@@ -34,94 +34,153 @@ namespace StoriesHelper
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordInput = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.connexion = new System.Windows.Forms.Button();
+            this.gradientPageConnexion1 = new StoriesHelper.GradientPageConnexion();
+            this.quitter = new System.Windows.Forms.Button();
+            this.erreurEmail = new System.Windows.Forms.Label();
+            this.erreurPassword = new System.Windows.Forms.Label();
+            this.gradientPageConnexion1.SuspendLayout();
             this.SuspendLayout();
             // 
             // titre
             // 
             this.titre.AutoSize = true;
-            this.titre.Font = new System.Drawing.Font("Modern No. 20", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titre.Location = new System.Drawing.Point(145, 104);
+            this.titre.BackColor = System.Drawing.Color.Transparent;
+            this.titre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titre.ForeColor = System.Drawing.Color.White;
+            this.titre.Location = new System.Drawing.Point(40, 108);
             this.titre.Name = "titre";
-            this.titre.Size = new System.Drawing.Size(724, 45);
+            this.titre.Size = new System.Drawing.Size(516, 51);
             this.titre.TabIndex = 0;
-            this.titre.Text = "Bienvenue sur StoriesHelper BackOffice";
+            this.titre.Text = "StoriesHelper BackOffice";
             // 
             // emailInput
             // 
-            this.emailInput.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailInput.Location = new System.Drawing.Point(434, 227);
+            this.emailInput.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailInput.Location = new System.Drawing.Point(81, 273);
             this.emailInput.Name = "emailInput";
-            this.emailInput.Size = new System.Drawing.Size(252, 27);
+            this.emailInput.Size = new System.Drawing.Size(442, 34);
             this.emailInput.TabIndex = 1;
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLabel.Location = new System.Drawing.Point(270, 229);
+            this.emailLabel.BackColor = System.Drawing.Color.Transparent;
+            this.emailLabel.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.White;
+            this.emailLabel.Location = new System.Drawing.Point(93, 223);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(124, 23);
+            this.emailLabel.Size = new System.Drawing.Size(218, 33);
             this.emailLabel.TabIndex = 2;
-            this.emailLabel.Text = "Adresse Email :";
+            this.emailLabel.Text = "Adresse Email *";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(300, 286);
+            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
+            this.passwordLabel.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold);
+            this.passwordLabel.ForeColor = System.Drawing.Color.White;
+            this.passwordLabel.Location = new System.Drawing.Point(93, 355);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(94, 23);
+            this.passwordLabel.Size = new System.Drawing.Size(201, 33);
             this.passwordLabel.TabIndex = 3;
-            this.passwordLabel.Text = "Password : ";
+            this.passwordLabel.Text = "Mot de passe *";
             // 
             // passwordInput
             // 
-            this.passwordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordInput.Location = new System.Drawing.Point(434, 286);
+            this.passwordInput.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.passwordInput.Location = new System.Drawing.Point(81, 401);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '*';
-            this.passwordInput.Size = new System.Drawing.Size(252, 27);
+            this.passwordInput.Size = new System.Drawing.Size(442, 34);
             this.passwordInput.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(282, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(435, 19);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Veuillez vous connecter pour pouvoir accéder à votre BackOffice";
             // 
             // connexion
             // 
-            this.connexion.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connexion.Location = new System.Drawing.Point(491, 346);
+            this.connexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.connexion.FlatAppearance.BorderSize = 0;
+            this.connexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.connexion.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connexion.ForeColor = System.Drawing.Color.White;
+            this.connexion.Location = new System.Drawing.Point(175, 542);
             this.connexion.Name = "connexion";
-            this.connexion.Size = new System.Drawing.Size(131, 40);
+            this.connexion.Size = new System.Drawing.Size(250, 56);
             this.connexion.TabIndex = 6;
-            this.connexion.Text = "connexion";
-            this.connexion.UseVisualStyleBackColor = true;
+            this.connexion.Text = "Connexion";
+            this.connexion.UseVisualStyleBackColor = false;
             this.connexion.Click += new System.EventHandler(this.connexion_Click);
+            // 
+            // gradientPageConnexion1
+            // 
+            this.gradientPageConnexion1.Angle = 90F;
+            this.gradientPageConnexion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(181)))));
+            this.gradientPageConnexion1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(1)))), ((int)(((byte)(224)))));
+            this.gradientPageConnexion1.Controls.Add(this.erreurPassword);
+            this.gradientPageConnexion1.Controls.Add(this.erreurEmail);
+            this.gradientPageConnexion1.Controls.Add(this.quitter);
+            this.gradientPageConnexion1.Controls.Add(this.connexion);
+            this.gradientPageConnexion1.Controls.Add(this.titre);
+            this.gradientPageConnexion1.Controls.Add(this.passwordInput);
+            this.gradientPageConnexion1.Controls.Add(this.emailLabel);
+            this.gradientPageConnexion1.Controls.Add(this.passwordLabel);
+            this.gradientPageConnexion1.Controls.Add(this.emailInput);
+            this.gradientPageConnexion1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPageConnexion1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPageConnexion1.Name = "gradientPageConnexion1";
+            this.gradientPageConnexion1.Size = new System.Drawing.Size(598, 694);
+            this.gradientPageConnexion1.TabIndex = 7;
+            this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
+            // 
+            // quitter
+            // 
+            this.quitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.quitter.FlatAppearance.BorderSize = 0;
+            this.quitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.quitter.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitter.Location = new System.Drawing.Point(541, 3);
+            this.quitter.Name = "quitter";
+            this.quitter.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.quitter.Size = new System.Drawing.Size(57, 76);
+            this.quitter.TabIndex = 7;
+            this.quitter.Text = "X";
+            this.quitter.UseVisualStyleBackColor = true;
+            this.quitter.Click += new System.EventHandler(this.quitter_Click);
+            // 
+            // erreurEmail
+            // 
+            this.erreurEmail.AutoSize = true;
+            this.erreurEmail.BackColor = System.Drawing.Color.Transparent;
+            this.erreurEmail.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erreurEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.erreurEmail.Location = new System.Drawing.Point(99, 314);
+            this.erreurEmail.Name = "erreurEmail";
+            this.erreurEmail.Size = new System.Drawing.Size(0, 20);
+            this.erreurEmail.TabIndex = 8;
+            // 
+            // erreurPassword
+            // 
+            this.erreurPassword.AutoSize = true;
+            this.erreurPassword.BackColor = System.Drawing.Color.Transparent;
+            this.erreurPassword.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
+            this.erreurPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.erreurPassword.Location = new System.Drawing.Point(99, 442);
+            this.erreurPassword.Name = "erreurPassword";
+            this.erreurPassword.Size = new System.Drawing.Size(0, 20);
+            this.erreurPassword.TabIndex = 9;
             // 
             // pageConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 550);
-            this.Controls.Add(this.connexion);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.passwordInput);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.emailLabel);
-            this.Controls.Add(this.emailInput);
-            this.Controls.Add(this.titre);
+            this.ClientSize = new System.Drawing.Size(598, 694);
+            this.Controls.Add(this.gradientPageConnexion1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "pageConnexion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pageConnexion";
+            this.gradientPageConnexion1.ResumeLayout(false);
+            this.gradientPageConnexion1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,8 +191,11 @@ namespace StoriesHelper
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordInput;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button connexion;
+        private GradientPageConnexion gradientPageConnexion1;
+        private System.Windows.Forms.Button quitter;
+        private System.Windows.Forms.Label erreurEmail;
+        private System.Windows.Forms.Label erreurPassword;
     }
 }
 

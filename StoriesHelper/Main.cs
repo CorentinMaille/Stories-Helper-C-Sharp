@@ -32,7 +32,7 @@ namespace StoriesHelper
         private void buttonLeave(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.HotTrack;
+            button.BackColor = Color.RoyalBlue;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -45,6 +45,14 @@ namespace StoriesHelper
 
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

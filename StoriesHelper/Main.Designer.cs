@@ -38,9 +38,12 @@ namespace StoriesHelper
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StoriesHelperLabel1 = new System.Windows.Forms.Label();
             this.organisationButton = new System.Windows.Forms.Button();
+            this.PanelWelcome = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.sideBarBackground.SuspendLayout();
             this.ApplicationNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PanelWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // collaboratorsButton
@@ -142,21 +145,43 @@ namespace StoriesHelper
             this.organisationButton.UseVisualStyleBackColor = true;
             this.organisationButton.MouseEnter += new System.EventHandler(this.buttonHover);
             // 
+            // PanelWelcome
+            // 
+            this.PanelWelcome.Controls.Add(this.label1);
+            this.PanelWelcome.Location = new System.Drawing.Point(293, -1);
+            this.PanelWelcome.Name = "PanelWelcome";
+            this.PanelWelcome.Size = new System.Drawing.Size(985, 751);
+            this.PanelWelcome.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(365, 156);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1277, 750);
+            this.Controls.Add(this.PanelWelcome);
             this.Controls.Add(this.sideBarBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storie Helper";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.sideBarBackground.ResumeLayout(false);
             this.ApplicationNamePanel.ResumeLayout(false);
             this.ApplicationNamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.PanelWelcome.ResumeLayout(false);
+            this.PanelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,5 +196,7 @@ namespace StoriesHelper
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label StoriesHelperLabel1;
         private System.Windows.Forms.Label StoriesHelperLabel2;
+        private System.Windows.Forms.Panel PanelWelcome;
+        private System.Windows.Forms.Label label1;
     }
 }
