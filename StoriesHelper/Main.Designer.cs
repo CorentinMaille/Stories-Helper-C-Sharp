@@ -33,17 +33,16 @@ namespace StoriesHelper
             this.collaboratorsButton = new System.Windows.Forms.Button();
             this.ProjectsButton = new System.Windows.Forms.Button();
             this.sideBarBackground = new System.Windows.Forms.Panel();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.ApplicationNamePanel = new System.Windows.Forms.Panel();
             this.StoriesHelperLabel2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StoriesHelperLabel1 = new System.Windows.Forms.Label();
             this.organisationButton = new System.Windows.Forms.Button();
-            this.PanelWelcome = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.sideBarBackground.SuspendLayout();
             this.ApplicationNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PanelWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // collaboratorsButton
@@ -57,7 +56,8 @@ namespace StoriesHelper
             this.collaboratorsButton.Text = "Collaborateurs";
             this.collaboratorsButton.UseVisualStyleBackColor = true;
             this.collaboratorsButton.Click += new System.EventHandler(this.collaboratorsButton_Click);
-            this.collaboratorsButton.MouseEnter += new System.EventHandler(this.buttonHover);
+            this.collaboratorsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
+            this.collaboratorsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
             // ProjectsButton
             // 
@@ -70,21 +70,38 @@ namespace StoriesHelper
             this.ProjectsButton.TabIndex = 1;
             this.ProjectsButton.Text = "Projets";
             this.ProjectsButton.UseVisualStyleBackColor = false;
-            this.ProjectsButton.MouseEnter += new System.EventHandler(this.buttonHover);
-            this.ProjectsButton.MouseHover += new System.EventHandler(this.buttonLeave);
+            this.ProjectsButton.Click += new System.EventHandler(this.ProjectsButton_Click);
+            this.ProjectsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
+            this.ProjectsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
             // sideBarBackground
             // 
             this.sideBarBackground.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.sideBarBackground.Controls.Add(this.QuitButton);
             this.sideBarBackground.Controls.Add(this.ApplicationNamePanel);
             this.sideBarBackground.Controls.Add(this.organisationButton);
             this.sideBarBackground.Controls.Add(this.ProjectsButton);
             this.sideBarBackground.Controls.Add(this.collaboratorsButton);
             this.sideBarBackground.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.sideBarBackground.Location = new System.Drawing.Point(0, -1);
+            this.sideBarBackground.Location = new System.Drawing.Point(-1, -1);
             this.sideBarBackground.Name = "sideBarBackground";
-            this.sideBarBackground.Size = new System.Drawing.Size(298, 751);
+            this.sideBarBackground.Size = new System.Drawing.Size(295, 902);
             this.sideBarBackground.TabIndex = 2;
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.QuitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuitButton.Location = new System.Drawing.Point(12, 823);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(275, 66);
+            this.QuitButton.TabIndex = 4;
+            this.QuitButton.Text = "Quitter";
+            this.QuitButton.UseVisualStyleBackColor = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            this.QuitButton.MouseEnter += new System.EventHandler(this.buttonEnter);
+            this.QuitButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
             // ApplicationNamePanel
             // 
@@ -119,7 +136,6 @@ namespace StoriesHelper
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // StoriesHelperLabel1
             // 
@@ -131,7 +147,6 @@ namespace StoriesHelper
             this.StoriesHelperLabel1.Size = new System.Drawing.Size(108, 36);
             this.StoriesHelperLabel1.TabIndex = 3;
             this.StoriesHelperLabel1.Text = "Stories";
-            this.StoriesHelperLabel1.Click += new System.EventHandler(this.label1_Click);
             // 
             // organisationButton
             // 
@@ -143,33 +158,24 @@ namespace StoriesHelper
             this.organisationButton.TabIndex = 3;
             this.organisationButton.Text = "Organisation";
             this.organisationButton.UseVisualStyleBackColor = true;
-            this.organisationButton.MouseEnter += new System.EventHandler(this.buttonHover);
+            this.organisationButton.Click += new System.EventHandler(this.organisationButton_Click);
+            this.organisationButton.MouseEnter += new System.EventHandler(this.buttonEnter);
+            this.organisationButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
-            // PanelWelcome
+            // MainPanel
             // 
-            this.PanelWelcome.Controls.Add(this.label1);
-            this.PanelWelcome.Location = new System.Drawing.Point(293, -1);
-            this.PanelWelcome.Name = "PanelWelcome";
-            this.PanelWelcome.Size = new System.Drawing.Size(985, 751);
-            this.PanelWelcome.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(365, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.MainPanel.Location = new System.Drawing.Point(292, -1);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1309, 902);
+            this.MainPanel.TabIndex = 3;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1277, 750);
-            this.Controls.Add(this.PanelWelcome);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.sideBarBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
@@ -180,8 +186,6 @@ namespace StoriesHelper
             this.ApplicationNamePanel.ResumeLayout(false);
             this.ApplicationNamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PanelWelcome.ResumeLayout(false);
-            this.PanelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,7 +200,7 @@ namespace StoriesHelper
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label StoriesHelperLabel1;
         private System.Windows.Forms.Label StoriesHelperLabel2;
-        private System.Windows.Forms.Panel PanelWelcome;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button QuitButton;
     }
 }

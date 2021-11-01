@@ -56,3 +56,7 @@ D:\C#\StoriesHelper\StoriesHelper\bin\Debug\System.Memory.xml
 D:\C#\StoriesHelper\StoriesHelper\bin\Debug\System.Numerics.Vectors.xml
 D:\C#\StoriesHelper\StoriesHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.csproj.CopyComplete
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Home.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Organization.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Collaborators.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Projects.resources
