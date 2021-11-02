@@ -22,24 +22,24 @@ namespace StoriesHelper
             string mdp = passwordInput.Text;
             string email = emailInput.Text;
             command.Parameters.AddWithValue("@email", email);
-            command.CommandText = "SELECT email, password FROM organizations WHERE email = @email";
+            command.CommandText = "SELECT rowid, email, password FROM organizations WHERE email = @email";
             MySqlDataReader reader = command.ExecuteReader();
             string mdpHash = "";
+            int idOrg = 0;
             if (reader.HasRows)
             {
                 erreurEmail.Text = "";
                 erreurPassword.Text = "";
                 while (reader.Read())
                 {
-                    mdpHash = reader.GetString(1);
+                    mdpHash = reader.GetString(2);
+                    idOrg = reader.GetInt32(0);
                 }
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
                     MessageBox.Show("Le mot de passe est correct");
-
-                    Main WelcomeWindow = new Main();
-
+                    Main WelcomeWindow = new Main(idOrg);
                     WelcomeWindow.Show();
                     this.Hide();
                 }
