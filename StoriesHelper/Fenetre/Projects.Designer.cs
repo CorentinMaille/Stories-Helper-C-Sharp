@@ -1,5 +1,5 @@
 ﻿
-namespace StoriesHelper
+namespace StoriesHelper.Fenetre
 {
     partial class Projects
     {
