@@ -6,9 +6,12 @@ namespace StoriesHelper
 {
     public partial class Collaborators : UserControl
     {
+        private int idOrg;
+
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
-        public Collaborators()
+        public Collaborators(int idOrg)
         {
+            this.idOrg = idOrg;
             InitializeComponent();
         }
 

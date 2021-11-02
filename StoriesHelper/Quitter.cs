@@ -10,13 +10,21 @@ using System.Windows.Forms;
 
 namespace StoriesHelper
 {
-    public partial class Organization : UserControl
+    public partial class Quitter : Form
     {
-        private int idOrg;
-        public Organization(int idOrg)
+        public Quitter()
         {
-            this.idOrg = idOrg;
             InitializeComponent();
+        }
+
+        private void annulerQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void confirmerQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
