@@ -17,14 +17,14 @@ namespace StoriesHelper
             InitializeComponent();
         }
 
-        private void annulerQuitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void confirmerQuitter_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
