@@ -12,18 +12,20 @@ namespace StoriesHelper
 {
     public partial class Main : Form
     {
-        public Main()
+        private int idOrg;
+        public Main(int idOrg)
         {
+            this.idOrg = idOrg;
             InitializeComponent();
 
-            Home HomeContent = new Home();
+            Home HomeContent = new Home(idOrg);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(HomeContent);
 
             HomeContent.Show();
 
-           
+
         }
 
         private void buttonEnter(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace StoriesHelper
 
         private void organisationButton_Click(object sender, EventArgs e)
         {
-            Organization OrganizationContent = new Organization();
+            Organization OrganizationContent = new Organization(this.idOrg);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);
@@ -54,7 +56,7 @@ namespace StoriesHelper
         }
         private void collaboratorsButton_Click(object sender, EventArgs e)
         {
-            Collaborators CollaboratorsContent = new Collaborators();
+            Collaborators CollaboratorsContent = new Collaborators(this.idOrg);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(CollaboratorsContent);
@@ -63,7 +65,7 @@ namespace StoriesHelper
         }
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
-            Projects ProjectContent = new Projects();
+            Projects ProjectContent = new Projects(this.idOrg);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(ProjectContent);
