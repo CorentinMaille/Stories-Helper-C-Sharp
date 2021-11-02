@@ -29,52 +29,51 @@ namespace StoriesHelper
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.confirmerQuitter = new System.Windows.Forms.Button();
-            this.annulerQuitter = new System.Windows.Forms.Button();
+            this.labelSupprimer = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelSupprimer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Êtes-vous sûr de vouloir quitter ?";
+            this.labelSupprimer.AutoSize = true;
+            this.labelSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSupprimer.Location = new System.Drawing.Point(63, 41);
+            this.labelSupprimer.Name = "labelSupprimer";
+            this.labelSupprimer.Size = new System.Drawing.Size(317, 24);
+            this.labelSupprimer.TabIndex = 0;
+            this.labelSupprimer.Text = "Êtes-vous sûr de vouloir quitter ?";
             // 
-            // confirmerQuitter
+            // button1
             // 
-            this.confirmerQuitter.Location = new System.Drawing.Point(88, 82);
-            this.confirmerQuitter.Name = "confirmerQuitter";
-            this.confirmerQuitter.Size = new System.Drawing.Size(102, 33);
-            this.confirmerQuitter.TabIndex = 1;
-            this.confirmerQuitter.Text = "Oui";
-            this.confirmerQuitter.UseVisualStyleBackColor = true;
-            this.confirmerQuitter.Click += new System.EventHandler(this.confirmerQuitter_Click);
+            this.button1.Location = new System.Drawing.Point(82, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 44);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Oui";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // annulerQuitter
+            // button2
             // 
-            this.annulerQuitter.Location = new System.Drawing.Point(229, 82);
-            this.annulerQuitter.Name = "annulerQuitter";
-            this.annulerQuitter.Size = new System.Drawing.Size(98, 33);
-            this.annulerQuitter.TabIndex = 2;
-            this.annulerQuitter.Text = "Annuler";
-            this.annulerQuitter.UseVisualStyleBackColor = true;
-            this.annulerQuitter.Click += new System.EventHandler(this.annulerQuitter_Click);
+            this.button2.Location = new System.Drawing.Point(238, 83);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 44);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Annuler";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Quitter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 165);
-            this.Controls.Add(this.annulerQuitter);
-            this.Controls.Add(this.confirmerQuitter);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(440, 175);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelSupprimer);
             this.Name = "Quitter";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "quitter";
+            this.Text = "Quitter";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,8 +81,8 @@ namespace StoriesHelper
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button confirmerQuitter;
-        private System.Windows.Forms.Button annulerQuitter;
+        private System.Windows.Forms.Label labelSupprimer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -69,6 +69,9 @@
     <Compile Include="GradientPageConnexion.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MyDraggableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="pageConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +110,12 @@
     <Compile Include="Organization.Designer.cs">
       <DependentUpon>Organization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quitter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quitter.Designer.cs">
+      <DependentUpon>Quitter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Organization.resx">
       <DependentUpon>Organization.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quitter.resx">
+      <DependentUpon>Quitter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
