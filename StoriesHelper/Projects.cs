@@ -12,8 +12,10 @@ namespace StoriesHelper
 {
     public partial class Projects : UserControl
     {
-        public Projects()
+        private int idOrg;
+        public Projects(int idOrg)
         {
+            this.idOrg = idOrg;
             InitializeComponent();
         }
     }
