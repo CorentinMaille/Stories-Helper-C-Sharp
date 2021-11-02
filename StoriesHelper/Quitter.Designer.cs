@@ -73,6 +73,7 @@ namespace StoriesHelper
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelSupprimer);
             this.Name = "Quitter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quitter";
             this.ResumeLayout(false);
             this.PerformLayout();
