@@ -84,6 +84,7 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\Syste
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\System.Memory.xml
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Quitter.resources
@@ -94,4 +95,3 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\Stori
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Collaborators.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Projects.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Quitter.resources
-C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
