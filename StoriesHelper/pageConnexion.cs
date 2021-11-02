@@ -38,7 +38,6 @@ namespace StoriesHelper
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
-                    MessageBox.Show("Le mot de passe est correct");
                     Main WelcomeWindow = new Main(idOrg);
                     WelcomeWindow.Show();
                     this.Hide();
