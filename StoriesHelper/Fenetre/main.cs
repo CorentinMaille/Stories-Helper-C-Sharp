@@ -7,13 +7,11 @@ namespace StoriesHelper.Fenetre
 {
     public partial class Main : MyDraggableForm
     {
-        private int idOrg;
-        public Main(int idOrg)
+        public Main()
         {
-            this.idOrg = idOrg;
             InitializeComponent();
 
-            Home HomeContent = new Home(idOrg);
+            Home HomeContent = new Home();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(HomeContent);
@@ -42,7 +40,7 @@ namespace StoriesHelper.Fenetre
 
         private void organisationButton_Click(object sender, EventArgs e)
         {
-            Organization OrganizationContent = new Organization(this.idOrg);
+            Organization OrganizationContent = new Organization();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);
@@ -51,7 +49,7 @@ namespace StoriesHelper.Fenetre
         }
         private void collaboratorsButton_Click(object sender, EventArgs e)
         {
-            Collaborators CollaboratorsContent = new Collaborators(this.idOrg);
+            Collaborators CollaboratorsContent = new Collaborators();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(CollaboratorsContent);
@@ -60,7 +58,7 @@ namespace StoriesHelper.Fenetre
         }
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
-            Projects ProjectContent = new Projects(this.idOrg);
+            Projects ProjectContent = new Projects();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(ProjectContent);
