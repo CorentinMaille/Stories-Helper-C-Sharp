@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using StoriesHelper.Service;
 
-namespace StoriesHelper
+namespace StoriesHelper.Fenetre
 {
     using BCrypt.Net;
 
