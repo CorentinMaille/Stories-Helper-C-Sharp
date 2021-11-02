@@ -31,6 +31,7 @@ namespace StoriesHelper
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pageConnexion));
             this.gradientPageConnexion1 = new StoriesHelper.GradientPageConnexion();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.erreurPassword = new System.Windows.Forms.Label();
             this.erreurEmail = new System.Windows.Forms.Label();
             this.connexion = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@ namespace StoriesHelper
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.emailInput = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gradientPageConnexion1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,17 @@ namespace StoriesHelper
             this.gradientPageConnexion1.TabIndex = 7;
             this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
             this.gradientPageConnexion1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(533, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.quitter_Click);
             // 
             // erreurPassword
             // 
@@ -123,6 +134,7 @@ namespace StoriesHelper
             this.passwordInput.PasswordChar = '*';
             this.passwordInput.Size = new System.Drawing.Size(442, 34);
             this.passwordInput.TabIndex = 4;
+            this.passwordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Input_KeyDown);
             // 
             // emailLabel
             // 
@@ -155,17 +167,7 @@ namespace StoriesHelper
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(442, 34);
             this.emailInput.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(533, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.quitter_Click);
+            this.emailInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Input_KeyDown);
             // 
             // pageConnexion
             // 

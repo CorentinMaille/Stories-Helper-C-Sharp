@@ -66,5 +66,13 @@ namespace StoriesHelper
             MyDraggableForm mdf = new MyDraggableForm();
             mdf.Drag(sender, e, Handle);
         }
+
+        private void Input_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.connexion_Click(sender, e);
+            }
+        }
     }
 }
