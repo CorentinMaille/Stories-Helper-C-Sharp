@@ -8,12 +8,13 @@ namespace StoriesHelper
 
     public partial class pageConnexion : Form
     {
+
+
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
         public pageConnexion()
         {
             InitializeComponent();
         }
-
 
         private void connexion_Click(object sender, EventArgs e)
         {
@@ -38,8 +39,8 @@ namespace StoriesHelper
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
-                    MessageBox.Show("Le mot de passe est correct");
                     Main WelcomeWindow = new Main(idOrg);
+
                     WelcomeWindow.Show();
                     this.Hide();
                 }
@@ -58,6 +59,12 @@ namespace StoriesHelper
         private void quitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        protected void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            MyDraggableForm mdf = new MyDraggableForm();
+            mdf.Drag(sender, e, Handle);
         }
     }
 }
