@@ -1,5 +1,6 @@
-﻿
-namespace StoriesHelper
+﻿using StoriesHelper.Service;
+
+namespace StoriesHelper.Fenetre
 {
     partial class pageConnexion
     {
@@ -30,7 +31,7 @@ namespace StoriesHelper
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pageConnexion));
-            this.gradientPageConnexion1 = new StoriesHelper.GradientPageConnexion();
+            this.gradientPageConnexion1 = new GradientPageConnexion();
             this.erreurPassword = new System.Windows.Forms.Label();
             this.erreurEmail = new System.Windows.Forms.Label();
             this.connexion = new System.Windows.Forms.Button();
