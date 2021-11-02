@@ -74,7 +74,8 @@ namespace StoriesHelper
         }
         private void QuitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Quitter quitter = new Quitter();
+            quitter.Show();
         }
     }
 }
