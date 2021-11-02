@@ -94,3 +94,4 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\Stori
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Quitter.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Quitter.resources

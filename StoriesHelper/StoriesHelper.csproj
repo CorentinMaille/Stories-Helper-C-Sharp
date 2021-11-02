@@ -69,6 +69,9 @@
     <Compile Include="GradientPageConnexion.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MyDraggableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="pageConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
