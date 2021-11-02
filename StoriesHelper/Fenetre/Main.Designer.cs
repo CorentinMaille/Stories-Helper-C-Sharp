@@ -87,6 +87,7 @@ namespace StoriesHelper
             this.sideBarBackground.Name = "sideBarBackground";
             this.sideBarBackground.Size = new System.Drawing.Size(295, 902);
             this.sideBarBackground.TabIndex = 2;
+            this.sideBarBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // QuitButton
             // 
@@ -114,6 +115,7 @@ namespace StoriesHelper
             this.ApplicationNamePanel.Name = "ApplicationNamePanel";
             this.ApplicationNamePanel.Size = new System.Drawing.Size(275, 138);
             this.ApplicationNamePanel.TabIndex = 3;
+            this.ApplicationNamePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // StoriesHelperLabel2
             // 
@@ -125,6 +127,7 @@ namespace StoriesHelper
             this.StoriesHelperLabel2.Size = new System.Drawing.Size(102, 36);
             this.StoriesHelperLabel2.TabIndex = 4;
             this.StoriesHelperLabel2.Text = "Helper";
+            this.StoriesHelperLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // pictureBox1
             // 
@@ -136,6 +139,7 @@ namespace StoriesHelper
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // StoriesHelperLabel1
             // 
@@ -147,6 +151,7 @@ namespace StoriesHelper
             this.StoriesHelperLabel1.Size = new System.Drawing.Size(108, 36);
             this.StoriesHelperLabel1.TabIndex = 3;
             this.StoriesHelperLabel1.Text = "Stories";
+            this.StoriesHelperLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // organisationButton
             // 
@@ -168,6 +173,7 @@ namespace StoriesHelper
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1309, 902);
             this.MainPanel.TabIndex = 3;
+            this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // Main
             // 
@@ -182,6 +188,7 @@ namespace StoriesHelper
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Storie Helper";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.sideBarBackground.ResumeLayout(false);
             this.ApplicationNamePanel.ResumeLayout(false);
             this.ApplicationNamePanel.PerformLayout();

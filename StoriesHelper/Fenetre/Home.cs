@@ -18,10 +18,5 @@ namespace StoriesHelper
             this.idOrg = idOrg;
             InitializeComponent();
         }
-
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

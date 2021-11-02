@@ -49,7 +49,6 @@ namespace StoriesHelper
             this.Controls.Add(this.WelcomeLabel);
             this.Name = "Home";
             this.Size = new System.Drawing.Size(1300, 900);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

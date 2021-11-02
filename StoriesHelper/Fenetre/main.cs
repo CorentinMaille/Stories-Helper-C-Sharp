@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StoriesHelper
 {
-    public partial class Main : Form
+    public partial class Main : MyDraggableForm
     {
         private int idOrg;
         public Main(int idOrg)
@@ -76,6 +76,12 @@ namespace StoriesHelper
         {
             Quitter quitter = new Quitter();
             quitter.Show();
+        }
+
+        protected void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            MyDraggableForm mdf = new MyDraggableForm();
+            mdf.Drag(sender, e, Handle);
         }
     }
 }
