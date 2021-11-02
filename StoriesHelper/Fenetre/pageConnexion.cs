@@ -40,7 +40,7 @@ namespace StoriesHelper.Fenetre
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
-                    Main WelcomeWindow = new Main(idOrg);
+                    Main WelcomeWindow = new Main();
 
                     WelcomeWindow.Show();
                     this.Hide();

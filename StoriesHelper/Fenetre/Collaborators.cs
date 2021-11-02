@@ -6,12 +6,9 @@ namespace StoriesHelper.Fenetre
 {
     public partial class Collaborators : UserControl
     {
-        private int idOrg;
-
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
-        public Collaborators(int idOrg)
+        public Collaborators()
         {
-            this.idOrg = idOrg;
             InitializeComponent();
         }
 

@@ -12,10 +12,8 @@ namespace StoriesHelper.Fenetre
 {
     public partial class Organization : UserControl
     {
-        private int idOrg;
-        public Organization(int idOrg)
+        public Organization()
         {
-            this.idOrg = idOrg;
             InitializeComponent();
         }
     }

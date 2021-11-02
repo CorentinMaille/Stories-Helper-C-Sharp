@@ -117,6 +117,7 @@
     <Compile Include="Fenetre\Quitter.Designer.cs">
       <DependentUpon>Quitter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\Session.cs" />
     <EmbeddedResource Include="Fenetre\Organization.resx">
       <DependentUpon>Organization.cs</DependentUpon>
     </EmbeddedResource>
