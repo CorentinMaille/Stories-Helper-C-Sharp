@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace StoriesHelper.Modeles
 {
-    class Users
+    class Users : Model
     {
-        MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
-
         private int idUser;
         private string firstname;
         private string lastname;
@@ -36,6 +34,7 @@ namespace StoriesHelper.Modeles
                 this.birth = reader.GetDateTime(3);
                 this.idOrganization = reader.GetInt32(7);
             }
+            conn.Close();
         }
     }
 }
