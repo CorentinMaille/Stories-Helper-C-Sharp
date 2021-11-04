@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StoriesHelper.Modeles
 {
-    class Users
+    class Users : Model
     {
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
 
