@@ -94,3 +94,4 @@ D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Home.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Collaborators.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Projects.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Quitter.resources
+C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CopyComplete

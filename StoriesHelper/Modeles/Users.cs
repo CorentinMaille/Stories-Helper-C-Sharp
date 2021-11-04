@@ -9,13 +9,13 @@ namespace StoriesHelper.Modeles
 {
     class Users : Model
     {
-        private int idUser;
-        private string firstname;
-        private string lastname;
-        private string email;
-        private string password;
-        private DateTime birth;
-        private int idOrganization;
+        private int idUser { get; set; }
+        private string firstname { get; set; }
+        private string lastname { get; set; }
+        private string email { get; set; }
+        private string password { get; set; }
+        private DateTime birth { get; set; }
+        private int idOrganization { get; set; }
 
         public Users(int idUser)
         {
