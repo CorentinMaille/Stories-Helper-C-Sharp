@@ -5,13 +5,13 @@ namespace StoriesHelper.Modeles
 {
     class User : Model
     {
-        int idUser { get; set; }
-        string firstname { get; set; }
-        string lastname { get; set; }
-        string email { get; set; }
-        string password { get; set; }
-        DateTime birth { get; set; }
-        int idOrganization { get; set; }
+        int idUser;
+        string firstname;
+        string lastname;
+        string email;
+        string password;
+        DateTime birth;
+        int idOrganization;
 
         public User(int idUser = -1)
         {
