@@ -13,7 +13,7 @@ namespace StoriesHelper.Models
 
         protected Model()
         {
-            MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
+            conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
         }
     }
 }

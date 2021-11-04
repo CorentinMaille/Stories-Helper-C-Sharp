@@ -20,3 +20,4 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\Stori
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CoreCompileInputs.cache
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
+C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
