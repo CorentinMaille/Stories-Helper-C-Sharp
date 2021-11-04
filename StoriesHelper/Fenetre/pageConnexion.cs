@@ -9,8 +9,6 @@ namespace StoriesHelper.Fenetre
 
     public partial class pageConnexion : Form
     {
-
-
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
         public pageConnexion()
         {
