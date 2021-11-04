@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Modeles\Model.cs" />
     <Compile Include="Modeles\Task.cs" />
-    <Compile Include="Modeles\User.cs" />
+    <Compile Include="Modeles\Users.cs" />
     <Compile Include="Services\GradientPageConnexion.cs">
       <SubType>Component</SubType>
     </Compile>
