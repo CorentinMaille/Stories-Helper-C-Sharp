@@ -1,17 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 
-namespace StoriesHelper.Modeles
+namespace StoriesHelper.Models
 {
     class User : Model
     {
-        int idUser;
-        string firstname;
-        string lastname;
-        string email;
-        string password;
-        DateTime birth;
-        int idOrganization;
+        protected int rowid;
+        protected string firstname;
+        protected string lastname;
+        protected string email;
+        protected string password;
+        protected DateTime birth;
+        protected int fk_organisation;
 
         public User(int idUser = -1)
         {
@@ -20,25 +20,28 @@ namespace StoriesHelper.Modeles
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
                 command.Parameters.AddWithValue("@id", idUser);
-                command.CommandText = "SELECT * FROM users WHERE rowid = @id";
+                string sql = "SELECT *";
+                sql += " FROM users ";
+                sql += "WHERE rowid = @id";
+                command.CommandText = sql;
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.idUser = reader.GetInt32(0);
+                    rowid = reader.GetInt32(0);
                     firstname = reader.GetString(1);
                     lastname = reader.GetString(2);
-                    email = reader.GetString(6);
-                    password = reader.GetString(4);
                     birth = reader.GetDateTime(3);
-                    idOrganization = reader.GetInt32(7);
+                    password = reader.GetString(4);
+                    email = reader.GetString(6);
+                    fk_organisation = reader.GetInt32(7);
                 }
                 conn.Close();
             }
         }
 
-        public int getIdUser()
+        public int getRowId()
         {
-            return idUser;
+            return rowid;
         }
 
         public string getFirstname()
@@ -81,13 +84,14 @@ namespace StoriesHelper.Modeles
         {
             birth = newBirth;
         }
-        public int getIdOrganization()
+        public int getFkOrganization()
         {
-            return idOrganization;
+            return fk_organisation;
         }
-        public void setIdOrganisation(int newIdOrganization)
+        public void setFkOrganization(int newIdOrganization)
         {
-            idOrganization = newIdOrganization;
+            fk_organisation = newIdOrganization;
         }
+
     }
 }

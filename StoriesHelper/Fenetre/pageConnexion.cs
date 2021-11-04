@@ -6,6 +6,8 @@ using StoriesHelper.Service;
 namespace StoriesHelper.Fenetre
 {
     using BCrypt.Net;
+    using StoriesHelper.Models;
+    using System.Collections.Generic;
 
     public partial class pageConnexion : Form
     {
@@ -38,6 +40,13 @@ namespace StoriesHelper.Fenetre
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
+                    Team team = new Team(4);
+                    List<User> listUser = team.getListUsers();
+                    foreach(User user in listUser)
+                    {
+                        MessageBox.Show(user.getFirstname());
+                    }
+
                     Main WelcomeWindow = new Main();
 
                     WelcomeWindow.Show();

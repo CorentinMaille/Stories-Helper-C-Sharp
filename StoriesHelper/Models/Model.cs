@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace StoriesHelper.Modeles
+namespace StoriesHelper.Models
 {
     class Model
     {
@@ -13,7 +13,7 @@ namespace StoriesHelper.Modeles
 
         protected Model()
         {
-            MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
+            conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
         }
     }
 }
