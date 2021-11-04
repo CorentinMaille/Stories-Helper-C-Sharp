@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 
-namespace StoriesHelper.Modeles
+namespace StoriesHelper.Models
 {
     class User : Model
     {
