@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Services\GradientPageConnexion.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -147,6 +150,7 @@
     <EmbeddedResource Include="Fenetre\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\StoriesHelper.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,6 +165,30 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\BCrypt.Net-Next.dll" />
+    <Content Include="bin\Debug\BCrypt.Net-Next.xml" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\StoriesHelper.exe" />
+    <Content Include="bin\Debug\StoriesHelper.pdb" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\ZstdNet.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
