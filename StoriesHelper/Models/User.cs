@@ -28,8 +28,8 @@ namespace StoriesHelper.Models
                 while (reader.Read())
                 {
                     rowid = reader.GetInt32(0);
-                    firstname = reader.GetString(1);
-                    lastname = reader.GetString(2);
+                    lastname = reader.GetString(1);
+                    firstname = reader.GetString(2);
                     birth = reader.GetDateTime(3);
                     password = reader.GetString(4);
                     email = reader.GetString(6);
@@ -38,12 +38,24 @@ namespace StoriesHelper.Models
                 conn.Close();
             }
         }
-
+        public void initializedUser(int idUser, string firstname, string lastname, DateTime birth, string password, string email, int fk_orgnaization)
+        {
+            this.rowid = idUser;
+            this.lastname = lastname;
+            this.firstname = firstname;
+            this.birth = birth;
+            this.password = password;
+            this.email = email;
+            this.fk_organisation = fk_orgnaization;
+        }
         public int getRowId()
         {
             return rowid;
         }
-
+        public void setRowId(int newRowid)
+        {
+            rowid = newRowid;
+        }
         public string getFirstname()
         {
             return firstname;
