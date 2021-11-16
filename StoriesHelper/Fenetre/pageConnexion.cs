@@ -40,12 +40,18 @@ namespace StoriesHelper.Fenetre
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
-                    Team team = new Team(4);
-                    List<User> listUser = team.getListUsers();
-                    foreach(User user in listUser)
+                    Project project = new Project(2);
+                    List<Team> listTeam = project.getListTeams();
+                    foreach (Team team in listTeam)
                     {
-                        MessageBox.Show(user.getFirstname());
+                        MessageBox.Show(team.getName());
+                        List<User> listUser = team.getListUsers();
+                        foreach(User user in listUser)
+                        {
+                            MessageBox.Show(user.getFirstname());
+                        }
                     }
+
 
                     Main WelcomeWindow = new Main();
 
