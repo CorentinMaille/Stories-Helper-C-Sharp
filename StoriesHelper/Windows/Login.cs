@@ -82,7 +82,7 @@ namespace StoriesHelper.Windows
 
         private void quitter_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         protected void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
