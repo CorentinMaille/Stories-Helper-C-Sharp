@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
-    partial class Main
+    partial class main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace StoriesHelper.Fenetre
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.collaboratorsButton = new System.Windows.Forms.Button();
             this.ProjectsButton = new System.Windows.Forms.Button();
             this.sideBarBackground = new System.Windows.Forms.Panel();

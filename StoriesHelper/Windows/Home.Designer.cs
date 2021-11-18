@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
-    partial class Projects
+    partial class Home
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,25 +29,25 @@ namespace StoriesHelper.Fenetre
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProjectLabel = new System.Windows.Forms.Label();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ProjectLabel
+            // WelcomeLabel
             // 
-            this.ProjectLabel.AutoSize = true;
-            this.ProjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.ProjectLabel.Location = new System.Drawing.Point(511, 319);
-            this.ProjectLabel.Name = "ProjectLabel";
-            this.ProjectLabel.Size = new System.Drawing.Size(151, 48);
-            this.ProjectLabel.TabIndex = 0;
-            this.ProjectLabel.Text = "Projets";
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.WelcomeLabel.Location = new System.Drawing.Point(489, 362);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(195, 48);
+            this.WelcomeLabel.TabIndex = 0;
+            this.WelcomeLabel.Text = "Welcome";
             // 
-            // Projects
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ProjectLabel);
-            this.Name = "Projects";
+            this.Controls.Add(this.WelcomeLabel);
+            this.Name = "Home";
             this.Size = new System.Drawing.Size(1300, 900);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -56,6 +56,6 @@ namespace StoriesHelper.Fenetre
 
         #endregion
 
-        private System.Windows.Forms.Label ProjectLabel;
+        private System.Windows.Forms.Label WelcomeLabel;
     }
 }

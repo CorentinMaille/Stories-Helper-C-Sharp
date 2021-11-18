@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Windows\PanelOrganization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\PanelOrganization.Designer.cs">
+      <DependentUpon>PanelOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BelongsTo.cs" />
     <Compile Include="Models\TaskComment.cs" />
     <Compile Include="Models\Model.cs" />
@@ -76,63 +82,59 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Organization.cs" />
-    <Compile Include="Services\GradientPageConnexion.cs">
+    <Compile Include="Services\GradientLogin.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\MyDraggableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fenetre\pageConnexion.cs">
+    <Compile Include="Windows\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fenetre\pageConnexion.Designer.cs">
-      <DependentUpon>pageConnexion.cs</DependentUpon>
+    <Compile Include="Windows\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetre\main.cs">
+    <Compile Include="Windows\main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fenetre\main.Designer.cs">
+    <Compile Include="Windows\main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Fenetre\Home.cs">
+    <Compile Include="Windows\Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Fenetre\Home.Designer.cs">
+    <Compile Include="Windows\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetre\Collaborators.cs">
+    <Compile Include="Windows\Collaborators.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Fenetre\Collaborators.Designer.cs">
+    <Compile Include="Windows\Collaborators.Designer.cs">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetre\Projects.cs">
+    <Compile Include="Windows\Projects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Fenetre\Projects.Designer.cs">
+    <Compile Include="Windows\Projects.Designer.cs">
       <DependentUpon>Projects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetre\Organization.cs" />
-    <Compile Include="Fenetre\Organization.Designer.cs">
-      <DependentUpon>Organization.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Fenetre\Quitter.cs">
+    <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fenetre\Quitter.Designer.cs">
+    <Compile Include="Windows\Quitter.Designer.cs">
       <DependentUpon>Quitter.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Session.cs" />
-    <EmbeddedResource Include="Fenetre\Organization.resx">
-      <DependentUpon>Organization.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fenetre\pageConnexion.resx">
-      <DependentUpon>pageConnexion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Fenetre\main.resx">
+    <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PanelOrganization.resx">
+      <DependentUpon>PanelOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,16 +145,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Fenetre\Home.resx">
+    <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fenetre\Collaborators.resx">
+    <EmbeddedResource Include="Windows\Collaborators.resx">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fenetre\Projects.resx">
+    <EmbeddedResource Include="Windows\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fenetre\Quitter.resx">
+    <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\StoriesHelper.exe.config" />

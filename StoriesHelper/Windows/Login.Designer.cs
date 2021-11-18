@@ -1,8 +1,8 @@
 ﻿using StoriesHelper.Service;
 
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
-    partial class pageConnexion
+    partial class Login
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -30,7 +30,7 @@ namespace StoriesHelper.Fenetre
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pageConnexion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.gradientPageConnexion1 = new StoriesHelper.Service.GradientPageConnexion();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.erreurPassword = new System.Windows.Forms.Label();
@@ -170,14 +170,14 @@ namespace StoriesHelper.Fenetre
             this.emailInput.TabIndex = 1;
             this.emailInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Input_KeyDown);
             // 
-            // pageConnexion
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 694);
             this.Controls.Add(this.gradientPageConnexion1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "pageConnexion";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pageConnexion";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);

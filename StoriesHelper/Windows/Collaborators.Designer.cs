@@ -1,5 +1,5 @@
 ﻿
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
     partial class Collaborators
     {

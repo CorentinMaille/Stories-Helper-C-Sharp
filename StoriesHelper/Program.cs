@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using StoriesHelper.Fenetre;
+using StoriesHelper.Windows;
 using StoriesHelper.Service;
 
 namespace StoriesHelper
@@ -28,7 +28,7 @@ namespace StoriesHelper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pageConnexion());
+            Application.Run(new Login());
         }
     }
 }

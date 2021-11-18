@@ -3,16 +3,16 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using StoriesHelper.Service;
 
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
     using BCrypt.Net;
     using StoriesHelper.Models;
     using System.Collections.Generic;
 
-    public partial class pageConnexion : Form
+    public partial class Login : Form
     {
         MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
-        public pageConnexion()
+        public Login()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace StoriesHelper.Fenetre
 
                     // FIN DE LA SECTION TEST !!!
 
-                    Main WelcomeWindow = new Main();
+                    main WelcomeWindow = new main();
 
                     WelcomeWindow.Show();
                     this.Hide();

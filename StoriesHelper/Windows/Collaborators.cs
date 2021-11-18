@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
     public partial class Collaborators : UserControl
     {

@@ -3,11 +3,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Service;
 
-namespace StoriesHelper.Fenetre
+namespace StoriesHelper.Windows
 {
-    public partial class Main : MyDraggableForm
+    public partial class main : MyDraggableForm
     {
-        public Main()
+        public main()
         {
             InitializeComponent();
 
