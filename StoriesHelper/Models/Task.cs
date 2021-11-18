@@ -109,9 +109,19 @@ namespace StoriesHelper.Models
 
             while (reader.Read())
             {
+                string taskName = "";
+                if (!reader.IsDBNull(1))
+                {
+                    taskName = reader.GetString(1);
+                }
+                string taskDescription = "";
+                if (!reader.IsDBNull(2))
+                {
+                    taskDescription = reader.GetString(2);
+                }
                 rowid = reader.GetInt32(0);
-                name = reader.GetString(1);
-                description = reader.GetString(2);
+                name = taskName;
+                description = taskDescription;
                 fk_column = reader.GetInt32(3);
                 rank = reader.GetInt32(4);
                 fk_author = reader.GetInt32(5);
@@ -142,9 +152,42 @@ namespace StoriesHelper.Models
                 this.TaskComments.Add(taskComment);
             }
 
+            conn.Close();
+        }
+
+        public void initializedTask(int rowid, string name, string description, int fk_column, int rank, int fk_author, bool admin, bool active)
+        {
+            this.rowid = rowid;
+            this.name = name;
+            this.description = description;
+            this.fk_column = fk_column;
+            this.rank = rank;
+            this.fk_author = fk_author;
+            this.admin = admin;
+            this.active = active;
+
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@fk_task", rowid);
+           
+            string sql = "SELECT *";
+            sql += " FROM tasks_comments";
+            sql += " WHERE fk_task = @fk_task";
+
+            command.CommandText = sql;
+
+            MySqlDataReader commentReader = command.ExecuteReader();
+
+            while (commentReader.Read())
+            {
+                TaskComment taskComment = new TaskComment();
+
+                taskComment.initializeTaskComment(commentReader.GetInt32(0), commentReader.GetInt32(1), commentReader.GetString(2), commentReader.GetInt32(3), commentReader.GetBoolean(4));
+                this.TaskComments.Add(taskComment);
+            }
 
             conn.Close();
-
         }
 
         public int fetch_last_insert_id()
