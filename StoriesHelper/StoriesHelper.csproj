@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BelongsTo.cs" />
     <Compile Include="Models\TaskComment.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Project.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Models\TaskMembers.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Organization.cs"/>
+    <Compile Include="Models\Organization.cs" />
     <Compile Include="Services\GradientPageConnexion.cs">
       <SubType>Component</SubType>
     </Compile>
