@@ -1,13 +1,3 @@
 .vs
-StoriesHelper/bin/Debug/StoriesHelper.exe
-StoriesHelper/obj/Debug/StoriesHelper.exe
-StoriesHelper/obj/Debug/StoriesHelper.csproj.AssemblyReference.cache
-StoriesHelper/obj/Debug/StoriesHelper.csproj.CoreCompileInputs.cache
-StoriesHelper/obj/Debug/StoriesHelper.csproj.GenerateResource.cache
-StoriesHelper/bin/Debug/StoriesHelper.pdb
-StoriesHelper/obj/Debug/StoriesHelper.pdb
-StoriesHelper/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-StoriesHelper/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-StoriesHelper/obj/Debug
 StoriesHelper/bin/Debug
-
+StoriesHelper/obj/Debug
