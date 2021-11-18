@@ -35,9 +35,14 @@ namespace StoriesHelper.Models
 
                     while (reader.Read())
                     {
+                        string comment = "";
+                        if (!reader.IsDBNull(1))
+                        {
+                            comment = reader.GetString(1);
+                        }
                         this.rowid = rowid;
                         this.fk_task = reader.GetInt32(0);
-                        this.note = reader.GetString(1);
+                        this.note = comment;
                         this.fk_user = reader.GetInt32(2);
                         this.admin = reader.GetBoolean(3);
                     }
