@@ -40,7 +40,7 @@ namespace StoriesHelper.Fenetre
 
         private void organisationButton_Click(object sender, EventArgs e)
         {
-            Organization OrganizationContent = new Organization();
+            PanelOrganization OrganizationContent = new PanelOrganization();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);

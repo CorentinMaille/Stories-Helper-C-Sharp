@@ -8,7 +8,6 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\Bounc
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Organization.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.pageConnexion.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.Main.resources
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Properties.Resources.resources
@@ -21,3 +20,4 @@ C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\Stori
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
 C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
+C:\Users\nbarb\source\repos\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Fenetre.PanelOrganization.resources

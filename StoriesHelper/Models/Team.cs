@@ -118,40 +118,7 @@ namespace StoriesHelper.Models
                 user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
                 list_users.Add(user);
             }
-
+             
         }
-        // a déplacer dans models/projects //
-
-        /*       public List<Team> fetchByProjectId(int fk_project)
-                {
-                    try
-                    {
-                        conn.Open();
-                        MySqlCommand command = conn.CreateCommand();
-                        command.Parameters.AddWithValue("@id", fk_project);
-                        string sql = "SELECT t.rowid, t.name, t.fk_organization, t.fk_project";
-                        sql += " FROM teams AS t";
-                        sql += " WHERE t.fk_project = ?";
-                        command.CommandText = sql;
-                        MySqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            List<Team> list_team = new List<Team>()
-                            {
-                                Team team = new Team(reader.GetInt32(0));
-                                list_team.Add(team);
-                            };
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        List<Team> list_team = new List<Team>();
-
-                        return list_team;
-                    }
-        return 
-                }*/
     }
-
-
 }

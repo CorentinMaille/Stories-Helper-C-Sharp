@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Models\TaskComment.cs" />
     <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Organization.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\Team.cs" />
@@ -111,11 +112,11 @@
     <Compile Include="Fenetre\Projects.Designer.cs">
       <DependentUpon>Projects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fenetre\Organization.cs">
+    <Compile Include="Fenetre\PanelOrganization.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Fenetre\Organization.Designer.cs">
-      <DependentUpon>Organization.cs</DependentUpon>
+    <Compile Include="Fenetre\PanelOrganization.Designer.cs">
+      <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Fenetre\Quitter.cs">
       <SubType>Form</SubType>
@@ -124,8 +125,8 @@
       <DependentUpon>Quitter.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Session.cs" />
-    <EmbeddedResource Include="Fenetre\Organization.resx">
-      <DependentUpon>Organization.cs</DependentUpon>
+    <EmbeddedResource Include="Fenetre\PanelOrganization.resx">
+      <DependentUpon>PanelOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fenetre\pageConnexion.resx">
       <DependentUpon>pageConnexion.cs</DependentUpon>
