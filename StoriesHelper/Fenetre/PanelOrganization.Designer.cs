@@ -1,7 +1,7 @@
 ﻿
 namespace StoriesHelper.Fenetre
 {
-    partial class Organization
+    partial class PanelOrganization
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

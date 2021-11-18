@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StoriesHelper.Fenetre
 {
-    public partial class Organization : UserControl
+    public partial class PanelOrganization : UserControl
     {
-        public Organization()
+        public PanelOrganization()
         {
             InitializeComponent();
         }

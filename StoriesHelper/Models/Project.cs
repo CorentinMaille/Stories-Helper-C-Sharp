@@ -16,7 +16,7 @@ namespace StoriesHelper.Models
         protected DateTime open;
         protected int fk_organization;
         protected string description;
-        protected List<Team> list_team = new List<Team>();
+        protected List<Team> list_teams = new List<Team>();
         protected int active;
 
         public Project(int idProject = -1)
@@ -30,7 +30,11 @@ namespace StoriesHelper.Models
         {
             return rowid;
         }
-        public string getname()
+        public void setRowid(int newRowid)
+        {
+            rowid = newRowid;
+        }
+        public string getName()
         {
             return name;
         }
@@ -80,15 +84,16 @@ namespace StoriesHelper.Models
         }
         public List<Team> getListTeams()
         {
-            return list_team;
+            return list_teams;
         }
         public void setListTeams(List<Team> newListTeams)
         {
-            list_team = newListTeams;
+            list_teams = newListTeams;
         }
 
         public void fetch(int idProject)
         {
+            // récupère les informations du projet
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idProject);
@@ -103,10 +108,11 @@ namespace StoriesHelper.Models
                 name = reader.GetString(1);
                 type = reader.GetString(2);
                 open = reader.GetDateTime(3);
-                fk_organization = reader.GetInt32(5);
-                description = reader.GetString(6);
+                fk_organization = reader.GetInt32(4);
+                description = reader.GetString(5);
             }
             conn.Close();
+            //initialise les teams du projet
             conn.Open();
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idProjet", idProject);
@@ -119,7 +125,34 @@ namespace StoriesHelper.Models
             {
                 Team team = new Team();
                 team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetInt32(3));
-                list_team.Add(team);
+                list_teams.Add(team);
+            }
+            conn.Close();
+        }
+
+        public void initializedProject(int rowid, string name, string type, DateTime open, int fk_organization, string description, int active)
+        {
+            this.rowid = rowid;
+            this.name = name;
+            this.type = type;
+            this.open = open;
+            this.fk_organization = fk_organization;
+            this.description = description;
+            this.active = active;
+
+            conn.Open();
+            MySqlCommand command2 = conn.CreateCommand();
+            command2.Parameters.AddWithValue("@idProjet", rowid);
+            string sql2 = "SELECT *";
+            sql2 += " FROM teams";
+            sql2 += " WHERE fk_project = @idProjet";
+            command2.CommandText = sql2;
+            MySqlDataReader teams = command2.ExecuteReader();
+            while (teams.Read())
+            {
+                Team team = new Team();
+                team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetInt32(3));
+                list_teams.Add(team);
             }
             conn.Close();
         }
