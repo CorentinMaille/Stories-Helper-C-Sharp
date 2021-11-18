@@ -119,7 +119,7 @@ namespace StoriesHelper.Models
                 {
                     taskDescription = reader.GetString(2);
                 }
-                rowid = reader.GetInt32(0);
+                rowid = reader.GetInt32(0); 
                 name = taskName;
                 description = taskDescription;
                 fk_column = reader.GetInt32(3);
@@ -128,7 +128,6 @@ namespace StoriesHelper.Models
                 admin = reader.GetBoolean(6);
                 active = reader.GetBoolean(7);
             }
-
             conn.Close();
 
             conn.Open();
