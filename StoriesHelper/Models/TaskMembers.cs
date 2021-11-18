@@ -68,10 +68,16 @@ namespace StoriesHelper.Models
             sql += " FROM tasks_members";
             sql += " WHERE t.rowid = ?";
 
-                        $sql = "";
-            $sql.= " FROM tasks_members";
-            $sql.= " WHERE t.rowid = ?";
+            command.CommandText = sql;
 
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while(reader.Read())
+            {
+                this.rowid = reader.GetInt32(0);
+                this.fk_user = reader.GetInt32(1);
+                this.fk_task = reader.GetInt32(2);
+            }
             conn.Close();
         }
 
