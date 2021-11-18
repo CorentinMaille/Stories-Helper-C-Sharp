@@ -62,7 +62,7 @@ namespace StoriesHelper.Models
 
             MySqlCommand command = conn.CreateCommand();
 
-            command.Parameters.AddWithValue("",);
+            command.Parameters.AddWithValue("@rowid", rowid);
 
             string sql = "SELECT t.rowid, t.fk_user, t.fk_task";
             sql += " FROM tasks_members";
