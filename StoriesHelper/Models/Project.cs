@@ -104,12 +104,17 @@ namespace StoriesHelper.Models
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
+                string projectDescription = "";
+                if (!reader.IsDBNull(5))
+                {
+                    projectDescription = reader.GetString(5);
+                }
                 rowid = reader.GetInt32(0);
                 name = reader.GetString(1);
                 type = reader.GetString(2);
                 open = reader.GetDateTime(3);
                 fk_organization = reader.GetInt32(4);
-                description = reader.GetString(5);
+                description = projectDescription;
             }
             conn.Close();
             //initialise les teams du projet

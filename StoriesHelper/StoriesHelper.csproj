@@ -74,6 +74,7 @@
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
+    <Compile Include="Models\MapColumns.cs" />
     <Compile Include="Models\TaskComment.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Project.cs" />
