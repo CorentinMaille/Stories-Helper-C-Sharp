@@ -131,7 +131,6 @@ namespace StoriesHelper.Models
             conn.Close();
 
             conn.Open();
-
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@fk_task", taskId);
 

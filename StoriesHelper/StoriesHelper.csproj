@@ -74,12 +74,6 @@
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
-    <Compile Include="Fenetre\PanelOrganization.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Fenetre\PanelOrganization.Designer.cs">
-      <DependentUpon>PanelOrganization.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\MapColumns.cs" />
     <Compile Include="Models\TaskComment.cs" />
     <Compile Include="Models\Model.cs" />
