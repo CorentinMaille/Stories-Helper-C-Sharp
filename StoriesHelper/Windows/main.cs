@@ -10,6 +10,7 @@ namespace StoriesHelper.Windows
         public main()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(1167, 718);
 
             Home HomeContent = new Home();
 
@@ -75,6 +76,13 @@ namespace StoriesHelper.Windows
         {
             MyDraggableForm mdf = new MyDraggableForm();
             mdf.Drag(sender, e, Handle);
+        }
+
+        private void Disconect_button_Click(object sender, EventArgs e)
+        {
+            Login loginWindow = new Login();
+            loginWindow.Show();
+            this.Hide();
         }
     }
 }
