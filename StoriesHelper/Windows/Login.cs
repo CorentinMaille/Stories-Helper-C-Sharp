@@ -15,6 +15,7 @@ namespace StoriesHelper.Windows
         public Login()
         {
             InitializeComponent();
+            titre.Left = (this.ClientSize.Width - titre.Width) / 2;
         }
 
         private void connexion_Click(object sender, EventArgs e)

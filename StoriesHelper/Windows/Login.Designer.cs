@@ -117,11 +117,12 @@ namespace StoriesHelper.Windows
             // 
             // titre
             // 
+            this.titre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.titre.AutoSize = true;
             this.titre.BackColor = System.Drawing.Color.Transparent;
             this.titre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titre.ForeColor = System.Drawing.Color.White;
-            this.titre.Location = new System.Drawing.Point(40, 108);
+            this.titre.Location = new System.Drawing.Point(42, 121);
             this.titre.Name = "titre";
             this.titre.Size = new System.Drawing.Size(516, 51);
             this.titre.TabIndex = 0;
@@ -174,6 +175,7 @@ namespace StoriesHelper.Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(598, 694);
             this.Controls.Add(this.gradientPageConnexion1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
