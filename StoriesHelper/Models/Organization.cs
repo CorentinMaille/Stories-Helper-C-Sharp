@@ -32,7 +32,7 @@ namespace StoriesHelper.Models
         {
             rowid = newRowid;
         }
-        public string getname()
+        public string getName()
         {
             return name;
         }
