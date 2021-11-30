@@ -129,7 +129,6 @@ namespace StoriesHelper.Models
                     taskDescription = tasks.GetString(2);
                 }
                 task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
-                MessageBox.Show(task.getName());
                 list_tasks.Add(task);
             }
             conn.Close();
