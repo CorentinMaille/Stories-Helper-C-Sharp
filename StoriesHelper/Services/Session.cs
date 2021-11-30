@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoriesHelper.Services
+namespace StoriesHelper.Service
 {
-    class Session
+    public static class Session
     {
-        protected int idOrganization;
-
-        public Session(int id)
-        {
-            this.idOrganization = id;
-        }
+        public static int UserId;
     }
 }

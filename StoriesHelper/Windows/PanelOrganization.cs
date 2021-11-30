@@ -2,17 +2,17 @@
 using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
+using StoriesHelper.Service;
 
 namespace StoriesHelper.Windows
 {
     public partial class PanelOrganization : UserControl
     {
-        private int id;
-        public PanelOrganization(int idOrg)
+        public PanelOrganization()
         {
-            this.id = idOrg;
+            int idOrganization = Session.UserId;
             InitializeComponent();
-            Organization organization = new Organization(idOrg);
+            Organization organization = new Organization(idOrganization);
 
             OrganizationLabel.Text += organization.getName();
 
@@ -28,9 +28,9 @@ namespace StoriesHelper.Windows
 
             NbTeams.Text = "Nombre d'équipes : " + nbTeams;
 
-            List<Task> listTasks = organization.fetchTaskByOrganization(idOrg);
-            List<Task> listTasksOpen = organization.fetchTaskOpenByOrganization(idOrg);
-            List<Task> listTasksClosed = organization.fetchTaskClosedByOrganization(idOrg);
+            List<Task> listTasks = organization.fetchTaskByOrganization(idOrganization);
+            List<Task> listTasksOpen = organization.fetchTaskOpenByOrganization(idOrganization);
+            List<Task> listTasksClosed = organization.fetchTaskClosedByOrganization(idOrganization);
 
             NbTasks.Text = "Nombre de tâches : " + listTasks.Count();
             NbTasksOpen.Text = "Nombre de tâches open : " + listTasksOpen.Count();
