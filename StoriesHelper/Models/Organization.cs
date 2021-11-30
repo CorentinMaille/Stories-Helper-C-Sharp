@@ -133,5 +133,116 @@ namespace StoriesHelper.Models
             }
             conn.Close();
         }
+
+        public List<Task> fetchTaskByOrganization(int idOrganization)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idOrganization", idOrganization);
+            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
+            sql += " FROM tasks t";
+            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
+            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
+            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
+            sql += " WHERE o.rowid = @idOrganization";
+            command.CommandText = sql;
+            MySqlDataReader tasks = command.ExecuteReader();
+            List<Task> list_tasks = new List<Task>();
+            while (tasks.Read())
+            {
+                Task task = new Task();
+                string taskName = "";
+                if (!tasks.IsDBNull(1))
+                {
+                    taskName = tasks.GetString(1);
+                }
+                string taskDescription = "";
+                if (!tasks.IsDBNull(2))
+                {
+                    taskDescription = tasks.GetString(2);
+                }
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
+                list_tasks.Add(task);
+            }
+            conn.Close();
+            return list_tasks;
+        }
+        public List<Task> fetchTaskOpenByOrganization(int idOrganization)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idOrganization", idOrganization);
+            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
+            sql += " FROM tasks t";
+            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
+            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
+            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
+            sql += " WHERE o.rowid = @idOrganization";
+            sql += " AND t.active = 1";
+            command.CommandText = sql;
+            MySqlDataReader tasks = command.ExecuteReader();
+            List<Task> list_tasks = new List<Task>();
+            while (tasks.Read())
+            {
+                Task task = new Task();
+                string taskName = "";
+                if (!tasks.IsDBNull(1))
+                {
+                    taskName = tasks.GetString(1);
+                }
+                string taskDescription = "";
+                if (!tasks.IsDBNull(2))
+                {
+                    taskDescription = tasks.GetString(2);
+                }
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
+                list_tasks.Add(task);
+            }
+            conn.Close();
+            return list_tasks;
+        }
+        public List<Task> fetchTaskClosedByOrganization(int idOrganization)
+        {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idOrganization", idOrganization);
+            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
+            sql += " FROM tasks t";
+            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
+            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
+            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
+            sql += " WHERE o.rowid = @idOrganization";
+            sql += " AND t.active = 0";
+            command.CommandText = sql;
+            MySqlDataReader tasks = command.ExecuteReader();
+            List<Task> list_tasks = new List<Task>();
+            while (tasks.Read())
+            {
+                Task task = new Task();
+                string taskName = "";
+                if (!tasks.IsDBNull(1))
+                {
+                    taskName = tasks.GetString(1);
+                }
+                string taskDescription = "";
+                if (!tasks.IsDBNull(2))
+                {
+                    taskDescription = tasks.GetString(2);
+                }
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
+                list_tasks.Add(task);
+            }
+            conn.Close();
+            return list_tasks;
+        }
+        public int CalculateRatioTasks(int total, int open)
+        {
+            if(total != 0)
+            {
+                int ration = ((open*100) / total);
+                return ration;
+            }
+            return 456;
+        }
     }
 }

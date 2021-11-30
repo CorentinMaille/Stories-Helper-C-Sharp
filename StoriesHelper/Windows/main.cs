@@ -7,8 +7,10 @@ namespace StoriesHelper.Windows
 {
     public partial class main : MyDraggableForm
     {
-        public main()
+        private int id; 
+        public main(int idOrg)
         {
+            this.id = idOrg;
             InitializeComponent();
             this.MinimumSize = new Size(1167, 718);
 
@@ -41,7 +43,7 @@ namespace StoriesHelper.Windows
 
         private void organisationButton_Click(object sender, EventArgs e)
         {
-            PanelOrganization OrganizationContent = new PanelOrganization();
+            PanelOrganization OrganizationContent = new PanelOrganization(id);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);

@@ -78,7 +78,7 @@ namespace StoriesHelper.Windows
 
                     // FIN DE LA SECTION TEST !!!
 
-                    main WelcomeWindow = new main();
+                    main WelcomeWindow = new main(idOrg);
 
                     WelcomeWindow.Show();
                     this.Hide();
