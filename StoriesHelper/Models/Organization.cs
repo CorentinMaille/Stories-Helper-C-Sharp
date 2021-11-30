@@ -239,10 +239,10 @@ namespace StoriesHelper.Models
         {
             if(total != 0)
             {
-                int ration = ((open*100) / total);
-                return ration;
+                int ratio = ((open*100) / total);
+                return ratio;
             }
-            return 456;
+            return 0;
         }
     }
 }
