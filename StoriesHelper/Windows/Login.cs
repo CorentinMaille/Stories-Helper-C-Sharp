@@ -6,8 +6,6 @@ using StoriesHelper.Service;
 namespace StoriesHelper.Windows
 {
     using BCrypt.Net;
-    using StoriesHelper.Models;
-    using System.Collections.Generic;
 
     public partial class Login : Form
     {
@@ -41,6 +39,7 @@ namespace StoriesHelper.Windows
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
+
                     // SECTION TEST !!!
                     // Test Organisation
                     /* Organization organization = new Organization(3);
@@ -77,8 +76,8 @@ namespace StoriesHelper.Windows
 
 
                     // FIN DE LA SECTION TEST !!!
-
-                    main WelcomeWindow = new main(idOrg);
+                    Session.UserId = idOrg;
+                    main WelcomeWindow = new main();
 
                     WelcomeWindow.Show();
                     this.Hide();
