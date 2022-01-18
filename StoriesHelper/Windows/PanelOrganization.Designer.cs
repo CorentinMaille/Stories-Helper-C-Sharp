@@ -29,104 +29,105 @@ namespace StoriesHelper.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gradientPageConnexion1 = new StoriesHelper.Service.GradientPageConnexion();
-            this.NbTasksClosed = new System.Windows.Forms.Label();
-            this.NbTasksOpen = new System.Windows.Forms.Label();
-            this.RatioTasks = new System.Windows.Forms.Label();
-            this.NbTasks = new System.Windows.Forms.Label();
+            this.GraphiqueRatioTaskOrganization = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.NbTeams = new System.Windows.Forms.Label();
             this.NbProjects = new System.Windows.Forms.Label();
             this.OrganizationLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NbTeams = new System.Windows.Forms.Label();
+            this.NbUtilisateurs = new System.Windows.Forms.Label();
+            this.listeProjet = new System.Windows.Forms.FlowLayoutPanel();
             this.gradientPageConnexion1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskOrganization)).BeginInit();
             this.SuspendLayout();
             // 
             // gradientPageConnexion1
             // 
             this.gradientPageConnexion1.Angle = 90F;
             this.gradientPageConnexion1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.gradientPageConnexion1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(1)))), ((int)(((byte)(224)))));
+            this.gradientPageConnexion1.BottomColor = System.Drawing.Color.White;
+            this.gradientPageConnexion1.Controls.Add(this.listeProjet);
+            this.gradientPageConnexion1.Controls.Add(this.NbUtilisateurs);
+            this.gradientPageConnexion1.Controls.Add(this.GraphiqueRatioTaskOrganization);
             this.gradientPageConnexion1.Controls.Add(this.NbTeams);
-            this.gradientPageConnexion1.Controls.Add(this.NbTasksClosed);
-            this.gradientPageConnexion1.Controls.Add(this.NbTasksOpen);
-            this.gradientPageConnexion1.Controls.Add(this.RatioTasks);
-            this.gradientPageConnexion1.Controls.Add(this.NbTasks);
             this.gradientPageConnexion1.Controls.Add(this.NbProjects);
             this.gradientPageConnexion1.Controls.Add(this.OrganizationLabel);
             this.gradientPageConnexion1.Controls.Add(this.label1);
             this.gradientPageConnexion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gradientPageConnexion1.Location = new System.Drawing.Point(-108, -44);
             this.gradientPageConnexion1.Name = "gradientPageConnexion1";
-            this.gradientPageConnexion1.Size = new System.Drawing.Size(1405, 944);
+            this.gradientPageConnexion1.Size = new System.Drawing.Size(1408, 941);
             this.gradientPageConnexion1.TabIndex = 1;
             this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
             // 
-            // NbTasksClosed
+            // GraphiqueRatioTaskOrganization
             // 
-            this.NbTasksClosed.AutoSize = true;
-            this.NbTasksClosed.BackColor = System.Drawing.Color.Transparent;
-            this.NbTasksClosed.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbTasksClosed.ForeColor = System.Drawing.SystemColors.Control;
-            this.NbTasksClosed.Location = new System.Drawing.Point(726, 360);
-            this.NbTasksClosed.Name = "NbTasksClosed";
-            this.NbTasksClosed.Size = new System.Drawing.Size(58, 33);
-            this.NbTasksClosed.TabIndex = 6;
-            this.NbTasksClosed.Text = "aze";
+            this.GraphiqueRatioTaskOrganization.BackColor = System.Drawing.Color.Transparent;
+            this.GraphiqueRatioTaskOrganization.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 45;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
+            this.GraphiqueRatioTaskOrganization.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Name = "Legend1";
+            this.GraphiqueRatioTaskOrganization.Legends.Add(legend1);
+            this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(108, 632);
+            this.GraphiqueRatioTaskOrganization.Name = "GraphiqueRatioTaskOrganization";
+            this.GraphiqueRatioTaskOrganization.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Task";
+            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.GraphiqueRatioTaskOrganization.Series.Add(series1);
+            this.GraphiqueRatioTaskOrganization.Size = new System.Drawing.Size(558, 312);
+            this.GraphiqueRatioTaskOrganization.TabIndex = 8;
+            this.GraphiqueRatioTaskOrganization.Text = "Stats Des Tâches de l\'Organisation en cours";
+            title1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Stats des Tâches En Cours de l\'Organisation";
+            this.GraphiqueRatioTaskOrganization.Titles.Add(title1);
             // 
-            // NbTasksOpen
+            // NbTeams
             // 
-            this.NbTasksOpen.AutoSize = true;
-            this.NbTasksOpen.BackColor = System.Drawing.Color.Transparent;
-            this.NbTasksOpen.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbTasksOpen.ForeColor = System.Drawing.SystemColors.Control;
-            this.NbTasksOpen.Location = new System.Drawing.Point(182, 360);
-            this.NbTasksOpen.Name = "NbTasksOpen";
-            this.NbTasksOpen.Size = new System.Drawing.Size(58, 33);
-            this.NbTasksOpen.TabIndex = 5;
-            this.NbTasksOpen.Text = "aze";
-            // 
-            // RatioTasks
-            // 
-            this.RatioTasks.AutoSize = true;
-            this.RatioTasks.BackColor = System.Drawing.Color.Transparent;
-            this.RatioTasks.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RatioTasks.ForeColor = System.Drawing.SystemColors.Control;
-            this.RatioTasks.Location = new System.Drawing.Point(726, 299);
-            this.RatioTasks.Name = "RatioTasks";
-            this.RatioTasks.Size = new System.Drawing.Size(58, 33);
-            this.RatioTasks.TabIndex = 4;
-            this.RatioTasks.Text = "aze";
-            // 
-            // NbTasks
-            // 
-            this.NbTasks.AutoSize = true;
-            this.NbTasks.BackColor = System.Drawing.Color.Transparent;
-            this.NbTasks.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbTasks.ForeColor = System.Drawing.SystemColors.Control;
-            this.NbTasks.Location = new System.Drawing.Point(182, 299);
-            this.NbTasks.Name = "NbTasks";
-            this.NbTasks.Size = new System.Drawing.Size(58, 33);
-            this.NbTasks.TabIndex = 3;
-            this.NbTasks.Text = "aze";
+            this.NbTeams.AutoSize = true;
+            this.NbTeams.BackColor = System.Drawing.Color.Transparent;
+            this.NbTeams.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbTeams.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NbTeams.Location = new System.Drawing.Point(549, 222);
+            this.NbTeams.Name = "NbTeams";
+            this.NbTeams.Size = new System.Drawing.Size(117, 28);
+            this.NbTeams.TabIndex = 7;
+            this.NbTeams.Text = "nbEquipe";
             // 
             // NbProjects
             // 
             this.NbProjects.AutoSize = true;
             this.NbProjects.BackColor = System.Drawing.Color.Transparent;
-            this.NbProjects.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbProjects.ForeColor = System.Drawing.SystemColors.Control;
-            this.NbProjects.Location = new System.Drawing.Point(181, 235);
+            this.NbProjects.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbProjects.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NbProjects.Location = new System.Drawing.Point(172, 222);
             this.NbProjects.Name = "NbProjects";
-            this.NbProjects.Size = new System.Drawing.Size(58, 33);
+            this.NbProjects.Size = new System.Drawing.Size(87, 28);
             this.NbProjects.TabIndex = 2;
-            this.NbProjects.Text = "aze";
+            this.NbProjects.Text = "nbProj";
             // 
             // OrganizationLabel
             // 
             this.OrganizationLabel.AutoSize = true;
             this.OrganizationLabel.BackColor = System.Drawing.Color.Transparent;
             this.OrganizationLabel.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrganizationLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.OrganizationLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.OrganizationLabel.Location = new System.Drawing.Point(215, 132);
             this.OrganizationLabel.Name = "OrganizationLabel";
             this.OrganizationLabel.Size = new System.Drawing.Size(711, 51);
@@ -142,17 +143,25 @@ namespace StoriesHelper.Windows
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // NbTeams
+            // NbUtilisateurs
             // 
-            this.NbTeams.AutoSize = true;
-            this.NbTeams.BackColor = System.Drawing.Color.Transparent;
-            this.NbTeams.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbTeams.ForeColor = System.Drawing.SystemColors.Control;
-            this.NbTeams.Location = new System.Drawing.Point(726, 235);
-            this.NbTeams.Name = "NbTeams";
-            this.NbTeams.Size = new System.Drawing.Size(58, 33);
-            this.NbTeams.TabIndex = 7;
-            this.NbTeams.Text = "aze";
+            this.NbUtilisateurs.AutoSize = true;
+            this.NbUtilisateurs.BackColor = System.Drawing.Color.Transparent;
+            this.NbUtilisateurs.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbUtilisateurs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NbUtilisateurs.Location = new System.Drawing.Point(936, 222);
+            this.NbUtilisateurs.Name = "NbUtilisateurs";
+            this.NbUtilisateurs.Size = new System.Drawing.Size(170, 28);
+            this.NbUtilisateurs.TabIndex = 10;
+            this.NbUtilisateurs.Text = "nbUtilisateurs";
+            // 
+            // listeProjet
+            // 
+            this.listeProjet.BackColor = System.Drawing.Color.Transparent;
+            this.listeProjet.Location = new System.Drawing.Point(177, 277);
+            this.listeProjet.Name = "listeProjet";
+            this.listeProjet.Size = new System.Drawing.Size(200, 310);
+            this.listeProjet.TabIndex = 11;
             // 
             // PanelOrganization
             // 
@@ -164,6 +173,7 @@ namespace StoriesHelper.Windows
             this.Size = new System.Drawing.Size(1300, 900);
             this.gradientPageConnexion1.ResumeLayout(false);
             this.gradientPageConnexion1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskOrganization)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,10 +183,9 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.Label OrganizationLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label NbProjects;
-        private System.Windows.Forms.Label RatioTasks;
-        private System.Windows.Forms.Label NbTasks;
-        private System.Windows.Forms.Label NbTasksClosed;
-        private System.Windows.Forms.Label NbTasksOpen;
         private System.Windows.Forms.Label NbTeams;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskOrganization;
+        private System.Windows.Forms.Label NbUtilisateurs;
+        private System.Windows.Forms.FlowLayoutPanel listeProjet;
     }
 }

@@ -12,6 +12,7 @@ namespace StoriesHelper.Models
         protected string password;
         protected DateTime birth;
         protected int fk_organisation;
+        protected bool admin;
 
         public User(int idUser = -1)
         {
@@ -21,7 +22,7 @@ namespace StoriesHelper.Models
                 MySqlCommand command = conn.CreateCommand();
                 command.Parameters.AddWithValue("@id", idUser);
                 string sql = "SELECT *";
-                sql += " FROM users ";
+                sql += " FROM user ";
                 sql += "WHERE rowid = @id";
                 command.CommandText = sql;
                 MySqlDataReader reader = command.ExecuteReader();
@@ -34,11 +35,12 @@ namespace StoriesHelper.Models
                     password = reader.GetString(4);
                     email = reader.GetString(6);
                     fk_organisation = reader.GetInt32(7);
+                    admin = reader.GetBoolean(10);
                 }
                 conn.Close();
             }
         }
-        public void initializedUser(int idUser, string firstname, string lastname, DateTime birth, string password, string email, int fk_orgnaization)
+        public void initializedUser(int idUser, string firstname, string lastname, DateTime birth, string password, string email, int fk_orgnaization, bool admin)
         {
             this.rowid = idUser;
             this.lastname = lastname;
@@ -47,6 +49,7 @@ namespace StoriesHelper.Models
             this.password = password;
             this.email = email;
             this.fk_organisation = fk_orgnaization;
+            this.admin = admin;
         }
         public int getRowId()
         {
@@ -96,14 +99,21 @@ namespace StoriesHelper.Models
         {
             birth = newBirth;
         }
-        public int getFkOrganization()
+        public int getOrganization()
         {
             return fk_organisation;
         }
-        public void setFkOrganization(int newIdOrganization)
+        public void setFkOrganization(int newOrganization)
         {
-            fk_organisation = newIdOrganization;
+            fk_organisation = newOrganization;
         }
-
+        public bool getAdmin()
+        {
+            return admin;
+        }
+        public void setAdmin(bool newAdmin)
+        {
+            admin = newAdmin;
+        }
     }
 }

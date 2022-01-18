@@ -19,8 +19,6 @@ namespace StoriesHelper.Windows
             MainPanel.Controls.Add(HomeContent);
 
             HomeContent.Show();
-
-
         }
 
         private void buttonEnter(object sender, EventArgs e)

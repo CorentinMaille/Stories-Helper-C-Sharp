@@ -197,7 +197,7 @@ namespace StoriesHelper.Windows
             this.MainPanel.Location = new System.Drawing.Point(292, -1);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1309, 902);
+            this.MainPanel.Size = new System.Drawing.Size(1265, 885);
             this.MainPanel.TabIndex = 3;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 

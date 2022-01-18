@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace StoriesHelper.Models
 {
-    class MapColumns : Model
+    class Column : Model
     {
         protected int rowid;
         protected string name;
@@ -17,7 +17,7 @@ namespace StoriesHelper.Models
         protected List<Task> list_tasks = new List<Task>();
         protected int rank;
 
-        public MapColumns(int idMap = -1)
+        public Column(int idMap = -1)
         {
             if (idMap != -1)
             {
@@ -43,6 +43,30 @@ namespace StoriesHelper.Models
         public List<Task> getListTasks()
         {
             return list_tasks;
+        }        
+        public List<Task> getListTasksOpen()
+        {
+            List<Task> list_task_open = new List<Task>();
+            foreach (Task task in list_tasks)
+            {
+                if (task.isActive())
+                {
+                    list_task_open.Add(task);
+                }
+            }
+            return list_task_open;
+        }        
+        public List<Task> getListTasksClosed()
+        {
+            List<Task> list_task_closed = new List<Task>();
+            foreach (Task task in list_tasks)
+            {
+                if (!task.isActive())
+                {
+                    list_task_closed.Add(task);
+                }
+            }
+            return list_task_closed;
         }
         public void setListTasks(List<Task> newTask)
         {
@@ -52,9 +76,9 @@ namespace StoriesHelper.Models
         {
             return fk_team;
         }
-        public void setFkTeam(int newFkTeam)
+        public void setFkTeam(int newTeam)
         {
-            fk_team = newFkTeam;
+            fk_team = newTeam;
         }
         public int getRank()
         {
@@ -64,15 +88,14 @@ namespace StoriesHelper.Models
         {
             rank = newRank;
         }
-
         public void fetch(int idMap)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idMap);
             string sql = "SELECT *";
-            sql += " FROM map_columns ";
-            sql += "WHERE rowid = @id";
+            sql += " FROM map_column";
+            sql += " WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -87,14 +110,14 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idColumn", idMap);
             string sql2 = "SELECT *";
-            sql2 += " FROM tasks";
+            sql2 += " FROM task";
             sql2 += " WHERE fk_column = @idColumn";
             command2.CommandText = sql2;
             MySqlDataReader tasks = command2.ExecuteReader();
             while (tasks.Read())
             {
                 Task task = new Task();
-                task.initializedTask(tasks.GetInt32(0), tasks.GetString(1), tasks.GetString(2), tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6) , tasks.GetBoolean(7));
+                task.initializedTask(tasks.GetInt32(0), tasks.GetString(1), tasks.GetString(2), tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(7));
                 list_tasks.Add(task);
             }
             conn.Close();
@@ -111,7 +134,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idColumn", rowid);
             string sql = "SELECT *";
-            sql += " FROM tasks";
+            sql += " FROM task";
             sql += " WHERE fk_column = @idColumn";
             command.CommandText = sql;
             MySqlDataReader tasks = command.ExecuteReader();
@@ -128,7 +151,7 @@ namespace StoriesHelper.Models
                 {
                     taskDescription = tasks.GetString(2);
                 }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6));
                 list_tasks.Add(task);
             }
             conn.Close();
