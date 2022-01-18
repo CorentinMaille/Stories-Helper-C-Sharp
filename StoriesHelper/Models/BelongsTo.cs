@@ -9,65 +9,43 @@ namespace StoriesHelper.Models
 {
     class BelongsTo : Model
     {
-        List<Int32> userIds;
-        List<Int32> teamIds;
+        int fk_user;
+        int fk_team;
 
-        public BelongsTo(int fk_user = 0)
+        public BelongsTo(int fk_user = 0, int fk_team = 0)
         {
-            if(fk_user != 0)
+            if(fk_user != 0 && fk_team != 0)
             {
-                this.fetch(fk_user);
+                this.fetch(fk_user, fk_team);
             }
-
         }
 
         // SETTER
-        public void setUserIds(List<Int32> userIds)
+        public void setUserIds(int user)
         {
-            this.userIds = userIds;
+            this.fk_user = user;
         }
 
-        public void setTeamIds(List<Int32> teamIds)
+        public void setTeamIds(int team)
         {
-            this.teamIds = teamIds;
+            this.fk_team = team;
         }
 
         // GETTER
-
-        public List<Int32> getUserIds(List<Int32> userIds)
+        public int getUserIds()
         {
-            return this.userIds;
+            return this.fk_user;
         }
 
-        public List<Int32> getTeamIds(List<Int32> teamIds)
+        public int getTeamIds()
         {
-            return this.teamIds;
+            return this.fk_team;
         }
 
-
-        public void fetch(int fk_user)
+        public void fetch(int fk_user, int fk_team)
         {
-            conn.Open();
-
-            MySqlCommand command = conn.CreateCommand();
-
-            command.Parameters.AddWithValue("@fk_user", fk_user);
-
-            string sql = "SELECT fk_team";
-            sql += " FROM belong_to";
-            sql += "  WHERE fk_user = ?";
-
-            command.CommandText = sql;
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while(reader.Read())
-            {
-                int fk_team = reader.GetInt32(0);
-                this.userIds.Add(fk_user);
-                this.teamIds.Add(fk_team);
-            }
-            conn.Close();
+            this.fk_user = fk_user;
+            this.fk_team = fk_team;
         }
     }
 }

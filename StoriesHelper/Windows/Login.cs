@@ -23,7 +23,7 @@ namespace StoriesHelper.Windows
             string mdp = passwordInput.Text;
             string email = emailInput.Text;
             command.Parameters.AddWithValue("@email", email);
-            command.CommandText = "SELECT rowid, email, password FROM organizations WHERE email = @email";
+            command.CommandText = "SELECT rowid, email, password, fk_organization FROM user WHERE email = @email AND admin = 1";
             MySqlDataReader reader = command.ExecuteReader();
             string mdpHash = "";
             int idOrg = 0;
@@ -34,7 +34,7 @@ namespace StoriesHelper.Windows
                 while (reader.Read())
                 {
                     mdpHash = reader.GetString(2);
-                    idOrg = reader.GetInt32(0);
+                    idOrg = reader.GetInt32(3);
                 }
 
                 if (BCrypt.Verify(mdp, mdpHash))

@@ -88,7 +88,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idOrganization);
             string sql = "SELECT *";
-            sql += " FROM organizations ";
+            sql += " FROM organization ";
             sql += "WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -96,9 +96,6 @@ namespace StoriesHelper.Models
             {
                 rowid = reader.GetInt32(0);
                 name = reader.GetString(1);
-                email = reader.GetString(2);
-                password = reader.GetString(3);
-                consent = reader.GetInt32(4);
             }
             conn.Close();
             //initialise les projets de l'organisation
@@ -106,7 +103,7 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idOrganization", idOrganization );
             string sql2 = "SELECT *";
-            sql2 += " FROM projects";
+            sql2 += " FROM project";
             sql2 += " WHERE fk_organization = @idOrganization";
             command2.CommandText = sql2;
             MySqlDataReader projects = command2.ExecuteReader();
@@ -121,125 +118,25 @@ namespace StoriesHelper.Models
             MySqlCommand command3 = conn.CreateCommand();
             command3.Parameters.AddWithValue("@idOrganization", idOrganization);
             string sql3 = "SELECT *";
-            sql3 += " FROM users";
+            sql3 += " FROM user";
             sql3 += " WHERE fk_organization = @idOrganization";
             command3.CommandText = sql3;
             MySqlDataReader users = command3.ExecuteReader();
             while (users.Read())
             {
                 User user = new User();
-                user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
+                user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7), users.GetBoolean(10));
                 list_users.Add(user);
             }
             conn.Close();
         }
-
-        public List<Task> fetchTaskByOrganization(int idOrganization)
+        public double CalculateRatioTasks(int total, int open)
         {
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idOrganization", idOrganization);
-            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
-            sql += " FROM tasks t";
-            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
-            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
-            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
-            sql += " WHERE o.rowid = @idOrganization";
-            command.CommandText = sql;
-            MySqlDataReader tasks = command.ExecuteReader();
-            List<Task> list_tasks = new List<Task>();
-            while (tasks.Read())
-            {
-                Task task = new Task();
-                string taskName = "";
-                if (!tasks.IsDBNull(1))
-                {
-                    taskName = tasks.GetString(1);
-                }
-                string taskDescription = "";
-                if (!tasks.IsDBNull(2))
-                {
-                    taskDescription = tasks.GetString(2);
-                }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
-                list_tasks.Add(task);
-            }
-            conn.Close();
-            return list_tasks;
-        }
-        public List<Task> fetchTaskOpenByOrganization(int idOrganization)
-        {
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idOrganization", idOrganization);
-            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
-            sql += " FROM tasks t";
-            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
-            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
-            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
-            sql += " WHERE o.rowid = @idOrganization";
-            sql += " AND t.active = 1";
-            command.CommandText = sql;
-            MySqlDataReader tasks = command.ExecuteReader();
-            List<Task> list_tasks = new List<Task>();
-            while (tasks.Read())
-            {
-                Task task = new Task();
-                string taskName = "";
-                if (!tasks.IsDBNull(1))
-                {
-                    taskName = tasks.GetString(1);
-                }
-                string taskDescription = "";
-                if (!tasks.IsDBNull(2))
-                {
-                    taskDescription = tasks.GetString(2);
-                }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
-                list_tasks.Add(task);
-            }
-            conn.Close();
-            return list_tasks;
-        }
-        public List<Task> fetchTaskClosedByOrganization(int idOrganization)
-        {
-            conn.Open();
-            MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idOrganization", idOrganization);
-            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_author, t.admin, t.active";
-            sql += " FROM tasks t";
-            sql += " INNER JOIN map_columns mp ON t.fk_column = mp.rowid";
-            sql += " INNER JOIN teams tm ON mp.fk_team = tm.rowid";
-            sql += " INNER JOIN organizations o ON tm.fk_organization = o.rowid";
-            sql += " WHERE o.rowid = @idOrganization";
-            sql += " AND t.active = 0";
-            command.CommandText = sql;
-            MySqlDataReader tasks = command.ExecuteReader();
-            List<Task> list_tasks = new List<Task>();
-            while (tasks.Read())
-            {
-                Task task = new Task();
-                string taskName = "";
-                if (!tasks.IsDBNull(1))
-                {
-                    taskName = tasks.GetString(1);
-                }
-                string taskDescription = "";
-                if (!tasks.IsDBNull(2))
-                {
-                    taskDescription = tasks.GetString(2);
-                }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6), tasks.GetBoolean(7));
-                list_tasks.Add(task);
-            }
-            conn.Close();
-            return list_tasks;
-        }
-        public int CalculateRatioTasks(int total, int open)
-        {
+            double ratio = 0;
             if(total != 0)
             {
-                int ratio = ((open*100) / total);
+                double percentage = ((float)open / total) * 100;
+                ratio = Math.Round(percentage , 2);
                 return ratio;
             }
             return 0;

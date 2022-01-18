@@ -13,46 +13,34 @@ namespace StoriesHelper.Models
         private int fk_user;
         private int fk_task;
 
-        public TaskMembers(int rowid = 0)
+        public TaskMembers(int fk_user = 0, int fk_task = 0)
         {
-            if(rowid != 0)
+            if(fk_user != 0 && fk_task != 0)
             {
                 this.fetch(rowid);
             }
         }
 
         // SETTER
-
-        public void setRowid(int rowid)
+        public void setUser(int user)
         {
-            this.rowid = rowid;
+            this.fk_user = user;
         }
 
-        public void setFk_user(int fk_user)
+        public void setTask(int task)
         {
-            this.fk_user = fk_user;
-        }
-
-        public void setFk_task(int fk_task)
-        {
-            this.fk_task = fk_task;
+            this.fk_task = task;
         }
 
         // GETTER
-
-        public int getRowid(int rowid)
-        {
-            return this.rowid;
-        }
-
-        public int getFk_user(int fk_user)
+        public int getUser()
         {
             return this.fk_user;
         }
 
-        public int getFk_task(int fk_task)
+        public int getTask()
         {
-            return fk_task;
+            return this.fk_task;
         }
 
         // FETCH
@@ -64,9 +52,9 @@ namespace StoriesHelper.Models
 
             command.Parameters.AddWithValue("@rowid", rowid);
 
-            string sql = "SELECT t.rowid, t.fk_user, t.fk_task";
-            sql += " FROM tasks_members";
-            sql += " WHERE t.rowid = ?";
+            string sql = "SELECT t.fk_user, t.fk_task";
+            sql += " FROM task_member";
+            sql += " WHERE t.fk_user = ? AND t.fk_task = ?";
 
             command.CommandText = sql;
 
@@ -74,13 +62,10 @@ namespace StoriesHelper.Models
 
             while(reader.Read())
             {
-                this.rowid = reader.GetInt32(0);
                 this.fk_user = reader.GetInt32(1);
                 this.fk_task = reader.GetInt32(2);
             }
             conn.Close();
         }
-
-
     }
 }

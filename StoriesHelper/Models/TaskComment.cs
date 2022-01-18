@@ -27,9 +27,9 @@ namespace StoriesHelper.Models
 
                     command.Parameters.AddWithValue("@rowid", rowid);
 
-                    string sql = "SELECT t.fk_task, t.note, t.fk_user, t.admin";
-                    sql += " FROM tasks_comments AS t";
-                    sql += " WHERE t.rowid = @rowid";
+                    string sql = "SELECT *";
+                    sql += " FROM task_comment";
+                    sql += " WHERE rowid = @rowid";
 
                     MySqlDataReader reader = command.ExecuteReader();
 
@@ -44,7 +44,6 @@ namespace StoriesHelper.Models
                         this.fk_task = reader.GetInt32(0);
                         this.note = comment;
                         this.fk_user = reader.GetInt32(2);
-                        this.admin = reader.GetBoolean(3);
                     }
 
                     conn.Close();
@@ -56,13 +55,12 @@ namespace StoriesHelper.Models
             }
         }
 
-        public void initializeTaskComment(int rowid, int fk_task, string note, int fk_user, bool admin)
+        public void initializeTaskComment(int rowid, int fk_task, string note, int fk_user)
         {
             this.rowid = rowid;
             this.fk_task = fk_task;
             this.note = note;
             this.fk_user = fk_user;
-            this.admin = admin;
         }
 
         // SETTER
@@ -72,9 +70,9 @@ namespace StoriesHelper.Models
             this.rowid = rowid;
         }
 
-        public void setFk_task(int fk_task)
+        public void setFk_task(int task)
         {
-            this.fk_task = fk_task;
+            this.fk_task = task;
         }
 
         public void setNote(string note)
@@ -82,9 +80,9 @@ namespace StoriesHelper.Models
             this.note = note;
         }
 
-        public void setFk_user(int fk_user)
+        public void setFk_user(int user)
         {
-            this.fk_user = fk_user;
+            this.fk_user = user;
         }
 
         public void setAdmin(bool admin)
@@ -100,7 +98,7 @@ namespace StoriesHelper.Models
             return this.rowid;
         }
 
-        public int getFk_task()
+        public int getTask()
         {
             return this.fk_task;
         }
@@ -110,7 +108,7 @@ namespace StoriesHelper.Models
             return this.note;
         }
 
-        public int getFk_user()
+        public int getUser()
         {
             return this.fk_user;
         }
@@ -127,7 +125,7 @@ namespace StoriesHelper.Models
                 MySqlCommand command = conn.CreateCommand();
 
                 string sql = "SELECT t.rowid, t.fk_task, t.note, t.fk_user";
-                sql += " FROM tasks_comments AS t";
+                sql += " FROM task_comment AS t";
                 sql += " WHERE rowid = @rowid";
 
                 MySqlDataReader reader = command.ExecuteReader();
@@ -147,8 +145,6 @@ namespace StoriesHelper.Models
             {
                 throw exception;
             }
-
         }
-
     }
 }

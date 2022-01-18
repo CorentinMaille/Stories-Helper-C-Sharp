@@ -66,7 +66,7 @@ namespace StoriesHelper.Models
         {
             description = newDescription;
         } 
-        public int getActive()
+        public int isActive()
         {
             return active;
         }
@@ -98,7 +98,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idProject);
             string sql = "SELECT *";
-            sql += " FROM projects ";
+            sql += " FROM project ";
             sql += "WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -122,14 +122,14 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idProjet", idProject);
             string sql2 = "SELECT *";
-            sql2 += " FROM teams";
+            sql2 += " FROM team";
             sql2 += " WHERE fk_project = @idProjet";
             command2.CommandText = sql2;
             MySqlDataReader teams = command2.ExecuteReader();
             while (teams.Read())
             {
                 Team team = new Team();
-                team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetInt32(3));
+                team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetBoolean(3));
                 list_teams.Add(team);
             }
             conn.Close();
@@ -149,14 +149,14 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idProjet", rowid);
             string sql2 = "SELECT *";
-            sql2 += " FROM teams";
+            sql2 += " FROM team";
             sql2 += " WHERE fk_project = @idProjet";
             command2.CommandText = sql2;
             MySqlDataReader teams = command2.ExecuteReader();
             while (teams.Read())
             {
                 Team team = new Team();
-                team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetInt32(3));
+                team.initializedTeam(teams.GetInt32(0), teams.GetString(1), teams.GetInt32(2), teams.GetBoolean(3));
                 list_teams.Add(team);
             }
             conn.Close();
