@@ -130,16 +130,5 @@ namespace StoriesHelper.Models
             }
             conn.Close();
         }
-        public double CalculateRatioTasks(int total, int open)
-        {
-            double ratio = 0;
-            if(total != 0)
-            {
-                double percentage = ((float)open / total) * 100;
-                ratio = Math.Round(percentage , 2);
-                return ratio;
-            }
-            return 0;
-        }
     }
 }

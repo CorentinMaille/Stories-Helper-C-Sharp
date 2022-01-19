@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Calcul.cs" />
     <Compile Include="Windows\PanelOrganization.cs">
       <SubType>UserControl</SubType>
     </Compile>
