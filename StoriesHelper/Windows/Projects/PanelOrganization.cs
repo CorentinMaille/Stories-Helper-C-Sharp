@@ -13,11 +13,9 @@ namespace StoriesHelper.Windows
         {
             int idOrganization = Session.UserId;
             InitializeComponent();
-            Organization organization = new Organization(idOrganization);
-
-            OrganizationLabel.Text += organization.getName();
-
-            List<Project> Projects = organization.getListProjects();
+            Organization Organization = new Organization(idOrganization);
+            OrganizationLabel.Text += Organization.getName();
+            List<Project> Projects = Organization.getListProjects();
             List<Team> Teams = new List<Team>();
             List<Column> Columns = new List<Column>();
             List<Task> Tasks = new List<Task>();

@@ -69,10 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Calcul.cs" />
-    <Compile Include="Windows\PanelOrganization.cs">
+    <Compile Include="Windows\Projects\PanelOrganization.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\PanelOrganization.Designer.cs">
+    <Compile Include="Windows\Projects\PanelOrganization.Designer.cs">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
@@ -117,10 +117,10 @@
     <Compile Include="Windows\Collaborators.Designer.cs">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects.cs">
+    <Compile Include="Windows\Projects\Projects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects.Designer.cs">
+    <Compile Include="Windows\Projects\Projects.Designer.cs">
       <DependentUpon>Projects.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Quitter.cs">
@@ -136,7 +136,7 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\PanelOrganization.resx">
+    <EmbeddedResource Include="Windows\Projects\PanelOrganization.resx">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,7 +154,7 @@
     <EmbeddedResource Include="Windows\Collaborators.resx">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects.resx">
+    <EmbeddedResource Include="Windows\Projects\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Quitter.resx">

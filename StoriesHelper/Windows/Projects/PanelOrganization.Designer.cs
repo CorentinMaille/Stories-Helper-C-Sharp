@@ -34,13 +34,13 @@ namespace StoriesHelper.Windows
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gradientPageConnexion1 = new StoriesHelper.Service.GradientPageConnexion();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.NbUtilisateurs = new System.Windows.Forms.Label();
             this.GraphiqueRatioTaskOrganization = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.NbTeams = new System.Windows.Forms.Label();
             this.NbProjects = new System.Windows.Forms.Label();
             this.OrganizationLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.NbUtilisateurs = new System.Windows.Forms.Label();
-            this.listeProjet = new System.Windows.Forms.FlowLayoutPanel();
             this.gradientPageConnexion1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskOrganization)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@ namespace StoriesHelper.Windows
             this.gradientPageConnexion1.Angle = 90F;
             this.gradientPageConnexion1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.gradientPageConnexion1.BottomColor = System.Drawing.Color.White;
-            this.gradientPageConnexion1.Controls.Add(this.listeProjet);
+            this.gradientPageConnexion1.Controls.Add(this.panel1);
             this.gradientPageConnexion1.Controls.Add(this.NbUtilisateurs);
             this.gradientPageConnexion1.Controls.Add(this.GraphiqueRatioTaskOrganization);
             this.gradientPageConnexion1.Controls.Add(this.NbTeams);
@@ -63,6 +63,26 @@ namespace StoriesHelper.Windows
             this.gradientPageConnexion1.Size = new System.Drawing.Size(1408, 941);
             this.gradientPageConnexion1.TabIndex = 1;
             this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(177, 277);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 550);
+            this.panel1.TabIndex = 11;
+            // 
+            // NbUtilisateurs
+            // 
+            this.NbUtilisateurs.AutoSize = true;
+            this.NbUtilisateurs.BackColor = System.Drawing.Color.Transparent;
+            this.NbUtilisateurs.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NbUtilisateurs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.NbUtilisateurs.Location = new System.Drawing.Point(936, 222);
+            this.NbUtilisateurs.Name = "NbUtilisateurs";
+            this.NbUtilisateurs.Size = new System.Drawing.Size(170, 28);
+            this.NbUtilisateurs.TabIndex = 10;
+            this.NbUtilisateurs.Text = "nbUtilisateurs";
             // 
             // GraphiqueRatioTaskOrganization
             // 
@@ -79,7 +99,7 @@ namespace StoriesHelper.Windows
             legend1.BackColor = System.Drawing.Color.Transparent;
             legend1.Name = "Legend1";
             this.GraphiqueRatioTaskOrganization.Legends.Add(legend1);
-            this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(108, 632);
+            this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(1300, 186);
             this.GraphiqueRatioTaskOrganization.Name = "GraphiqueRatioTaskOrganization";
             this.GraphiqueRatioTaskOrganization.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
@@ -143,26 +163,6 @@ namespace StoriesHelper.Windows
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // NbUtilisateurs
-            // 
-            this.NbUtilisateurs.AutoSize = true;
-            this.NbUtilisateurs.BackColor = System.Drawing.Color.Transparent;
-            this.NbUtilisateurs.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NbUtilisateurs.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbUtilisateurs.Location = new System.Drawing.Point(936, 222);
-            this.NbUtilisateurs.Name = "NbUtilisateurs";
-            this.NbUtilisateurs.Size = new System.Drawing.Size(170, 28);
-            this.NbUtilisateurs.TabIndex = 10;
-            this.NbUtilisateurs.Text = "nbUtilisateurs";
-            // 
-            // listeProjet
-            // 
-            this.listeProjet.BackColor = System.Drawing.Color.Transparent;
-            this.listeProjet.Location = new System.Drawing.Point(177, 277);
-            this.listeProjet.Name = "listeProjet";
-            this.listeProjet.Size = new System.Drawing.Size(200, 310);
-            this.listeProjet.TabIndex = 11;
-            // 
             // PanelOrganization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +186,6 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.Label NbTeams;
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskOrganization;
         private System.Windows.Forms.Label NbUtilisateurs;
-        private System.Windows.Forms.FlowLayoutPanel listeProjet;
+        private System.Windows.Forms.Panel panel1;
     }
 }
