@@ -26,7 +26,7 @@ namespace StoriesHelper.Windows.Organizations
             {
                 Teams.AddRange(project.getListTeams());
             }
-            Teams = Teams.OrderBy(p => p.getName()).ToList();
+            Teams = Teams.OrderBy(t => t.getName()).ToList();
             int positionLabel = 60;
             int positionButton = 55;
             foreach (Team Team in Teams)

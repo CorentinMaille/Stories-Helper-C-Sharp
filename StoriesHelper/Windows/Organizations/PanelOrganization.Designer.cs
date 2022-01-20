@@ -73,7 +73,7 @@ namespace StoriesHelper.Windows.Organizations
             this.PanelListUsers.BackColor = System.Drawing.Color.Transparent;
             this.PanelListUsers.Location = new System.Drawing.Point(916, 267);
             this.PanelListUsers.Name = "PanelListUsers";
-            this.PanelListUsers.Size = new System.Drawing.Size(330, 550);
+            this.PanelListUsers.Size = new System.Drawing.Size(450, 550);
             this.PanelListUsers.TabIndex = 13;
             // 
             // PanelListTeams

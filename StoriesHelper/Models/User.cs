@@ -40,7 +40,7 @@ namespace StoriesHelper.Models
                 conn.Close();
             }
         }
-        public void initializedUser(int idUser, string firstname, string lastname, DateTime birth, string password, string email, int fk_orgnaization, bool admin)
+        public void initializedUser(int idUser, string lastname, string firstname, DateTime birth, string password, string email, int fk_orgnaization, bool admin)
         {
             this.rowid = idUser;
             this.lastname = lastname;

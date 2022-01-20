@@ -76,6 +76,12 @@
     <Compile Include="Windows\Organizations\ListProjects.Designer.cs">
       <DependentUpon>ListProjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Organizations\ListUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\ListUsers.Designer.cs">
+      <DependentUpon>ListUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Organizations\ListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\ListProjects.resx">
       <DependentUpon>ListProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\ListUsers.resx">
+      <DependentUpon>ListUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\ListTeams.resx">
       <DependentUpon>ListTeams.cs</DependentUpon>

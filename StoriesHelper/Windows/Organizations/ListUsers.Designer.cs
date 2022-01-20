@@ -1,7 +1,7 @@
 ﻿
 namespace StoriesHelper.Windows.Organizations
 {
-    partial class ListTeams
+    partial class ListUsers
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,27 +29,27 @@ namespace StoriesHelper.Windows.Organizations
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitreListeTeam = new System.Windows.Forms.Label();
+            this.labelTitreListeUtilisateur = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelTitreListeTeam
+            // labelTitreListeUtilisateur
             // 
-            this.labelTitreListeTeam.AutoSize = true;
-            this.labelTitreListeTeam.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.labelTitreListeTeam.Location = new System.Drawing.Point(3, 21);
-            this.labelTitreListeTeam.Name = "labelTitreListeTeam";
-            this.labelTitreListeTeam.Size = new System.Drawing.Size(178, 23);
-            this.labelTitreListeTeam.TabIndex = 0;
-            this.labelTitreListeTeam.Text = "Liste des Équipes :";
+            this.labelTitreListeUtilisateur.AutoSize = true;
+            this.labelTitreListeUtilisateur.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.labelTitreListeUtilisateur.Location = new System.Drawing.Point(3, 21);
+            this.labelTitreListeUtilisateur.Name = "labelTitreListeUtilisateur";
+            this.labelTitreListeUtilisateur.Size = new System.Drawing.Size(211, 23);
+            this.labelTitreListeUtilisateur.TabIndex = 0;
+            this.labelTitreListeUtilisateur.Text = "Liste des Utilisateurs :";
             // 
-            // ListTeams
+            // ListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.labelTitreListeTeam);
-            this.Name = "ListTeams";
-            this.Size = new System.Drawing.Size(330, 550);
+            this.Controls.Add(this.labelTitreListeUtilisateur);
+            this.Name = "ListUsers";
+            this.Size = new System.Drawing.Size(450, 550);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,6 +57,6 @@ namespace StoriesHelper.Windows.Organizations
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitreListeTeam;
+        private System.Windows.Forms.Label labelTitreListeUtilisateur;
     }
 }

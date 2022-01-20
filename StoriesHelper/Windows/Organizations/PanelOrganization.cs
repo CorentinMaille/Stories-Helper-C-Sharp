@@ -22,7 +22,7 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<User> Users = new List<User>();
+            List<User> Users = Organization.getListUsers();
             foreach (Project project in Projects)
             {
                 Teams.AddRange(project.getListTeams());
@@ -43,10 +43,6 @@ namespace StoriesHelper.Windows.Organizations
                 } else {
                     TasksClosed.Add(task);
                 }
-            }
-            foreach (Team team in Teams)
-            {
-                Users.AddRange(team.getListUsers());
             }
             int nbProjects = Projects.Count();
             int nbTeams = Teams.Count();
@@ -77,10 +73,10 @@ namespace StoriesHelper.Windows.Organizations
             ListTeams.Show();
 
             // Liste Projets
-/*            ListProjects ListProjects = new ListProjects();
-            PanelListProjects.Controls.Clear();
-            PanelListProjects.Controls.Add(ListProjects);
-            ListProjects.Show();*/
+            ListUsers ListUsers = new ListUsers();
+            PanelListUsers.Controls.Clear();
+            PanelListUsers.Controls.Add(ListUsers);
+            ListUsers.Show();
 
 
         }
