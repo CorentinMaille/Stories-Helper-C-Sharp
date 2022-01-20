@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Service;
 using StoriesHelper.Services;
+using StoriesHelper.Windows.Projects;
 
 namespace StoriesHelper.Windows
 {
@@ -62,6 +63,13 @@ namespace StoriesHelper.Windows
             GraphiqueRatioTaskOrganization.Series["Task"].IsValueShownAsLabel = true;
             GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());
             GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
+
+            // 
+            ListProjects ListProjects = new ListProjects();
+            PanelListProjects.Controls.Clear();
+            PanelListProjects.Controls.Add(ListProjects);
+
+            ListProjects.Show();
         }
     }
 }

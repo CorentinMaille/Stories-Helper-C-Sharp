@@ -29,19 +29,35 @@ namespace StoriesHelper.Windows.Projects
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelTitreListeProjet = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // labelTitreListeProjet
+            // 
+            this.labelTitreListeProjet.AutoSize = true;
+            this.labelTitreListeProjet.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreListeProjet.Location = new System.Drawing.Point(3, 21);
+            this.labelTitreListeProjet.Name = "labelTitreListeProjet";
+            this.labelTitreListeProjet.Size = new System.Drawing.Size(169, 23);
+            this.labelTitreListeProjet.TabIndex = 0;
+            this.labelTitreListeProjet.Text = "Liste des projets :";
             // 
             // ListProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.labelTitreListeProjet);
             this.Name = "ListProjects";
-            this.Size = new System.Drawing.Size(300, 550);
+            this.Size = new System.Drawing.Size(330, 550);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label labelTitreListeProjet;
     }
 }

@@ -40,6 +40,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\OneDrive\Bureau\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -69,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Calcul.cs" />
+    <Compile Include="Windows\Projects\ListProjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ListProjects.Designer.cs">
+      <DependentUpon>ListProjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Projects\PanelOrganization.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,12 +124,6 @@
     <Compile Include="Windows\Collaborators.Designer.cs">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects\Projects.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Windows\Projects\Projects.Designer.cs">
-      <DependentUpon>Projects.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ListProjects.resx">
+      <DependentUpon>ListProjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\PanelOrganization.resx">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
@@ -153,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Collaborators.resx">
       <DependentUpon>Collaborators.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\Projects.resx">
-      <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>
