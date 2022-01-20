@@ -1,5 +1,5 @@
 ﻿
-namespace StoriesHelper.Windows
+namespace StoriesHelper.Windows.Organizations
 {
     partial class PanelOrganization
     {
@@ -29,11 +29,13 @@ namespace StoriesHelper.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gradientPageConnexion1 = new StoriesHelper.Service.GradientPageConnexion();
+            this.PanelListUsers = new System.Windows.Forms.Panel();
+            this.PanelListTeams = new System.Windows.Forms.Panel();
             this.PanelListProjects = new System.Windows.Forms.Panel();
             this.NbUtilisateurs = new System.Windows.Forms.Label();
             this.GraphiqueRatioTaskOrganization = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -50,6 +52,8 @@ namespace StoriesHelper.Windows
             this.gradientPageConnexion1.Angle = 90F;
             this.gradientPageConnexion1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.gradientPageConnexion1.BottomColor = System.Drawing.Color.White;
+            this.gradientPageConnexion1.Controls.Add(this.PanelListUsers);
+            this.gradientPageConnexion1.Controls.Add(this.PanelListTeams);
             this.gradientPageConnexion1.Controls.Add(this.PanelListProjects);
             this.gradientPageConnexion1.Controls.Add(this.NbUtilisateurs);
             this.gradientPageConnexion1.Controls.Add(this.GraphiqueRatioTaskOrganization);
@@ -63,6 +67,22 @@ namespace StoriesHelper.Windows
             this.gradientPageConnexion1.Size = new System.Drawing.Size(1408, 941);
             this.gradientPageConnexion1.TabIndex = 1;
             this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
+            // 
+            // PanelListUsers
+            // 
+            this.PanelListUsers.BackColor = System.Drawing.Color.Transparent;
+            this.PanelListUsers.Location = new System.Drawing.Point(916, 267);
+            this.PanelListUsers.Name = "PanelListUsers";
+            this.PanelListUsers.Size = new System.Drawing.Size(330, 550);
+            this.PanelListUsers.TabIndex = 13;
+            // 
+            // PanelListTeams
+            // 
+            this.PanelListTeams.BackColor = System.Drawing.Color.Transparent;
+            this.PanelListTeams.Location = new System.Drawing.Point(529, 267);
+            this.PanelListTeams.Name = "PanelListTeams";
+            this.PanelListTeams.Size = new System.Drawing.Size(330, 550);
+            this.PanelListTeams.TabIndex = 12;
             // 
             // PanelListProjects
             // 
@@ -88,35 +108,35 @@ namespace StoriesHelper.Windows
             // 
             this.GraphiqueRatioTaskOrganization.BackColor = System.Drawing.Color.Transparent;
             this.GraphiqueRatioTaskOrganization.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.Area3DStyle.Inclination = 45;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            chartArea2.ShadowColor = System.Drawing.Color.Transparent;
-            this.GraphiqueRatioTaskOrganization.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.Name = "Legend1";
-            this.GraphiqueRatioTaskOrganization.Legends.Add(legend2);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 45;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
+            this.GraphiqueRatioTaskOrganization.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Name = "Legend1";
+            this.GraphiqueRatioTaskOrganization.Legends.Add(legend1);
             this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(1300, 186);
             this.GraphiqueRatioTaskOrganization.Name = "GraphiqueRatioTaskOrganization";
             this.GraphiqueRatioTaskOrganization.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.IsXValueIndexed = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Task";
-            series2.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series2.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.GraphiqueRatioTaskOrganization.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Task";
+            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.GraphiqueRatioTaskOrganization.Series.Add(series1);
             this.GraphiqueRatioTaskOrganization.Size = new System.Drawing.Size(558, 312);
             this.GraphiqueRatioTaskOrganization.TabIndex = 8;
             this.GraphiqueRatioTaskOrganization.Text = "Stats Des Tâches de l\'Organisation en cours";
-            title2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Stats des Tâches En Cours de l\'Organisation";
-            this.GraphiqueRatioTaskOrganization.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Stats des Tâches En Cours de l\'Organisation";
+            this.GraphiqueRatioTaskOrganization.Titles.Add(title1);
             // 
             // NbTeams
             // 
@@ -136,7 +156,7 @@ namespace StoriesHelper.Windows
             this.NbProjects.BackColor = System.Drawing.Color.Transparent;
             this.NbProjects.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NbProjects.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbProjects.Location = new System.Drawing.Point(172, 222);
+            this.NbProjects.Location = new System.Drawing.Point(181, 222);
             this.NbProjects.Name = "NbProjects";
             this.NbProjects.Size = new System.Drawing.Size(87, 28);
             this.NbProjects.TabIndex = 2;
@@ -187,5 +207,7 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskOrganization;
         private System.Windows.Forms.Label NbUtilisateurs;
         private System.Windows.Forms.Panel PanelListProjects;
+        private System.Windows.Forms.Panel PanelListTeams;
+        private System.Windows.Forms.Panel PanelListUsers;
     }
 }

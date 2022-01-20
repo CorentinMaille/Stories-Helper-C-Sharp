@@ -1,5 +1,5 @@
 ﻿
-namespace StoriesHelper.Windows.Projects
+namespace StoriesHelper.Windows.Organizations
 {
     partial class ListProjects
     {
@@ -40,7 +40,7 @@ namespace StoriesHelper.Windows.Projects
             this.labelTitreListeProjet.Name = "labelTitreListeProjet";
             this.labelTitreListeProjet.Size = new System.Drawing.Size(169, 23);
             this.labelTitreListeProjet.TabIndex = 0;
-            this.labelTitreListeProjet.Text = "Liste des projets :";
+            this.labelTitreListeProjet.Text = "Liste des Projets :";
             // 
             // ListProjects
             // 

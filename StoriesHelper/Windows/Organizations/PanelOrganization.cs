@@ -4,9 +4,9 @@ using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Service;
 using StoriesHelper.Services;
-using StoriesHelper.Windows.Projects;
+using StoriesHelper.Windows.Organizations;
 
-namespace StoriesHelper.Windows
+namespace StoriesHelper.Windows.Organizations
 {
     public partial class PanelOrganization : UserControl
     {
@@ -64,12 +64,25 @@ namespace StoriesHelper.Windows
             GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());
             GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
 
-            // 
+            // Liste Projets
             ListProjects ListProjects = new ListProjects();
             PanelListProjects.Controls.Clear();
             PanelListProjects.Controls.Add(ListProjects);
-
             ListProjects.Show();
+
+            // Liste Projets
+            ListTeams ListTeams = new ListTeams();
+            PanelListTeams.Controls.Clear();
+            PanelListTeams.Controls.Add(ListTeams);
+            ListTeams.Show();
+
+            // Liste Projets
+/*            ListProjects ListProjects = new ListProjects();
+            PanelListProjects.Controls.Clear();
+            PanelListProjects.Controls.Add(ListProjects);
+            ListProjects.Show();*/
+
+
         }
     }
 }

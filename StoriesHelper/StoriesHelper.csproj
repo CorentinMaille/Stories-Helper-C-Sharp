@@ -70,16 +70,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Calcul.cs" />
-    <Compile Include="Windows\Projects\ListProjects.cs">
+    <Compile Include="Windows\Organizations\ListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects\ListProjects.Designer.cs">
+    <Compile Include="Windows\Organizations\ListProjects.Designer.cs">
       <DependentUpon>ListProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects\PanelOrganization.cs">
+    <Compile Include="Windows\Organizations\ListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects\PanelOrganization.Designer.cs">
+    <Compile Include="Windows\Organizations\ListTeams.Designer.cs">
+      <DependentUpon>ListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\PanelOrganization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\PanelOrganization.Designer.cs">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
@@ -137,10 +143,13 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\ListProjects.resx">
+    <EmbeddedResource Include="Windows\Organizations\ListProjects.resx">
       <DependentUpon>ListProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\PanelOrganization.resx">
+    <EmbeddedResource Include="Windows\Organizations\ListTeams.resx">
+      <DependentUpon>ListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\PanelOrganization.resx">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
