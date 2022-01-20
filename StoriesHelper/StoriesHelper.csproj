@@ -40,6 +40,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\OneDrive\Bureau\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -69,10 +70,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Calcul.cs" />
-    <Compile Include="Windows\PanelOrganization.cs">
+    <Compile Include="Windows\Organizations\ListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\PanelOrganization.Designer.cs">
+    <Compile Include="Windows\Organizations\ListProjects.Designer.cs">
+      <DependentUpon>ListProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\ListUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\ListUsers.Designer.cs">
+      <DependentUpon>ListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\ListTeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\ListTeams.Designer.cs">
+      <DependentUpon>ListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\PanelOrganization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\PanelOrganization.Designer.cs">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
@@ -117,12 +136,6 @@
     <Compile Include="Windows\Collaborators.Designer.cs">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Windows\Projects.Designer.cs">
-      <DependentUpon>Projects.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,7 +149,16 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\PanelOrganization.resx">
+    <EmbeddedResource Include="Windows\Organizations\ListProjects.resx">
+      <DependentUpon>ListProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\ListUsers.resx">
+      <DependentUpon>ListUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\ListTeams.resx">
+      <DependentUpon>ListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\PanelOrganization.resx">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -153,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Collaborators.resx">
       <DependentUpon>Collaborators.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects.resx">
-      <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>

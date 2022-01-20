@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows 
-{ 
-    partial class Projects
+namespace StoriesHelper.Windows.Organizations
+{
+    partial class ListProjects
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,26 +29,28 @@ namespace StoriesHelper.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.ProjectLabel = new System.Windows.Forms.Label();
+            this.labelTitreListeProjet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ProjectLabel
+            // labelTitreListeProjet
             // 
-            this.ProjectLabel.AutoSize = true;
-            this.ProjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.ProjectLabel.Location = new System.Drawing.Point(511, 319);
-            this.ProjectLabel.Name = "ProjectLabel";
-            this.ProjectLabel.Size = new System.Drawing.Size(151, 48);
-            this.ProjectLabel.TabIndex = 0;
-            this.ProjectLabel.Text = "Projets";
+            this.labelTitreListeProjet.AutoSize = true;
+            this.labelTitreListeProjet.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreListeProjet.Location = new System.Drawing.Point(3, 21);
+            this.labelTitreListeProjet.Name = "labelTitreListeProjet";
+            this.labelTitreListeProjet.Size = new System.Drawing.Size(169, 23);
+            this.labelTitreListeProjet.TabIndex = 0;
+            this.labelTitreListeProjet.Text = "Liste des Projets :";
             // 
-            // Projects
+            // ListProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ProjectLabel);
-            this.Name = "Projects";
-            this.Size = new System.Drawing.Size(1300, 900);
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.labelTitreListeProjet);
+            this.Name = "ListProjects";
+            this.Size = new System.Drawing.Size(330, 550);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,6 +58,6 @@ namespace StoriesHelper.Windows
 
         #endregion
 
-        private System.Windows.Forms.Label ProjectLabel;
+        private System.Windows.Forms.Label labelTitreListeProjet;
     }
 }

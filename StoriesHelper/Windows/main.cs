@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Service;
+using StoriesHelper.Windows.Organizations;
 
 namespace StoriesHelper.Windows
 {
@@ -58,12 +59,7 @@ namespace StoriesHelper.Windows
         }
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
-            Projects ProjectContent = new Projects();
 
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(ProjectContent);
-
-            ProjectContent.Show();
         }
         private void QuitButton_Click(object sender, EventArgs e)
         {
