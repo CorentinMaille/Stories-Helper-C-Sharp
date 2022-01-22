@@ -110,7 +110,7 @@ namespace StoriesHelper.Models
             while (projects.Read())
             {
                 Project project = new Project();
-                project.initializedProject(projects.GetInt32(0), projects.GetString(1), projects.GetString(2), projects.GetDateTime(3), projects.GetInt32(4), projects.GetString(5), projects.GetInt32(6));
+                project.initializedProject(projects.GetInt32(0), projects.GetString(1), projects.GetString(2), projects.GetDateTime(3), projects.GetInt32(4), projects.GetString(5), projects.GetBoolean(6));
                 list_projects.Add(project);
             }
             conn.Close();

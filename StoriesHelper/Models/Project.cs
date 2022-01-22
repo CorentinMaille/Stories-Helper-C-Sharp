@@ -17,7 +17,7 @@ namespace StoriesHelper.Models
         protected int fk_organization;
         protected string description;
         protected List<Team> list_teams = new List<Team>();
-        protected int active;
+        protected bool active;
 
         public Project(int idProject = -1)
         {
@@ -66,11 +66,11 @@ namespace StoriesHelper.Models
         {
             description = newDescription;
         } 
-        public int isActive()
+        public bool isActive()
         {
             return active;
         }
-        public void setActive(int newActive)
+        public void setActive(bool newActive)
         {
             active = newActive;
         }
@@ -135,7 +135,7 @@ namespace StoriesHelper.Models
             conn.Close();
         }
 
-        public void initializedProject(int rowid, string name, string type, DateTime open, int fk_organization, string description, int active)
+        public void initializedProject(int rowid, string name, string type, DateTime open, int fk_organization, string description, bool active)
         {
             this.rowid = rowid;
             this.name = name;

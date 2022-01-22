@@ -60,7 +60,7 @@ namespace StoriesHelper.Windows.Organizations
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
                 button.Location = new Point(150, positionButton);
-                button.Click += new System.EventHandler(this.goToTeam);
+                button.Click += new EventHandler(goToTeam);
                 this.Controls.Add(button);
 
                 positionLabel += 40;

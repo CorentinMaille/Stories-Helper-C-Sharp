@@ -23,9 +23,15 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
             List<User> Users = Organization.getListUsers();
+            int nbArchived = 0;
             foreach (Project project in Projects)
             {
                 Teams.AddRange(project.getListTeams());
+
+                if (project.isActive())
+                {
+                    nbArchived++;
+                }
             }
             foreach (Team team in Teams)
             {
@@ -48,7 +54,7 @@ namespace StoriesHelper.Windows.Organizations
             int nbTeams = Teams.Count();
             int nbTasks = Tasks.Count();
             int nbUsers = Users.Count();
-            NbProjects.Text = "Nombre de projets : " + nbProjects;
+            NbProjects.Text = "Nombre de projets en cours : " + nbProjects;
             NbTeams.Text = "Nombre de teams : " + nbTeams;
             NbUtilisateurs.Text = "Nombre d'utilisateur : " + nbUsers;
             double ratioOpen = Calcul.CalculateRatioTasks(TasksOpen.Count(), Tasks.Count());
@@ -66,19 +72,44 @@ namespace StoriesHelper.Windows.Organizations
             PanelListProjects.Controls.Add(ListProjects);
             ListProjects.Show();
 
-            // Liste Projets
+            // Liste Teams
             ListTeams ListTeams = new ListTeams();
             PanelListTeams.Controls.Clear();
             PanelListTeams.Controls.Add(ListTeams);
             ListTeams.Show();
 
-            // Liste Projets
+            // Liste Users
             ListUsers ListUsers = new ListUsers();
             PanelListUsers.Controls.Clear();
             PanelListUsers.Controls.Add(ListUsers);
             ListUsers.Show();
 
 
+        }
+        private void checkBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (checkBoxArchived.Checked && checkBoxOpen.Checked)
+            {
+                ListProjects ListProjects = new ListProjects(true, true);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            } else if (checkBoxArchived.Checked && !checkBoxOpen.Checked) {
+                ListProjects ListProjects = new ListProjects(true, false);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            } else if (!checkBoxArchived.Checked && !checkBoxOpen.Checked) {
+                ListProjects ListProjects = new ListProjects(false, false);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            } else {
+                ListProjects ListProjects = new ListProjects();
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            }
         }
     }
 }
