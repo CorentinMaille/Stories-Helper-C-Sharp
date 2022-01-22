@@ -12,14 +12,35 @@ namespace StoriesHelper.Windows.Organizations
 {
     public partial class ListProjects : UserControl
     {
-        public ListProjects()
+        public ListProjects(bool archived = false, bool open = true)
         {
             InitializeComponent();
             Organization Organization = new Organization(Session.UserId);
-            List<Project> Projects = Organization.getListProjects();
+            List<Project> ListProjects = Organization.getListProjects();
+            List<Project> Projects = new List<Project>();
+            if (archived && open) 
+            {
+                Projects = Organization.getListProjects();
+            } else if (archived && !open) {
+                foreach (Project Project in ListProjects)
+                {
+                    if (!Project.isActive())
+                    {
+                        Projects.Add(Project);
+                    }
+                }
+            } else if (!archived && open) {
+                foreach (Project Project in ListProjects)
+                {
+                    if (Project.isActive())
+                    {
+                        Projects.Add(Project);
+                    }
+                }
+            }
             Projects = Projects.OrderBy(p => p.getName()).ToList();
-            int positionLabel = 60;
-            int positionButton = 55;
+            int positionLabel = 25;
+            int positionButton = 20;
             foreach (Project Project in Projects)
             {
                 // Créer le label
@@ -39,6 +60,10 @@ namespace StoriesHelper.Windows.Organizations
                 }             
                 Label.UseMnemonic = true;
                 Label.AutoSize = true;
+                if (!Project.isActive())
+                {
+                    Label.ForeColor = Color.Red;
+                }
                 Label.Font = new Font("Cambria", 11);
                 Label.Location = new Point(0, positionLabel);
                 this.Controls.Add(Label);
@@ -50,7 +75,7 @@ namespace StoriesHelper.Windows.Organizations
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
                 button.Location = new Point(150, positionButton);
-                button.Click += new System.EventHandler(this.goToProject);
+                button.Click += new EventHandler(goToProject);
                 this.Controls.Add(button);
 
                 positionLabel += 40;
