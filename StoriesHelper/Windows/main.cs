@@ -25,13 +25,13 @@ namespace StoriesHelper.Windows
         private void buttonEnter(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = Color.White;
+            button.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void buttonLeave(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.BackColor = SystemColors.HotTrack;
+            button.BackColor = SystemColors.ControlDarkDark;
         }
 
         private void Main_Load(object sender, EventArgs e)
