@@ -24,13 +24,17 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> TasksOpen = new List<Task>();
             List<User> Users = Organization.getListUsers();
             int nbArchived = 0;
+            int nbProjects = 0;
             foreach (Project project in Projects)
             {
                 Teams.AddRange(project.getListTeams());
 
-                if (project.isActive())
+                if (!project.isActive())
                 {
                     nbArchived++;
+                } else
+                {
+                    nbProjects++;
                 }
             }
             foreach (Team team in Teams)
@@ -50,13 +54,13 @@ namespace StoriesHelper.Windows.Organizations
                     TasksClosed.Add(task);
                 }
             }
-            int nbProjects = Projects.Count();
             int nbTeams = Teams.Count();
             int nbTasks = Tasks.Count();
             int nbUsers = Users.Count();
-            NbProjects.Text = "Nombre de projets en cours : " + nbProjects;
-            NbTeams.Text = "Nombre de teams : " + nbTeams;
-            NbUtilisateurs.Text = "Nombre d'utilisateur : " + nbUsers;
+            NbProjects.Text += nbProjects;
+            NbArchivedProjects.Text += nbArchived;
+            NbTeams.Text += nbTeams;
+            NbUtilisateurs.Text += nbUsers;
             double ratioOpen = Calcul.CalculateRatioTasks(TasksOpen.Count(), Tasks.Count());
             double ratioClosed = Calcul.CalculateRatioTasks(TasksClosed.Count(), Tasks.Count());
             string labelOpen = "Open (" + ratioOpen + "%)";
