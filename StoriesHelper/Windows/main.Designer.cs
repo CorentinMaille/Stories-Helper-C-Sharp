@@ -82,6 +82,7 @@ namespace StoriesHelper.Windows
             // sideBarBackground
             // 
             this.sideBarBackground.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.sideBarBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sideBarBackground.Controls.Add(this.button2);
             this.sideBarBackground.Controls.Add(this.DisconectButton);
             this.sideBarBackground.Controls.Add(this.ApplicationNamePanel);
@@ -202,6 +203,7 @@ namespace StoriesHelper.Windows
             // 
             // MainPanel
             // 
+            this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainPanel.Location = new System.Drawing.Point(299, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
