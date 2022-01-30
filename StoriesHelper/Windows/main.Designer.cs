@@ -40,7 +40,7 @@ namespace StoriesHelper.Windows
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StoriesHelperLabel1 = new System.Windows.Forms.Label();
             this.organisationButton = new System.Windows.Forms.Button();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            MainPanel = new System.Windows.Forms.Panel();
             this.sideBarBackground.SuspendLayout();
             this.ApplicationNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +75,6 @@ namespace StoriesHelper.Windows
             this.ProjectsButton.TabIndex = 3;
             this.ProjectsButton.Text = "Projets";
             this.ProjectsButton.UseVisualStyleBackColor = false;
-            this.ProjectsButton.Click += new System.EventHandler(this.ProjectsButton_Click);
             this.ProjectsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
             this.ProjectsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
@@ -202,13 +201,13 @@ namespace StoriesHelper.Windows
             // 
             // MainPanel
             // 
-            this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MainPanel.Location = new System.Drawing.Point(299, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1101, 900);
-            this.MainPanel.TabIndex = 3;
-            this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MainPanel.Location = new System.Drawing.Point(299, 0);
+            MainPanel.Margin = new System.Windows.Forms.Padding(2);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new System.Drawing.Size(1101, 900);
+            MainPanel.TabIndex = 3;
+            MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // main
             // 
@@ -216,7 +215,7 @@ namespace StoriesHelper.Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1400, 900);
-            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(MainPanel);
             this.Controls.Add(this.sideBarBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -243,7 +242,7 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label StoriesHelperLabel1;
         private System.Windows.Forms.Label StoriesHelperLabel2;
-        private System.Windows.Forms.Panel MainPanel;
+        static public System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button DisconectButton;
         private System.Windows.Forms.Button button2;
     }

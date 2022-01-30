@@ -71,45 +71,45 @@ namespace StoriesHelper.Windows.Organizations
             GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
 
             // Liste Projets
-            ListProjects ListProjects = new ListProjects();
+            OrganizationListProjects ListProjects = new OrganizationListProjects();
             PanelListProjects.Controls.Clear();
             PanelListProjects.Controls.Add(ListProjects);
             ListProjects.Show();
 
             // Liste Teams
-            ListTeams ListTeams = new ListTeams();
+            OrganizationListTeams ListTeams = new OrganizationListTeams();
             PanelListTeams.Controls.Clear();
             PanelListTeams.Controls.Add(ListTeams);
             ListTeams.Show();
 
             // Liste Users
-            ListUsers ListUsers = new ListUsers();
+            OrganizationListUsers ListUsers = new OrganizationListUsers();
             PanelListUsers.Controls.Clear();
             PanelListUsers.Controls.Add(ListUsers);
             ListUsers.Show();
 
 
         }
-        private void checkBox_CheckedChanged(object sender, System.EventArgs e)
+        private void displayOpenArchived(object sender, System.EventArgs e)
         {
             if (checkBoxArchived.Checked && checkBoxOpen.Checked)
             {
-                ListProjects ListProjects = new ListProjects(true, true);
+                OrganizationListProjects ListProjects = new OrganizationListProjects(true, true);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
             } else if (checkBoxArchived.Checked && !checkBoxOpen.Checked) {
-                ListProjects ListProjects = new ListProjects(true, false);
+                OrganizationListProjects ListProjects = new OrganizationListProjects(true, false);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
             } else if (!checkBoxArchived.Checked && !checkBoxOpen.Checked) {
-                ListProjects ListProjects = new ListProjects(false, false);
+                OrganizationListProjects ListProjects = new OrganizationListProjects(false, false);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
             } else {
-                ListProjects ListProjects = new ListProjects();
+                OrganizationListProjects ListProjects = new OrganizationListProjects();
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();

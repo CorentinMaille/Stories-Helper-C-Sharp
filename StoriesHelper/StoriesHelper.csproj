@@ -54,8 +54,8 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -70,23 +70,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Calcul.cs" />
-    <Compile Include="Windows\Organizations\ListProjects.cs">
+    <Compile Include="Windows\Organizations\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\ListProjects.Designer.cs">
-      <DependentUpon>ListProjects.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\OrganizationListProjects.Designer.cs">
+      <DependentUpon>OrganizationListProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\ListUsers.cs">
+    <Compile Include="Windows\Organizations\OrganizationListUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\ListUsers.Designer.cs">
-      <DependentUpon>ListUsers.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\OrganizationListUsers.Designer.cs">
+      <DependentUpon>OrganizationListUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\ListTeams.cs">
+    <Compile Include="Windows\Organizations\OrganizationListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\ListTeams.Designer.cs">
-      <DependentUpon>ListTeams.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\OrganizationListTeams.Designer.cs">
+      <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Organizations\PanelOrganization.cs">
       <SubType>UserControl</SubType>
@@ -136,6 +136,18 @@
     <Compile Include="Windows\Collaborators.Designer.cs">
       <DependentUpon>Collaborators.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeams.Designer.cs">
+      <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\PanelProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\PanelProject.Designer.cs">
+      <DependentUpon>PanelProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,14 +161,14 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\ListProjects.resx">
-      <DependentUpon>ListProjects.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListProjects.resx">
+      <DependentUpon>OrganizationListProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\ListUsers.resx">
-      <DependentUpon>ListUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListUsers.resx">
+      <DependentUpon>OrganizationListUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\ListTeams.resx">
-      <DependentUpon>ListTeams.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListTeams.resx">
+      <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\PanelOrganization.resx">
       <DependentUpon>PanelOrganization.cs</DependentUpon>
@@ -175,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Collaborators.resx">
       <DependentUpon>Collaborators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
+      <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\PanelProject.resx">
+      <DependentUpon>PanelProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>

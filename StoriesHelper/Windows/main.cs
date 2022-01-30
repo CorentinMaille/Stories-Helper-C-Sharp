@@ -3,12 +3,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Service;
 using StoriesHelper.Windows.Organizations;
+using StoriesHelper.Windows.Projects;
 
 namespace StoriesHelper.Windows
 {
     public partial class main : MyDraggableForm
     {
-        private int id; 
         public main()
         {
             InitializeComponent();
@@ -57,9 +57,14 @@ namespace StoriesHelper.Windows
 
             CollaboratorsContent.Show();
         }
-        private void ProjectsButton_Click(object sender, EventArgs e)
+        static public void goToProject(int idProject)
         {
+            PanelProject ProjectContent = new PanelProject(idProject);
 
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(ProjectContent);
+
+            ProjectContent.Show();
         }
         private void QuitButton_Click(object sender, EventArgs e)
         {
@@ -79,5 +84,7 @@ namespace StoriesHelper.Windows
             loginWindow.Show();
             this.Hide();
         }
+
+
     }
 }
