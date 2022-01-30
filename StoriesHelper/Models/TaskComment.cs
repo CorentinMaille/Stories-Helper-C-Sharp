@@ -13,7 +13,6 @@ namespace StoriesHelper.Models
         private int fk_task;
         private string note;
         private int fk_user;
-        private bool admin;
 
         public TaskComment(int rowid = 0)
         {
@@ -85,12 +84,6 @@ namespace StoriesHelper.Models
             this.fk_user = user;
         }
 
-        public void setAdmin(bool admin)
-        {
-            this.admin = admin;
-        }
-
-
         // GETTER
 
         public int getRowid()
@@ -136,7 +129,6 @@ namespace StoriesHelper.Models
                     this.fk_task = reader.GetInt32(1);
                     this.note = reader.GetString(2);
                     this.fk_user = reader.GetInt32(3);
-                    this.admin = reader.GetBoolean(4);
                 }
 
                 conn.Close();
