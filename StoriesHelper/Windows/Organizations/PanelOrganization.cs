@@ -22,7 +22,7 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<User> Users = Organization.getListUsers();
+            List<Collaborator> Users = Organization.getListUsers();
             int nbArchived = 0;
             int nbProjects = 0;
             foreach (Project project in Projects)
@@ -55,20 +55,14 @@ namespace StoriesHelper.Windows.Organizations
                 }
             }
             int nbTeams = Teams.Count();
-            int nbTasks = Tasks.Count();
             int nbUsers = Users.Count();
+
+            displayTaskChart(Tasks, TasksOpen, TasksClosed);
+
             NbProjects.Text += nbProjects;
             NbArchivedProjects.Text += nbArchived;
             NbTeams.Text += nbTeams;
             NbUtilisateurs.Text += nbUsers;
-            double ratioOpen = Calcul.CalculateRatioTasks(TasksOpen.Count(), Tasks.Count());
-            double ratioClosed = Calcul.CalculateRatioTasks(TasksClosed.Count(), Tasks.Count());
-            string labelOpen = "Open (" + ratioOpen + "%)";
-            string labelClosed = "Closed (" + ratioClosed + "%)";
-
-            GraphiqueRatioTaskOrganization.Series["Task"].IsValueShownAsLabel = true;
-            GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());
-            GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
 
             // Liste Projets
             OrganizationListProjects ListProjects = new OrganizationListProjects();
@@ -113,6 +107,25 @@ namespace StoriesHelper.Windows.Organizations
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
+            }
+        }
+        private void displayTaskChart(List<Task> Tasks, List<Task> TasksOpen, List<Task> TasksClosed)
+        {
+
+            if (TasksClosed.Count() == 0 && TasksOpen.Count() == 0)
+            {
+                GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY("no Data", 1);
+            }
+            else
+            {
+                double ratioOpen = Calcul.CalculateRatioTasks(TasksOpen.Count(), Tasks.Count());
+                double ratioClosed = Calcul.CalculateRatioTasks(TasksClosed.Count(), Tasks.Count());
+                string labelOpen = "Open (" + ratioOpen + "%)";
+                string labelClosed = "Closed (" + ratioClosed + "%)";
+
+                GraphiqueRatioTaskOrganization.Series["Task"].IsValueShownAsLabel = true;
+                GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());
+                GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
             }
         }
     }

@@ -40,7 +40,6 @@ namespace StoriesHelper.Windows
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StoriesHelperLabel1 = new System.Windows.Forms.Label();
             this.organisationButton = new System.Windows.Forms.Button();
-            MainPanel = new System.Windows.Forms.Panel();
             this.sideBarBackground.SuspendLayout();
             this.ApplicationNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +50,7 @@ namespace StoriesHelper.Windows
             this.collaboratorsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collaboratorsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.collaboratorsButton.ForeColor = System.Drawing.Color.Black;
-            this.collaboratorsButton.Location = new System.Drawing.Point(0, 260);
+            this.collaboratorsButton.Location = new System.Drawing.Point(0, 261);
             this.collaboratorsButton.Margin = new System.Windows.Forms.Padding(2);
             this.collaboratorsButton.Name = "collaboratorsButton";
             this.collaboratorsButton.Size = new System.Drawing.Size(302, 110);
@@ -67,7 +66,7 @@ namespace StoriesHelper.Windows
             this.ProjectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProjectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectsButton.ForeColor = System.Drawing.Color.Black;
-            this.ProjectsButton.Location = new System.Drawing.Point(0, 369);
+            this.ProjectsButton.Location = new System.Drawing.Point(0, 370);
             this.ProjectsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectsButton.Name = "ProjectsButton";
             this.ProjectsButton.Size = new System.Drawing.Size(302, 110);
@@ -187,7 +186,7 @@ namespace StoriesHelper.Windows
             this.organisationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.organisationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.organisationButton.ForeColor = System.Drawing.Color.Black;
-            this.organisationButton.Location = new System.Drawing.Point(0, 151);
+            this.organisationButton.Location = new System.Drawing.Point(0, 152);
             this.organisationButton.Margin = new System.Windows.Forms.Padding(2);
             this.organisationButton.Name = "organisationButton";
             this.organisationButton.Size = new System.Drawing.Size(302, 110);
@@ -198,23 +197,12 @@ namespace StoriesHelper.Windows
             this.organisationButton.MouseEnter += new System.EventHandler(this.buttonEnter);
             this.organisationButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
-            // MainPanel
-            // 
-            MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            MainPanel.Location = new System.Drawing.Point(299, 0);
-            MainPanel.Margin = new System.Windows.Forms.Padding(2);
-            MainPanel.Name = "MainPanel";
-            MainPanel.Size = new System.Drawing.Size(1101, 900);
-            MainPanel.TabIndex = 3;
-            MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1400, 900);
-            this.Controls.Add(MainPanel);
             this.Controls.Add(this.sideBarBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -241,7 +229,6 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label StoriesHelperLabel1;
         private System.Windows.Forms.Label StoriesHelperLabel2;
-        static public System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button DisconectButton;
         private System.Windows.Forms.Button button2;
     }

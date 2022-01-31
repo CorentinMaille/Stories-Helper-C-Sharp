@@ -9,10 +9,20 @@ namespace StoriesHelper.Windows
 {
     public partial class main : MyDraggableForm
     {
+        public static Panel MainPanel;
         public main()
         {
             InitializeComponent();
-            this.MinimumSize = new Size(1167, 718);
+            MainPanel = new Panel();
+            MainPanel.BorderStyle = BorderStyle.FixedSingle;
+            MainPanel.Location = new Point(299, 0);
+            MainPanel.Margin = new Padding(2);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(1101, 900);
+            MainPanel.TabIndex = 3;
+            MainPanel.MouseDown += new MouseEventHandler(Form1_MouseDown);
+            Controls.Add(MainPanel);
+            MinimumSize = new Size(1167, 718);
 
             Home HomeContent = new Home();
 
@@ -38,8 +48,17 @@ namespace StoriesHelper.Windows
         {
 
         }
-
         private void organisationButton_Click(object sender, EventArgs e)
+        {
+            PanelOrganization OrganizationContent = new PanelOrganization();
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(OrganizationContent);
+
+            OrganizationContent.Show();
+        }
+
+        static public void goToOrganization()
         {
             PanelOrganization OrganizationContent = new PanelOrganization();
 
@@ -63,7 +82,7 @@ namespace StoriesHelper.Windows
             quitter.Show();
         }
 
-        protected void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        protected void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             MyDraggableForm mdf = new MyDraggableForm();
             mdf.Drag(sender, e, Handle);
@@ -73,9 +92,7 @@ namespace StoriesHelper.Windows
         {
             Login loginWindow = new Login();
             loginWindow.Show();
-            this.Hide();
+            Hide();
         }
-
-
     }
 }

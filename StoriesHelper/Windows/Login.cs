@@ -39,42 +39,6 @@ namespace StoriesHelper.Windows
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
 
-                    // SECTION TEST !!!
-                    // Test Organisation
-                    /* Organization organization = new Organization(3);
-                       List<Project> listProject = organization.getListProjects();
-                       foreach(Project project in listProject)
-                       {
-                           MessageBox.Show(project.getRowId() + " " + project.getName() + " " + project.getOpen().ToString("d"));
-                           List<Team> listTeam = project.getListTeams();
-                           foreach (Team team in listTeam)
-                           {
-                               MessageBox.Show(team.getName());
-                               List<User> listUser = team.getListUsers();
-                               foreach (User user in listUser)
-                               {
-                                   MessageBox.Show(user.getFirstname() + " " + user.getLastname() + " " + user.getBirth().ToString("d"));
-
-                               }
-                           }
-                       }*/
-
-                    // Test la récupération des tâches depuis Team
-                    /*
-                        Team team = new Team(1);
-                        List<MapColumns> listColumns = team.getListColumns();
-                        foreach(MapColumns column in listColumns)
-                        {
-                            MessageBox.Show(column.getName());
-                            List<Task> listTask = column.getListTasks();
-                            foreach(Task task in listTask)
-                            {
-                                MessageBox.Show(task.getName() + " " + task.getDescription());
-                            }
-                        }*/
-
-
-                    // FIN DE LA SECTION TEST !!!
                     Session.UserId = idOrg;
                     main WelcomeWindow = new main();
 

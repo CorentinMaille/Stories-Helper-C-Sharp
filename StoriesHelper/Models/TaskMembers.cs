@@ -6,7 +6,6 @@ namespace StoriesHelper.Models
     {
         private int fk_user;
         private int fk_task;
-
         public TaskMembers(int fk_user = 0, int fk_task = 0)
         {
             if(fk_user != 0 && fk_task != 0)

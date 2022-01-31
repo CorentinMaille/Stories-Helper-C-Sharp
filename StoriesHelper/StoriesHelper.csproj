@@ -69,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Collaborator.cs" />
     <Compile Include="Services\Calcul.cs" />
     <Compile Include="Windows\Organizations\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>

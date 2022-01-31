@@ -15,11 +15,11 @@ namespace StoriesHelper.Windows.Organizations
         {
             InitializeComponent();
             Organization Organization = new Organization(Session.UserId);
-            List<User> Users = Organization.getListUsers();
+            List<Collaborator> Users = Organization.getListUsers();
             Users = Users.OrderBy(u => u.getLastname()).ToList();
             int positionLabel = 20;
             int positionButton = 15;
-            foreach (User User in Users)
+            foreach (Collaborator User in Users)
             {
                 // Créer le label Lastname
                 string UserLastname = User.getLastname().ToUpper();

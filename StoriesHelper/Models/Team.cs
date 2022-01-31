@@ -9,7 +9,7 @@ namespace StoriesHelper.Models
         protected int rowid;
         protected string name;
         protected int fk_project;
-        protected List<User> list_users = new List<User>();
+        protected List<Collaborator> list_users = new List<Collaborator>();
         protected List<Column> list_columns = new List<Column>();
         protected bool active;
 
@@ -44,11 +44,11 @@ namespace StoriesHelper.Models
         {
             fk_project = newProject;
         }        
-        public List<User> getListUsers()
+        public List<Collaborator> getListUsers()
         {
             return list_users;
         }
-        public void setListUsers(List<User> newListUsers)
+        public void setListUsers(List<Collaborator> newListUsers)
         {
             list_users = newListUsers;
         }
@@ -93,12 +93,13 @@ namespace StoriesHelper.Models
             sql2 += " FROM user AS u";
             sql2 += " LEFT JOIN belong_to AS b ON u.rowid = b.fk_user";
             sql2 += " WHERE b.fk_team = @idTeam";
+            sql += " AND u.admin = 0";
             command2.CommandText = sql2;
             MySqlDataReader users = command2.ExecuteReader();
             while (users.Read())
             {
-                User user = new User();
-                user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7), users.GetBoolean(10));
+                Collaborator user = new Collaborator();
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
                 list_users.Add(user);
             }
             conn.Close();
@@ -133,12 +134,13 @@ namespace StoriesHelper.Models
             sql += " FROM user AS u";
             sql += " LEFT JOIN belong_to AS b ON u.rowid = b.fk_user";
             sql += " WHERE b.fk_team = @idTeam";
+            sql += " AND u.admin = 0";
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while(users.Read())
             {
-                User user = new User();
-                user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7), users.GetBoolean(10));
+                Collaborator user = new Collaborator();
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
                 list_users.Add(user);
             }
             conn.Close();

@@ -15,7 +15,7 @@ namespace StoriesHelper.Models
         protected string password;
         protected int consent;
         protected List<Project> list_projects = new List<Project>();
-        protected List<User> list_users = new List<User>();
+        protected List<Collaborator> list_users = new List<Collaborator>();
 
         public Organization(int idOrganization = -1)
         {
@@ -72,11 +72,11 @@ namespace StoriesHelper.Models
         {
             list_projects = newListProject;
         }
-        public List<User> getListUsers()
+        public List<Collaborator> getListUsers()
         {
             return list_users;
         }
-        public void setListUsers(List<User> newListUser)
+        public void setListUsers(List<Collaborator> newListUser)
         {
             list_users = newListUser;
         }
@@ -120,12 +120,13 @@ namespace StoriesHelper.Models
             string sql3 = "SELECT *";
             sql3 += " FROM user";
             sql3 += " WHERE fk_organization = @idOrganization";
+            sql3 += " AND admin = 0";
             command3.CommandText = sql3;
             MySqlDataReader users = command3.ExecuteReader();
             while (users.Read())
             {
-                User user = new User();
-                user.initializedUser(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7), users.GetBoolean(10));
+                Collaborator user = new Collaborator();
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
                 list_users.Add(user);
             }
             conn.Close();

@@ -17,17 +17,17 @@ namespace StoriesHelper.Windows.Projects
             Project Project = new Project(idProject);
             List<Team> Teams = Project.getListTeams();
             Teams = Teams.OrderBy(t => t.getName()).ToList();
-            int positionLabel = 60;
-            int positionButton = 55;
+            int positionLabel = 10;
+            int positionButton = 5;
             foreach (Team Team in Teams)
             {
                 // Créer le label
                 string TeamName = Team.getName();
                 string newName = "";
                 Label Label = new Label();
-                if (TeamName.Length > 15)
+                if (TeamName.Length > 30)
                 {
-                    newName = TeamName.Remove(15, (TeamName.Length - 15));
+                    newName = TeamName.Remove(30, (TeamName.Length - 30));
                     newName = newName.Insert(newName.Length, "...");
                     Label.Text = "- " + newName;
                     Label.Name = newName + Team.getRowId();
@@ -39,9 +39,42 @@ namespace StoriesHelper.Windows.Projects
                 }
                 Label.UseMnemonic = true;
                 Label.AutoSize = true;
-                Label.Font = new Font("Cambria", 11);
+                Label.Font = new Font("Cambria", 13);
                 Label.Location = new Point(0, positionLabel);
                 this.Controls.Add(Label);
+
+                Label NbCollaborateur = new Label();
+                NbCollaborateur.Text = Team.getListUsers().Count().ToString();
+                NbCollaborateur.Name = "NbCollaborateur" + Team.getRowId();
+                NbCollaborateur.UseMnemonic = true;
+                NbCollaborateur.AutoSize = true;
+                NbCollaborateur.Font = new Font("Cambria", 14);
+                NbCollaborateur.Location = new Point(290, positionLabel);
+                this.Controls.Add(NbCollaborateur);
+
+                Label NbTask = new Label();
+                List<Column> Columns = Team.getListColumns();
+                List<Task> Tasks = new List<Task>();
+                foreach (Column column in Columns)
+                {
+                    Tasks.AddRange(column.getListTasks());
+                }
+                NbTask.Text = Tasks.Count().ToString();
+                NbTask.Name = "NbTask" + Team.getRowId();
+                NbTask.UseMnemonic = true;
+                NbTask.AutoSize = true;
+                NbTask.Font = new Font("Cambria", 14);
+                NbTask.Location = new Point(390, positionLabel);
+                this.Controls.Add(NbTask);
+
+                Label Rendement = new Label();
+                Rendement.Text = "X";
+                Rendement.Name = "Rendement" + Team.getRowId();
+                Rendement.UseMnemonic = true;
+                Rendement.AutoSize = true;
+                Rendement.Font = new Font("Cambria", 14);
+                Rendement.Location = new Point(470, positionLabel);
+                this.Controls.Add(Rendement);
 
                 // Créer Le button
                 Button button = new Button();
@@ -49,7 +82,7 @@ namespace StoriesHelper.Windows.Projects
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
-                button.Location = new Point(150, positionButton);
+                button.Location = new Point(550, positionButton);
                 button.Click += new EventHandler(goToTeam);
                 this.Controls.Add(button);
 
