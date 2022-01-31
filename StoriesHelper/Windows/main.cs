@@ -48,15 +48,6 @@ namespace StoriesHelper.Windows
 
             OrganizationContent.Show();
         }
-        private void collaboratorsButton_Click(object sender, EventArgs e)
-        {
-            Collaborators CollaboratorsContent = new Collaborators();
-
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(CollaboratorsContent);
-
-            CollaboratorsContent.Show();
-        }
         static public void goToProject(int idProject)
         {
             PanelProject ProjectContent = new PanelProject(idProject);

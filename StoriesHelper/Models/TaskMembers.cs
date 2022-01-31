@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace StoriesHelper.Models
 {
     class TaskMembers : Model
     {
-        private int rowid;
         private int fk_user;
         private int fk_task;
 
@@ -17,44 +11,45 @@ namespace StoriesHelper.Models
         {
             if(fk_user != 0 && fk_task != 0)
             {
-                this.fetch(rowid);
+                fetch(fk_user, fk_task);
             }
         }
 
         // SETTER
         public void setUser(int user)
         {
-            this.fk_user = user;
+            fk_user = user;
         }
 
         public void setTask(int task)
         {
-            this.fk_task = task;
+            fk_task = task;
         }
 
         // GETTER
         public int getUser()
         {
-            return this.fk_user;
+            return fk_user;
         }
 
         public int getTask()
         {
-            return this.fk_task;
+            return fk_task;
         }
 
         // FETCH
-        public void fetch(int rowid)
+        public void fetch(int fk_user, int fk_task)
         {
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
 
-            command.Parameters.AddWithValue("@rowid", rowid);
+            command.Parameters.AddWithValue("@fk_user", fk_user);
+            command.Parameters.AddWithValue("@fk_task", fk_task);
 
             string sql = "SELECT t.fk_user, t.fk_task";
             sql += " FROM task_member";
-            sql += " WHERE t.fk_user = ? AND t.fk_task = ?";
+            sql += " WHERE t.fk_user = @fk_user AND t.fk_task = @fk_task";
 
             command.CommandText = sql;
 

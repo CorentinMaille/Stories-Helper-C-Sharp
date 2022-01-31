@@ -130,12 +130,6 @@
     <Compile Include="Windows\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Collaborators.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Windows\Collaborators.Designer.cs">
-      <DependentUpon>Collaborators.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Projects\ProjectListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,9 +178,6 @@
     </Compile>
     <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Collaborators.resx">
-      <DependentUpon>Collaborators.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>

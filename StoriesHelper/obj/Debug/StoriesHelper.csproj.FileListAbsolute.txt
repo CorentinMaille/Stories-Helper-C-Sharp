@@ -45,7 +45,6 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.main.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Properties.Resources.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Home.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Collaborators.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Quitter.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.GenerateResource.cache
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CoreCompileInputs.cache
@@ -59,3 +58,4 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeams.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.PanelProject.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
