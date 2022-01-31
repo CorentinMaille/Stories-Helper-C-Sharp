@@ -142,6 +142,18 @@
     <Compile Include="Windows\Projects\PanelProject.Designer.cs">
       <DependentUpon>PanelProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeams.Designer.cs">
+      <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\PanelProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\PanelProject.Designer.cs">
+      <DependentUpon>PanelProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </Compile>
     <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
+      <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\PanelProject.resx">
+      <DependentUpon>PanelProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
