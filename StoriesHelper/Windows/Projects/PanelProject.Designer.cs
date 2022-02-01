@@ -53,6 +53,7 @@ namespace StoriesHelper.Windows.Projects
             this.GraphiqueRatioTaskProject = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PanelListTeams = new System.Windows.Forms.Panel();
             this.LabelTitreProject = new System.Windows.Forms.Label();
+            this.retour = new System.Windows.Forms.Button();
             this.gradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskProject)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@ namespace StoriesHelper.Windows.Projects
             this.gradient.Angle = 90F;
             this.gradient.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gradient.BottomColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gradient.Controls.Add(this.retour);
             this.gradient.Controls.Add(this.labelNbCollaborateur);
             this.gradient.Controls.Add(this.labelNbTeam);
             this.gradient.Controls.Add(this.ArchivedProject);
@@ -299,6 +301,16 @@ namespace StoriesHelper.Windows.Projects
             this.LabelTitreProject.TabIndex = 2;
             this.LabelTitreProject.Text = "Project : ";
             // 
+            // retour
+            // 
+            this.retour.Location = new System.Drawing.Point(999, 15);
+            this.retour.Name = "retour";
+            this.retour.Size = new System.Drawing.Size(87, 27);
+            this.retour.TabIndex = 29;
+            this.retour.Text = "<<< Retour";
+            this.retour.UseVisualStyleBackColor = true;
+            this.retour.Click += new System.EventHandler(this.retour_Click);
+            // 
             // PanelProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +346,6 @@ namespace StoriesHelper.Windows.Projects
         private System.Windows.Forms.Label ArchivedProject;
         private System.Windows.Forms.Label labelNbCollaborateur;
         private System.Windows.Forms.Label labelNbTeam;
+        private System.Windows.Forms.Button retour;
     }
 }

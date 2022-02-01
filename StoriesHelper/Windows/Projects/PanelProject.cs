@@ -115,5 +115,10 @@ namespace StoriesHelper.Windows.Projects
             Project.update();
             main.goToProject(idProject);
         }
+
+        private void retour_Click(object sender, EventArgs e)
+        {
+            main.goToOrganization();
+        }
     }
 }
