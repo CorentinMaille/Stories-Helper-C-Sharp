@@ -88,7 +88,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idOrganization);
             string sql = "SELECT *";
-            sql += " FROM organization ";
+            sql += " FROM storieshelper_organization ";
             sql += "WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -103,7 +103,7 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idOrganization", idOrganization );
             string sql2 = "SELECT *";
-            sql2 += " FROM project";
+            sql2 += " FROM storieshelper_project";
             sql2 += " WHERE fk_organization = @idOrganization";
             command2.CommandText = sql2;
             MySqlDataReader projects = command2.ExecuteReader();
@@ -118,7 +118,7 @@ namespace StoriesHelper.Models
             MySqlCommand command3 = conn.CreateCommand();
             command3.Parameters.AddWithValue("@idOrganization", idOrganization);
             string sql3 = "SELECT *";
-            sql3 += " FROM user";
+            sql3 += " FROM storieshelper_user";
             sql3 += " WHERE fk_organization = @idOrganization";
             sql3 += " AND admin = 0";
             command3.CommandText = sql3;

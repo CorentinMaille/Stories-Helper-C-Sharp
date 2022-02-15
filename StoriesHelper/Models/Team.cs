@@ -74,7 +74,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idTeam);
             string sql = "SELECT *";
-            sql += " FROM team ";
+            sql += " FROM storieshelper_team ";
             sql += "WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -90,8 +90,8 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idTeam", idTeam);
             string sql2 = "SELECT *";
-            sql2 += " FROM user AS u";
-            sql2 += " LEFT JOIN belong_to AS b ON u.rowid = b.fk_user";
+            sql2 += " FROM storieshelper_user AS u";
+            sql2 += " LEFT JOIN storieshelper_belong_to AS b ON u.rowid = b.fk_user";
             sql2 += " WHERE b.fk_team = @idTeam";
             sql += " AND u.admin = 0";
             command2.CommandText = sql2;
@@ -107,7 +107,7 @@ namespace StoriesHelper.Models
             MySqlCommand command3 = conn.CreateCommand();
             command3.Parameters.AddWithValue("@idTeam", idTeam);
             string sql3 = "SELECT *";
-            sql3 += " FROM map_column";
+            sql3 += " FROM storieshelper_map_column";
             sql3 += " WHERE fk_team = @idTeam";
             command3.CommandText = sql3;
             MySqlDataReader columns = command3.ExecuteReader();
@@ -131,8 +131,8 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idTeam", idTeam);
             string sql = "SELECT *";
-            sql += " FROM user AS u";
-            sql += " LEFT JOIN belong_to AS b ON u.rowid = b.fk_user";
+            sql += " FROM storieshelper_user AS u";
+            sql += " LEFT JOIN storieshelper_belong_to AS b ON u.rowid = b.fk_user";
             sql += " WHERE b.fk_team = @idTeam";
             sql += " AND u.admin = 0";
             command.CommandText = sql;
@@ -148,7 +148,7 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idTeam", idTeam);
             string sql2 = "SELECT *";
-            sql2 += " FROM map_column";
+            sql2 += " FROM storieshelper_map_column";
             sql2 += " WHERE fk_team = @idTeam";
             command2.CommandText = sql2;
             MySqlDataReader columns = command2.ExecuteReader();
@@ -166,8 +166,8 @@ namespace StoriesHelper.Models
             // supprime les liens team/utilisateur
             conn.Open();
             MySqlCommand deleteBelongTo = conn.CreateCommand();
-            string sql = "DELETE mc FROM map_column mc ";
-            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            string sql = "DELETE mc FROM storieshelper_map_column mc ";
+            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
             sql += "WHERE tm.rowid = @rowid ";
             deleteBelongTo.Parameters.AddWithValue("@rowid", rowid);
             deleteBelongTo.CommandText = sql;
@@ -176,10 +176,10 @@ namespace StoriesHelper.Models
             // supprime les liens team/utilisateur
             conn.Open();
             MySqlCommand deleteTaskMember = conn.CreateCommand();
-            sql = "DELETE tkm FROM task_member tkm ";
-            sql += "INNER JOIN task tk ON tk.rowid = tkm.fk_task ";
-            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
-            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql = "DELETE tkm FROM storieshelper_task_member tkm ";
+            sql += "INNER JOIN storieshelper_task tk ON tk.rowid = tkm.fk_task ";
+            sql += "INNER JOIN storieshelper_map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
             sql += "WHERE tm.rowid = @rowid ";
             deleteTaskMember.Parameters.AddWithValue("@rowid", rowid);
             deleteTaskMember.CommandText = sql;
@@ -188,10 +188,10 @@ namespace StoriesHelper.Models
             // supprime les commentaires
             conn.Open();
             MySqlCommand deleteComments = conn.CreateCommand();
-            sql = "DELETE tc FROM task_comment tc ";
-            sql += "INNER JOIN task tk ON tk.rowid = tc.fk_task ";
-            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
-            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql = "DELETE tc FROM storieshelper_task_comment tc ";
+            sql += "INNER JOIN storieshelper_task tk ON tk.rowid = tc.fk_task ";
+            sql += "INNER JOIN storieshelper_map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
             sql += "WHERE tm.rowid = @rowid ";
             deleteComments.Parameters.AddWithValue("@rowid", rowid);
             deleteComments.CommandText = sql;
@@ -200,9 +200,9 @@ namespace StoriesHelper.Models
             // supprime les tâches
             conn.Open();
             MySqlCommand deleteTasks = conn.CreateCommand();
-            sql = "DELETE tk FROM task tk ";
-            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
-            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql = "DELETE tk FROM storieshelper_task tk ";
+            sql += "INNER JOIN storieshelper_map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
             sql += "WHERE tm.rowid = @rowid ";
             deleteTasks.Parameters.AddWithValue("@rowid", rowid);
             deleteTasks.CommandText = sql;
@@ -211,9 +211,9 @@ namespace StoriesHelper.Models
             // supprime les colonnes
             conn.Open();
             MySqlCommand deleteColumns = conn.CreateCommand();
-            sql = "DELETE mc FROM map_column mc ";
-            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
-            sql += "INNER JOIN project p ON p.rowid = tm.fk_project ";
+            sql = "DELETE mc FROM storieshelper_map_column mc ";
+            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
+            sql += "INNER JOIN storieshelper_project p ON p.rowid = tm.fk_project ";
             sql += "WHERE p.rowid = @rowid ";
             deleteColumns.Parameters.AddWithValue("@rowid", rowid);
             deleteColumns.CommandText = sql;
@@ -222,7 +222,7 @@ namespace StoriesHelper.Models
             // supprime la team
             conn.Open();
             MySqlCommand deleteTeams = conn.CreateCommand();
-            sql = "DELETE tm FROM team tm ";
+            sql = "DELETE tm FROM storieshelper_team tm ";
             sql += "WHERE tm.rowid = @rowid ";
             deleteTeams.Parameters.AddWithValue("@rowid", rowid);
             deleteTeams.CommandText = sql;
@@ -234,7 +234,7 @@ namespace StoriesHelper.Models
         {
             conn.Open();
             MySqlCommand update = conn.CreateCommand();
-            string sql = "UPDATE team ";
+            string sql = "UPDATE storieshelper_team ";
             sql += "SET ";
             sql += "name = @name, ";
             sql += "fk_project = @fk_project, ";

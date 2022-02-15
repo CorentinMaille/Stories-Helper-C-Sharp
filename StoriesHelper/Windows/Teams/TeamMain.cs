@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using StoriesHelper.Windows.Teams.TeamStatistiques;
 
 namespace StoriesHelper.Windows.Teams
 {
@@ -48,6 +49,11 @@ namespace StoriesHelper.Windows.Teams
             PanelListUsers.Controls.Clear();
             PanelListUsers.Controls.Add(ListUsers);
             ListUsers.Show();
+
+            TeamTaskStatistiques TeamTaskStatistiques = new TeamTaskStatistiques(idTeam);
+            panelShowStatistiqueTeam.Controls.Clear();
+            panelShowStatistiqueTeam.Controls.Add(TeamTaskStatistiques);
+            TeamTaskStatistiques.Show();
         }
 
         private void retour_Click(object sender, System.EventArgs e)

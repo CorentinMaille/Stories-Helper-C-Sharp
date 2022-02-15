@@ -97,7 +97,7 @@ namespace StoriesHelper.Models
             command.Parameters.AddWithValue("@rowid", taskId);
 
             string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_user, t.active";
-            sql += " FROM task AS t";
+            sql += " FROM storieshelper_task AS t";
             sql += " WHERE rowid = @rowid";
 
             command.CommandText = sql;
@@ -131,7 +131,7 @@ namespace StoriesHelper.Models
             command.Parameters.AddWithValue("@fk_task", taskId);
 
             sql = "SELECT t.rowid, t.fk_task, t.note, t.fk_user, t.admin";
-            sql += " FROM task_comment AS t";
+            sql += " FROM storieshelper_task_comment AS t";
             sql += " WHERE fk_task = @fk_task";
 
             command.CommandText = sql;
@@ -165,7 +165,7 @@ namespace StoriesHelper.Models
             command.Parameters.AddWithValue("@fk_task", rowid);
            
             string sql = "SELECT *";
-            sql += " FROM task_comment";
+            sql += " FROM storieshelper_task_comment";
             sql += " WHERE fk_task = @fk_task";
 
             command.CommandText = sql;
@@ -189,7 +189,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
 
             string sql = "SELECT MAX(rowid) AS rowid";
-            sql += " FROM task";
+            sql += " FROM storieshelper_task";
 
             command.CommandText = sql;
 

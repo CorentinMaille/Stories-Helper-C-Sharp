@@ -27,7 +27,7 @@ namespace StoriesHelper.Models
                     command.Parameters.AddWithValue("@rowid", rowid);
 
                     string sql = "SELECT *";
-                    sql += " FROM task_comment";
+                    sql += " FROM storieshelper_task_comment";
                     sql += " WHERE rowid = @rowid";
 
                     MySqlDataReader reader = command.ExecuteReader();
@@ -118,7 +118,7 @@ namespace StoriesHelper.Models
                 MySqlCommand command = conn.CreateCommand();
 
                 string sql = "SELECT t.rowid, t.fk_task, t.note, t.fk_user";
-                sql += " FROM task_comment AS t";
+                sql += " FROM storieshelper_task_comment AS t";
                 sql += " WHERE rowid = @rowid";
 
                 MySqlDataReader reader = command.ExecuteReader();
