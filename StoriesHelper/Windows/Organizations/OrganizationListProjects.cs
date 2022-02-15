@@ -1,6 +1,5 @@
 ﻿using StoriesHelper.Models;
-using StoriesHelper.Service;
-using StoriesHelper.Windows.Projects;
+using StoriesHelper.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -74,7 +73,7 @@ namespace StoriesHelper.Windows.Organizations
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
-                button.Location = new Point(150, positionButton);
+                button.Location = new Point(130, positionButton);
                 button.Click += new EventHandler(goToProject);
                 Controls.Add(button);
 

@@ -4,15 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
-using StoriesHelper.Service;
 using StoriesHelper.Services;
 
 namespace StoriesHelper.Windows.Projects
 {
-    public partial class PanelProject : UserControl
+    public partial class ProjectMain : UserControl
     {
         private int idProject;
-        public PanelProject(int idProject)
+        public ProjectMain(int idProject)
         {
             InitializeComponent();
             this.idProject = idProject;
@@ -26,7 +25,7 @@ namespace StoriesHelper.Windows.Projects
             foreach (Team team in Teams)
             {
                 Columns.AddRange(team.getListColumns());
-                Collaborator.AddRange(team.getListUsers());
+                Collaborator.AddRange(team.getListCollaborators());
             }
             foreach (Column column in Columns)
             {
@@ -52,8 +51,8 @@ namespace StoriesHelper.Windows.Projects
             labelType.Text += Project.getType();
             labelDateCreation.Text += Project.getOpen().ToString("d");
             labelNbCollaborateur.Text += Collaborator.Count(); 
-            labelNbTeam.Text += Teams.Count(); 
-            textDescription.Text = Project.getDescription();
+            labelNbTeam.Text += Teams.Count();/*
+            textDescription.Text = Project.getDescription();*/
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 
@@ -87,17 +86,17 @@ namespace StoriesHelper.Windows.Projects
 
         private void SupprimerProject_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Vous êtes sur le point de supprimer le projet ... Cette action est irréversible, êtes-vous sûr de vouloir continuer ?", "Supprimer Projet", (MessageBoxButtons) 1);
+            Project Project = new Project(idProject);
+            DialogResult result = MessageBox.Show("Vous êtes sur le point de supprimer le projet " + Project.getName() + " Cette action est irréversible, êtes-vous sûr de vouloir continuer ?", "Supprimer Projet", (MessageBoxButtons) 1);
             if (result == DialogResult.OK)
             {
-                Project Project = new Project(idProject);
                 try
                 {
                     Project.delete();
-                    MessageBox.Show("Le projet a bien été supprimé.");
+                    MessageBox.Show("Le projet " + Project.getName() + " a bien été supprimé.");
                     main.goToOrganization();
                 } catch {
-                    MessageBox.Show("Une erreur est survenue lors de la suppression du projet.");
+                    MessageBox.Show("Une erreur est survenue lors de la suppression.");
                 }
             }
         }

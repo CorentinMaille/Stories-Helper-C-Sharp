@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows.Organizations
+namespace StoriesHelper.Services
 {
-    partial class OrganizationListProjects
+    partial class CustomTextBox
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -29,19 +29,7 @@ namespace StoriesHelper.Windows.Organizations
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // OrganizationListProjects
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "OrganizationListProjects";
-            this.Size = new System.Drawing.Size(300, 410);
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
         }
 
         #endregion

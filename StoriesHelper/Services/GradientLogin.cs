@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 
 
-namespace StoriesHelper.Service
+namespace StoriesHelper.Services
 {
     public class GradientPageConnexion : Panel
     {

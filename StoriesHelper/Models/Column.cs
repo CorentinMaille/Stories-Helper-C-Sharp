@@ -94,7 +94,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idMap);
             string sql = "SELECT *";
-            sql += " FROM map_column";
+            sql += " FROM storieshelper_map_column";
             sql += " WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -110,7 +110,7 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idColumn", idMap);
             string sql2 = "SELECT *";
-            sql2 += " FROM task";
+            sql2 += " FROM storieshelper_task";
             sql2 += " WHERE fk_column = @idColumn";
             command2.CommandText = sql2;
             MySqlDataReader tasks = command2.ExecuteReader();
@@ -134,7 +134,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idColumn", rowid);
             string sql = "SELECT *";
-            sql += " FROM task";
+            sql += " FROM storieshelper_task";
             sql += " WHERE fk_column = @idColumn";
             command.CommandText = sql;
             MySqlDataReader tasks = command.ExecuteReader();

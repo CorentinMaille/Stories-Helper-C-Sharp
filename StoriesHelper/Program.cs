@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StoriesHelper.Windows;
-using StoriesHelper.Service;
+using StoriesHelper.Services;
 
 namespace StoriesHelper
 {

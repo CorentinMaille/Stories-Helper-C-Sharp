@@ -47,7 +47,7 @@ namespace StoriesHelper.Models
             command.Parameters.AddWithValue("@fk_task", fk_task);
 
             string sql = "SELECT t.fk_user, t.fk_task";
-            sql += " FROM task_member";
+            sql += " FROM storieshelper_task_member";
             sql += " WHERE t.fk_user = @fk_user AND t.fk_task = @fk_task";
 
             command.CommandText = sql;

@@ -15,7 +15,7 @@ namespace StoriesHelper.Models
         protected string password;
         protected int consent;
         protected List<Project> list_projects = new List<Project>();
-        protected List<Collaborator> list_users = new List<Collaborator>();
+        protected List<Collaborator> list_collaborators = new List<Collaborator>();
 
         public Organization(int idOrganization = -1)
         {
@@ -74,11 +74,11 @@ namespace StoriesHelper.Models
         }
         public List<Collaborator> getListUsers()
         {
-            return list_users;
+            return list_collaborators;
         }
         public void setListUsers(List<Collaborator> newListUser)
         {
-            list_users = newListUser;
+            list_collaborators = newListUser;
         }
 
         public void fetch(int idOrganization)
@@ -88,7 +88,7 @@ namespace StoriesHelper.Models
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", idOrganization);
             string sql = "SELECT *";
-            sql += " FROM organization ";
+            sql += " FROM storieshelper_organization ";
             sql += "WHERE rowid = @id";
             command.CommandText = sql;
             MySqlDataReader reader = command.ExecuteReader();
@@ -103,7 +103,7 @@ namespace StoriesHelper.Models
             MySqlCommand command2 = conn.CreateCommand();
             command2.Parameters.AddWithValue("@idOrganization", idOrganization );
             string sql2 = "SELECT *";
-            sql2 += " FROM project";
+            sql2 += " FROM storieshelper_project";
             sql2 += " WHERE fk_organization = @idOrganization";
             command2.CommandText = sql2;
             MySqlDataReader projects = command2.ExecuteReader();
@@ -118,7 +118,7 @@ namespace StoriesHelper.Models
             MySqlCommand command3 = conn.CreateCommand();
             command3.Parameters.AddWithValue("@idOrganization", idOrganization);
             string sql3 = "SELECT *";
-            sql3 += " FROM user";
+            sql3 += " FROM storieshelper_user";
             sql3 += " WHERE fk_organization = @idOrganization";
             sql3 += " AND admin = 0";
             command3.CommandText = sql3;
@@ -127,7 +127,7 @@ namespace StoriesHelper.Models
             {
                 Collaborator user = new Collaborator();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
-                list_users.Add(user);
+                list_collaborators.Add(user);
             }
             conn.Close();
         }

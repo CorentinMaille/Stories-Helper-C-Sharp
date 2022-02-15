@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using StoriesHelper.Service;
+using StoriesHelper.Services;
 
 namespace StoriesHelper.Windows
 {
@@ -9,7 +9,7 @@ namespace StoriesHelper.Windows
 
     public partial class Login : Form
     {
-        MySqlConnection conn = new MySqlConnection("database=projet;server=localhost;user id = root;pwd=");
+        MySqlConnection conn = new MySqlConnection("database=storieshelper;server=localhost;user id = root;pwd=");
         public Login()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace StoriesHelper.Windows
             string mdp = passwordInput.Text;
             string email = emailInput.Text;
             command.Parameters.AddWithValue("@email", email);
-            command.CommandText = "SELECT rowid, email, password, fk_organization FROM user WHERE email = @email AND admin = 1";
+            command.CommandText = "SELECT rowid, email, password, fk_organization FROM storieshelper_user WHERE email = @email AND admin = 1";
             MySqlDataReader reader = command.ExecuteReader();
             string mdpHash = "";
             int idOrg = 0;

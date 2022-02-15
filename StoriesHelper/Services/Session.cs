@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoriesHelper.Service
+namespace StoriesHelper.Services
 {
     public static class Session
     {

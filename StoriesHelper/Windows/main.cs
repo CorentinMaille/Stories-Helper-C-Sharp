@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using StoriesHelper.Service;
+using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations;
 using StoriesHelper.Windows.Projects;
+using StoriesHelper.Windows.Teams;
 
 namespace StoriesHelper.Windows
 {
@@ -50,7 +51,7 @@ namespace StoriesHelper.Windows
         }
         private void organisationButton_Click(object sender, EventArgs e)
         {
-            PanelOrganization OrganizationContent = new PanelOrganization();
+            OrganizationMain OrganizationContent = new OrganizationMain();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);
@@ -60,7 +61,7 @@ namespace StoriesHelper.Windows
 
         static public void goToOrganization()
         {
-            PanelOrganization OrganizationContent = new PanelOrganization();
+            OrganizationMain OrganizationContent = new OrganizationMain();
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(OrganizationContent);
@@ -69,12 +70,21 @@ namespace StoriesHelper.Windows
         }
         static public void goToProject(int idProject)
         {
-            PanelProject ProjectContent = new PanelProject(idProject);
+            ProjectMain ProjectContent = new ProjectMain(idProject);
 
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(ProjectContent);
 
             ProjectContent.Show();
+        }
+        static public void goToTeam(int idTeam, string from)
+        {
+            TeamMain TeamContent = new TeamMain(idTeam, from);
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(TeamContent);
+
+            TeamContent.Show();
         }
         private void QuitButton_Click(object sender, EventArgs e)
         {

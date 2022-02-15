@@ -17,7 +17,7 @@ namespace StoriesHelper.Models
                 MySqlCommand command = conn.CreateCommand();
                 command.Parameters.AddWithValue("@id", idUser);
                 string sql = "SELECT u.rowid, u.password. u.email, u.fk_organization";
-                sql += " FROM user ";
+                sql += " FROM storieshelper_user ";
                 sql += "WHERE rowid = @id";
                 sql += "AND admin = 1";
                 command.CommandText = sql;

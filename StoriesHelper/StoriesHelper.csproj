@@ -36,6 +36,9 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
     </Reference>
+    <Reference Include="FluentDateTime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6ccbc613702e6c71, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentDateTime.2.0.0\lib\netstandard2.0\FluentDateTime.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\OneDrive\Bureau\MySql.Data.dll</HintPath>
@@ -72,6 +75,12 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Collaborator.cs" />
     <Compile Include="Services\Calcul.cs" />
+    <Compile Include="Services\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Organizations\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,11 +99,11 @@
     <Compile Include="Windows\Organizations\OrganizationListTeams.Designer.cs">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\PanelOrganization.cs">
+    <Compile Include="Windows\Organizations\OrganizationMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\PanelOrganization.Designer.cs">
-      <DependentUpon>PanelOrganization.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\OrganizationMain.Designer.cs">
+      <DependentUpon>OrganizationMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BelongsTo.cs" />
     <Compile Include="Models\Column.cs" />
@@ -138,11 +147,11 @@
     <Compile Include="Windows\Projects\ProjectListTeams.Designer.cs">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects\PanelProject.cs">
+    <Compile Include="Windows\Projects\ProjectMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects\PanelProject.Designer.cs">
-      <DependentUpon>PanelProject.cs</DependentUpon>
+    <Compile Include="Windows\Projects\ProjectMain.Designer.cs">
+      <DependentUpon>ProjectMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Quitter.cs">
       <SubType>Form</SubType>
@@ -151,6 +160,30 @@
       <DependentUpon>Quitter.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Session.cs" />
+    <Compile Include="Windows\Teams\TeamMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamMain.Designer.cs">
+      <DependentUpon>TeamMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUsers.Designer.cs">
+      <DependentUpon>TeamListUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.Designer.cs">
+      <DependentUpon>TeamTaskGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskStatistiques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskStatistiques.Designer.cs">
+      <DependentUpon>TeamTaskStatistiques.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Windows\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,8 +199,8 @@
     <EmbeddedResource Include="Windows\Organizations\OrganizationListTeams.resx">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\PanelOrganization.resx">
-      <DependentUpon>PanelOrganization.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationMain.resx">
+      <DependentUpon>OrganizationMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,11 +217,23 @@
     <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\PanelProject.resx">
-      <DependentUpon>PanelProject.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Projects\ProjectMain.resx">
+      <DependentUpon>ProjectMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamMain.resx">
+      <DependentUpon>TeamMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamListUsers.resx">
+      <DependentUpon>TeamListUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.resx">
+      <DependentUpon>TeamTaskGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamTaskStatistiques.resx">
+      <DependentUpon>TeamTaskStatistiques.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\StoriesHelper.exe.config" />
     <None Include="packages.config" />
