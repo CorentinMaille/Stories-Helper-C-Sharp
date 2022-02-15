@@ -16,6 +16,7 @@ namespace StoriesHelper.Models
         protected int consent;
         protected List<Project> list_projects = new List<Project>();
         protected List<Collaborator> list_collaborators = new List<Collaborator>();
+        protected List<LogHistory> list_logs = new List<LogHistory>();
 
         public Organization(int idOrganization = -1)
         {
@@ -81,6 +82,11 @@ namespace StoriesHelper.Models
             list_collaborators = newListUser;
         }
 
+        public List<LogHistory> getLogs()
+        {
+            return list_logs;
+        }
+
         public void fetch(int idOrganization)
         {
             // récupère les informations de l'organisation
@@ -129,6 +135,28 @@ namespace StoriesHelper.Models
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
                 list_collaborators.Add(user);
             }
+            conn.Close();
+
+            // add Organization logs
+            conn.Open();
+
+            MySqlCommand command4 = conn.CreateCommand();
+            command4.Parameters.AddWithValue("@fk_organization", idOrganization);
+            
+            string sql4 = "SELECT *";
+            sql4 += " storieshelper_log_history";
+            sql4 += " WHERE fk_organization = @fk_organization";
+
+            command4.CommandText = sql4;
+
+            MySqlDataReader logs = command4.ExecuteReader();
+            while (logs.Read())
+            {
+                LogHistory LogHistory = new LogHistory();
+                LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(6), logs.GetString(7));
+                list_logs.Add(LogHistory);
+            }
+
             conn.Close();
         }
     }

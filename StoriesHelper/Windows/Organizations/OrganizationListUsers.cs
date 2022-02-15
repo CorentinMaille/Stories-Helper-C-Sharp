@@ -14,7 +14,7 @@ namespace StoriesHelper.Windows.Organizations
         public OrganizationListUsers()
         {
             InitializeComponent();
-            Organization Organization = new Organization(Session.UserId);
+            Organization Organization = new Organization(Session.idOrganization);
             List<Collaborator> Users = Organization.getListUsers();
             Users = Users.OrderBy(u => u.getLastname()).ToList();
             int positionLabel = 20;

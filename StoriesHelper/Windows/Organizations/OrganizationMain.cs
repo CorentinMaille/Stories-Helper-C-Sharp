@@ -11,7 +11,7 @@ namespace StoriesHelper.Windows.Organizations
     {
         public OrganizationMain()
         {
-            int idOrganization = Session.UserId;
+            int idOrganization = Session.idOrganization;
             InitializeComponent();
             Organization Organization = new Organization(idOrganization);
             OrganizationLabel.Text += Organization.getName();

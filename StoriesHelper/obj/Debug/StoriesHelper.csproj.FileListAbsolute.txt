@@ -25,9 +25,6 @@ D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.exe
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.pdb
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.login.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.Main.resources
-D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.PanelOrganization.resources
-D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.Collaborators.resources
-D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.Projects.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.Quitter.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.windows.Home.resources
 D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
@@ -93,3 +90,17 @@ C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windo
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.dll
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.xml
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CopyComplete
+D:\C#\StoriesHelper\StoriesHelper\bin\Debug\FluentDateTime.dll
+D:\C#\StoriesHelper\StoriesHelper\bin\Debug\FluentDateTime.xml
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Logs.LogConsole.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Logs.LogMain.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListUsers.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeams.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationMain.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectMain.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamMain.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUsers.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskGraphics.resources
+D:\C#\StoriesHelper\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskStatistiques.resources

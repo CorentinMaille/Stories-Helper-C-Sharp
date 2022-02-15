@@ -74,12 +74,25 @@
   <ItemGroup>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Collaborator.cs" />
+    <Compile Include="Models\LogHistory.cs" />
     <Compile Include="Services\Calcul.cs" />
     <Compile Include="Services\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Logs\LogMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Logs\LogMain.Designer.cs">
+      <DependentUpon>LogMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Logs\LogConsole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Logs\LogConsole.Designer.cs">
+      <DependentUpon>LogConsole.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Organizations\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +199,12 @@
     </Compile>
     <EmbeddedResource Include="Windows\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Logs\LogConsole.resx">
+      <DependentUpon>LogConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Logs\LogMain.resx">
+      <DependentUpon>LogMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>

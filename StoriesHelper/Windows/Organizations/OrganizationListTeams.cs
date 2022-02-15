@@ -14,7 +14,7 @@ namespace StoriesHelper.Windows.Organizations
         public OrganizationListTeams(bool archived = false, bool open = true)
         {
             InitializeComponent();
-            Organization Organization = new Organization(Session.UserId);
+            Organization Organization = new Organization(Session.idOrganization);
             List<Project> Projects = Organization.getListProjects();
             List<Team> ListTeams = new List<Team>();
             List<Team> Teams = new List<Team>();

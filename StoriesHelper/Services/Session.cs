@@ -8,6 +8,6 @@ namespace StoriesHelper.Services
 {
     public static class Session
     {
-        public static int UserId;
+        public static int idOrganization;
     }
 }
