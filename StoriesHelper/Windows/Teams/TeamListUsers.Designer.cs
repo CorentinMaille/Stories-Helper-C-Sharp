@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows.Organizations
+namespace StoriesHelper.Windows.Teams
 {
-    partial class OrganizationListProjects
+    partial class TeamListUsers
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -31,15 +31,13 @@ namespace StoriesHelper.Windows.Organizations
         {
             this.SuspendLayout();
             // 
-            // OrganizationListProjects
+            // TeamListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "OrganizationListProjects";
-            this.Size = new System.Drawing.Size(300, 410);
+            this.Name = "TeamListUsers";
+            this.Size = new System.Drawing.Size(550, 260);
             this.ResumeLayout(false);
 
         }

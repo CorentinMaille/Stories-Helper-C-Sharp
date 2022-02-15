@@ -2,15 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
-using StoriesHelper.Service;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations;
 
 namespace StoriesHelper.Windows.Organizations
 {
-    public partial class PanelOrganization : UserControl
+    public partial class OrganizationMain : UserControl
     {
-        public PanelOrganization()
+        public OrganizationMain()
         {
             int idOrganization = Session.UserId;
             InitializeComponent();
@@ -84,20 +83,20 @@ namespace StoriesHelper.Windows.Organizations
 
 
         }
-        private void displayOpenArchived(object sender, System.EventArgs e)
+        private void displayOpenArchivedProject(object sender, System.EventArgs e)
         {
-            if (checkBoxArchived.Checked && checkBoxOpen.Checked)
+            if (checkBoxArchivedProject.Checked && checkBoxOpenProject.Checked)
             {
                 OrganizationListProjects ListProjects = new OrganizationListProjects(true, true);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
-            } else if (checkBoxArchived.Checked && !checkBoxOpen.Checked) {
+            } else if (checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked) {
                 OrganizationListProjects ListProjects = new OrganizationListProjects(true, false);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
-            } else if (!checkBoxArchived.Checked && !checkBoxOpen.Checked) {
+            } else if (!checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked) {
                 OrganizationListProjects ListProjects = new OrganizationListProjects(false, false);
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
@@ -107,6 +106,32 @@ namespace StoriesHelper.Windows.Organizations
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
+            }
+        }
+        
+        private void displayOpenArchivedTeam(object sender, System.EventArgs e)
+        {
+            if (checkBoxArchivedTeam.Checked && checkBoxOpenTeam.Checked)
+            {
+                OrganizationListTeams ListTeams = new OrganizationListTeams(true, true);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(ListTeams);
+                ListTeams.Show();
+            } else if (checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked) {
+                OrganizationListTeams ListTeams = new OrganizationListTeams(true, false);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(ListTeams);
+                ListTeams.Show();
+            } else if (!checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked) {
+                OrganizationListTeams ListTeams = new OrganizationListTeams(false, false);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(ListTeams);
+                ListTeams.Show();
+            } else {
+                OrganizationListTeams ListTeams = new OrganizationListTeams();
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(ListTeams);
+                ListTeams.Show();
             }
         }
         private void displayTaskChart(List<Task> Tasks, List<Task> TasksOpen, List<Task> TasksClosed)

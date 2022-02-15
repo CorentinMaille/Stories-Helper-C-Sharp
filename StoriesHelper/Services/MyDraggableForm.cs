@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoriesHelper.Service
+namespace StoriesHelper.Services
 {
     public class MyDraggableForm : Form
     {

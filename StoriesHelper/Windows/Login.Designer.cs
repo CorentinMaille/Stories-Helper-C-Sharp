@@ -1,4 +1,4 @@
-﻿using StoriesHelper.Service;
+﻿using StoriesHelper.Services;
 
 namespace StoriesHelper.Windows
 {
@@ -31,7 +31,7 @@ namespace StoriesHelper.Windows
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.gradientPageConnexion1 = new StoriesHelper.Service.GradientPageConnexion();
+            this.gradientPageConnexion1 = new StoriesHelper.Services.GradientPageConnexion();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.erreurPassword = new System.Windows.Forms.Label();
             this.erreurEmail = new System.Windows.Forms.Label();

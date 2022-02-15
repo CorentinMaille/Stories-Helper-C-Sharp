@@ -1,4 +1,4 @@
-﻿using StoriesHelper.Service;
+﻿using StoriesHelper.Services;
 using System;
 using System.Collections.Generic;
 using StoriesHelper.Models;
@@ -44,7 +44,7 @@ namespace StoriesHelper.Windows.Projects
                 this.Controls.Add(Label);
 
                 Label NbCollaborateur = new Label();
-                NbCollaborateur.Text = Team.getListUsers().Count().ToString();
+                NbCollaborateur.Text = Team.getListCollaborators().Count().ToString();
                 NbCollaborateur.Name = "NbCollaborateur" + Team.getRowId();
                 NbCollaborateur.UseMnemonic = true;
                 NbCollaborateur.AutoSize = true;
@@ -78,7 +78,7 @@ namespace StoriesHelper.Windows.Projects
 
                 // Créer Le button
                 Button button = new Button();
-                button.Name = Team.getName() + " " + Team.getRowId().ToString();
+                button.Name = Team.getRowId().ToString();
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
@@ -93,7 +93,7 @@ namespace StoriesHelper.Windows.Projects
         private void goToTeam(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            System.Windows.MessageBox.Show(button.Name);
+            main.goToTeam(Convert.ToInt32(button.Name), "Project");
         }
     }
 }

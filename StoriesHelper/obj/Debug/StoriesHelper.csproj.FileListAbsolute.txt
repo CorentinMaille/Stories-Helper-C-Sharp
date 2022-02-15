@@ -51,11 +51,12 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.cs
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CopyComplete
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.PanelOrganization.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListUsers.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeams.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.PanelProject.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUsers.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationMain.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectMain.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamMain.resources

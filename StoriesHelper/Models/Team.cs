@@ -9,7 +9,7 @@ namespace StoriesHelper.Models
         protected int rowid;
         protected string name;
         protected int fk_project;
-        protected List<Collaborator> list_users = new List<Collaborator>();
+        protected List<Collaborator> list_collaborators = new List<Collaborator>();
         protected List<Column> list_columns = new List<Column>();
         protected bool active;
 
@@ -44,13 +44,13 @@ namespace StoriesHelper.Models
         {
             fk_project = newProject;
         }        
-        public List<Collaborator> getListUsers()
+        public List<Collaborator> getListCollaborators()
         {
-            return list_users;
+            return list_collaborators;
         }
-        public void setListUsers(List<Collaborator> newListUsers)
+        public void setListCollaborators(List<Collaborator> newListCollaborators)
         {
-            list_users = newListUsers;
+            list_collaborators = newListCollaborators;
         }
         public List<Column> getListColumns()
         {
@@ -99,8 +99,8 @@ namespace StoriesHelper.Models
             while (users.Read())
             {
                 Collaborator user = new Collaborator();
-                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
-                list_users.Add(user);
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
+                list_collaborators.Add(user);
             }
             conn.Close();
             conn.Open();
@@ -140,8 +140,8 @@ namespace StoriesHelper.Models
             while(users.Read())
             {
                 Collaborator user = new Collaborator();
-                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
-                list_users.Add(user);
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
+                list_collaborators.Add(user);
             }
             conn.Close();
             conn.Open();
@@ -158,6 +158,94 @@ namespace StoriesHelper.Models
                 column.initializedColumn(columns.GetInt32(0), columns.GetString(1), columns.GetInt32(2), columns.GetInt32(3));
                 list_columns.Add(column);
             }
+            conn.Close();
+        }
+
+        public void delete()
+        {
+            // supprime les liens team/utilisateur
+            conn.Open();
+            MySqlCommand deleteBelongTo = conn.CreateCommand();
+            string sql = "DELETE mc FROM map_column mc ";
+            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql += "WHERE tm.rowid = @rowid ";
+            deleteBelongTo.Parameters.AddWithValue("@rowid", rowid);
+            deleteBelongTo.CommandText = sql;
+            deleteBelongTo.ExecuteNonQuery();
+            conn.Close();
+            // supprime les liens team/utilisateur
+            conn.Open();
+            MySqlCommand deleteTaskMember = conn.CreateCommand();
+            sql = "DELETE tkm FROM task_member tkm ";
+            sql += "INNER JOIN task tk ON tk.rowid = tkm.fk_task ";
+            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql += "WHERE tm.rowid = @rowid ";
+            deleteTaskMember.Parameters.AddWithValue("@rowid", rowid);
+            deleteTaskMember.CommandText = sql;
+            deleteTaskMember.ExecuteNonQuery();
+            conn.Close();
+            // supprime les commentaires
+            conn.Open();
+            MySqlCommand deleteComments = conn.CreateCommand();
+            sql = "DELETE tc FROM task_comment tc ";
+            sql += "INNER JOIN task tk ON tk.rowid = tc.fk_task ";
+            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql += "WHERE tm.rowid = @rowid ";
+            deleteComments.Parameters.AddWithValue("@rowid", rowid);
+            deleteComments.CommandText = sql;
+            deleteComments.ExecuteNonQuery();
+            conn.Close();
+            // supprime les tâches
+            conn.Open();
+            MySqlCommand deleteTasks = conn.CreateCommand();
+            sql = "DELETE tk FROM task tk ";
+            sql += "INNER JOIN map_column mc ON mc.rowid = tk.fk_column ";
+            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql += "WHERE tm.rowid = @rowid ";
+            deleteTasks.Parameters.AddWithValue("@rowid", rowid);
+            deleteTasks.CommandText = sql;
+            deleteTasks.ExecuteNonQuery();
+            conn.Close();
+            // supprime les colonnes
+            conn.Open();
+            MySqlCommand deleteColumns = conn.CreateCommand();
+            sql = "DELETE mc FROM map_column mc ";
+            sql += "INNER JOIN team tm ON tm.rowid = mc.fk_team ";
+            sql += "INNER JOIN project p ON p.rowid = tm.fk_project ";
+            sql += "WHERE p.rowid = @rowid ";
+            deleteColumns.Parameters.AddWithValue("@rowid", rowid);
+            deleteColumns.CommandText = sql;
+            deleteColumns.ExecuteNonQuery();
+            conn.Close();
+            // supprime la team
+            conn.Open();
+            MySqlCommand deleteTeams = conn.CreateCommand();
+            sql = "DELETE tm FROM team tm ";
+            sql += "WHERE tm.rowid = @rowid ";
+            deleteTeams.Parameters.AddWithValue("@rowid", rowid);
+            deleteTeams.CommandText = sql;
+            deleteTeams.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void update()
+        {
+            conn.Open();
+            MySqlCommand update = conn.CreateCommand();
+            string sql = "UPDATE team ";
+            sql += "SET ";
+            sql += "name = @name, ";
+            sql += "fk_project = @fk_project, ";
+            sql += "active = @active ";
+            sql += "WHERE rowid = @rowid";
+            update.Parameters.AddWithValue("@name", name);
+            update.Parameters.AddWithValue("@fk_project", fk_project);
+            update.Parameters.AddWithValue("@active", active);
+            update.Parameters.AddWithValue("@rowid", rowid);
+            update.CommandText = sql;
+            update.ExecuteNonQuery();
             conn.Close();
         }
     }
