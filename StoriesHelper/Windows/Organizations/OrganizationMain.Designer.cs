@@ -33,7 +33,7 @@ namespace StoriesHelper.Windows.Organizations
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.gradient = new StoriesHelper.Services.GradientPageConnexion();
+            this.gradient = new StoriesHelper.Services.Gradient();
             this.checkBoxArchivedTeam = new System.Windows.Forms.CheckBox();
             this.checkBoxOpenTeam = new System.Windows.Forms.CheckBox();
             this.labelTitreListeUtilisateur = new System.Windows.Forms.Label();
@@ -342,7 +342,7 @@ namespace StoriesHelper.Windows.Organizations
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskOrganization;
         private System.Windows.Forms.CheckBox checkBoxOpenProject;
         private System.Windows.Forms.Label NbArchivedProjects;
-        private Services.GradientPageConnexion gradient;
+        private Services.Gradient gradient;
         private System.Windows.Forms.Label labelTitreListeTeam;
         private System.Windows.Forms.Label labelTitreListeUtilisateur;
         private System.Windows.Forms.CheckBox checkBoxArchivedTeam;

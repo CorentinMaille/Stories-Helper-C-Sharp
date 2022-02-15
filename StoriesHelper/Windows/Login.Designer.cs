@@ -31,7 +31,7 @@ namespace StoriesHelper.Windows
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.gradientPageConnexion1 = new StoriesHelper.Services.GradientPageConnexion();
+            this.Gradient1 = new StoriesHelper.Services.Gradient();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.erreurPassword = new System.Windows.Forms.Label();
             this.erreurEmail = new System.Windows.Forms.Label();
@@ -41,32 +41,32 @@ namespace StoriesHelper.Windows
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.emailInput = new System.Windows.Forms.TextBox();
-            this.gradientPageConnexion1.SuspendLayout();
+            this.Gradient1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gradientPageConnexion1
+            // Gradient1
             // 
-            this.gradientPageConnexion1.Angle = 90F;
-            this.gradientPageConnexion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(181)))));
-            this.gradientPageConnexion1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(1)))), ((int)(((byte)(224)))));
-            this.gradientPageConnexion1.Controls.Add(this.pictureBox1);
-            this.gradientPageConnexion1.Controls.Add(this.erreurPassword);
-            this.gradientPageConnexion1.Controls.Add(this.erreurEmail);
-            this.gradientPageConnexion1.Controls.Add(this.connexion);
-            this.gradientPageConnexion1.Controls.Add(this.titre);
-            this.gradientPageConnexion1.Controls.Add(this.passwordInput);
-            this.gradientPageConnexion1.Controls.Add(this.emailLabel);
-            this.gradientPageConnexion1.Controls.Add(this.passwordLabel);
-            this.gradientPageConnexion1.Controls.Add(this.emailInput);
-            this.gradientPageConnexion1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gradientPageConnexion1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPageConnexion1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gradientPageConnexion1.Name = "gradientPageConnexion1";
-            this.gradientPageConnexion1.Size = new System.Drawing.Size(450, 575);
-            this.gradientPageConnexion1.TabIndex = 7;
-            this.gradientPageConnexion1.TopColor = System.Drawing.Color.Empty;
-            this.gradientPageConnexion1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.Gradient1.Angle = 90F;
+            this.Gradient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(181)))));
+            this.Gradient1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(1)))), ((int)(((byte)(224)))));
+            this.Gradient1.Controls.Add(this.pictureBox1);
+            this.Gradient1.Controls.Add(this.erreurPassword);
+            this.Gradient1.Controls.Add(this.erreurEmail);
+            this.Gradient1.Controls.Add(this.connexion);
+            this.Gradient1.Controls.Add(this.titre);
+            this.Gradient1.Controls.Add(this.passwordInput);
+            this.Gradient1.Controls.Add(this.emailLabel);
+            this.Gradient1.Controls.Add(this.passwordLabel);
+            this.Gradient1.Controls.Add(this.emailInput);
+            this.Gradient1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Gradient1.Location = new System.Drawing.Point(0, 0);
+            this.Gradient1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gradient1.Name = "Gradient1";
+            this.Gradient1.Size = new System.Drawing.Size(450, 575);
+            this.Gradient1.TabIndex = 7;
+            this.Gradient1.TopColor = System.Drawing.Color.Empty;
+            this.Gradient1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // pictureBox1
             // 
@@ -187,15 +187,15 @@ namespace StoriesHelper.Windows
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(450, 575);
-            this.Controls.Add(this.gradientPageConnexion1);
+            this.Controls.Add(this.Gradient1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pageConnexion";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.gradientPageConnexion1.ResumeLayout(false);
-            this.gradientPageConnexion1.PerformLayout();
+            this.Gradient1.ResumeLayout(false);
+            this.Gradient1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -209,7 +209,7 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordInput;
         private System.Windows.Forms.Button connexion;
-        private GradientPageConnexion gradientPageConnexion1;
+        private Gradient Gradient1;
         private System.Windows.Forms.Label erreurEmail;
         private System.Windows.Forms.Label erreurPassword;
         private System.Windows.Forms.PictureBox pictureBox1;

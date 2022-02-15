@@ -115,7 +115,7 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Organization.cs" />
-    <Compile Include="Services\GradientLogin.cs">
+    <Compile Include="Services\Gradient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\MyDraggableForm.cs">

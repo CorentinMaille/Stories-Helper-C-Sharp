@@ -29,7 +29,7 @@ namespace StoriesHelper.Windows.Teams
         /// </summary>
         private void InitializeComponent()
         {
-            this.gradientPanelTeam = new StoriesHelper.Services.GradientPageConnexion();
+            this.gradientPanelTeam = new StoriesHelper.Services.Gradient();
             this.buttonArchiverTeam = new System.Windows.Forms.Button();
             this.buttonSupprimerTeam = new System.Windows.Forms.Button();
             this.ArchivedTeam = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@ namespace StoriesHelper.Windows.Teams
             this.ArchivedTeam.ForeColor = System.Drawing.Color.Red;
             this.ArchivedTeam.Location = new System.Drawing.Point(905, 32);
             this.ArchivedTeam.Name = "ArchivedTeam";
-            this.ArchivedTeam.Size = new System.Drawing.Size(0, 51);
+            this.ArchivedTeam.Size = new System.Drawing.Size(0, 41);
             this.ArchivedTeam.TabIndex = 27;
             // 
             // Email
@@ -115,7 +115,7 @@ namespace StoriesHelper.Windows.Teams
             this.Email.Location = new System.Drawing.Point(1067, 734);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(75, 28);
+            this.Email.Size = new System.Drawing.Size(60, 22);
             this.Email.TabIndex = 34;
             this.Email.Text = "Email";
             // 
@@ -126,7 +126,7 @@ namespace StoriesHelper.Windows.Teams
             this.Prenom.Location = new System.Drawing.Point(880, 734);
             this.Prenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Prenom.Name = "Prenom";
-            this.Prenom.Size = new System.Drawing.Size(100, 28);
+            this.Prenom.Size = new System.Drawing.Size(80, 22);
             this.Prenom.TabIndex = 33;
             this.Prenom.Text = "Prénom";
             // 
@@ -137,7 +137,7 @@ namespace StoriesHelper.Windows.Teams
             this.Nom.Location = new System.Drawing.Point(720, 734);
             this.Nom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nom.Name = "Nom";
-            this.Nom.Size = new System.Drawing.Size(63, 28);
+            this.Nom.Size = new System.Drawing.Size(51, 22);
             this.Nom.TabIndex = 32;
             this.Nom.Text = "Nom";
             // 
@@ -176,7 +176,7 @@ namespace StoriesHelper.Windows.Teams
             this.labelNbCollaborateur.Location = new System.Drawing.Point(696, 687);
             this.labelNbCollaborateur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNbCollaborateur.Name = "labelNbCollaborateur";
-            this.labelNbCollaborateur.Size = new System.Drawing.Size(317, 28);
+            this.labelNbCollaborateur.Size = new System.Drawing.Size(252, 22);
             this.labelNbCollaborateur.TabIndex = 29;
             this.labelNbCollaborateur.Text = "Nombre de collaborateurs : ";
             // 
@@ -188,16 +188,16 @@ namespace StoriesHelper.Windows.Teams
             this.LabelTitreTeam.ForeColor = System.Drawing.SystemColors.ControlText;
             this.LabelTitreTeam.Location = new System.Drawing.Point(73, 54);
             this.LabelTitreTeam.Name = "LabelTitreTeam";
-            this.LabelTitreTeam.Size = new System.Drawing.Size(159, 51);
+            this.LabelTitreTeam.Size = new System.Drawing.Size(157, 41);
             this.LabelTitreTeam.TabIndex = 3;
-            this.LabelTitreTeam.Text = "Team : ";
+            this.LabelTitreTeam.Text = "Équipe : ";
             // 
             // TeamMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gradientPanelTeam);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TeamMain";
             this.Size = new System.Drawing.Size(1468, 1108);
             this.gradientPanelTeam.ResumeLayout(false);
@@ -208,7 +208,7 @@ namespace StoriesHelper.Windows.Teams
 
         #endregion
 
-        private Services.GradientPageConnexion gradientPanelTeam;
+        private Services.Gradient gradientPanelTeam;
         private System.Windows.Forms.Label LabelTitreTeam;
         private System.Windows.Forms.Label labelNbCollaborateur;
         private System.Windows.Forms.Panel panelShowStatistiqueTeam;

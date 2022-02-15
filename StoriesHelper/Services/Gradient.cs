@@ -11,7 +11,7 @@ using System.Drawing.Drawing2D;
 
 namespace StoriesHelper.Services
 {
-    public class GradientPageConnexion : Panel
+    public class Gradient : Panel
     {
         public Color TopColor { get; set; }
         public Color BottomColor { get; set; }

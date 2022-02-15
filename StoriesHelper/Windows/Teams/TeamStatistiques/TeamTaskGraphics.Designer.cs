@@ -43,34 +43,37 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             this.TeamGraphicsStat.BorderlineColor = System.Drawing.Color.Transparent;
             chartArea1.Area3DStyle.Enable3D = true;
             chartArea1.Area3DStyle.IsClustered = true;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
             chartArea1.BorderColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
             this.TeamGraphicsStat.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             legend1.Name = "Legend1";
             this.TeamGraphicsStat.Legends.Add(legend1);
-            this.TeamGraphicsStat.Location = new System.Drawing.Point(0, 3);
+            this.TeamGraphicsStat.Location = new System.Drawing.Point(0, 2);
+            this.TeamGraphicsStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TeamGraphicsStat.Name = "TeamGraphicsStat";
-            this.TeamGraphicsStat.RightToLeft = System.Windows.Forms.RightToLeft.No;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Tâches en cours";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
-            series2.Name = "Tâches archivées";
+            series2.Name = "Tâches terminées";
             this.TeamGraphicsStat.Series.Add(series1);
             this.TeamGraphicsStat.Series.Add(series2);
-            this.TeamGraphicsStat.Size = new System.Drawing.Size(1050, 502);
+            this.TeamGraphicsStat.Size = new System.Drawing.Size(788, 408);
             this.TeamGraphicsStat.TabIndex = 0;
             this.TeamGraphicsStat.Text = "chart1";
             // 
             // TeamTaskGraphics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TeamGraphicsStat);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TeamTaskGraphics";
-            this.Size = new System.Drawing.Size(1050, 502);
+            this.Size = new System.Drawing.Size(788, 408);
             ((System.ComponentModel.ISupportInitialize)(this.TeamGraphicsStat)).EndInit();
             this.ResumeLayout(false);
 

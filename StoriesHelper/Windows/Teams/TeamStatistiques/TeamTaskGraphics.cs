@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using FluentDateTime;
+using FluentDate;
+
+
 
 namespace StoriesHelper.Windows.Teams.TeamStatistiques
 {
@@ -23,29 +27,56 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             List<Column> Columns = Team.getListColumns();
             List<Collaborator> Collaborator = Team.getListCollaborators();
             List<Task> Tasks = new List<Task>();
-            List<Task> TasksClosed = new List<Task>();
+            List<Task> TasksFinished = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            foreach (Column column in Columns)
+            DateTime DateBegin = DateTime.Now;
+            DateTime DateEnd = DateTime.Now;
+            switch (date)
             {
-                Tasks.AddRange(column.getListTasks());
+                case "semaine":
+                    DateBegin = DateBegin.BeginningOfWeek();
+                    DateEnd = DateEnd.EndOfWeek();
+                    break;
+                case "mois":
+                    DateBegin = DateBegin.BeginningOfMonth();
+                    DateEnd = DateEnd.EndOfMonth();
+                    break;
+                case "annee":
+                    DateBegin = DateBegin.BeginningOfYear();
+                    DateEnd = DateEnd.EndOfYear();
+                    break;
             }
-            foreach (Task task in Tasks)
+            if(relativeDate != 0)
             {
-                if (task.isActive())
+                switch (date)
                 {
-                    TasksOpen.Add(task);
-                }
-                else
-                {
-                    TasksClosed.Add(task);
+                    case "jour":
+                        DateBegin = DateBegin + relativeDate.Days();
+                        DateEnd = DateEnd + relativeDate.Days();
+                        break;
+                    case "semaine":
+                        DateBegin = DateBegin + relativeDate.Weeks();
+                        DateEnd = DateEnd + relativeDate.Weeks();
+                        break;
+                    case "mois":
+                        DateBegin = DateBegin + relativeDate.Months();
+                        DateEnd = DateEnd + relativeDate.Months();
+                        break;
+                    case "annee":
+                        DateBegin = DateBegin + relativeDate.Years();
+                        DateEnd = DateEnd + relativeDate.Years();
+                        break;
                 }
             }
-            TeamGraphicsStat.Series["Tâches en cours"].IsValueShownAsLabel = true;
-            TeamGraphicsStat.Series["Tâches archivées"].IsValueShownAsLabel = true;
+
             foreach (Column Column in Columns)
             {
-                TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), 1);
-                TeamGraphicsStat.Series["Tâches archivées"].Points.AddXY(Column.getName(), TasksClosed.Count());
+                Tasks.AddRange(Column.getListTasks());
+                TasksOpen = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, false);
+                TasksFinished = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, true);
+                TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), TasksOpen.Count());
+                TeamGraphicsStat.Series["Tâches terminées"].Points.AddXY(Column.getName(), TasksFinished.Count());
+                TeamGraphicsStat.Series["Tâches terminées"].Points.AddXY(Column.getName(), Tasks.Count());
             }
         }
     }
