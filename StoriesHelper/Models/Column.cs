@@ -163,8 +163,8 @@ namespace StoriesHelper.Models
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idColumn", rowid);
-            command.Parameters.AddWithValue("@dateBegin", dateBegin.ToString("dd/MM/yyyy 00:00:00"));
-            command.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("dd/MM/yyyy 23:59:59"));
+            command.Parameters.AddWithValue("@dateBegin", dateBegin.ToString("yyyy-MM-dd 00:00:00"));
+            command.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("yyyy-MM-dd 23:59:59"));
             string sql = "SELECT *";
             sql += " FROM storieshelper_task";
             sql += " WHERE fk_column = @idColumn";

@@ -40,10 +40,11 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // precedent
             // 
-            this.precedent.Location = new System.Drawing.Point(322, 4);
-            this.precedent.Margin = new System.Windows.Forms.Padding(4);
+            this.precedent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.precedent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precedent.Location = new System.Drawing.Point(280, 3);
             this.precedent.Name = "precedent";
-            this.precedent.Size = new System.Drawing.Size(116, 33);
+            this.precedent.Size = new System.Drawing.Size(100, 30);
             this.precedent.TabIndex = 32;
             this.precedent.Text = "<< précédent";
             this.precedent.UseVisualStyleBackColor = true;
@@ -51,21 +52,25 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // jour
             // 
-            this.jour.Location = new System.Drawing.Point(481, 4);
-            this.jour.Margin = new System.Windows.Forms.Padding(4);
+            this.jour.BackColor = System.Drawing.Color.Transparent;
+            this.jour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.jour.FlatAppearance.BorderSize = 0;
+            this.jour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.jour.Location = new System.Drawing.Point(410, 3);
             this.jour.Name = "jour";
-            this.jour.Size = new System.Drawing.Size(116, 33);
+            this.jour.Size = new System.Drawing.Size(100, 30);
             this.jour.TabIndex = 33;
             this.jour.Text = "Jour";
-            this.jour.UseVisualStyleBackColor = true;
+            this.jour.UseVisualStyleBackColor = false;
             this.jour.Click += new System.EventHandler(this.btnDateGraphics);
             // 
             // mois
             // 
-            this.mois.Location = new System.Drawing.Point(810, 4);
-            this.mois.Margin = new System.Windows.Forms.Padding(4);
+            this.mois.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mois.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.mois.Location = new System.Drawing.Point(670, 3);
             this.mois.Name = "mois";
-            this.mois.Size = new System.Drawing.Size(116, 33);
+            this.mois.Size = new System.Drawing.Size(100, 30);
             this.mois.TabIndex = 34;
             this.mois.Text = "Mois";
             this.mois.UseVisualStyleBackColor = true;
@@ -73,10 +78,11 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // annee
             // 
-            this.annee.Location = new System.Drawing.Point(978, 4);
-            this.annee.Margin = new System.Windows.Forms.Padding(4);
+            this.annee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.annee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.annee.Location = new System.Drawing.Point(800, 3);
             this.annee.Name = "annee";
-            this.annee.Size = new System.Drawing.Size(116, 33);
+            this.annee.Size = new System.Drawing.Size(100, 30);
             this.annee.TabIndex = 35;
             this.annee.Text = "Année";
             this.annee.UseVisualStyleBackColor = true;
@@ -84,10 +90,11 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // suivant
             // 
-            this.suivant.Location = new System.Drawing.Point(1132, 4);
-            this.suivant.Margin = new System.Windows.Forms.Padding(4);
+            this.suivant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suivant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.suivant.Location = new System.Drawing.Point(930, 3);
             this.suivant.Name = "suivant";
-            this.suivant.Size = new System.Drawing.Size(116, 33);
+            this.suivant.Size = new System.Drawing.Size(100, 30);
             this.suivant.TabIndex = 36;
             this.suivant.Text = "Suivant >>";
             this.suivant.UseVisualStyleBackColor = true;
@@ -95,10 +102,11 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // semaine
             // 
-            this.semaine.Location = new System.Drawing.Point(645, 4);
-            this.semaine.Margin = new System.Windows.Forms.Padding(4);
+            this.semaine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.semaine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.semaine.Location = new System.Drawing.Point(540, 3);
             this.semaine.Name = "semaine";
-            this.semaine.Size = new System.Drawing.Size(116, 33);
+            this.semaine.Size = new System.Drawing.Size(100, 30);
             this.semaine.TabIndex = 37;
             this.semaine.Text = "Semaine";
             this.semaine.UseVisualStyleBackColor = true;
@@ -106,16 +114,17 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             // PanelTeamTaskGraphics
             // 
-            this.PanelTeamTaskGraphics.Location = new System.Drawing.Point(280, 49);
+            this.PanelTeamTaskGraphics.Location = new System.Drawing.Point(0, 40);
+            this.PanelTeamTaskGraphics.Margin = new System.Windows.Forms.Padding(2);
             this.PanelTeamTaskGraphics.Name = "PanelTeamTaskGraphics";
-            this.PanelTeamTaskGraphics.Size = new System.Drawing.Size(1050, 502);
+            this.PanelTeamTaskGraphics.Size = new System.Drawing.Size(1075, 408);
             this.PanelTeamTaskGraphics.TabIndex = 38;
             // 
             // TeamTaskStatistiques
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.PanelTeamTaskGraphics);
             this.Controls.Add(this.semaine);
             this.Controls.Add(this.mois);
@@ -123,9 +132,8 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             this.Controls.Add(this.annee);
             this.Controls.Add(this.jour);
             this.Controls.Add(this.precedent);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TeamTaskStatistiques";
-            this.Size = new System.Drawing.Size(1333, 554);
+            this.Size = new System.Drawing.Size(1077, 450);
             this.ResumeLayout(false);
 
         }

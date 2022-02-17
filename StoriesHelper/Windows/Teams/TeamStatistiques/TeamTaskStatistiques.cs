@@ -42,6 +42,13 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
                 default:
                     relativeDate = 0;
                     date = button.Name;
+                    precedent.BackColor = precedent.Name == date ? Color.Gray : Color.Transparent;
+                    jour.BackColor = jour.Name == date ? Color.Gray : Color.Transparent;
+                    semaine.BackColor = semaine.Name == date ? Color.Gray : Color.Transparent;
+                    mois.BackColor = mois.Name == date ? Color.Gray : Color.Transparent;
+                    annee.BackColor = annee.Name == date ? Color.Gray : Color.Transparent;
+                    suivant.BackColor = suivant.Name == date ? Color.Gray : Color.Transparent;
+
                     break;
             }
 

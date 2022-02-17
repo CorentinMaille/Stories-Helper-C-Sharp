@@ -25,10 +25,9 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             this.idTeam = idTeam;
             Team Team = new Team(idTeam);
             List<Column> Columns = Team.getListColumns();
+            Columns = Columns.OrderBy(c => c.getRank()).ToList();
             List<Collaborator> Collaborator = Team.getListCollaborators();
             List<Task> Tasks = new List<Task>();
-            List<Task> TasksFinished = new List<Task>();
-            List<Task> TasksOpen = new List<Task>();
             DateTime DateBegin = DateTime.Now;
             DateTime DateEnd = DateTime.Now;
             switch (date)
@@ -71,13 +70,22 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
 
             foreach (Column Column in Columns)
             {
-                Tasks.AddRange(Column.getListTasks());
-                TasksOpen = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, false);
-                TasksFinished = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, true);
-                TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), TasksOpen.Count());
-                TeamGraphicsStat.Series["Tâches terminées"].Points.AddXY(Column.getName(), TasksFinished.Count());
-                TeamGraphicsStat.Series["Tâches terminées"].Points.AddXY(Column.getName(), Tasks.Count());
+                if(Column.getName() == "Closed")
+                {
+                    Tasks = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, true);
+                    TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), Tasks.Count());
+                    TeamGraphicsStat.Series["Tâches en cours"].LabelBackColor = Color.Red;
+                } else
+                {
+                    Tasks = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, false);  
+                    TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), Tasks.Count());
+                }
             }
+
+            TitreStatistique TitreStatistique = new TitreStatistique(idTeam, date, relativeDate);
+            PanelTitreStatistique.Controls.Clear();
+            PanelTitreStatistique.Controls.Add(TitreStatistique);
+            TitreStatistique.Show();
         }
     }
 }
