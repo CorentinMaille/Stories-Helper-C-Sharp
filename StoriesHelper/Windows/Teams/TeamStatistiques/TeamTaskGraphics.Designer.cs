@@ -32,8 +32,8 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TeamGraphicsStat = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.PanelTitreStatistique = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.TeamGraphicsStat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,36 +41,54 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.TeamGraphicsStat.BackColor = System.Drawing.Color.Transparent;
             this.TeamGraphicsStat.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
             chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 20;
             chartArea1.Area3DStyle.IsClustered = true;
+            chartArea1.AxisX.IsMarksNextToAxis = false;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisX2.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea1.AxisY2.LineColor = System.Drawing.Color.Transparent;
             chartArea1.BorderColor = System.Drawing.Color.Transparent;
             chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
             this.TeamGraphicsStat.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             legend1.Name = "Legend1";
             this.TeamGraphicsStat.Legends.Add(legend1);
-            this.TeamGraphicsStat.Location = new System.Drawing.Point(0, 3);
+            this.TeamGraphicsStat.Location = new System.Drawing.Point(44, 2);
+            this.TeamGraphicsStat.Margin = new System.Windows.Forms.Padding(2);
             this.TeamGraphicsStat.Name = "TeamGraphicsStat";
-            this.TeamGraphicsStat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TeamGraphicsStat.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
             series1.Name = "Tâches en cours";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Tâches archivées";
             this.TeamGraphicsStat.Series.Add(series1);
-            this.TeamGraphicsStat.Series.Add(series2);
-            this.TeamGraphicsStat.Size = new System.Drawing.Size(1050, 502);
+            this.TeamGraphicsStat.Size = new System.Drawing.Size(1043, 408);
             this.TeamGraphicsStat.TabIndex = 0;
             this.TeamGraphicsStat.Text = "chart1";
             // 
+            // PanelTitreStatistique
+            // 
+            this.PanelTitreStatistique.Location = new System.Drawing.Point(0, 41);
+            this.PanelTitreStatistique.Name = "PanelTitreStatistique";
+            this.PanelTitreStatistique.Size = new System.Drawing.Size(250, 367);
+            this.PanelTitreStatistique.TabIndex = 1;
+            // 
             // TeamTaskGraphics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PanelTitreStatistique);
             this.Controls.Add(this.TeamGraphicsStat);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TeamTaskGraphics";
-            this.Size = new System.Drawing.Size(1050, 502);
+            this.Size = new System.Drawing.Size(1075, 408);
             ((System.ComponentModel.ISupportInitialize)(this.TeamGraphicsStat)).EndInit();
             this.ResumeLayout(false);
 
@@ -79,5 +97,6 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart TeamGraphicsStat;
+        private System.Windows.Forms.Panel PanelTitreStatistique;
     }
 }

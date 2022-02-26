@@ -43,7 +43,7 @@ namespace StoriesHelper.Models
         public List<Task> getListTasks()
         {
             return list_tasks;
-        }        
+        }
         public List<Task> getListTasksOpen()
         {
             List<Task> list_task_open = new List<Task>();
@@ -55,7 +55,7 @@ namespace StoriesHelper.Models
                 }
             }
             return list_task_open;
-        }        
+        }
         public List<Task> getListTasksClosed()
         {
             List<Task> list_task_closed = new List<Task>();
@@ -142,12 +142,12 @@ namespace StoriesHelper.Models
             {
                 Task task = new Task();
                 string taskName = "";
-                if(!tasks.IsDBNull(1))
+                if (!tasks.IsDBNull(1))
                 {
                     taskName = tasks.GetString(1);
                 }
                 string taskDescription = "";
-                if(!tasks.IsDBNull(2))
+                if (!tasks.IsDBNull(2))
                 {
                     taskDescription = tasks.GetString(2);
                 }
@@ -155,6 +155,45 @@ namespace StoriesHelper.Models
                 list_tasks.Add(task);
             }
             conn.Close();
+        }
+
+        public List<Task> fetchTaskBetweenTime(int idColumn, DateTime dateBegin, DateTime dateEnd, bool finished)
+        {
+            List<Task> ListTask = new List<Task>();
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idColumn", rowid);
+            command.Parameters.AddWithValue("@dateBegin", dateBegin.ToString("yyyy-MM-dd 00:00:00"));
+            command.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("yyyy-MM-dd 23:59:59"));
+            string sql = "SELECT *";
+            sql += " FROM storieshelper_task";
+            sql += " WHERE fk_column = @idColumn";
+            if(finished)
+            {
+                sql += " AND finished_at BETWEEN @dateBegin AND @dateEnd";
+            } else {
+                sql += " AND created_at BETWEEN @dateBegin AND @dateEnd";
+            }
+            command.CommandText = sql;
+            MySqlDataReader tasks = command.ExecuteReader();
+            while (tasks.Read())
+            {
+                Task task = new Task();
+                string taskName = "";
+                if (!tasks.IsDBNull(1))
+                {
+                    taskName = tasks.GetString(1);
+                }
+                string taskDescription = "";
+                if (!tasks.IsDBNull(2))
+                {
+                    taskDescription = tasks.GetString(2);
+                }
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6));
+                ListTask.Add(task);
+            }
+            conn.Close();
+            return ListTask;
         }
     }
 }

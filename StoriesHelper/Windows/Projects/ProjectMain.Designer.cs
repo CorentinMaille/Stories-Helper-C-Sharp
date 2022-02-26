@@ -35,7 +35,7 @@ namespace StoriesHelper.Windows.Projects
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gradientPanelProject = new StoriesHelper.Services.GradientPageConnexion();
+            this.gradientPanelProject = new StoriesHelper.Services.Gradient();
             this.retour = new System.Windows.Forms.Button();
             this.labelNbCollaborateur = new System.Windows.Forms.Label();
             this.labelNbTeam = new System.Windows.Forms.Label();
@@ -263,7 +263,7 @@ namespace StoriesHelper.Windows.Projects
             legend1.Name = "Legend1";
             this.GraphiqueRatioTaskProject.Legends.Add(legend1);
             this.GraphiqueRatioTaskProject.Location = new System.Drawing.Point(48, 570);
-            this.GraphiqueRatioTaskProject.Margin = new System.Windows.Forms.Padding(2);
+            this.GraphiqueRatioTaskProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GraphiqueRatioTaskProject.Name = "GraphiqueRatioTaskProject";
             this.GraphiqueRatioTaskProject.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
@@ -286,7 +286,7 @@ namespace StoriesHelper.Windows.Projects
             // 
             this.PanelListTeams.BackColor = System.Drawing.Color.Transparent;
             this.PanelListTeams.Location = new System.Drawing.Point(410, 570);
-            this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelListTeams.Name = "PanelListTeams";
             this.PanelListTeams.Size = new System.Drawing.Size(625, 300);
             this.PanelListTeams.TabIndex = 13;
@@ -300,16 +300,16 @@ namespace StoriesHelper.Windows.Projects
             this.LabelTitreProject.Location = new System.Drawing.Point(55, 44);
             this.LabelTitreProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelTitreProject.Name = "LabelTitreProject";
-            this.LabelTitreProject.Size = new System.Drawing.Size(159, 41);
+            this.LabelTitreProject.Size = new System.Drawing.Size(143, 41);
             this.LabelTitreProject.TabIndex = 2;
-            this.LabelTitreProject.Text = "Project : ";
+            this.LabelTitreProject.Text = "Projet : ";
             // 
-            // PanelProject
+            // ProjectMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gradientPanelProject);
-            this.Name = "PanelProject";
+            this.Name = "ProjectMain";
             this.Size = new System.Drawing.Size(1101, 900);
             this.gradientPanelProject.ResumeLayout(false);
             this.gradientPanelProject.PerformLayout();
@@ -320,7 +320,7 @@ namespace StoriesHelper.Windows.Projects
 
         #endregion
 
-        private Services.GradientPageConnexion gradientPanelProject;
+        private Services.Gradient gradientPanelProject;
         private System.Windows.Forms.Label LabelTitreProject;
         private System.Windows.Forms.Panel PanelListTeams;
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskProject;

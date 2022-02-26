@@ -46,9 +46,9 @@ namespace StoriesHelper.Windows.Organizations
                 string projectName = Project.getName();
                 string newName = "";
                 Label Label = new Label();
-                if (projectName.Length > 15)
+                if (projectName.Length > 30)
                 {
-                    newName = projectName.Remove(15, (projectName.Length - 15));
+                    newName = projectName.Remove(30, (projectName.Length - 30));
                     newName = newName.Insert(newName.Length, "...");
                     Label.Text = "- " + newName;
                     Label.Name = newName + Project.getRowId();
@@ -73,7 +73,7 @@ namespace StoriesHelper.Windows.Organizations
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
-                button.Location = new Point(130, positionButton);
+                button.Location = new Point(230, positionButton);
                 button.Click += new EventHandler(goToProject);
                 Controls.Add(button);
 

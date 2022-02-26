@@ -115,7 +115,7 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Organization.cs" />
-    <Compile Include="Services\GradientLogin.cs">
+    <Compile Include="Services\Gradient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Services\MyDraggableForm.cs">
@@ -184,6 +184,12 @@
     <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskStatistiques.Designer.cs">
       <DependentUpon>TeamTaskStatistiques.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TitreStatistique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TitreStatistique.Designer.cs">
+      <DependentUpon>TitreStatistique.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Windows\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamTaskStatistiques.resx">
       <DependentUpon>TeamTaskStatistiques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TitreStatistique.resx">
+      <DependentUpon>TitreStatistique.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\StoriesHelper.exe.config" />
     <None Include="packages.config" />

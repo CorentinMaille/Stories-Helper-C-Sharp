@@ -35,10 +35,11 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrganizationListUsers";
-            this.Size = new System.Drawing.Size(340, 410);
+            this.Size = new System.Drawing.Size(320, 400);
             this.ResumeLayout(false);
 
         }
