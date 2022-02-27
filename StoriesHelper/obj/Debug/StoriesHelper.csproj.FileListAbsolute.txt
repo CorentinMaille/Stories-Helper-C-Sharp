@@ -56,7 +56,6 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeams.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUsers.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationMain.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectMain.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamMain.resources
@@ -98,3 +97,4 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.x
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskGraphics.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskStatistiques.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TitreStatistique.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache

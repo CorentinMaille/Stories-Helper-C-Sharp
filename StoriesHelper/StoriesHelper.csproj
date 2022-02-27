@@ -74,6 +74,9 @@
   <ItemGroup>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Collaborator.cs" />
+    <Compile Include="Models\ColumnState.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\ColumnStateRepository.cs" />
     <Compile Include="Services\Calcul.cs" />
     <Compile Include="Services\CustomTextBox.cs">
       <SubType>Component</SubType>

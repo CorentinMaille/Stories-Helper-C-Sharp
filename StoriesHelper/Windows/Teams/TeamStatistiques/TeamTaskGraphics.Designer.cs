@@ -77,7 +77,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.PanelTitreStatistique.Location = new System.Drawing.Point(0, 41);
             this.PanelTitreStatistique.Name = "PanelTitreStatistique";
-            this.PanelTitreStatistique.Size = new System.Drawing.Size(250, 367);
+            this.PanelTitreStatistique.Size = new System.Drawing.Size(256, 367);
             this.PanelTitreStatistique.TabIndex = 1;
             // 
             // TeamTaskGraphics
