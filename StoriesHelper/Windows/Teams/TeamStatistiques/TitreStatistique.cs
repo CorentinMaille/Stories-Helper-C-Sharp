@@ -11,26 +11,25 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
     public partial class TitreStatistique : UserControl
     {
         protected int idTeam;
-        public TitreStatistique(int idTeam, string date, int relativeDate)
+        public TitreStatistique(int idTeam, string scope, int relativeDate)
         {
             InitializeComponent();
             this.idTeam = idTeam;
-            bool ret = calculateTime(date, relativeDate, out DateTime DateBegin, out DateTime DateEnd);
-            bool previousRet = calculateTime(date, relativeDate, out DateTime PreviousDateBegin, out DateTime PreviousDateEnd);
+            DateTime DateBegin = DateTime.Now;
+            DateTime DateEnd = DateTime.Now;
+            string date = "";
+            string begin = "";
+            string end = "";
+            bool ret = calculateTime(scope, relativeDate, out DateBegin, out DateEnd, out begin, out end, out date);
 
-            AfficherTitre(date, DateBegin, DateEnd);
-            AfficherRendement(idTeam, DateBegin, DateEnd);
+            AfficherTitre(scope, DateBegin);
 
             Titre.Left = (this.ClientSize.Width - Titre.Width) / 2;
-            Rendement.Left = (this.ClientSize.Width - Rendement.Width) / 2;
-            Taches.Left = (this.ClientSize.Width - Taches.Width) / 2;
-            ValueTache.Left = (this.ClientSize.Width - ValueTache.Width) / 2;
-            ValueRendement.Left = (this.ClientSize.Width - ValueRendement.Width) / 2;
         }
 
-        private void AfficherTitre(string date, DateTime DateBegin, DateTime DateEnd)
+        private void AfficherTitre(string scope, DateTime DateBegin)
         {
-            switch (date)
+            switch (scope)
             {
                 case "jour":
                     Titre.Text = DateBegin.ToString("dd/MM/yyyy");
@@ -47,29 +46,6 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
                     Titre.Text = "Année " + DateBegin.ToString("yyyy");
                     break;
             }
-        }
-
-        private void AfficherRendement(int idTeam, DateTime DateBegin, DateTime DateEnd)
-        {
-            List<Task> TasksClosed = new List<Task>();
-            List<Task> Tasks = new List<Task>();
-            Team Team = new Team(idTeam);
-            List<Column> Columns = Team.getListColumns();
-            Columns = Columns.OrderBy(c => c.getRank()).ToList();
-            foreach (Column Column in Columns)
-            {
-                if (Column.getName() == "Closed")
-                {
-                    TasksClosed = Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, true);
-                }
-                else
-                {
-                    Tasks.AddRange(Column.fetchTaskBetweenTime(Column.getRowId(), DateBegin, DateEnd, false));
-                }
-            }
-
-            double rendement = CalculateRendement(TasksClosed.Count(), Tasks.Count());
-            ValueRendement.Text = rendement.ToString();
         }
 
         private int CalculateWeeks(DateTime DateWeekBegin)
@@ -96,10 +72,13 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             return week;
         }
 
-        private bool calculateTime(string date, int relativeDate, out DateTime DateBegin, out DateTime DateEnd)
+        private bool calculateTime(string date, int relativeDate,out DateTime DateBegin, out DateTime DateEnd, out string begin, out string end, out string Date)
         {
             DateBegin = DateTime.Now;
             DateEnd = DateTime.Now;
+            Date = "";
+            begin = "";
+            end = "";
             switch (date)
             {
                 case "semaine":
@@ -122,33 +101,30 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
                     case "jour":
                         DateBegin = DateBegin + relativeDate.Days();
                         DateEnd = DateEnd + relativeDate.Days();
+                        Date = DateEnd.ToString("yyyy-MM-dd");
                         break;
                     case "semaine":
                         DateBegin = DateBegin + relativeDate.Weeks();
                         DateEnd = DateEnd + relativeDate.Weeks();
+                        Date = DateEnd.ToString("yyyy-MM-dd");
                         break;
                     case "mois":
                         DateBegin = DateBegin + relativeDate.Months();
                         DateEnd = DateEnd + relativeDate.Months();
+                        Date = DateEnd.ToString("yyyy-MM") + "%";
                         break;
                     case "annee":
                         DateBegin = DateBegin + relativeDate.Years();
                         DateEnd = DateEnd + relativeDate.Years();
+                        Date = DateEnd.ToString("yyyy") + "%";
                         break;
                 }
             }
 
-            return true;
-        }
+            begin = DateBegin.ToString("yyyy-MM-dd 00:00:00");
+            end = DateEnd.ToString("yyyy-MM-dd 23:59:59");
 
-        private double CalculateRendement(double tasksClosed, double tasks)
-        {
-            double result = tasksClosed;
-            if(tasks != 0)
-            {
-                result = (tasksClosed / tasks) ;
-            }
-            return result;
+            return true;
         }
     }
 }

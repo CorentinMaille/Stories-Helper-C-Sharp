@@ -11,6 +11,7 @@ namespace StoriesHelper.Models
         protected int fk_project;
         protected List<Collaborator> list_collaborators = new List<Collaborator>();
         protected List<Column> list_columns = new List<Column>();
+        protected List<ColumnState> list_column_states = new List<ColumnState>();
         protected bool active;
 
         public Team(int idTeam = -1)
@@ -60,6 +61,16 @@ namespace StoriesHelper.Models
         {
             list_columns = newListColumns;
         }
+
+        public List<ColumnState> getListColumnState()
+        {
+            return list_column_states;
+        }
+        public void setListColumnState(List<ColumnState> list_column_states)
+        {
+            this.list_column_states = list_column_states;
+        }
+
         public bool isActive()
         {
             return active;
@@ -118,6 +129,21 @@ namespace StoriesHelper.Models
                 list_columns.Add(column);
             }
             conn.Close();
+            conn.Open();
+            MySqlCommand command4 = conn.CreateCommand();
+            command4.Parameters.AddWithValue("@idTeam", idTeam);
+            string sql4 = "SELECT *";
+            sql4 += " FROM storieshelper_column_state";
+            sql4 += " WHERE fk_team = @idTeam";
+            command4.CommandText = sql4;
+            MySqlDataReader columnStates = command4.ExecuteReader();
+            while (columnStates.Read())
+            {
+                ColumnState ColumnState = new ColumnState();
+                ColumnState.initializedColumnState(columnStates.GetInt32(0), columnStates.GetInt32(1), columnStates.GetInt32(2), columnStates.GetString(3), columnStates.GetInt32(4), columnStates.GetDateTime(5), columnStates.GetString(6));
+                list_column_states.Add(ColumnState);
+            }
+            conn.Close();
         }
 
         public void initializedTeam(int idTeam, string name, int fk_project, bool active)
@@ -157,6 +183,21 @@ namespace StoriesHelper.Models
                 Column column = new Column();
                 column.initializedColumn(columns.GetInt32(0), columns.GetString(1), columns.GetInt32(2), columns.GetInt32(3));
                 list_columns.Add(column);
+            }
+            conn.Close();
+            conn.Open();
+            MySqlCommand command3 = conn.CreateCommand();
+            command3.Parameters.AddWithValue("@idTeam", idTeam);
+            string sql3 = "SELECT *";
+            sql3 += " FROM storieshelper_column_state";
+            sql3 += " WHERE fk_team = @idTeam";
+            command3.CommandText = sql3;
+            MySqlDataReader columnStates = command3.ExecuteReader();
+            while (columnStates.Read())
+            {
+                ColumnState ColumnState = new ColumnState();
+                ColumnState.initializedColumnState(columnStates.GetInt32(0), columnStates.GetInt32(1), columnStates.GetInt32(2), columnStates.GetString(3), columnStates.GetInt32(4), columnStates.GetDateTime(5), columnStates.GetString(6));
+                list_column_states.Add(ColumnState);
             }
             conn.Close();
         }

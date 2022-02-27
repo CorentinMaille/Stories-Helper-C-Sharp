@@ -157,23 +157,17 @@ namespace StoriesHelper.Models
             conn.Close();
         }
 
-        public List<Task> fetchTaskBetweenTime(int idColumn, DateTime dateBegin, DateTime dateEnd, bool finished)
+        public List<Task> fetchTaskBetweenTime(int idColumn, string dateBegin, string dateEnd)
         {
             List<Task> ListTask = new List<Task>();
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@idColumn", rowid);
-            command.Parameters.AddWithValue("@dateBegin", dateBegin.ToString("yyyy-MM-dd 00:00:00"));
-            command.Parameters.AddWithValue("@dateEnd", dateEnd.ToString("yyyy-MM-dd 23:59:59"));
+            command.Parameters.AddWithValue("@idColumn", idColumn);
+            command.Parameters.AddWithValue("@dateBegin", dateBegin);
+            command.Parameters.AddWithValue("@dateEnd", dateEnd);
             string sql = "SELECT *";
             sql += " FROM storieshelper_task";
             sql += " WHERE fk_column = @idColumn";
-            if(finished)
-            {
-                sql += " AND finished_at BETWEEN @dateBegin AND @dateEnd";
-            } else {
-                sql += " AND created_at BETWEEN @dateBegin AND @dateEnd";
-            }
             command.CommandText = sql;
             MySqlDataReader tasks = command.ExecuteReader();
             while (tasks.Read())
