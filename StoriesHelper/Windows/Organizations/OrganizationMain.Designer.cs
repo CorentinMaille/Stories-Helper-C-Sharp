@@ -29,10 +29,10 @@ namespace StoriesHelper.Windows.Organizations
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gradient = new StoriesHelper.Services.Gradient();
             this.checkBoxArchivedTeam = new System.Windows.Forms.CheckBox();
             this.checkBoxOpenTeam = new System.Windows.Forms.CheckBox();
@@ -90,7 +90,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxArchivedTeam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxArchivedTeam.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxArchivedTeam.ForeColor = System.Drawing.Color.Red;
-            this.checkBoxArchivedTeam.Location = new System.Drawing.Point(613, 422);
+            this.checkBoxArchivedTeam.Location = new System.Drawing.Point(609, 422);
             this.checkBoxArchivedTeam.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxArchivedTeam.Name = "checkBoxArchivedTeam";
             this.checkBoxArchivedTeam.Size = new System.Drawing.Size(64, 16);
@@ -107,7 +107,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxOpenTeam.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxOpenTeam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxOpenTeam.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Italic);
-            this.checkBoxOpenTeam.Location = new System.Drawing.Point(561, 422);
+            this.checkBoxOpenTeam.Location = new System.Drawing.Point(549, 422);
             this.checkBoxOpenTeam.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxOpenTeam.Name = "checkBoxOpenTeam";
             this.checkBoxOpenTeam.Size = new System.Drawing.Size(48, 16);
@@ -121,7 +121,7 @@ namespace StoriesHelper.Windows.Organizations
             this.labelTitreListeUtilisateur.AutoSize = true;
             this.labelTitreListeUtilisateur.BackColor = System.Drawing.Color.Transparent;
             this.labelTitreListeUtilisateur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreListeUtilisateur.Location = new System.Drawing.Point(696, 415);
+            this.labelTitreListeUtilisateur.Location = new System.Drawing.Point(722, 416);
             this.labelTitreListeUtilisateur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitreListeUtilisateur.Name = "labelTitreListeUtilisateur";
             this.labelTitreListeUtilisateur.Size = new System.Drawing.Size(202, 22);
@@ -133,7 +133,7 @@ namespace StoriesHelper.Windows.Organizations
             this.labelTitreListeTeam.AutoSize = true;
             this.labelTitreListeTeam.BackColor = System.Drawing.Color.Transparent;
             this.labelTitreListeTeam.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreListeTeam.Location = new System.Drawing.Point(389, 415);
+            this.labelTitreListeTeam.Location = new System.Drawing.Point(372, 417);
             this.labelTitreListeTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitreListeTeam.Name = "labelTitreListeTeam";
             this.labelTitreListeTeam.Size = new System.Drawing.Size(168, 22);
@@ -161,7 +161,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxOpenProject.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxOpenProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxOpenProject.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Italic);
-            this.checkBoxOpenProject.Location = new System.Drawing.Point(248, 422);
+            this.checkBoxOpenProject.Location = new System.Drawing.Point(194, 423);
             this.checkBoxOpenProject.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxOpenProject.Name = "checkBoxOpenProject";
             this.checkBoxOpenProject.Size = new System.Drawing.Size(48, 16);
@@ -174,36 +174,36 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.GraphiqueRatioTaskOrganization.BackColor = System.Drawing.Color.Transparent;
             this.GraphiqueRatioTaskOrganization.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Area3DStyle.Enable3D = true;
-            chartArea3.Area3DStyle.Inclination = 45;
-            chartArea3.BackColor = System.Drawing.Color.Transparent;
-            chartArea3.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea3.BorderColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            chartArea3.ShadowColor = System.Drawing.Color.Transparent;
-            this.GraphiqueRatioTaskOrganization.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.Transparent;
-            legend3.Name = "Legend1";
-            this.GraphiqueRatioTaskOrganization.Legends.Add(legend3);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 45;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
+            this.GraphiqueRatioTaskOrganization.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Name = "Legend1";
+            this.GraphiqueRatioTaskOrganization.Legends.Add(legend1);
             this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(411, 150);
             this.GraphiqueRatioTaskOrganization.Margin = new System.Windows.Forms.Padding(2);
             this.GraphiqueRatioTaskOrganization.Name = "GraphiqueRatioTaskOrganization";
             this.GraphiqueRatioTaskOrganization.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.IsXValueIndexed = true;
-            series3.Legend = "Legend1";
-            series3.Name = "Task";
-            series3.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.GraphiqueRatioTaskOrganization.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsXValueIndexed = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Task";
+            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.GraphiqueRatioTaskOrganization.Series.Add(series1);
             this.GraphiqueRatioTaskOrganization.Size = new System.Drawing.Size(284, 207);
             this.GraphiqueRatioTaskOrganization.TabIndex = 8;
             this.GraphiqueRatioTaskOrganization.Text = "Stats Des Tâches de l\'Organisation en cours";
-            title3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "Title1";
-            title3.Text = "Stats des Tâches En Cours de l\'Organisation";
-            this.GraphiqueRatioTaskOrganization.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Stats des Tâches En Cours de l\'Organisation";
+            this.GraphiqueRatioTaskOrganization.Titles.Add(title1);
             // 
             // checkBoxArchivedProject
             // 
@@ -212,7 +212,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxArchivedProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxArchivedProject.Font = new System.Drawing.Font("Cambria", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxArchivedProject.ForeColor = System.Drawing.Color.Red;
-            this.checkBoxArchivedProject.Location = new System.Drawing.Point(300, 422);
+            this.checkBoxArchivedProject.Location = new System.Drawing.Point(252, 422);
             this.checkBoxArchivedProject.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxArchivedProject.Name = "checkBoxArchivedProject";
             this.checkBoxArchivedProject.Size = new System.Drawing.Size(64, 16);
@@ -226,7 +226,7 @@ namespace StoriesHelper.Windows.Organizations
             this.labelTitreListeProjet.AutoSize = true;
             this.labelTitreListeProjet.BackColor = System.Drawing.Color.Transparent;
             this.labelTitreListeProjet.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreListeProjet.Location = new System.Drawing.Point(80, 415);
+            this.labelTitreListeProjet.Location = new System.Drawing.Point(18, 416);
             this.labelTitreListeProjet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitreListeProjet.Name = "labelTitreListeProjet";
             this.labelTitreListeProjet.Size = new System.Drawing.Size(163, 22);
@@ -237,7 +237,7 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.PanelListUsers.AutoScroll = true;
             this.PanelListUsers.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListUsers.Location = new System.Drawing.Point(700, 442);
+            this.PanelListUsers.Location = new System.Drawing.Point(726, 442);
             this.PanelListUsers.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListUsers.Name = "PanelListUsers";
             this.PanelListUsers.Size = new System.Drawing.Size(340, 410);
@@ -247,20 +247,20 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.PanelListTeams.AutoScroll = true;
             this.PanelListTeams.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListTeams.Location = new System.Drawing.Point(383, 442);
+            this.PanelListTeams.Location = new System.Drawing.Point(376, 442);
             this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListTeams.Name = "PanelListTeams";
-            this.PanelListTeams.Size = new System.Drawing.Size(289, 410);
+            this.PanelListTeams.Size = new System.Drawing.Size(319, 410);
             this.PanelListTeams.TabIndex = 12;
             // 
             // PanelListProjects
             // 
             this.PanelListProjects.AutoScroll = true;
             this.PanelListProjects.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListProjects.Location = new System.Drawing.Point(54, 442);
+            this.PanelListProjects.Location = new System.Drawing.Point(22, 442);
             this.PanelListProjects.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListProjects.Name = "PanelListProjects";
-            this.PanelListProjects.Size = new System.Drawing.Size(310, 410);
+            this.PanelListProjects.Size = new System.Drawing.Size(330, 410);
             this.PanelListProjects.TabIndex = 11;
             // 
             // NbUtilisateurs

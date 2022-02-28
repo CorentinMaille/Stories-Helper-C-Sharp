@@ -61,7 +61,7 @@ namespace StoriesHelper.Windows
             this.Gradient1.Controls.Add(this.emailInput);
             this.Gradient1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gradient1.Location = new System.Drawing.Point(0, 0);
-            this.Gradient1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Gradient1.Margin = new System.Windows.Forms.Padding(2);
             this.Gradient1.Name = "Gradient1";
             this.Gradient1.Size = new System.Drawing.Size(450, 575);
             this.Gradient1.TabIndex = 7;
@@ -72,7 +72,7 @@ namespace StoriesHelper.Windows
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(400, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(49, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,7 +112,7 @@ namespace StoriesHelper.Windows
             this.connexion.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connexion.ForeColor = System.Drawing.Color.White;
             this.connexion.Location = new System.Drawing.Point(130, 440);
-            this.connexion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.connexion.Margin = new System.Windows.Forms.Padding(2);
             this.connexion.Name = "connexion";
             this.connexion.Size = new System.Drawing.Size(190, 46);
             this.connexion.TabIndex = 6;
@@ -138,7 +138,7 @@ namespace StoriesHelper.Windows
             // 
             this.passwordInput.Font = new System.Drawing.Font("Cambria", 13.8F);
             this.passwordInput.Location = new System.Drawing.Point(60, 326);
-            this.passwordInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(2);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.PasswordChar = '*';
             this.passwordInput.Size = new System.Drawing.Size(330, 29);
@@ -175,7 +175,7 @@ namespace StoriesHelper.Windows
             // 
             this.emailInput.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailInput.Location = new System.Drawing.Point(60, 222);
-            this.emailInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailInput.Margin = new System.Windows.Forms.Padding(2);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(330, 29);
             this.emailInput.TabIndex = 1;
@@ -189,7 +189,7 @@ namespace StoriesHelper.Windows
             this.ClientSize = new System.Drawing.Size(450, 575);
             this.Controls.Add(this.Gradient1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pageConnexion";

@@ -5,6 +5,7 @@ using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations;
 using StoriesHelper.Windows.Projects;
 using StoriesHelper.Windows.Teams;
+using StoriesHelper.Windows.Users;
 
 namespace StoriesHelper.Windows
 {
@@ -103,6 +104,16 @@ namespace StoriesHelper.Windows
             Login loginWindow = new Login();
             loginWindow.Show();
             Hide();
+        }
+
+        private void collaboratorsButton_Click(object sender, EventArgs e)
+        {
+            UserMainList UserMainList = new UserMainList();
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(UserMainList);
+
+            UserMainList.Show();
         }
     }
 }
