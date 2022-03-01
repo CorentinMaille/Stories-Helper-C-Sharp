@@ -35,8 +35,10 @@ namespace StoriesHelper.Windows.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Name = "UserListUsers";
-            this.Size = new System.Drawing.Size(1061, 636);
+            this.Size = new System.Drawing.Size(1059, 636);
             this.ResumeLayout(false);
 
         }

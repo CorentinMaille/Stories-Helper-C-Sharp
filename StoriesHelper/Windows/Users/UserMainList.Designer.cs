@@ -29,8 +29,15 @@ namespace StoriesHelper.Windows.Users
         /// </summary>
         private void InitializeComponent()
         {
-            this.LabelTitreUserList = new System.Windows.Forms.Label();
             this.gradient1 = new StoriesHelper.Services.Gradient();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelFilterId = new System.Windows.Forms.Label();
+            this.textId = new System.Windows.Forms.TextBox();
             this.panelListUsers = new System.Windows.Forms.Panel();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.labelFilterProject = new System.Windows.Forms.Label();
@@ -43,28 +50,22 @@ namespace StoriesHelper.Windows.Users
             this.textFirstname = new System.Windows.Forms.TextBox();
             this.labelFilterName = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
-            this.textId = new System.Windows.Forms.TextBox();
-            this.labelFilterId = new System.Windows.Forms.Label();
+            this.UserTitre = new System.Windows.Forms.Label();
             this.gradient1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LabelTitreUserList
-            // 
-            this.LabelTitreUserList.AutoSize = true;
-            this.LabelTitreUserList.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTitreUserList.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitreUserList.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.LabelTitreUserList.Location = new System.Drawing.Point(41, 26);
-            this.LabelTitreUserList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LabelTitreUserList.Name = "LabelTitreUserList";
-            this.LabelTitreUserList.Size = new System.Drawing.Size(234, 41);
-            this.LabelTitreUserList.TabIndex = 4;
-            this.LabelTitreUserList.Text = "Utilisateurs : ";
-            // 
             // gradient1
             // 
-            this.gradient1.Angle = 0F;
-            this.gradient1.BottomColor = System.Drawing.Color.Empty;
+            this.gradient1.Angle = 90F;
+            this.gradient1.BackColor = System.Drawing.Color.Transparent;
+            this.gradient1.BottomColor = System.Drawing.Color.SkyBlue;
+            this.gradient1.Controls.Add(this.UserTitre);
+            this.gradient1.Controls.Add(this.label6);
+            this.gradient1.Controls.Add(this.label5);
+            this.gradient1.Controls.Add(this.label3);
+            this.gradient1.Controls.Add(this.label2);
+            this.gradient1.Controls.Add(this.label1);
+            this.gradient1.Controls.Add(this.label4);
             this.gradient1.Controls.Add(this.labelFilterId);
             this.gradient1.Controls.Add(this.textId);
             this.gradient1.Controls.Add(this.panelListUsers);
@@ -83,24 +84,110 @@ namespace StoriesHelper.Windows.Users
             this.gradient1.Name = "gradient1";
             this.gradient1.Size = new System.Drawing.Size(1101, 900);
             this.gradient1.TabIndex = 5;
-            this.gradient1.TopColor = System.Drawing.Color.Empty;
+            this.gradient1.TopColor = System.Drawing.Color.DodgerBlue;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(790, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 25);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Projets";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(620, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 25);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Équipes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(370, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(250, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 25);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Prénom";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(110, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "NOM";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 25);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Id";
+            // 
+            // labelFilterId
+            // 
+            this.labelFilterId.AutoSize = true;
+            this.labelFilterId.BackColor = System.Drawing.Color.Transparent;
+            this.labelFilterId.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFilterId.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelFilterId.Location = new System.Drawing.Point(731, 155);
+            this.labelFilterId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFilterId.Name = "labelFilterId";
+            this.labelFilterId.Size = new System.Drawing.Size(43, 25);
+            this.labelFilterId.TabIndex = 19;
+            this.labelFilterId.Text = "Id :";
+            // 
+            // textId
+            // 
+            this.textId.BackColor = System.Drawing.SystemColors.Control;
+            this.textId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textId.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textId.Location = new System.Drawing.Point(736, 183);
+            this.textId.Margin = new System.Windows.Forms.Padding(2);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(149, 29);
+            this.textId.TabIndex = 18;
             // 
             // panelListUsers
             // 
-            this.panelListUsers.Location = new System.Drawing.Point(17, 234);
+            this.panelListUsers.AutoScroll = true;
+            this.panelListUsers.Location = new System.Drawing.Point(17, 274);
             this.panelListUsers.Name = "panelListUsers";
-            this.panelListUsers.Size = new System.Drawing.Size(1061, 636);
+            this.panelListUsers.Size = new System.Drawing.Size(1081, 596);
             this.panelListUsers.TabIndex = 17;
             // 
             // buttonFilter
             // 
             this.buttonFilter.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Location = new System.Drawing.Point(917, 183);
+            this.buttonFilter.Location = new System.Drawing.Point(917, 179);
             this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(149, 29);
+            this.buttonFilter.Size = new System.Drawing.Size(149, 38);
             this.buttonFilter.TabIndex = 16;
             this.buttonFilter.Text = "Filtrer";
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // labelFilterProject
             // 
@@ -117,6 +204,7 @@ namespace StoriesHelper.Windows.Users
             // 
             // comboProject
             // 
+            this.comboProject.BackColor = System.Drawing.SystemColors.Control;
             this.comboProject.Font = new System.Drawing.Font("Cambria", 13.8F);
             this.comboProject.FormattingEnabled = true;
             this.comboProject.Location = new System.Drawing.Point(391, 183);
@@ -139,6 +227,7 @@ namespace StoriesHelper.Windows.Users
             // 
             // comboTeam
             // 
+            this.comboTeam.BackColor = System.Drawing.SystemColors.Control;
             this.comboTeam.Font = new System.Drawing.Font("Cambria", 13.8F);
             this.comboTeam.FormattingEnabled = true;
             this.comboTeam.Location = new System.Drawing.Point(48, 183);
@@ -175,6 +264,8 @@ namespace StoriesHelper.Windows.Users
             // 
             // textEmail
             // 
+            this.textEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textEmail.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEmail.Location = new System.Drawing.Point(736, 114);
             this.textEmail.Margin = new System.Windows.Forms.Padding(2);
@@ -184,6 +275,8 @@ namespace StoriesHelper.Windows.Users
             // 
             // textFirstname
             // 
+            this.textFirstname.BackColor = System.Drawing.SystemColors.Control;
+            this.textFirstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textFirstname.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textFirstname.Location = new System.Drawing.Point(391, 114);
             this.textFirstname.Margin = new System.Windows.Forms.Padding(2);
@@ -206,6 +299,8 @@ namespace StoriesHelper.Windows.Users
             // 
             // textName
             // 
+            this.textName.BackColor = System.Drawing.SystemColors.Control;
+            this.textName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textName.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.Location = new System.Drawing.Point(48, 114);
             this.textName.Margin = new System.Windows.Forms.Padding(2);
@@ -213,46 +308,33 @@ namespace StoriesHelper.Windows.Users
             this.textName.Size = new System.Drawing.Size(330, 29);
             this.textName.TabIndex = 2;
             // 
-            // textId
+            // UserTitre
             // 
-            this.textId.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textId.Location = new System.Drawing.Point(736, 183);
-            this.textId.Margin = new System.Windows.Forms.Padding(2);
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(149, 29);
-            this.textId.TabIndex = 18;
-            // 
-            // labelFilterId
-            // 
-            this.labelFilterId.AutoSize = true;
-            this.labelFilterId.BackColor = System.Drawing.Color.Transparent;
-            this.labelFilterId.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFilterId.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelFilterId.Location = new System.Drawing.Point(731, 155);
-            this.labelFilterId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelFilterId.Name = "labelFilterId";
-            this.labelFilterId.Size = new System.Drawing.Size(43, 25);
-            this.labelFilterId.TabIndex = 19;
-            this.labelFilterId.Text = "Id :";
+            this.UserTitre.AutoSize = true;
+            this.UserTitre.BackColor = System.Drawing.Color.Transparent;
+            this.UserTitre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold);
+            this.UserTitre.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UserTitre.Location = new System.Drawing.Point(41, 26);
+            this.UserTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UserTitre.Name = "UserTitre";
+            this.UserTitre.Size = new System.Drawing.Size(234, 41);
+            this.UserTitre.TabIndex = 26;
+            this.UserTitre.Text = "Utilisateurs : ";
             // 
             // UserMainList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.LabelTitreUserList);
             this.Controls.Add(this.gradient1);
             this.Name = "UserMainList";
             this.Size = new System.Drawing.Size(1101, 900);
             this.gradient1.ResumeLayout(false);
             this.gradient1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LabelTitreUserList;
         private Services.Gradient gradient1;
         private System.Windows.Forms.Panel panelListUsers;
         private System.Windows.Forms.Button buttonFilter;
@@ -268,5 +350,12 @@ namespace StoriesHelper.Windows.Users
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.Label labelFilterId;
         private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label UserTitre;
     }
 }

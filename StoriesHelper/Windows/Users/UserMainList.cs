@@ -20,6 +20,7 @@ namespace StoriesHelper.Windows.Users
                 TeamList.AddRange(Project.getListTeams());
             }
             this.comboTeam.DropDownWidth = 200;
+            this.comboProject.DropDownWidth = 200;
             foreach (Project Project in ProjectList)
             {
                 this.comboProject.Items.AddRange(new Object[] { Project.getName() });
@@ -31,6 +32,23 @@ namespace StoriesHelper.Windows.Users
 
             // Affichage de la liste
             UserListUsers UserListUsers = new UserListUsers();
+
+            panelListUsers.Controls.Clear();
+            panelListUsers.Controls.Add(UserListUsers);
+
+            UserListUsers.Show();
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            string lastname = textName.Text;
+            string firstname = textFirstname.Text;
+            string email = textEmail.Text;
+            string team = comboTeam.Text;
+            string project = comboProject.Text;
+            string id = textId.Text;
+
+            UserListUsers UserListUsers = new UserListUsers(lastname, firstname, email, team, project, id);
 
             panelListUsers.Controls.Clear();
             panelListUsers.Controls.Add(UserListUsers);
