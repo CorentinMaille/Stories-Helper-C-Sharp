@@ -27,11 +27,11 @@ namespace StoriesHelper.Windows.Teams
             }
             foreach (Task task in Tasks)
             {
-                if (task.isActive())
+                if (task.isActive() == 1)
                 {
                     TasksOpen.Add(task);
                 }
-                else
+                else if (task.isActive() == -1)
                 {
                     TasksClosed.Add(task);
                 }

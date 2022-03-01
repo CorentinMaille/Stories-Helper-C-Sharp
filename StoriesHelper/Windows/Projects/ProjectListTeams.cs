@@ -57,24 +57,22 @@ namespace StoriesHelper.Windows.Projects
                 List<Task> Tasks = new List<Task>();
                 foreach (Column column in Columns)
                 {
-                    Tasks.AddRange(column.getListTasks());
+                   foreach (Task task in column.getListTasks())
+                   {
+                       if (task.isActive() == 1)
+                       {
+                           Tasks.Add(task);
+                       }
+                   }
                 }
                 NbTask.Text = Tasks.Count().ToString();
                 NbTask.Name = "NbTask" + Team.getRowId();
                 NbTask.UseMnemonic = true;
                 NbTask.AutoSize = true;
                 NbTask.Font = new Font("Cambria", 14);
-                NbTask.Location = new Point(390, positionLabel);
+                NbTask.Location = new Point(420, positionLabel);
                 this.Controls.Add(NbTask);
 
-                Label Rendement = new Label();
-                Rendement.Text = "X";
-                Rendement.Name = "Rendement" + Team.getRowId();
-                Rendement.UseMnemonic = true;
-                Rendement.AutoSize = true;
-                Rendement.Font = new Font("Cambria", 14);
-                Rendement.Location = new Point(470, positionLabel);
-                this.Controls.Add(Rendement);
 
                 // Créer Le button
                 Button button = new Button();

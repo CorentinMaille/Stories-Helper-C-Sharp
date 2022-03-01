@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using StoriesHelper.Services;
+using StoriesHelper.Models;
 
 namespace StoriesHelper.Windows
 {
@@ -13,7 +14,6 @@ namespace StoriesHelper.Windows
         public Login()
         {
             InitializeComponent();
-
         }
 
         private void connexion_Click(object sender, EventArgs e)
@@ -29,8 +29,7 @@ namespace StoriesHelper.Windows
             int idOrg = 0;
             if (reader.HasRows)
             {
-                erreurEmail.Text = "";
-                erreurPassword.Text = "";
+                erreur.Text = "";
                 while (reader.Read())
                 {
                     mdpHash = reader.GetString(2);
@@ -48,13 +47,14 @@ namespace StoriesHelper.Windows
                 }
                 else
                 {
-                    erreurPassword.Text = "*Le mot de passe est incorrect";
+                    erreur.Text = "*L'une des informations est incorrect";
                 }
             }
             else
             {
-                erreurEmail.Text = "*Email incorrect";
+                erreur.Text = "*L'une des informations est incorrect";
             }
+            erreur.Left = (this.ClientSize.Width - erreur.Width) / 2;
             conn.Close();
         }
 

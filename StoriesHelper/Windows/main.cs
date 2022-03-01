@@ -26,12 +26,12 @@ namespace StoriesHelper.Windows
             Controls.Add(MainPanel);
             MinimumSize = new Size(1167, 718);
 
-            Home HomeContent = new Home();
+            OrganizationMain OrganizationContent = new OrganizationMain();
 
             MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(HomeContent);
+            MainPanel.Controls.Add(OrganizationContent);
 
-            HomeContent.Show();
+            OrganizationContent.Show();
         }
 
         private void buttonEnter(object sender, EventArgs e)

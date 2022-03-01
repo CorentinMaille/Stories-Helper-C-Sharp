@@ -33,8 +33,7 @@ namespace StoriesHelper.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Gradient1 = new StoriesHelper.Services.Gradient();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.erreurPassword = new System.Windows.Forms.Label();
-            this.erreurEmail = new System.Windows.Forms.Label();
+            this.erreur = new System.Windows.Forms.Label();
             this.connexion = new System.Windows.Forms.Button();
             this.titre = new System.Windows.Forms.Label();
             this.passwordInput = new System.Windows.Forms.TextBox();
@@ -51,8 +50,7 @@ namespace StoriesHelper.Windows
             this.Gradient1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(181)))));
             this.Gradient1.BottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(1)))), ((int)(((byte)(224)))));
             this.Gradient1.Controls.Add(this.pictureBox1);
-            this.Gradient1.Controls.Add(this.erreurPassword);
-            this.Gradient1.Controls.Add(this.erreurEmail);
+            this.Gradient1.Controls.Add(this.erreur);
             this.Gradient1.Controls.Add(this.connexion);
             this.Gradient1.Controls.Add(this.titre);
             this.Gradient1.Controls.Add(this.passwordInput);
@@ -80,29 +78,17 @@ namespace StoriesHelper.Windows
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.quitter_Click);
             // 
-            // erreurPassword
+            // erreur
             // 
-            this.erreurPassword.AutoSize = true;
-            this.erreurPassword.BackColor = System.Drawing.Color.Transparent;
-            this.erreurPassword.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
-            this.erreurPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.erreurPassword.Location = new System.Drawing.Point(74, 359);
-            this.erreurPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.erreurPassword.Name = "erreurPassword";
-            this.erreurPassword.Size = new System.Drawing.Size(0, 16);
-            this.erreurPassword.TabIndex = 9;
-            // 
-            // erreurEmail
-            // 
-            this.erreurEmail.AutoSize = true;
-            this.erreurEmail.BackColor = System.Drawing.Color.Transparent;
-            this.erreurEmail.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.erreurEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.erreurEmail.Location = new System.Drawing.Point(74, 255);
-            this.erreurEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.erreurEmail.Name = "erreurEmail";
-            this.erreurEmail.Size = new System.Drawing.Size(0, 16);
-            this.erreurEmail.TabIndex = 8;
+            this.erreur.AutoSize = true;
+            this.erreur.BackColor = System.Drawing.Color.Transparent;
+            this.erreur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erreur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.erreur.Location = new System.Drawing.Point(74, 147);
+            this.erreur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.erreur.Name = "erreur";
+            this.erreur.Size = new System.Drawing.Size(0, 22);
+            this.erreur.TabIndex = 8;
             // 
             // connexion
             // 
@@ -210,8 +196,7 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.TextBox passwordInput;
         private System.Windows.Forms.Button connexion;
         private Gradient Gradient1;
-        private System.Windows.Forms.Label erreurEmail;
-        private System.Windows.Forms.Label erreurPassword;
+        private System.Windows.Forms.Label erreur;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
