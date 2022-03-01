@@ -57,6 +57,7 @@ namespace StoriesHelper.Windows
             this.collaboratorsButton.TabIndex = 2;
             this.collaboratorsButton.Text = "Collaborateurs";
             this.collaboratorsButton.UseVisualStyleBackColor = true;
+            this.collaboratorsButton.Click += new System.EventHandler(this.collaboratorsButton_Click);
             this.collaboratorsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
             this.collaboratorsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 

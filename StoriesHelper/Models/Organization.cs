@@ -126,7 +126,7 @@ namespace StoriesHelper.Models
             while (users.Read())
             {
                 Collaborator user = new Collaborator();
-                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(6), users.GetInt32(7));
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }
             conn.Close();

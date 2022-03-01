@@ -40,6 +40,15 @@ namespace StoriesHelper.Windows.Organizations
             Projects = Projects.OrderBy(p => p.getName()).ToList();
             int positionLabel = 25;
             int positionButton = 20;
+            int positionLigne = 52;
+
+            LigneHorizontale Ligne = new LigneHorizontale();
+            Ligne.Name = "FirstLine";
+            Ligne.Location = new Point(0, 12);
+            Ligne.Width = 310;
+            Ligne.Height = 1;
+
+            Controls.Add(Ligne);
             foreach (Project Project in Projects)
             {
                 // Créer le label
@@ -64,7 +73,7 @@ namespace StoriesHelper.Windows.Organizations
                     Label.ForeColor = Color.Red;
                 }
                 Label.Font = new Font("Cambria", 11);
-                Label.Location = new Point(0, positionLabel);
+                Label.Location = new Point(1, positionLabel);
                 Controls.Add(Label);
 
                 // Créer Le button
@@ -77,8 +86,17 @@ namespace StoriesHelper.Windows.Organizations
                 button.Click += new EventHandler(goToProject);
                 Controls.Add(button);
 
+                // Créer la ligne
+                Ligne = new LigneHorizontale();
+                Ligne.Name = "Ligne" + Project.getRowId().ToString();
+                Ligne.Location = new Point(0, positionLigne);
+                Ligne.Width = 310;
+                Ligne.Height = 1;
+                Controls.Add(Ligne);
+
                 positionLabel += 40;
                 positionButton += 40;
+                positionLigne += 40;
             }
         }
         private void goToProject(object sender, EventArgs e)

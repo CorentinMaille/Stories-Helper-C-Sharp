@@ -44,6 +44,23 @@ namespace StoriesHelper.Models
 
         public void fetch(int fk_user, int fk_team)
         {
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@user", fk_user);
+            command.Parameters.AddWithValue("@team", fk_team);
+            string sql = "SELECT *";
+            sql += " FROM storieshelper_belong_to";
+            sql += " WHERE fk_user = @user";
+            sql += " WHERE fk_team = @team";
+            command.CommandText = sql;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+
+            }
+            conn.Close();
+
+
             this.fk_user = fk_user;
             this.fk_team = fk_team;
         }

@@ -20,6 +20,7 @@ namespace StoriesHelper.Windows.Organizations
             List<Team> Teams = new List<Team>();
             foreach (Project project in Projects)
             {
+                ListTeams.Clear();
                 ListTeams.AddRange(project.getListTeams());
                 if (archived && open)
                 {
@@ -49,6 +50,16 @@ namespace StoriesHelper.Windows.Organizations
             Teams = Teams.OrderBy(t => t.getName()).ToList();
             int positionLabel = 20;
             int positionButton = 15;
+            int positionLigne = 47;
+
+            // Créer la ligne du haut
+            LigneHorizontale LigneHorizontale = new LigneHorizontale();
+            LigneHorizontale.Name = "FirstLine";
+            LigneHorizontale.Location = new Point(0, 7);
+            LigneHorizontale.Width = 280;
+            LigneHorizontale.Height = 2;
+            this.Controls.Add(LigneHorizontale);
+
             foreach (Team Team in Teams)
             {
                 // Créer le label
@@ -74,7 +85,7 @@ namespace StoriesHelper.Windows.Organizations
                     Label.ForeColor = Color.Red;
                 }
                 Label.Font = new Font("Cambria", 11);
-                Label.Location = new Point(0, positionLabel);
+                Label.Location = new Point(1, positionLabel);
                 this.Controls.Add(Label);
 
                 // Créer Le button
@@ -87,10 +98,20 @@ namespace StoriesHelper.Windows.Organizations
                 button.Click += new EventHandler(goToTeam);
                 this.Controls.Add(button);
 
+                // Créer la ligne
+                LigneHorizontale = new LigneHorizontale();
+                LigneHorizontale.Name = "Ligne" + Team.getRowId().ToString();
+                LigneHorizontale.Location = new Point(0, positionLigne);
+                LigneHorizontale.Width = 280;
+                LigneHorizontale.Height = 1;
+                this.Controls.Add(LigneHorizontale);
+
                 positionLabel += 40;
                 positionButton += 40;
+                positionLigne += 40;
             }
         }
+
         private void goToTeam(object sender, EventArgs e)
         {
             Button button = sender as Button;
