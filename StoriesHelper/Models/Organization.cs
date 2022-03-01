@@ -153,7 +153,7 @@ namespace StoriesHelper.Models
             while (logs.Read())
             {
                 LogHistory LogHistory = new LogHistory();
-                LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(6), logs.GetString(7));
+                LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(6), logs.GetString(7), logs.GetString(8));
                 list_logs.Add(LogHistory);
             }
 
