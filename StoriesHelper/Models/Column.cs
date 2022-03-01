@@ -49,7 +49,7 @@ namespace StoriesHelper.Models
             List<Task> list_task_open = new List<Task>();
             foreach (Task task in list_tasks)
             {
-                if (task.isActive())
+                if (task.isActive() == 1)
                 {
                     list_task_open.Add(task);
                 }
@@ -61,7 +61,7 @@ namespace StoriesHelper.Models
             List<Task> list_task_closed = new List<Task>();
             foreach (Task task in list_tasks)
             {
-                if (!task.isActive())
+                if (task.isActive() == -1)
                 {
                     list_task_closed.Add(task);
                 }
@@ -117,7 +117,7 @@ namespace StoriesHelper.Models
             while (tasks.Read())
             {
                 Task task = new Task();
-                task.initializedTask(tasks.GetInt32(0), tasks.GetString(1), tasks.GetString(2), tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(7));
+                task.initializedTask(tasks.GetInt32(0), tasks.GetString(1), tasks.GetString(2), tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetInt32(7));
                 list_tasks.Add(task);
             }
             conn.Close();
@@ -151,7 +151,7 @@ namespace StoriesHelper.Models
                 {
                     taskDescription = tasks.GetString(2);
                 }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6));
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetInt32(6));
                 list_tasks.Add(task);
             }
             conn.Close();
@@ -183,7 +183,7 @@ namespace StoriesHelper.Models
                 {
                     taskDescription = tasks.GetString(2);
                 }
-                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetBoolean(6));
+                task.initializedTask(tasks.GetInt32(0), taskName, taskDescription, tasks.GetInt32(3), tasks.GetInt32(4), tasks.GetInt32(5), tasks.GetInt32(6));
                 ListTask.Add(task);
             }
             conn.Close();

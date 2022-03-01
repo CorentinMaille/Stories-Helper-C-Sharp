@@ -45,7 +45,6 @@ namespace StoriesHelper.Windows.Projects
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelDateCreation = new System.Windows.Forms.Label();
             this.labelType = new System.Windows.Forms.Label();
-            this.Rendement = new System.Windows.Forms.Label();
             this.NbTachesEnCours = new System.Windows.Forms.Label();
             this.NombreUtilisateurs = new System.Windows.Forms.Label();
             this.NomTeam = new System.Windows.Forms.Label();
@@ -76,7 +75,6 @@ namespace StoriesHelper.Windows.Projects
             this.gradientPanelProject.Controls.Add(this.labelDescription);
             this.gradientPanelProject.Controls.Add(this.labelDateCreation);
             this.gradientPanelProject.Controls.Add(this.labelType);
-            this.gradientPanelProject.Controls.Add(this.Rendement);
             this.gradientPanelProject.Controls.Add(this.NbTachesEnCours);
             this.gradientPanelProject.Controls.Add(this.NombreUtilisateurs);
             this.gradientPanelProject.Controls.Add(this.NomTeam);
@@ -195,23 +193,12 @@ namespace StoriesHelper.Windows.Projects
             this.labelType.TabIndex = 20;
             this.labelType.Text = "Type :  ";
             // 
-            // Rendement
-            // 
-            this.Rendement.AutoSize = true;
-            this.Rendement.BackColor = System.Drawing.Color.Transparent;
-            this.Rendement.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.Rendement.Location = new System.Drawing.Point(850, 537);
-            this.Rendement.Name = "Rendement";
-            this.Rendement.Size = new System.Drawing.Size(94, 19);
-            this.Rendement.TabIndex = 19;
-            this.Rendement.Text = "Rendement";
-            // 
             // NbTachesEnCours
             // 
             this.NbTachesEnCours.AutoSize = true;
             this.NbTachesEnCours.BackColor = System.Drawing.Color.Transparent;
             this.NbTachesEnCours.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.NbTachesEnCours.Location = new System.Drawing.Point(770, 537);
+            this.NbTachesEnCours.Location = new System.Drawing.Point(800, 537);
             this.NbTachesEnCours.Name = "NbTachesEnCours";
             this.NbTachesEnCours.Size = new System.Drawing.Size(84, 19);
             this.NbTachesEnCours.TabIndex = 18;
@@ -263,7 +250,7 @@ namespace StoriesHelper.Windows.Projects
             legend1.Name = "Legend1";
             this.GraphiqueRatioTaskProject.Legends.Add(legend1);
             this.GraphiqueRatioTaskProject.Location = new System.Drawing.Point(48, 570);
-            this.GraphiqueRatioTaskProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GraphiqueRatioTaskProject.Margin = new System.Windows.Forms.Padding(2);
             this.GraphiqueRatioTaskProject.Name = "GraphiqueRatioTaskProject";
             this.GraphiqueRatioTaskProject.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
@@ -286,7 +273,7 @@ namespace StoriesHelper.Windows.Projects
             // 
             this.PanelListTeams.BackColor = System.Drawing.Color.Transparent;
             this.PanelListTeams.Location = new System.Drawing.Point(410, 570);
-            this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListTeams.Name = "PanelListTeams";
             this.PanelListTeams.Size = new System.Drawing.Size(625, 300);
             this.PanelListTeams.TabIndex = 13;
@@ -327,7 +314,6 @@ namespace StoriesHelper.Windows.Projects
         private System.Windows.Forms.Label NomTeam;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelType;
-        private System.Windows.Forms.Label Rendement;
         private System.Windows.Forms.Label NbTachesEnCours;
         private System.Windows.Forms.Label NombreUtilisateurs;
         private System.Windows.Forms.Label labelDateCreation;

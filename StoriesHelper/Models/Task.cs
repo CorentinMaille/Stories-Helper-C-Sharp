@@ -14,7 +14,7 @@ namespace StoriesHelper.Models
         private int fk_column;
         private int rank;
         private int fk_author;
-        private bool active;
+        private int active;
         private List<TaskComment> TaskComments = new List<TaskComment>();
 
         public Task(int taskId = 0)
@@ -51,7 +51,7 @@ namespace StoriesHelper.Models
             this.fk_author = author;
         }
 
-        public void setActive(bool active)
+        public void setActive(int active)
         {
             this.active = active;
         }
@@ -83,7 +83,7 @@ namespace StoriesHelper.Models
             return this.fk_author;
         }
 
-        public bool isActive()
+        public int isActive()
         {
             return this.active;
         }
@@ -122,7 +122,7 @@ namespace StoriesHelper.Models
                 fk_column = reader.GetInt32(3);
                 rank = reader.GetInt32(4);
                 fk_author = reader.GetInt32(5);
-                active = reader.GetBoolean(6);
+                active = reader.GetInt32(6);
             }
             conn.Close();
 
@@ -149,7 +149,7 @@ namespace StoriesHelper.Models
             conn.Close();
         }
 
-        public void initializedTask(int rowid, string name, string description, int fk_column, int rank, int fk_user, bool active)
+        public void initializedTask(int rowid, string name, string description, int fk_column, int rank, int fk_user, int active)
         {
             this.rowid = rowid;
             this.name = name;

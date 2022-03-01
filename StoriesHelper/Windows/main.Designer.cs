@@ -31,7 +31,6 @@ namespace StoriesHelper.Windows
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.collaboratorsButton = new System.Windows.Forms.Button();
-            this.ProjectsButton = new System.Windows.Forms.Button();
             this.sideBarBackground = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.DisconectButton = new System.Windows.Forms.Button();
@@ -61,22 +60,6 @@ namespace StoriesHelper.Windows
             this.collaboratorsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
             this.collaboratorsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
-            // ProjectsButton
-            // 
-            this.ProjectsButton.BackColor = System.Drawing.Color.Transparent;
-            this.ProjectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProjectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectsButton.ForeColor = System.Drawing.Color.Black;
-            this.ProjectsButton.Location = new System.Drawing.Point(0, 370);
-            this.ProjectsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ProjectsButton.Name = "ProjectsButton";
-            this.ProjectsButton.Size = new System.Drawing.Size(302, 110);
-            this.ProjectsButton.TabIndex = 3;
-            this.ProjectsButton.Text = "Projets";
-            this.ProjectsButton.UseVisualStyleBackColor = false;
-            this.ProjectsButton.MouseEnter += new System.EventHandler(this.buttonEnter);
-            this.ProjectsButton.MouseLeave += new System.EventHandler(this.buttonLeave);
-            // 
             // sideBarBackground
             // 
             this.sideBarBackground.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -84,7 +67,6 @@ namespace StoriesHelper.Windows
             this.sideBarBackground.Controls.Add(this.DisconectButton);
             this.sideBarBackground.Controls.Add(this.ApplicationNamePanel);
             this.sideBarBackground.Controls.Add(this.organisationButton);
-            this.sideBarBackground.Controls.Add(this.ProjectsButton);
             this.sideBarBackground.Controls.Add(this.collaboratorsButton);
             this.sideBarBackground.ForeColor = System.Drawing.Color.DodgerBlue;
             this.sideBarBackground.Location = new System.Drawing.Point(-1, -1);
@@ -223,7 +205,6 @@ namespace StoriesHelper.Windows
         #endregion
 
         private System.Windows.Forms.Button collaboratorsButton;
-        private System.Windows.Forms.Button ProjectsButton;
         private System.Windows.Forms.Panel sideBarBackground;
         private System.Windows.Forms.Button organisationButton;
         private System.Windows.Forms.Panel ApplicationNamePanel;
