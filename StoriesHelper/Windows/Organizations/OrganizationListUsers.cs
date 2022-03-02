@@ -67,7 +67,7 @@ namespace StoriesHelper.Windows.Organizations
 
                 // Créer Le button
                 Button button = new Button();
-                button.Name = User.getLastname() + " " + User.getRowId().ToString();
+                button.Name = User.getRowId().ToString();
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
@@ -82,7 +82,7 @@ namespace StoriesHelper.Windows.Organizations
         private void goToUser(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            System.Windows.MessageBox.Show(button.Name);
+            main.goToUser(Convert.ToInt32(button.Name), "Organization");
         }
     }
 }

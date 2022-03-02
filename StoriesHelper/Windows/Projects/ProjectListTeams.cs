@@ -57,7 +57,13 @@ namespace StoriesHelper.Windows.Projects
                 List<Task> Tasks = new List<Task>();
                 foreach (Column column in Columns)
                 {
-                    Tasks.AddRange(column.getListTasks());
+                   foreach (Task task in column.getListTasks())
+                   {
+                       if (task.isActive() == 1)
+                       {
+                           Tasks.Add(task);
+                       }
+                   }
                 }
                 NbTask.Text = Tasks.Count().ToString();
                 NbTask.Name = "NbTask" + Team.getRowId();
@@ -82,6 +88,7 @@ namespace StoriesHelper.Windows.Projects
                 positionButton += 40;
             }
         }
+
         private void goToTeam(object sender, EventArgs e)
         {
             Button button = sender as Button;

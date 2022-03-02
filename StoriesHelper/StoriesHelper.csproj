@@ -157,6 +157,12 @@
     <Compile Include="Windows\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Projects\ProjectDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectDescription.Designer.cs">
+      <DependentUpon>ProjectDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Projects\ProjectListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     <Compile Include="Windows\Teams\TeamStatistiques\TitreStatistique.Designer.cs">
       <DependentUpon>TitreStatistique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Users\UserInterface\UserInterfaceMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Users\UserInterface\UserInterfaceMain.Designer.cs">
+      <DependentUpon>UserInterfaceMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Users\UserListUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -248,6 +260,9 @@
     <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ProjectDescription.resx">
+      <DependentUpon>ProjectDescription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TitreStatistique.resx">
       <DependentUpon>TitreStatistique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Users\UserInterface\UserInterfaceMain.resx">
+      <DependentUpon>UserInterfaceMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Users\UserListUsers.resx">
       <DependentUpon>UserListUsers.cs</DependentUpon>

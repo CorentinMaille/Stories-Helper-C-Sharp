@@ -168,6 +168,7 @@ namespace StoriesHelper.Models
             string sql = "SELECT *";
             sql += " FROM storieshelper_task";
             sql += " WHERE fk_column = @idColumn";
+            sql += " And active <> 0";
             command.CommandText = sql;
             MySqlDataReader tasks = command.ExecuteReader();
             while (tasks.Read())

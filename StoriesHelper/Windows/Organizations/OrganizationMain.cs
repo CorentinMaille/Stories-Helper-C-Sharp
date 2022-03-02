@@ -42,15 +42,19 @@ namespace StoriesHelper.Windows.Organizations
             }
             foreach (Column column in Columns)
             {
-                Tasks.AddRange(column.getListTasks());
-            }
-            foreach (Task task in Tasks)
-            {
-                if (task.isActive() == 1)
+                foreach (Task task in column.getListTasks())
                 {
-                    TasksOpen.Add(task);
-                } else if (task.isActive() == -1) {
-                    TasksClosed.Add(task);
+                    if(task.isActive() == 1)
+                    {
+
+                        if (column.getName() == "Closed")
+                        {
+                            TasksClosed.Add(task);
+                        } else
+                        {
+                            TasksOpen.Add(task);
+                        }
+                    }
                 }
             }
             int nbTeams = Teams.Count();

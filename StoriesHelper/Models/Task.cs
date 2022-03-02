@@ -96,8 +96,8 @@ namespace StoriesHelper.Models
 
             command.Parameters.AddWithValue("@rowid", taskId);
 
-            string sql = "SELECT t.rowid, t.name, t.description, t.fk_column, t.rank, t.fk_user, t.active";
-            sql += " FROM storieshelper_task AS t";
+            string sql = "SELECT *";
+            sql += " FROM storieshelper_task";
             sql += " WHERE rowid = @rowid";
 
             command.CommandText = sql;
@@ -130,7 +130,7 @@ namespace StoriesHelper.Models
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@fk_task", taskId);
 
-            sql = "SELECT t.rowid, t.fk_task, t.note, t.fk_user, t.admin";
+            sql = "SELECT t.rowid, t.fk_task, t.note, t.fk_user";
             sql += " FROM storieshelper_task_comment AS t";
             sql += " WHERE fk_task = @fk_task";
 
