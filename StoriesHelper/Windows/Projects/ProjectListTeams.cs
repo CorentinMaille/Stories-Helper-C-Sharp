@@ -88,6 +88,7 @@ namespace StoriesHelper.Windows.Projects
                 positionButton += 40;
             }
         }
+
         private void goToTeam(object sender, EventArgs e)
         {
             Button button = sender as Button;

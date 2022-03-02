@@ -9,6 +9,7 @@ namespace StoriesHelper.Models
         protected string email;
         protected string password;
         protected int fk_organization;
+        protected int admin;
 
         public int getRowId()
         {

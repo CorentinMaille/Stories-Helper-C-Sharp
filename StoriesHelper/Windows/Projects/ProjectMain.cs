@@ -65,6 +65,12 @@ namespace StoriesHelper.Windows.Projects
             PanelListTeams.Controls.Clear();
             PanelListTeams.Controls.Add(ListTeams);
             ListTeams.Show();
+
+            // description
+            ProjectDescription ProjectDescription = new ProjectDescription(Project.getDescription());
+            panelDescription.Controls.Clear();
+            panelDescription.Controls.Add(ProjectDescription);
+            ProjectDescription.Show();
         }
 
         /*

@@ -6,6 +6,7 @@ using StoriesHelper.Windows.Organizations;
 using StoriesHelper.Windows.Projects;
 using StoriesHelper.Windows.Teams;
 using StoriesHelper.Windows.Users;
+using StoriesHelper.Windows.Users.UserInterface;
 
 namespace StoriesHelper.Windows
 {
@@ -69,6 +70,17 @@ namespace StoriesHelper.Windows
 
             OrganizationContent.Show();
         }
+
+        private void collaboratorsButton_Click(object sender, EventArgs e)
+        {
+            UserMainList UserMainList = new UserMainList();
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(UserMainList);
+
+            UserMainList.Show();
+        }
+
         static public void goToProject(int idProject)
         {
             ProjectMain ProjectContent = new ProjectMain(idProject);
@@ -78,6 +90,7 @@ namespace StoriesHelper.Windows
 
             ProjectContent.Show();
         }
+
         static public void goToTeam(int idTeam, string from)
         {
             TeamMain TeamContent = new TeamMain(idTeam, from);
@@ -87,6 +100,27 @@ namespace StoriesHelper.Windows
 
             TeamContent.Show();
         }
+
+        static public void goToListUser()
+        {
+            UserMainList UserMainList = new UserMainList();
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(UserMainList);
+
+            UserMainList.Show();
+        }
+
+        static public void goToUser(int idUser, string from)
+        {
+            UserInterfaceMain UserInterfaceMain = new UserInterfaceMain(idUser, from);
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(UserInterfaceMain);
+
+            UserInterfaceMain.Show();
+        }
+
         private void QuitButton_Click(object sender, EventArgs e)
         {
             Quitter quitter = new Quitter();
@@ -104,16 +138,6 @@ namespace StoriesHelper.Windows
             Login loginWindow = new Login();
             loginWindow.Show();
             Hide();
-        }
-
-        private void collaboratorsButton_Click(object sender, EventArgs e)
-        {
-            UserMainList UserMainList = new UserMainList();
-
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(UserMainList);
-
-            UserMainList.Show();
         }
     }
 }

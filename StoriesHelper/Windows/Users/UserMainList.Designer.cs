@@ -30,6 +30,7 @@ namespace StoriesHelper.Windows.Users
         private void InitializeComponent()
         {
             this.gradient1 = new StoriesHelper.Services.Gradient();
+            this.UserTitre = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace StoriesHelper.Windows.Users
             this.textFirstname = new System.Windows.Forms.TextBox();
             this.labelFilterName = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
-            this.UserTitre = new System.Windows.Forms.Label();
             this.gradient1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,19 @@ namespace StoriesHelper.Windows.Users
             this.gradient1.Size = new System.Drawing.Size(1101, 900);
             this.gradient1.TabIndex = 5;
             this.gradient1.TopColor = System.Drawing.Color.DodgerBlue;
+            // 
+            // UserTitre
+            // 
+            this.UserTitre.AutoSize = true;
+            this.UserTitre.BackColor = System.Drawing.Color.Transparent;
+            this.UserTitre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold);
+            this.UserTitre.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.UserTitre.Location = new System.Drawing.Point(41, 26);
+            this.UserTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UserTitre.Name = "UserTitre";
+            this.UserTitre.Size = new System.Drawing.Size(234, 41);
+            this.UserTitre.TabIndex = 26;
+            this.UserTitre.Text = "Utilisateurs : ";
             // 
             // label6
             // 
@@ -307,19 +320,6 @@ namespace StoriesHelper.Windows.Users
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(330, 29);
             this.textName.TabIndex = 2;
-            // 
-            // UserTitre
-            // 
-            this.UserTitre.AutoSize = true;
-            this.UserTitre.BackColor = System.Drawing.Color.Transparent;
-            this.UserTitre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold);
-            this.UserTitre.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserTitre.Location = new System.Drawing.Point(41, 26);
-            this.UserTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.UserTitre.Name = "UserTitre";
-            this.UserTitre.Size = new System.Drawing.Size(234, 41);
-            this.UserTitre.TabIndex = 26;
-            this.UserTitre.Text = "Utilisateurs : ";
             // 
             // UserMainList
             // 

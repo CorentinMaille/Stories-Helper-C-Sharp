@@ -47,12 +47,12 @@ namespace StoriesHelper.Windows
                 }
                 else
                 {
-                    erreur.Text = "*L'une des informations est incorrect";
+                    erreur.Text = "*L'une des informations est incorrecte";
                 }
             }
             else
             {
-                erreur.Text = "*L'une des informations est incorrect";
+                erreur.Text = "*L'une des informations est incorrecte";
             }
             erreur.Left = (this.ClientSize.Width - erreur.Width) / 2;
             conn.Close();

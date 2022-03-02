@@ -13,9 +13,11 @@ namespace StoriesHelper.Windows.Teams
 {
     public partial class TeamListUsers : UserControl
     {
+        protected int idTeam;
         public TeamListUsers(int idTeam)
         {
             InitializeComponent();
+            this.idTeam = idTeam;            
             Team Team = new Team(idTeam);
             List<Collaborator> Users = Team.getListCollaborators();
             Users = Users.OrderBy(u => u.getLastname()).ToList();
@@ -91,7 +93,7 @@ namespace StoriesHelper.Windows.Teams
 
                 // Créer Le button
                 Button button = new Button();
-                button.Name = User.getLastname() + " " + User.getRowId().ToString();
+                button.Name = User.getRowId().ToString();
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
@@ -106,7 +108,7 @@ namespace StoriesHelper.Windows.Teams
         private void goToUser(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            System.Windows.MessageBox.Show(button.Name);
+            main.goToUser(Convert.ToInt32(button.Name), this.idTeam.ToString());
         }
     }
 }
