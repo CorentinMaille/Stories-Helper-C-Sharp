@@ -3,13 +3,15 @@ using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Services;
-using StoriesHelper.Windows.Organizations;
+using StoriesHelper.Windows.Organizations.OrganizationListProject;
 
 namespace StoriesHelper.Windows.Organizations
 {
     public partial class OrganizationMain : UserControl
     {
-        public OrganizationMain()
+        protected string projectName = "";
+        protected string projectType = "";
+        public OrganizationMain(string projectName = "", string projectType = "")
         {
             int idOrganization = Session.UserId;
             InitializeComponent();
@@ -68,52 +70,31 @@ namespace StoriesHelper.Windows.Organizations
             NbUtilisateurs.Text += nbUsers;
 
             // Liste Projets
-            OrganizationListProjects ListProjects = new OrganizationListProjects();
+            MainOrganizationListProject MainOrganizationListProject = new MainOrganizationListProject();
             PanelListProjects.Controls.Clear();
-            PanelListProjects.Controls.Add(ListProjects);
-            ListProjects.Show();
+            PanelListProjects.Controls.Add(MainOrganizationListProject);
+            MainOrganizationListProject.Show();
 
             // Liste Teams
             OrganizationListTeams ListTeams = new OrganizationListTeams();
             PanelListTeams.Controls.Clear();
             PanelListTeams.Controls.Add(ListTeams);
             ListTeams.Show();
-
-            // Liste Users
-            OrganizationListUsers ListUsers = new OrganizationListUsers();
-            PanelListUsers.Controls.Clear();
-            PanelListUsers.Controls.Add(ListUsers);
-            ListUsers.Show();
-
-
         }
-        private void displayOpenArchivedProject(object sender, System.EventArgs e)
+        private void FilterDisplayProject(object sender, System.EventArgs e)
         {
-            if (checkBoxArchivedProject.Checked && checkBoxOpenProject.Checked)
-            {
-                OrganizationListProjects ListProjects = new OrganizationListProjects(true, true);
-                PanelListProjects.Controls.Clear();
-                PanelListProjects.Controls.Add(ListProjects);
-                ListProjects.Show();
-            } else if (checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked) {
-                OrganizationListProjects ListProjects = new OrganizationListProjects(true, false);
-                PanelListProjects.Controls.Clear();
-                PanelListProjects.Controls.Add(ListProjects);
-                ListProjects.Show();
-            } else if (!checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked) {
-                OrganizationListProjects ListProjects = new OrganizationListProjects(false, false);
-                PanelListProjects.Controls.Clear();
-                PanelListProjects.Controls.Add(ListProjects);
-                ListProjects.Show();
-            } else {
-                OrganizationListProjects ListProjects = new OrganizationListProjects();
-                PanelListProjects.Controls.Clear();
-                PanelListProjects.Controls.Add(ListProjects);
-                ListProjects.Show();
-            }
+            projectName = FilterNameProject.Text;
+            projectType = FilterTypeProject.Text;
+
+            showListProject();
         }
-        
-        private void displayOpenArchivedTeam(object sender, System.EventArgs e)
+
+        private void displayProject(object sender, System.EventArgs e)
+        {
+            showListProject();
+        }
+
+        private void displayTeam(object sender, System.EventArgs e)
         {
             if (checkBoxArchivedTeam.Checked && checkBoxOpenTeam.Checked)
             {
@@ -155,6 +136,37 @@ namespace StoriesHelper.Windows.Organizations
                 GraphiqueRatioTaskOrganization.Series["Task"].IsValueShownAsLabel = true;
                 GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());
                 GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelClosed, TasksClosed.Count());
+            }
+        }
+        
+        public void showListProject()
+        {
+            if (checkBoxArchivedProject.Checked && checkBoxOpenProject.Checked)
+            {
+                MainOrganizationListProject ListProjects = new MainOrganizationListProject(true, true, projectName, projectType);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            }
+            else if (checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked)
+            {
+                MainOrganizationListProject ListProjects = new MainOrganizationListProject(true, false, projectName, projectType);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+            }
+            else if (!checkBoxArchivedProject.Checked && !checkBoxOpenProject.Checked)
+            {
+                MainOrganizationListProject ListProjects = new MainOrganizationListProject(false, false, projectName, projectType);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
+            }
+            else
+            {
+                MainOrganizationListProject ListProjects = new MainOrganizationListProject(false, true, projectName, projectType);
+                PanelListProjects.Controls.Clear();
+                PanelListProjects.Controls.Add(ListProjects);
+                ListProjects.Show();
             }
         }
     }

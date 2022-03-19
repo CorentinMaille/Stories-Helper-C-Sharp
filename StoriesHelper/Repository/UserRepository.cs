@@ -11,11 +11,15 @@ namespace StoriesHelper.Repository
         List<Project> list_projects = new List<Project>();
         List<Collaborator> list_collaborators = new List<Collaborator>();
         
-        public List<Collaborator> getAllUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null)
+        public List<Collaborator> getAllUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1)
         {
+            int offset = 1 * page;
+            int limit = 25 * page;
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
+            command.Parameters.AddWithValue("@offset", offset);
+            command.Parameters.AddWithValue("@limit", limit);
             string sql = "select u.* ";
             sql += " FROM storieshelper_organization o ";
             sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
@@ -53,6 +57,8 @@ namespace StoriesHelper.Repository
                 command.Parameters.AddWithValue("@id", "%" + id + "%");
                 sql += " AND u.rowid LIKE @id";
             }
+            sql += " LIMIT @limit";
+            sql += " OFFSET @offset";
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())

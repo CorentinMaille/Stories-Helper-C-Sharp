@@ -3,11 +3,8 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\StoriesHelper.ex
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\StoriesHelper.pdb
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.dll
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.xml
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Login.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.main.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListUsers.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeams.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationMain.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Properties.Resources.resources
@@ -29,3 +26,7 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.ex
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectDescription.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Users.UserInterface.UserInterfaceMain.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProject.MainOrganizationListProject.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProject.OrganizationPaginationProject.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache

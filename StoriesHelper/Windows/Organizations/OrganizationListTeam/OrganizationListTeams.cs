@@ -48,27 +48,35 @@ namespace StoriesHelper.Windows.Organizations
                 }
             }
             Teams = Teams.OrderBy(t => t.getName()).ToList();
-            int positionLabel = 20;
-            int positionButton = 15;
-            int positionLigne = 47;
-
-            // Créer la ligne du haut
-            LigneHorizontale LigneHorizontale = new LigneHorizontale();
-            LigneHorizontale.Name = "FirstLine";
-            LigneHorizontale.Location = new Point(0, 7);
-            LigneHorizontale.Width = 280;
-            LigneHorizontale.Height = 2;
-            this.Controls.Add(LigneHorizontale);
+            int positionLabel = 10;
+            int positionButton = 7;
+            int positionBackColor = 7;
+            int rang = 0;
 
             foreach (Team Team in Teams)
             {
+                // créer le fond coloré.
+                Gradient BackColor = new Gradient();
+                BackColor.Name = "BackColor" + Team.getRowId().ToString();
+                BackColor.Location = new Point(0, positionBackColor);
+                BackColor.Size = new Size(500, 40);
+                if (rang % 2 == 0)
+                {
+                    BackColor.BackColor = Color.CornflowerBlue;
+                }
+                else
+                {
+                    BackColor.BackColor = Color.LightSkyBlue;
+                }
+                this.Controls.Add(BackColor);
+
                 // Créer le label
                 string TeamName = Team.getName();
                 string newName = "";
                 Label Label = new Label();
-                if (TeamName.Length > 25)
+                if (TeamName.Length > 50)
                 {
-                    newName = TeamName.Remove(25, (TeamName.Length - 25));
+                    newName = TeamName.Remove(50, (TeamName.Length - 50));
                     newName = newName.Insert(newName.Length, "...");
                     Label.Text = "- " + newName;
                     Label.Name = newName + Team.getRowId();
@@ -86,30 +94,48 @@ namespace StoriesHelper.Windows.Organizations
                 }
                 Label.Font = new Font("Cambria", 11);
                 Label.Location = new Point(1, positionLabel);
-                this.Controls.Add(Label);
+                BackColor.Controls.Add(Label);
 
                 // Créer Le button
                 Button button = new Button();
                 button.Name = Team.getRowId().ToString();
                 button.Text = "Aller à";
+                button.FlatStyle = FlatStyle.Flat;
+                button.BackColor = Color.Gray;
                 button.Font = new Font("Cambria", 11);
                 button.Size = new Size(70, 25);
-                button.Location = new Point(200, positionButton);
+                button.Location = new Point(400, positionButton);
                 button.Click += new EventHandler(goToTeam);
-                this.Controls.Add(button);
+                BackColor.Controls.Add(button);
 
                 // Créer la ligne
-                LigneHorizontale = new LigneHorizontale();
+                LigneHorizontale LigneHorizontale = new LigneHorizontale();
                 LigneHorizontale.Name = "Ligne" + Team.getRowId().ToString();
-                LigneHorizontale.Location = new Point(0, positionLigne);
-                LigneHorizontale.Width = 280;
+                LigneHorizontale.Location = new Point(0, 0);
+                LigneHorizontale.Width = 500;
                 LigneHorizontale.Height = 1;
-                this.Controls.Add(LigneHorizontale);
+                BackColor.Controls.Add(LigneHorizontale);
 
-                positionLabel += 40;
-                positionButton += 40;
-                positionLigne += 40;
+                positionBackColor += 40;
+                rang += 1;
             }
+
+            // Créer la ligne Verticale Gauche
+            LigneVerticale LigneVerticaleGauche = new LigneVerticale();
+            LigneVerticaleGauche.Name = "LigneVerticaleGauche";
+            LigneVerticaleGauche.Location = new Point(0, 0);
+            LigneVerticaleGauche.Width = positionBackColor;
+            LigneVerticaleGauche.Height = 1;
+            this.Controls.Add(LigneVerticaleGauche);
+
+            // Créer la ligne Verticale Droite
+            LigneVerticale LigneVerticaleDroite = new LigneVerticale();
+            LigneVerticaleDroite.Name = "LigneVerticaleDroite";
+            LigneVerticaleDroite.Location = new Point(500, 0);
+            LigneVerticaleDroite.Width = positionBackColor;
+            LigneVerticaleDroite.Height = 1;
+            this.Controls.Add(LigneVerticaleDroite);
+
         }
 
         private void goToTeam(object sender, EventArgs e)

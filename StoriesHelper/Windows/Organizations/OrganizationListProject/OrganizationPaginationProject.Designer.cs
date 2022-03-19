@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows.Organizations
+namespace StoriesHelper.Windows.Organizations.OrganizationListProject
 {
-    partial class OrganizationListProjects
+    partial class OrganizationPaginationProject
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -31,15 +31,16 @@ namespace StoriesHelper.Windows.Organizations
         {
             this.SuspendLayout();
             // 
-            // OrganizationListProjects
+            // OrganizationPagination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "OrganizationListProjects";
-            this.Size = new System.Drawing.Size(290, 410);
+            this.MaximumSize = new System.Drawing.Size(520, 30);
+            this.Name = "OrganizationPagination";
+            this.Size = new System.Drawing.Size(0, 0);
             this.ResumeLayout(false);
 
         }

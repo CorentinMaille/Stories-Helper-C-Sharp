@@ -75,8 +75,10 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Collaborator.cs" />
     <Compile Include="Models\ColumnState.cs" />
+    <Compile Include="Repository\ProjectRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\ColumnStateRepository.cs" />
+    <Compile Include="Repository\TeamRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Services\Calcul.cs" />
     <Compile Include="Services\CustomTextBox.cs">
@@ -97,22 +99,29 @@
     <Compile Include="Services\LigneHorizontale.Designer.cs">
       <DependentUpon>LigneHorizontale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListProjects.cs">
+    <Compile Include="Services\ProjectNameType.cs" />
+    <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListProjects.Designer.cs">
+    <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.Designer.cs">
       <DependentUpon>OrganizationListProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListUsers.cs">
+    <Compile Include="Windows\Organizations\OrganizationListProject\MainOrganizationListProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListUsers.Designer.cs">
-      <DependentUpon>OrganizationListUsers.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\OrganizationListProject\MainOrganizationListProject.Designer.cs">
+      <DependentUpon>MainOrganizationListProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListTeams.cs">
+    <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationPaginationProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\OrganizationListTeams.Designer.cs">
+    <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationPaginationProject.Designer.cs">
+      <DependentUpon>OrganizationPaginationProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.Designer.cs">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Organizations\OrganizationMain.cs">
@@ -236,13 +245,16 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\OrganizationListProjects.resx">
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.resx">
       <DependentUpon>OrganizationListProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\OrganizationListUsers.resx">
-      <DependentUpon>OrganizationListUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\MainOrganizationListProject.resx">
+      <DependentUpon>MainOrganizationListProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\OrganizationListTeams.resx">
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\OrganizationPaginationProject.resx">
+      <DependentUpon>OrganizationPaginationProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.resx">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\OrganizationMain.resx">
