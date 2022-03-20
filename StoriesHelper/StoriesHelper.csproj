@@ -99,6 +99,7 @@
     <Compile Include="Services\LigneHorizontale.Designer.cs">
       <DependentUpon>LigneHorizontale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\TeamNameType.cs" />
     <Compile Include="Services\ProjectNameType.cs" />
     <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
@@ -118,11 +119,23 @@
     <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationPaginationProject.Designer.cs">
       <DependentUpon>OrganizationPaginationProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\MainOrganizationListTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\MainOrganizationListTeam.Designer.cs">
+      <DependentUpon>MainOrganizationListTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.Designer.cs">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationPaginationTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\OrganizationListTeam\OrganizationPaginationTeam.Designer.cs">
+      <DependentUpon>OrganizationPaginationTeam.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Organizations\OrganizationMain.cs">
       <SubType>UserControl</SubType>
@@ -254,8 +267,14 @@
     <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\OrganizationPaginationProject.resx">
       <DependentUpon>OrganizationPaginationProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListTeam\MainOrganizationListTeam.resx">
+      <DependentUpon>MainOrganizationListTeam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\OrganizationListTeam\OrganizationListTeams.resx">
       <DependentUpon>OrganizationListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\OrganizationListTeam\OrganizationPaginationTeam.resx">
+      <DependentUpon>OrganizationPaginationTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\OrganizationMain.resx">
       <DependentUpon>OrganizationMain.cs</DependentUpon>

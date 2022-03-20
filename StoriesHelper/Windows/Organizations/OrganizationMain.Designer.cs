@@ -56,6 +56,9 @@ namespace StoriesHelper.Windows.Organizations
             this.NbTeams = new System.Windows.Forms.Label();
             this.NbProjects = new System.Windows.Forms.Label();
             this.OrganizationLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.FilterNameTeam = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.gradient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskOrganization)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +68,9 @@ namespace StoriesHelper.Windows.Organizations
             this.gradient.Angle = 90F;
             this.gradient.BackColor = System.Drawing.Color.White;
             this.gradient.BottomColor = System.Drawing.Color.White;
+            this.gradient.Controls.Add(this.label6);
+            this.gradient.Controls.Add(this.FilterNameTeam);
+            this.gradient.Controls.Add(this.label5);
             this.gradient.Controls.Add(this.button2);
             this.gradient.Controls.Add(this.label4);
             this.gradient.Controls.Add(this.label3);
@@ -88,32 +94,32 @@ namespace StoriesHelper.Windows.Organizations
             this.gradient.Controls.Add(this.NbProjects);
             this.gradient.Controls.Add(this.OrganizationLabel);
             this.gradient.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gradient.Location = new System.Drawing.Point(0, 0);
+            this.gradient.Location = new System.Drawing.Point(-101, 0);
             this.gradient.Margin = new System.Windows.Forms.Padding(2);
             this.gradient.Name = "gradient";
-            this.gradient.Size = new System.Drawing.Size(1101, 900);
+            this.gradient.Size = new System.Drawing.Size(1202, 900);
             this.gradient.TabIndex = 1;
             this.gradient.TopColor = System.Drawing.Color.Empty;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(996, 341);
+            this.button2.Location = new System.Drawing.Point(1071, 370);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(83, 28);
             this.button2.TabIndex = 29;
             this.button2.Text = "Filtrer";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.displayTeam);
+            this.button2.Click += new System.EventHandler(this.FilterDisplayTeam);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(217, 415);
+            this.label4.Location = new System.Drawing.Point(319, 415);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 22);
@@ -125,7 +131,7 @@ namespace StoriesHelper.Windows.Organizations
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 415);
+            this.label3.Location = new System.Drawing.Point(120, 415);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 22);
@@ -137,7 +143,7 @@ namespace StoriesHelper.Windows.Organizations
             this.FiltrerProjets.BackColor = System.Drawing.Color.Silver;
             this.FiltrerProjets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FiltrerProjets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FiltrerProjets.Location = new System.Drawing.Point(434, 370);
+            this.FiltrerProjets.Location = new System.Drawing.Point(536, 370);
             this.FiltrerProjets.Name = "FiltrerProjets";
             this.FiltrerProjets.Size = new System.Drawing.Size(83, 28);
             this.FiltrerProjets.TabIndex = 26;
@@ -148,7 +154,7 @@ namespace StoriesHelper.Windows.Organizations
             // FilterTypeProject
             // 
             this.FilterTypeProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterTypeProject.Location = new System.Drawing.Point(270, 373);
+            this.FilterTypeProject.Location = new System.Drawing.Point(372, 373);
             this.FilterTypeProject.Name = "FilterTypeProject";
             this.FilterTypeProject.Size = new System.Drawing.Size(137, 22);
             this.FilterTypeProject.TabIndex = 25;
@@ -158,7 +164,7 @@ namespace StoriesHelper.Windows.Organizations
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(218, 376);
+            this.label2.Location = new System.Drawing.Point(320, 376);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 24;
@@ -169,7 +175,7 @@ namespace StoriesHelper.Windows.Organizations
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 376);
+            this.label1.Location = new System.Drawing.Point(121, 376);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 23;
@@ -178,7 +184,7 @@ namespace StoriesHelper.Windows.Organizations
             // FilterNameProject
             // 
             this.FilterNameProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterNameProject.Location = new System.Drawing.Point(76, 373);
+            this.FilterNameProject.Location = new System.Drawing.Point(178, 373);
             this.FilterNameProject.Name = "FilterNameProject";
             this.FilterNameProject.Size = new System.Drawing.Size(137, 22);
             this.FilterNameProject.TabIndex = 22;
@@ -190,7 +196,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxArchivedTeam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxArchivedTeam.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Italic);
             this.checkBoxArchivedTeam.ForeColor = System.Drawing.Color.Red;
-            this.checkBoxArchivedTeam.Location = new System.Drawing.Point(617, 379);
+            this.checkBoxArchivedTeam.Location = new System.Drawing.Point(1098, 418);
             this.checkBoxArchivedTeam.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxArchivedTeam.Name = "checkBoxArchivedTeam";
             this.checkBoxArchivedTeam.Size = new System.Drawing.Size(75, 19);
@@ -207,7 +213,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxOpenTeam.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxOpenTeam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxOpenTeam.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Italic);
-            this.checkBoxOpenTeam.Location = new System.Drawing.Point(559, 378);
+            this.checkBoxOpenTeam.Location = new System.Drawing.Point(1031, 418);
             this.checkBoxOpenTeam.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxOpenTeam.Name = "checkBoxOpenTeam";
             this.checkBoxOpenTeam.Size = new System.Drawing.Size(54, 19);
@@ -221,7 +227,7 @@ namespace StoriesHelper.Windows.Organizations
             this.labelTitreListeTeam.AutoSize = true;
             this.labelTitreListeTeam.BackColor = System.Drawing.Color.Transparent;
             this.labelTitreListeTeam.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold);
-            this.labelTitreListeTeam.Location = new System.Drawing.Point(554, 321);
+            this.labelTitreListeTeam.Location = new System.Drawing.Point(656, 321);
             this.labelTitreListeTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitreListeTeam.Name = "labelTitreListeTeam";
             this.labelTitreListeTeam.Size = new System.Drawing.Size(225, 28);
@@ -234,7 +240,7 @@ namespace StoriesHelper.Windows.Organizations
             this.NbArchivedProjects.BackColor = System.Drawing.Color.Transparent;
             this.NbArchivedProjects.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NbArchivedProjects.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbArchivedProjects.Location = new System.Drawing.Point(80, 190);
+            this.NbArchivedProjects.Location = new System.Drawing.Point(182, 190);
             this.NbArchivedProjects.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NbArchivedProjects.Name = "NbArchivedProjects";
             this.NbArchivedProjects.Size = new System.Drawing.Size(262, 22);
@@ -249,7 +255,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxOpenProject.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxOpenProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxOpenProject.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOpenProject.Location = new System.Drawing.Point(390, 418);
+            this.checkBoxOpenProject.Location = new System.Drawing.Point(492, 418);
             this.checkBoxOpenProject.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxOpenProject.Name = "checkBoxOpenProject";
             this.checkBoxOpenProject.Size = new System.Drawing.Size(54, 19);
@@ -273,7 +279,7 @@ namespace StoriesHelper.Windows.Organizations
             legend2.BackColor = System.Drawing.Color.Transparent;
             legend2.Name = "Legend1";
             this.GraphiqueRatioTaskOrganization.Legends.Add(legend2);
-            this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(405, 100);
+            this.GraphiqueRatioTaskOrganization.Location = new System.Drawing.Point(507, 100);
             this.GraphiqueRatioTaskOrganization.Margin = new System.Windows.Forms.Padding(2);
             this.GraphiqueRatioTaskOrganization.Name = "GraphiqueRatioTaskOrganization";
             this.GraphiqueRatioTaskOrganization.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
@@ -300,7 +306,7 @@ namespace StoriesHelper.Windows.Organizations
             this.checkBoxArchivedProject.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxArchivedProject.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxArchivedProject.ForeColor = System.Drawing.Color.Red;
-            this.checkBoxArchivedProject.Location = new System.Drawing.Point(467, 418);
+            this.checkBoxArchivedProject.Location = new System.Drawing.Point(569, 418);
             this.checkBoxArchivedProject.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxArchivedProject.Name = "checkBoxArchivedProject";
             this.checkBoxArchivedProject.Size = new System.Drawing.Size(75, 19);
@@ -314,7 +320,7 @@ namespace StoriesHelper.Windows.Organizations
             this.labelTitreListeProjet.AutoSize = true;
             this.labelTitreListeProjet.BackColor = System.Drawing.Color.Transparent;
             this.labelTitreListeProjet.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreListeProjet.Location = new System.Drawing.Point(17, 321);
+            this.labelTitreListeProjet.Location = new System.Drawing.Point(119, 321);
             this.labelTitreListeProjet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitreListeProjet.Name = "labelTitreListeProjet";
             this.labelTitreListeProjet.Size = new System.Drawing.Size(206, 28);
@@ -325,7 +331,7 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.PanelListTeams.AutoScroll = true;
             this.PanelListTeams.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListTeams.Location = new System.Drawing.Point(559, 442);
+            this.PanelListTeams.Location = new System.Drawing.Point(661, 442);
             this.PanelListTeams.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListTeams.Name = "PanelListTeams";
             this.PanelListTeams.Size = new System.Drawing.Size(520, 440);
@@ -335,7 +341,7 @@ namespace StoriesHelper.Windows.Organizations
             // 
             this.PanelListProjects.AutoScroll = true;
             this.PanelListProjects.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListProjects.Location = new System.Drawing.Point(22, 442);
+            this.PanelListProjects.Location = new System.Drawing.Point(124, 442);
             this.PanelListProjects.Margin = new System.Windows.Forms.Padding(2);
             this.PanelListProjects.Name = "PanelListProjects";
             this.PanelListProjects.Size = new System.Drawing.Size(520, 440);
@@ -347,7 +353,7 @@ namespace StoriesHelper.Windows.Organizations
             this.NbUtilisateurs.BackColor = System.Drawing.Color.Transparent;
             this.NbUtilisateurs.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NbUtilisateurs.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbUtilisateurs.Location = new System.Drawing.Point(80, 270);
+            this.NbUtilisateurs.Location = new System.Drawing.Point(182, 270);
             this.NbUtilisateurs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NbUtilisateurs.Name = "NbUtilisateurs";
             this.NbUtilisateurs.Size = new System.Drawing.Size(206, 22);
@@ -360,7 +366,7 @@ namespace StoriesHelper.Windows.Organizations
             this.NbTeams.BackColor = System.Drawing.Color.Transparent;
             this.NbTeams.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NbTeams.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbTeams.Location = new System.Drawing.Point(80, 230);
+            this.NbTeams.Location = new System.Drawing.Point(182, 230);
             this.NbTeams.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NbTeams.Name = "NbTeams";
             this.NbTeams.Size = new System.Drawing.Size(176, 22);
@@ -373,7 +379,7 @@ namespace StoriesHelper.Windows.Organizations
             this.NbProjects.BackColor = System.Drawing.Color.Transparent;
             this.NbProjects.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NbProjects.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NbProjects.Location = new System.Drawing.Point(80, 150);
+            this.NbProjects.Location = new System.Drawing.Point(182, 150);
             this.NbProjects.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NbProjects.Name = "NbProjects";
             this.NbProjects.Size = new System.Drawing.Size(264, 22);
@@ -386,12 +392,43 @@ namespace StoriesHelper.Windows.Organizations
             this.OrganizationLabel.BackColor = System.Drawing.Color.Transparent;
             this.OrganizationLabel.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrganizationLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OrganizationLabel.Location = new System.Drawing.Point(47, 43);
+            this.OrganizationLabel.Location = new System.Drawing.Point(149, 43);
             this.OrganizationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OrganizationLabel.Name = "OrganizationLabel";
             this.OrganizationLabel.Size = new System.Drawing.Size(584, 41);
             this.OrganizationLabel.TabIndex = 1;
             this.OrganizationLabel.Text = "Vue d\'ensemble de l\'Organisation : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(658, 376);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 16);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Name :";
+            // 
+            // FilterNameTeam
+            // 
+            this.FilterNameTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FilterNameTeam.Location = new System.Drawing.Point(715, 373);
+            this.FilterNameTeam.Name = "FilterNameTeam";
+            this.FilterNameTeam.Size = new System.Drawing.Size(325, 22);
+            this.FilterNameTeam.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(657, 413);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(158, 22);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Nom des Équipes";
             // 
             // OrganizationMain
             // 
@@ -434,5 +471,8 @@ namespace StoriesHelper.Windows.Organizations
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox FilterNameTeam;
+        private System.Windows.Forms.Label label5;
     }
 }

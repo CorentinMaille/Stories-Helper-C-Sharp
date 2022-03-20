@@ -1,43 +1,58 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StoriesHelper.Services;
 
 namespace StoriesHelper.Repository
 {
     class TeamRepository : Repository
     {
-        public int NbTeamByOrganization(bool open, bool closed)
+        public List<TeamNameType> GetTeamsByOrganization(bool archived, bool open, int fkOrganization, int page = 0, string name = null, bool pagination = true)
         {
-            int count = 0;
-            if (open || closed)
+            int offset = 25 * page;
+            int limit = 25;
+
+            List<TeamNameType> TeamList = new List<TeamNameType>();
+            if (open || archived)
             {
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
-                string sql = "select COUNT(t.*) ";
+                command.Parameters.AddWithValue("@idOrganization", fkOrganization);
+                string sql = "SELECT t.rowid, t.name, t.active ";
                 sql += "FROM storieshelper_team t ";
                 sql += "INNER JOIN storieshelper_project p ON p.rowid = t.fk_project ";
-                sql += "INNER JOIN storieshelper_organization o ON o.rowid = p.fk_organization ";
-                sql += "WHERE 1 ";
-                if (open)
+                sql += "WHERE p.fk_organization = @idOrganization ";
+                if (name != null)
                 {
-                    sql += "WHERE t.active = 1 ";
+                    command.Parameters.AddWithValue("@name", "%" + name + "%");
+                    sql += "AND t.name LIKE @name ";
                 }
-                if (closed)
+                if (open && !archived)
                 {
-                    sql += "WHERE t.active = 0 ";
+                    sql += "AND t.active = 1 ";
+                }
+                else if (archived && !open)
+                {
+                    sql += "AND t.active = 0 ";
+                }
+                sql += "ORDER BY t.name ASC ";
+                if(pagination)
+                {
+                    command.Parameters.AddWithValue("@offset", offset);
+                    command.Parameters.AddWithValue("@limit", limit);
+                    sql += "LIMIT @limit ";
+                    sql += "OFFSET @offset ";
                 }
                 command.CommandText = sql;
-                MySqlDataReader CountTeam = command.ExecuteReader();
-                while(CountTeam.Read())
+                MySqlDataReader Team = command.ExecuteReader();
+                while (Team.Read())
                 {
-                    count = CountTeam.GetInt32(0);
+                    TeamNameType TeamNameType = new TeamNameType();
+                    TeamNameType.initializeTeamNameType(Team.GetInt32(0), Team.GetString(1), Team.GetBoolean(2));
+                    TeamList.Add(TeamNameType);
                 }
             }
 
-            return count;
+            return TeamList;
         }
     }
 }

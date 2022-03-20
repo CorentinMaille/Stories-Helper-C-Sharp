@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations.OrganizationListProject;
+using StoriesHelper.Windows.Organizations.OrganizationListTeam;
 
 namespace StoriesHelper.Windows.Organizations
 {
@@ -11,6 +12,7 @@ namespace StoriesHelper.Windows.Organizations
     {
         protected string projectName = "";
         protected string projectType = "";
+        protected string teamName = "";
         public OrganizationMain(string projectName = "", string projectType = "")
         {
             int idOrganization = Session.UserId;
@@ -76,11 +78,12 @@ namespace StoriesHelper.Windows.Organizations
             MainOrganizationListProject.Show();
 
             // Liste Teams
-            OrganizationListTeams ListTeams = new OrganizationListTeams();
+            MainOrganizationListTeam MainOrganizationListTeam = new MainOrganizationListTeam();
             PanelListTeams.Controls.Clear();
-            PanelListTeams.Controls.Add(ListTeams);
-            ListTeams.Show();
+            PanelListTeams.Controls.Add(MainOrganizationListTeam);
+            MainOrganizationListTeam.Show();
         }
+
         private void FilterDisplayProject(object sender, System.EventArgs e)
         {
             projectName = FilterNameProject.Text;
@@ -93,32 +96,19 @@ namespace StoriesHelper.Windows.Organizations
         {
             showListProject();
         }
+        
+        private void FilterDisplayTeam(object sender, System.EventArgs e)
+        {
+            teamName = FilterNameTeam.Text;
+
+            showListTeam();
+        }
 
         private void displayTeam(object sender, System.EventArgs e)
         {
-            if (checkBoxArchivedTeam.Checked && checkBoxOpenTeam.Checked)
-            {
-                OrganizationListTeams ListTeams = new OrganizationListTeams(true, true);
-                PanelListTeams.Controls.Clear();
-                PanelListTeams.Controls.Add(ListTeams);
-                ListTeams.Show();
-            } else if (checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked) {
-                OrganizationListTeams ListTeams = new OrganizationListTeams(true, false);
-                PanelListTeams.Controls.Clear();
-                PanelListTeams.Controls.Add(ListTeams);
-                ListTeams.Show();
-            } else if (!checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked) {
-                OrganizationListTeams ListTeams = new OrganizationListTeams(false, false);
-                PanelListTeams.Controls.Clear();
-                PanelListTeams.Controls.Add(ListTeams);
-                ListTeams.Show();
-            } else {
-                OrganizationListTeams ListTeams = new OrganizationListTeams();
-                PanelListTeams.Controls.Clear();
-                PanelListTeams.Controls.Add(ListTeams);
-                ListTeams.Show();
-            }
+            showListTeam();
         }
+
         private void displayTaskChart(List<Task> Tasks, List<Task> TasksOpen, List<Task> TasksClosed)
         {
 
@@ -167,6 +157,38 @@ namespace StoriesHelper.Windows.Organizations
                 PanelListProjects.Controls.Clear();
                 PanelListProjects.Controls.Add(ListProjects);
                 ListProjects.Show();
+            }
+        }
+
+        public void showListTeam()
+        {
+            if (checkBoxArchivedTeam.Checked && checkBoxOpenTeam.Checked)
+            {
+                MainOrganizationListTeam MainOrganizationListTeam = new MainOrganizationListTeam(true, true, teamName);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(MainOrganizationListTeam);
+                MainOrganizationListTeam.Show();
+            }
+            else if (checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked)
+            {
+                MainOrganizationListTeam MainOrganizationListTeam = new MainOrganizationListTeam(true, false, teamName);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(MainOrganizationListTeam);
+                MainOrganizationListTeam.Show();
+            }
+            else if (!checkBoxArchivedTeam.Checked && !checkBoxOpenTeam.Checked)
+            {
+                MainOrganizationListTeam MainOrganizationListTeam = new MainOrganizationListTeam(false, false, teamName);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(MainOrganizationListTeam);
+                MainOrganizationListTeam.Show();
+            }
+            else
+            {
+                MainOrganizationListTeam MainOrganizationListTeam = new MainOrganizationListTeam(false, true, teamName);
+                PanelListTeams.Controls.Clear();
+                PanelListTeams.Controls.Add(MainOrganizationListTeam);
+                MainOrganizationListTeam.Show();
             }
         }
     }

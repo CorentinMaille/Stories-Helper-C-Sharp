@@ -29,7 +29,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             PanelPagination.Left = (this.ClientSize.Width - PanelPagination.Width) / 2;
         }
 
-        public static void goToPaginate(bool archived, bool open, int page, string name, string type)
+        public static void goToPaginateProject(bool archived, bool open, int page, string name, string type)
         {
             OrganizationListProjects ListProjects = new OrganizationListProjects(archived, open, page, name, type);
             PanelListProjects.Controls.Clear();

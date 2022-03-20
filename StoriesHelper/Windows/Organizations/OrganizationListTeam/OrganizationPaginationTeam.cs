@@ -5,28 +5,26 @@ using StoriesHelper.Services;
 using StoriesHelper.Repository;
 using System.Drawing;
 
-namespace StoriesHelper.Windows.Organizations.OrganizationListProject
+namespace StoriesHelper.Windows.Organizations.OrganizationListTeam
 {
-    public partial class OrganizationPaginationProject : UserControl
+    public partial class OrganizationPaginationTeam : UserControl
     {
         protected int page;
         protected bool archived;
         protected bool open;
         protected string name;
-        protected string type;
         protected int pagination;
-        public OrganizationPaginationProject(bool archived, bool open, int page = 0, string name = null, string type = null)
+        public OrganizationPaginationTeam(bool archived, bool open, int page = 0, string name = null)
         {
             InitializeComponent();
             this.page = page;
             this.archived = archived;
             this.open = open;
             this.name = name;
-            this.type = type;
 
-            ProjectRepository ProjectRepository = new ProjectRepository();
+            TeamRepository TeamRepository = new TeamRepository();
 
-            int NbTeam = ProjectRepository.GetProjectsByOrganization(archived, open, Session.UserId, page, name, type, false).Count;
+            int NbTeam = TeamRepository.GetTeamsByOrganization(archived, open, Session.UserId, page, name, false).Count;
 
             int pagination = NbTeam / 25;
 
@@ -47,7 +45,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             FastBackward.AutoSize = true;
             FastBackward.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             FastBackward.Location = new Point(0, 2);
-            FastBackward.Click += new EventHandler(goToPaginateProject);
+            FastBackward.Click += new EventHandler(goToPaginateTeam);
             Controls.Add(FastBackward);
             
             Button Backward = new Button();
@@ -61,7 +59,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             Backward.AutoSize = true;
             Backward.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Backward.Location = new Point(50, 2);
-            Backward.Click += new EventHandler(goToPaginateProject);
+            Backward.Click += new EventHandler(goToPaginateTeam);
             Controls.Add(Backward);
 
             int positionButton = 90;
@@ -92,7 +90,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
                 button.AutoSize = true;
                 button.AutoSizeMode = AutoSizeMode.GrowAndShrink;
                 button.Location = new Point(positionButton, 2);
-                button.Click += new EventHandler(goToPaginateProject);
+                button.Click += new EventHandler(goToPaginateTeam);
                 Controls.Add(button);
 
                 positionButton += 30;
@@ -111,7 +109,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             Forward.AutoSize = true;
             Forward.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Forward.Location = new Point(positionButton, 2);
-            Forward.Click += new EventHandler(goToPaginateProject);
+            Forward.Click += new EventHandler(goToPaginateTeam);
             Controls.Add(Forward);
 
             Button FastForward = new Button();
@@ -125,7 +123,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             FastForward.AutoSize = true;
             FastForward.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             FastForward.Location = new Point(positionButton + 30, 2);
-            FastForward.Click += new EventHandler(goToPaginateProject);
+            FastForward.Click += new EventHandler(goToPaginateTeam);
             Controls.Add(FastForward);
 
             Label Label = new Label();
@@ -133,34 +131,34 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
             this.Controls.Add(Label);
         }
 
-        private void goToPaginateProject(object sender, EventArgs e)
+        private void goToPaginateTeam(object sender, EventArgs e)
         {
             Button button = sender as Button;
             if (Convert.ToString(button.Name) == "FastForward")
             {
-                MainOrganizationListProject.goToPaginateProject(archived, open, pagination, name, type);
+                MainOrganizationListTeam.goToPaginateTeam(archived, open, pagination, name);
             } 
             else if (Convert.ToString(button.Name) == "Forward") 
             {
                 if (page < pagination)
                 {
-                    MainOrganizationListProject.goToPaginateProject(archived, open, page + 1, name, type); 
+                    MainOrganizationListTeam.goToPaginateTeam(archived, open, page + 1, name); 
                 }
             }
             else if (Convert.ToString(button.Name) == "Backward") 
             {
                 if (page > 0)
                 {
-                    MainOrganizationListProject.goToPaginateProject(archived, open, page - 1, name, type); 
+                    MainOrganizationListTeam.goToPaginateTeam(archived, open, page - 1, name); 
                 }
             }
             else if (Convert.ToString(button.Name) == "FastBackward") 
             {
-                MainOrganizationListProject.goToPaginateProject(archived, open, 0, name, type); 
+                MainOrganizationListTeam.goToPaginateTeam(archived, open, 0, name); 
             } 
             else
             {
-                MainOrganizationListProject.goToPaginateProject(archived, open, Convert.ToInt32(button.Name), name, type);
+                MainOrganizationListTeam.goToPaginateTeam(archived, open, Convert.ToInt32(button.Name), name);
             }
         }
     }

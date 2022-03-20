@@ -1,19 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using StoriesHelper.Services;
 
 namespace StoriesHelper.Repository
 {
     class ProjectRepository : Repository
     {
-        public List<ProjectNameType> GetProjectsByOrganization(bool archived, bool open, int fkOrganization, int page = 0, string name = null, string type = null)
+        public List<ProjectNameType> GetProjectsByOrganization(bool archived, bool open, int fkOrganization, int page = 0, string name = null, string type = null, bool pagination = true)
         {
             int offset = 25 * page;
-            int limit = 25 * (page + 1);
+            int limit = 25;
 
             List<ProjectNameType> ProjectList = new List<ProjectNameType>();
             if (open || archived)
@@ -21,8 +17,6 @@ namespace StoriesHelper.Repository
                 conn.Open();
                 MySqlCommand command = conn.CreateCommand();
                 command.Parameters.AddWithValue("@idOrganization", fkOrganization);
-                command.Parameters.AddWithValue("@offset", offset);
-                command.Parameters.AddWithValue("@limit", limit);
                 string sql = "SELECT rowid, name, type, active ";
                 sql += "FROM storieshelper_project p ";
                 sql += "WHERE fk_organization = @idOrganization ";
@@ -43,8 +37,13 @@ namespace StoriesHelper.Repository
                 {
                     sql += "AND p.active = 0 ";
                 }
-                sql += "LIMIT @limit ";
-                sql += "OFFSET @offset ";
+                if (pagination)
+                {
+                    command.Parameters.AddWithValue("@offset", offset);
+                    command.Parameters.AddWithValue("@limit", limit);
+                    sql += "LIMIT @limit ";
+                    sql += "OFFSET @offset ";
+                }
                 command.CommandText = sql;
                 MySqlDataReader Project = command.ExecuteReader();
                 while (Project.Read())

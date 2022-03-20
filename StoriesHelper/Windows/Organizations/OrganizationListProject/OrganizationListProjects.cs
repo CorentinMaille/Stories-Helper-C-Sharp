@@ -19,7 +19,6 @@ namespace StoriesHelper.Windows.Organizations
             ProjectRepository projectRepository = new ProjectRepository();
             List<ProjectNameType> Projects = projectRepository.GetProjectsByOrganization(archived, open, Session.UserId, page, name, type);
 
-            Projects = Projects.OrderBy(p => p.name).ToList();
             int positionLabel = 10;
             int positionButton = 7;
             int positionBackColor = 0;
