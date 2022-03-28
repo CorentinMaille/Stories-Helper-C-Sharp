@@ -120,7 +120,6 @@ namespace StoriesHelper.Models
             string sql3 = "SELECT *";
             sql3 += " FROM storieshelper_user";
             sql3 += " WHERE fk_organization = @idOrganization";
-            sql3 += " AND admin = 0";
             command3.CommandText = sql3;
             MySqlDataReader users = command3.ExecuteReader();
             while (users.Read())

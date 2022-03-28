@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Images\IconeUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Images\IconeUser.Designer.cs">
+      <DependentUpon>IconeUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Collaborator.cs" />
     <Compile Include="Models\ColumnState.cs" />
@@ -101,6 +107,12 @@
     </Compile>
     <Compile Include="Services\TeamNameType.cs" />
     <Compile Include="Services\ProjectNameType.cs" />
+    <Compile Include="Windows\Organizations\Icones\NombreUtilisateurs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\Icones\NombreUtilisateurs.Designer.cs">
+      <DependentUpon>NombreUtilisateurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,11 +264,17 @@
     <Compile Include="Windows\Users\UserMainList.Designer.cs">
       <DependentUpon>UserMainList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Images\IconeUser.resx">
+      <DependentUpon>IconeUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\Icones\NombreUtilisateurs.resx">
+      <DependentUpon>NombreUtilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.resx">
       <DependentUpon>OrganizationListProjects.cs</DependentUpon>
@@ -287,6 +305,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -363,6 +382,7 @@
     <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
     <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
     <Content Include="bin\Debug\ZstdNet.dll" />
+    <None Include="Images\iconeUser.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

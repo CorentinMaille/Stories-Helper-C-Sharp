@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations.OrganizationListProject;
 using StoriesHelper.Windows.Organizations.OrganizationListTeam;
+using StoriesHelper.Windows.Organizations.Icones;
 
 namespace StoriesHelper.Windows.Organizations
 {
@@ -19,6 +21,8 @@ namespace StoriesHelper.Windows.Organizations
             InitializeComponent();
             Organization Organization = new Organization(idOrganization);
             OrganizationLabel.Text += Organization.getName();
+            OrganizationLabel.Left = (this.ClientSize.Width - OrganizationLabel.Width) / 2;
+
             List<Project> Projects = Organization.getListProjects();
             List<Team> Teams = new List<Team>();
             List<Column> Columns = new List<Column>();
@@ -63,6 +67,17 @@ namespace StoriesHelper.Windows.Organizations
             }
             int nbTeams = Teams.Count();
             int nbUsers = Users.Count();
+/*
+            for(int i = 0; i <= 25; i++)
+            {
+                UserControl OmbreUtilisateur = new UserControl();
+                OmbreUtilisateur.Name = "OmbreUtilisateur" + i.ToString();
+                OmbreUtilisateur.Size = new Size(150 + (2 * i), 150 + (2 * i));
+                OmbreUtilisateur.Location = new Point(25 - i, 25 - i);
+                OmbreUtilisateur.BackColor = Color.FromArgb(100 - (4 * i), 0, 0, 0);
+                testPanel.Controls.Add(OmbreUtilisateur);
+                OmbreUtilisateur.Show();
+            }    */  
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 
@@ -70,6 +85,12 @@ namespace StoriesHelper.Windows.Organizations
             NbArchivedProjects.Text += nbArchived;
             NbTeams.Text += nbTeams;
             NbUtilisateurs.Text += nbUsers;
+
+            // icone Utilisateur
+            NombreUtilisateurs NombreUtilisateurs = new NombreUtilisateurs();
+            testPanel.Controls.Clear();
+            testPanel.Controls.Add(NombreUtilisateurs);
+            NombreUtilisateurs.Show();
 
             // Liste Projets
             MainOrganizationListProject MainOrganizationListProject = new MainOrganizationListProject();
