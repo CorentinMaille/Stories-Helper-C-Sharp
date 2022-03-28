@@ -26,7 +26,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListProject
 
             ProjectRepository ProjectRepository = new ProjectRepository();
 
-            int NbTeam = ProjectRepository.GetProjectsByOrganization(archived, open, Session.UserId, page, name, type, false).Count;
+            int NbTeam = ProjectRepository.GetProjectsByOrganization(Session.UserId, archived, open, page, name, type, false).Count;
 
             int pagination = NbTeam / 25;
 

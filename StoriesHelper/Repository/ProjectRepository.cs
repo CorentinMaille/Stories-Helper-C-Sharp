@@ -6,7 +6,7 @@ namespace StoriesHelper.Repository
 {
     class ProjectRepository : Repository
     {
-        public List<ProjectNameType> GetProjectsByOrganization(bool archived, bool open, int fkOrganization, int page = 0, string name = null, string type = null, bool pagination = true)
+        public List<ProjectNameType> GetProjectsByOrganization(int fkOrganization, bool archived = false, bool open = true, int page = 0, string name = null, string type = null, bool pagination = true)
         {
             int offset = 25 * page;
             int limit = 25;
@@ -53,7 +53,7 @@ namespace StoriesHelper.Repository
                     ProjectList.Add(ProjectNameType);
                 }
             }
-
+            conn.Close();
             return ProjectList;
         }
     }

@@ -11,22 +11,16 @@ namespace StoriesHelper.Repository
         List<Project> list_projects = new List<Project>();
         List<Collaborator> list_collaborators = new List<Collaborator>();
         
-        public List<Collaborator> getAllUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1)
+        public List<Collaborator> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1, bool pagination = true)
         {
-            int offset = 1 * page;
-            int limit = 25 * page;
+            int offset = 25 * page;
+            int limit = 25;
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
-            command.Parameters.AddWithValue("@offset", offset);
-            command.Parameters.AddWithValue("@limit", limit);
             string sql = "select u.* ";
-            sql += " FROM storieshelper_organization o ";
-            sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
-            sql += " INNER JOIN storieshelper_team t on t.fk_project = p.rowid";
-            sql += " INNER JOIN storieshelper_belong_to bt on bt.fk_team = t.rowid";
-            sql += " INNER JOIN storieshelper_user u on bt.fk_user = u.rowid";
-            sql += " WHERE o.rowid = @idOrganization";
+            sql += " FROM storieshelper_user u ";
+            sql += " WHERE u.fk_organization = @idOrganization";
             if(lastname != null)
             {
                 command.Parameters.AddWithValue("@name", "%" + lastname + "%");
@@ -57,8 +51,13 @@ namespace StoriesHelper.Repository
                 command.Parameters.AddWithValue("@id", "%" + id + "%");
                 sql += " AND u.rowid LIKE @id";
             }
-            sql += " LIMIT @limit";
-            sql += " OFFSET @offset";
+            if(pagination)
+            {
+                command.Parameters.AddWithValue("@offset", offset);
+                command.Parameters.AddWithValue("@limit", limit);
+                sql += " LIMIT @limit";
+                sql += " OFFSET @offset";
+            }
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations.OrganizationListProject;
 using StoriesHelper.Windows.Organizations.OrganizationListTeam;
+using StoriesHelper.Windows.Organizations.Icons;
 
 namespace StoriesHelper.Windows.Organizations
 {
@@ -19,6 +21,8 @@ namespace StoriesHelper.Windows.Organizations
             InitializeComponent();
             Organization Organization = new Organization(idOrganization);
             OrganizationLabel.Text += Organization.getName();
+            OrganizationLabel.Left = (this.ClientSize.Width - OrganizationLabel.Width) / 2;
+
             List<Project> Projects = Organization.getListProjects();
             List<Team> Teams = new List<Team>();
             List<Column> Columns = new List<Column>();
@@ -66,10 +70,23 @@ namespace StoriesHelper.Windows.Organizations
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 
-            NbProjects.Text += nbProjects;
-            NbArchivedProjects.Text += nbArchived;
-            NbTeams.Text += nbTeams;
-            NbUtilisateurs.Text += nbUsers;
+            // icone Utilisateur
+            IconUser IconUser = new IconUser();
+            panelIconUser.Controls.Clear();
+            panelIconUser.Controls.Add(IconUser);
+            IconUser.Show();
+
+            // icone Equipe
+            IconTeam IconTeam = new IconTeam();
+            panelIconTeam.Controls.Clear();
+            panelIconTeam.Controls.Add(IconTeam);
+            IconTeam.Show();
+
+            // icone Projet
+            IconProject IconProject = new IconProject();
+            panelIconProject.Controls.Clear();
+            panelIconProject.Controls.Add(IconProject);
+            IconProject.Show();
 
             // Liste Projets
             MainOrganizationListProject MainOrganizationListProject = new MainOrganizationListProject();

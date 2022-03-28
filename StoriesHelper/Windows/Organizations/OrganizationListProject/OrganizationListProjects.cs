@@ -17,7 +17,7 @@ namespace StoriesHelper.Windows.Organizations
             InitializeComponent();
 
             ProjectRepository projectRepository = new ProjectRepository();
-            List<ProjectNameType> Projects = projectRepository.GetProjectsByOrganization(archived, open, Session.UserId, page, name, type);
+            List<ProjectNameType> Projects = projectRepository.GetProjectsByOrganization(Session.UserId, archived, open, page, name, type);
 
             int positionLabel = 10;
             int positionButton = 7;
