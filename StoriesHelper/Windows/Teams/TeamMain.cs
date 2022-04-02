@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Windows.Teams.TeamStatistiques;
+using StoriesHelper.Windows.Teams.TeamListUser;
 
 namespace StoriesHelper.Windows.Teams
 {
@@ -45,10 +46,10 @@ namespace StoriesHelper.Windows.Teams
             }
 
             // Liste Users
-            TeamListUsers ListUsers = new TeamListUsers(idTeam);
+            MainTeamListUser MainTeamListUser = new MainTeamListUser(idTeam);
             PanelListUsers.Controls.Clear();
-            PanelListUsers.Controls.Add(ListUsers);
-            ListUsers.Show();
+            PanelListUsers.Controls.Add(MainTeamListUser);
+            MainTeamListUser.Show();
 
             TeamTaskStatistiques TeamTaskStatistiques = new TeamTaskStatistiques(idTeam);
             panelShowStatistiqueTeam.Controls.Clear();

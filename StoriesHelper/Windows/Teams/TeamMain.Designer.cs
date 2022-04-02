@@ -47,8 +47,8 @@ namespace StoriesHelper.Windows.Teams
             // gradientPanelTeam
             // 
             this.gradientPanelTeam.Angle = 90F;
-            this.gradientPanelTeam.BackColor = System.Drawing.Color.DodgerBlue;
-            this.gradientPanelTeam.BottomColor = System.Drawing.Color.SkyBlue;
+            this.gradientPanelTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.gradientPanelTeam.BottomColor = System.Drawing.Color.White;
             this.gradientPanelTeam.Controls.Add(this.buttonArchiverTeam);
             this.gradientPanelTeam.Controls.Add(this.buttonSupprimerTeam);
             this.gradientPanelTeam.Controls.Add(this.ArchivedTeam);
@@ -111,7 +111,7 @@ namespace StoriesHelper.Windows.Teams
             this.Email.AutoSize = true;
             this.Email.BackColor = System.Drawing.Color.Transparent;
             this.Email.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.Email.Location = new System.Drawing.Point(763, 596);
+            this.Email.Location = new System.Drawing.Point(763, 560);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(60, 22);
             this.Email.TabIndex = 34;
@@ -122,7 +122,7 @@ namespace StoriesHelper.Windows.Teams
             this.Prenom.AutoSize = true;
             this.Prenom.BackColor = System.Drawing.Color.Transparent;
             this.Prenom.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.Prenom.Location = new System.Drawing.Point(612, 596);
+            this.Prenom.Location = new System.Drawing.Point(612, 560);
             this.Prenom.Name = "Prenom";
             this.Prenom.Size = new System.Drawing.Size(80, 22);
             this.Prenom.TabIndex = 33;
@@ -133,7 +133,7 @@ namespace StoriesHelper.Windows.Teams
             this.Nom.AutoSize = true;
             this.Nom.BackColor = System.Drawing.Color.Transparent;
             this.Nom.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nom.Location = new System.Drawing.Point(501, 596);
+            this.Nom.Location = new System.Drawing.Point(501, 560);
             this.Nom.Name = "Nom";
             this.Nom.Size = new System.Drawing.Size(51, 22);
             this.Nom.TabIndex = 32;
@@ -143,13 +143,15 @@ namespace StoriesHelper.Windows.Teams
             // 
             this.PanelListUsers.AutoScroll = true;
             this.PanelListUsers.BackColor = System.Drawing.Color.Transparent;
-            this.PanelListUsers.Location = new System.Drawing.Point(493, 621);
+            this.PanelListUsers.Location = new System.Drawing.Point(493, 586);
+            this.PanelListUsers.Margin = new System.Windows.Forms.Padding(0);
             this.PanelListUsers.Name = "PanelListUsers";
-            this.PanelListUsers.Size = new System.Drawing.Size(587, 260);
+            this.PanelListUsers.Size = new System.Drawing.Size(575, 300);
             this.PanelListUsers.TabIndex = 31;
             // 
             // retour
             // 
+            this.retour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.retour.Location = new System.Drawing.Point(999, 15);
             this.retour.Name = "retour";
             this.retour.Size = new System.Drawing.Size(87, 27);
@@ -171,7 +173,7 @@ namespace StoriesHelper.Windows.Teams
             this.labelNbCollaborateur.AutoSize = true;
             this.labelNbCollaborateur.BackColor = System.Drawing.Color.Transparent;
             this.labelNbCollaborateur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelNbCollaborateur.Location = new System.Drawing.Point(522, 558);
+            this.labelNbCollaborateur.Location = new System.Drawing.Point(44, 557);
             this.labelNbCollaborateur.Name = "labelNbCollaborateur";
             this.labelNbCollaborateur.Size = new System.Drawing.Size(252, 22);
             this.labelNbCollaborateur.TabIndex = 29;

@@ -21,6 +21,7 @@ namespace StoriesHelper.Windows.Projects
             base.Dispose(disposing);
         }
 
+
         #region Code généré par le Concepteur de composants
 
         /// <summary> 
@@ -29,12 +30,10 @@ namespace StoriesHelper.Windows.Projects
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gradientPanelProject = new StoriesHelper.Services.Gradient();
             this.panelDescription = new System.Windows.Forms.Panel();
             this.labelDescription = new System.Windows.Forms.Label();
@@ -58,16 +57,11 @@ namespace StoriesHelper.Windows.Projects
             ((System.ComponentModel.ISupportInitialize)(this.GraphiqueRatioTaskProject)).BeginInit();
             this.SuspendLayout();
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // gradientPanelProject
             // 
             this.gradientPanelProject.Angle = 90F;
-            this.gradientPanelProject.BackColor = System.Drawing.Color.DodgerBlue;
-            this.gradientPanelProject.BottomColor = System.Drawing.Color.SkyBlue;
+            this.gradientPanelProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.gradientPanelProject.BottomColor = System.Drawing.Color.White;
             this.gradientPanelProject.Controls.Add(this.panelDescription);
             this.gradientPanelProject.Controls.Add(this.retour);
             this.gradientPanelProject.Controls.Add(this.labelNbCollaborateur);
@@ -93,7 +87,6 @@ namespace StoriesHelper.Windows.Projects
             // panelDescription
             // 
             this.panelDescription.AutoScroll = true;
-            this.panelDescription.AutoSize = true;
             this.panelDescription.BackColor = System.Drawing.Color.Transparent;
             this.panelDescription.Controls.Add(this.labelDescription);
             this.panelDescription.Location = new System.Drawing.Point(53, 272);
@@ -115,13 +108,13 @@ namespace StoriesHelper.Windows.Projects
             // retour
             // 
             this.retour.BackColor = System.Drawing.Color.Gray;
-            this.retour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.retour.Location = new System.Drawing.Point(999, 15);
+            this.retour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.retour.Location = new System.Drawing.Point(995, 71);
             this.retour.Name = "retour";
             this.retour.Size = new System.Drawing.Size(87, 27);
             this.retour.TabIndex = 29;
             this.retour.Text = "<<< Retour";
-            this.retour.UseVisualStyleBackColor = false;
+            this.retour.UseVisualStyleBackColor = true;
             this.retour.Click += new System.EventHandler(this.retour_Click);
             // 
             // labelNbCollaborateur
@@ -213,22 +206,22 @@ namespace StoriesHelper.Windows.Projects
             this.NbTachesEnCours.AutoSize = true;
             this.NbTachesEnCours.BackColor = System.Drawing.Color.Transparent;
             this.NbTachesEnCours.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.NbTachesEnCours.Location = new System.Drawing.Point(800, 537);
+            this.NbTachesEnCours.Location = new System.Drawing.Point(830, 537);
             this.NbTachesEnCours.Name = "NbTachesEnCours";
-            this.NbTachesEnCours.Size = new System.Drawing.Size(84, 19);
+            this.NbTachesEnCours.Size = new System.Drawing.Size(60, 19);
             this.NbTachesEnCours.TabIndex = 18;
-            this.NbTachesEnCours.Text = "Nb Taches";
+            this.NbTachesEnCours.Text = "Taches";
             // 
             // NombreUtilisateurs
             // 
             this.NombreUtilisateurs.AutoSize = true;
             this.NombreUtilisateurs.BackColor = System.Drawing.Color.Transparent;
             this.NombreUtilisateurs.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreUtilisateurs.Location = new System.Drawing.Point(650, 537);
+            this.NombreUtilisateurs.Location = new System.Drawing.Point(702, 537);
             this.NombreUtilisateurs.Name = "NombreUtilisateurs";
-            this.NombreUtilisateurs.Size = new System.Drawing.Size(119, 19);
+            this.NombreUtilisateurs.Size = new System.Drawing.Size(95, 19);
             this.NombreUtilisateurs.TabIndex = 17;
-            this.NombreUtilisateurs.Text = "Nb Utilisateurs";
+            this.NombreUtilisateurs.Text = "Utilisateurs";
             // 
             // NomTeam
             // 
@@ -237,9 +230,9 @@ namespace StoriesHelper.Windows.Projects
             this.NomTeam.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.NomTeam.Location = new System.Drawing.Point(450, 537);
             this.NomTeam.Name = "NomTeam";
-            this.NomTeam.Size = new System.Drawing.Size(87, 19);
+            this.NomTeam.Size = new System.Drawing.Size(98, 19);
             this.NomTeam.TabIndex = 16;
-            this.NomTeam.Text = "Nom Team";
+            this.NomTeam.Text = "Nom Équipe";
             // 
             // panel1
             // 
@@ -281,7 +274,7 @@ namespace StoriesHelper.Windows.Projects
             this.GraphiqueRatioTaskProject.Text = "Stats Des Tâches en cours du Projet";
             title1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             title1.Name = "Title1";
-            title1.Text = "Stats des Tâches En Cours de l\'Organisation";
+            title1.Text = "Stats Des Tâches en cours du Projet";
             this.GraphiqueRatioTaskProject.Titles.Add(title1);
             // 
             // PanelListTeams
@@ -334,7 +327,6 @@ namespace StoriesHelper.Windows.Projects
         private System.Windows.Forms.Label NbTachesEnCours;
         private System.Windows.Forms.Label NombreUtilisateurs;
         private System.Windows.Forms.Label labelDateCreation;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button buttonSupprimerProjet;
         private System.Windows.Forms.Button buttonArchiverProjet;

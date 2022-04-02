@@ -57,10 +57,10 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             chartArea1.ShadowColor = System.Drawing.Color.Transparent;
             this.TeamGraphicsStat.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.TeamGraphicsStat.Legends.Add(legend1);
-            this.TeamGraphicsStat.Location = new System.Drawing.Point(44, 2);
+            this.TeamGraphicsStat.Location = new System.Drawing.Point(0, 2);
             this.TeamGraphicsStat.Margin = new System.Windows.Forms.Padding(2);
             this.TeamGraphicsStat.Name = "TeamGraphicsStat";
             this.TeamGraphicsStat.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
@@ -69,13 +69,13 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             series1.Legend = "Legend1";
             series1.Name = "Tâches en cours";
             this.TeamGraphicsStat.Series.Add(series1);
-            this.TeamGraphicsStat.Size = new System.Drawing.Size(1043, 408);
+            this.TeamGraphicsStat.Size = new System.Drawing.Size(861, 408);
             this.TeamGraphicsStat.TabIndex = 0;
             this.TeamGraphicsStat.Text = "chart1";
             // 
             // PanelTitreStatistique
             // 
-            this.PanelTitreStatistique.Location = new System.Drawing.Point(0, 41);
+            this.PanelTitreStatistique.Location = new System.Drawing.Point(819, 43);
             this.PanelTitreStatistique.Name = "PanelTitreStatistique";
             this.PanelTitreStatistique.Size = new System.Drawing.Size(256, 367);
             this.PanelTitreStatistique.TabIndex = 1;

@@ -9,11 +9,9 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationMain.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Properties.Resources.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Home.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectMain.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Quitter.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamMain.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUsers.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskGraphics.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamTaskStatistiques.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TitreStatistique.resources
@@ -31,7 +29,6 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeam.MainOrganizationListTeam.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListTeam.OrganizationPaginationTeam.resources
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icones.NombreUtilisateurs.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Images.iconeUser.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\StoriesHelper.exe.config
@@ -46,7 +43,6 @@ C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\Ubiety.Dns.Core.dll
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\K4os.Compression.LZ4.dll
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\K4os.Hash.xxHash.dll
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\bin\Debug\FluentDateTime.xml
-C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Images.IconeUser.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Login.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.main.resources
@@ -60,7 +56,6 @@ C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windo
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Properties.Resources.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Home.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectDescription.resources
-C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeams.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectMain.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Quitter.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamMain.resources
@@ -78,3 +73,19 @@ C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconTeam.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconUser.resources
 C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconProject.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.MainProjectListTeam.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.ProjectListTeams.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.ProjectPaginationTeam.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.AssemblyReference.cache
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUser.MainTeamListUser.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.teamListUser.TeamPaginationUser.resources
+C:\wamp64\www\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.teamListUser.teamsListUsers.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconProject.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconTeam.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.Icons.IconUser.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.MainProjectListTeam.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.ProjectListTeams.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectListTeam.ProjectPaginationTeam.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUser.MainTeamListUser.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.teamListUser.TeamPaginationUser.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamListUser.TeamListUsers.resources
