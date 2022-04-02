@@ -12,22 +12,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoriesHelper.Windows.Organizations.Icones
+namespace StoriesHelper.Windows.Organizations.Icons
 {
-    public partial class NombreUtilisateurs : UserControl
+    public partial class IconUser : UserControl
     {
-        public NombreUtilisateurs()
+        public IconUser()
         {
             InitializeComponent();
 
             UserRepository UserRepository = new UserRepository();
 
-            int NbUser = UserRepository.getAllUserFromOrganization(Session.UserId, pagination: false).Count();
+            int NbUser = UserRepository.getUserFromOrganization(Session.UserId, pagination: false).Count();
 
             Label Titre = new Label();
             Titre.Name = "TitreNbUtilisateur";
-            Titre.Text = "Nb Utilisateurs";
-            Titre.Location = new Point(35, 130);
+            Titre.Text = "Utilisateurs";
+            Titre.Location = new Point(35, 120);
             Titre.BackColor = Color.Transparent;
             Titre.UseMnemonic = true;
             Titre.AutoSize = true;
@@ -37,7 +37,7 @@ namespace StoriesHelper.Windows.Organizations.Icones
             Label Nombre = new Label();
             Nombre.Name = "Nombre";
             Nombre.Text = NbUser.ToString();
-            Nombre.Location = new Point(65, 155);
+            Nombre.Location = new Point(65, 145);
             Nombre.BackColor = Color.Transparent;
             Nombre.UseMnemonic = true;
             Nombre.AutoSize = true;
@@ -72,6 +72,9 @@ namespace StoriesHelper.Windows.Organizations.Icones
                     OmbreUtilisateur.Show();
                 }
             }
+
+            Nombre.Left = (200 - Nombre.Width) / 2;
+            Titre.Left = (200 - Titre.Width) / 2;
         }
     }
 }

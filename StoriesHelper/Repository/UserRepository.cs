@@ -11,7 +11,7 @@ namespace StoriesHelper.Repository
         List<Project> list_projects = new List<Project>();
         List<Collaborator> list_collaborators = new List<Collaborator>();
         
-        public List<Collaborator> getAllUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1, bool pagination = true)
+        public List<Collaborator> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1, bool pagination = true)
         {
             int offset = 25 * page;
             int limit = 25;

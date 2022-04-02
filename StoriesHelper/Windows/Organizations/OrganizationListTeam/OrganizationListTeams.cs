@@ -16,7 +16,7 @@ namespace StoriesHelper.Windows.Organizations
         {
             InitializeComponent();
             TeamRepository teamRepository = new TeamRepository();
-            List<TeamNameType> Teams = teamRepository.GetTeamsByOrganization(archived, open, Session.UserId, page, name);
+            List<TeamNameType> Teams = teamRepository.GetTeamsByOrganization(Session.UserId, open, archived, page, name);
 
             int positionLabel = 10;
             int positionButton = 7;

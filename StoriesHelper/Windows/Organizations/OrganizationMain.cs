@@ -6,7 +6,7 @@ using StoriesHelper.Models;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Organizations.OrganizationListProject;
 using StoriesHelper.Windows.Organizations.OrganizationListTeam;
-using StoriesHelper.Windows.Organizations.Icones;
+using StoriesHelper.Windows.Organizations.Icons;
 
 namespace StoriesHelper.Windows.Organizations
 {
@@ -81,16 +81,23 @@ namespace StoriesHelper.Windows.Organizations
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 
-            NbProjects.Text += nbProjects;
-            NbArchivedProjects.Text += nbArchived;
-            NbTeams.Text += nbTeams;
-            NbUtilisateurs.Text += nbUsers;
-
             // icone Utilisateur
-            NombreUtilisateurs NombreUtilisateurs = new NombreUtilisateurs();
-            testPanel.Controls.Clear();
-            testPanel.Controls.Add(NombreUtilisateurs);
-            NombreUtilisateurs.Show();
+            IconUser IconUser = new IconUser();
+            panelIconUser.Controls.Clear();
+            panelIconUser.Controls.Add(IconUser);
+            IconUser.Show();
+
+            // icone Equipe
+            IconTeam IconTeam = new IconTeam();
+            panelIconTeam.Controls.Clear();
+            panelIconTeam.Controls.Add(IconTeam);
+            IconTeam.Show();
+
+            // icone Projet
+            IconProject IconProject = new IconProject();
+            panelIconProject.Controls.Clear();
+            panelIconProject.Controls.Add(IconProject);
+            IconProject.Show();
 
             // Liste Projets
             MainOrganizationListProject MainOrganizationListProject = new MainOrganizationListProject();

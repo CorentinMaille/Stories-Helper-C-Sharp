@@ -128,12 +128,12 @@ namespace StoriesHelper.Windows
             // StoriesHelperLabel2
             // 
             this.StoriesHelperLabel2.AutoSize = true;
-            this.StoriesHelperLabel2.Font = new System.Drawing.Font("Brush Script MT", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StoriesHelperLabel2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.StoriesHelperLabel2.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StoriesHelperLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.StoriesHelperLabel2.Location = new System.Drawing.Point(31, 71);
             this.StoriesHelperLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StoriesHelperLabel2.Name = "StoriesHelperLabel2";
-            this.StoriesHelperLabel2.Size = new System.Drawing.Size(128, 59);
+            this.StoriesHelperLabel2.Size = new System.Drawing.Size(134, 59);
             this.StoriesHelperLabel2.TabIndex = 4;
             this.StoriesHelperLabel2.Text = "Helper";
             this.StoriesHelperLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -154,12 +154,13 @@ namespace StoriesHelper.Windows
             // StoriesHelperLabel1
             // 
             this.StoriesHelperLabel1.AutoSize = true;
-            this.StoriesHelperLabel1.Font = new System.Drawing.Font("Brush Script MT", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StoriesHelperLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.StoriesHelperLabel1.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StoriesHelperLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.StoriesHelperLabel1.Location = new System.Drawing.Point(8, 9);
             this.StoriesHelperLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StoriesHelperLabel1.Name = "StoriesHelperLabel1";
-            this.StoriesHelperLabel1.Size = new System.Drawing.Size(137, 59);
+            this.StoriesHelperLabel1.Size = new System.Drawing.Size(144, 59);
             this.StoriesHelperLabel1.TabIndex = 3;
             this.StoriesHelperLabel1.Text = "Stories";
             this.StoriesHelperLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);

@@ -24,7 +24,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListTeam
 
             TeamRepository TeamRepository = new TeamRepository();
 
-            int NbTeam = TeamRepository.GetTeamsByOrganization(archived, open, Session.UserId, page, name, false).Count;
+            int NbTeam = TeamRepository.GetTeamsByOrganization(Session.UserId, open, archived, page, name, false).Count;
 
             int pagination = NbTeam / 25;
 

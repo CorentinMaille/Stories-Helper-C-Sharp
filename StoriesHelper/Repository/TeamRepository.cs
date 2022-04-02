@@ -6,7 +6,7 @@ namespace StoriesHelper.Repository
 {
     class TeamRepository : Repository
     {
-        public List<TeamNameType> GetTeamsByOrganization(bool archived, bool open, int fkOrganization, int page = 0, string name = null, bool pagination = true)
+        public List<TeamNameType> GetTeamsByOrganization(int fkOrganization, bool open = true, bool archived = false, int page = 0, string name = null, bool pagination = true)
         {
             int offset = 25 * page;
             int limit = 25;
@@ -51,6 +51,8 @@ namespace StoriesHelper.Repository
                     TeamList.Add(TeamNameType);
                 }
             }
+
+            conn.Close();
 
             return TeamList;
         }

@@ -107,11 +107,23 @@
     </Compile>
     <Compile Include="Services\TeamNameType.cs" />
     <Compile Include="Services\ProjectNameType.cs" />
-    <Compile Include="Windows\Organizations\Icones\NombreUtilisateurs.cs">
+    <Compile Include="Windows\Organizations\Icons\IconProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Organizations\Icones\NombreUtilisateurs.Designer.cs">
-      <DependentUpon>NombreUtilisateurs.cs</DependentUpon>
+    <Compile Include="Windows\Organizations\Icons\IconProject.Designer.cs">
+      <DependentUpon>IconProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\Icons\IconTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\Icons\IconTeam.Designer.cs">
+      <DependentUpon>IconTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Organizations\Icons\IconUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Organizations\Icons\IconUser.Designer.cs">
+      <DependentUpon>IconUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.cs">
       <SubType>UserControl</SubType>
@@ -273,8 +285,14 @@
     <EmbeddedResource Include="Windows\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Organizations\Icones\NombreUtilisateurs.resx">
-      <DependentUpon>NombreUtilisateurs.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Organizations\Icons\IconProject.resx">
+      <DependentUpon>IconProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\Icons\IconTeam.resx">
+      <DependentUpon>IconTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Organizations\Icons\IconUser.resx">
+      <DependentUpon>IconUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Organizations\OrganizationListProject\OrganizationListProjects.resx">
       <DependentUpon>OrganizationListProjects.cs</DependentUpon>

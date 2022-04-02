@@ -33,7 +33,7 @@ namespace StoriesHelper.Windows.Users
             List<Collaborator> CollaboratorsList = new List<Collaborator>();
             List<Collaborator> Collaborators = new List<Collaborator>();
 
-            CollaboratorsList = UserRepository.getAllUserFromOrganization(Session.UserId, lastname, firstname, email, team, project, id);
+            CollaboratorsList = UserRepository.getUserFromOrganization(Session.UserId, lastname, firstname, email, team, project, id);
 
             int delta = 0;
             CollaboratorsList = CollaboratorsList.OrderBy(c => c.getRowId()).ToList();

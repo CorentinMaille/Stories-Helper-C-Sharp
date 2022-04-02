@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows.Organizations.Icones
+namespace StoriesHelper.Windows.Organizations.Icons
 {
-    partial class NombreUtilisateurs
+    partial class IconProject
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
