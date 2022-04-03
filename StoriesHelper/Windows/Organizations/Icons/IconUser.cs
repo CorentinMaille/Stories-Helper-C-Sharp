@@ -28,7 +28,7 @@ namespace StoriesHelper.Windows.Organizations.Icons
             Titre.Name = "TitreNbUtilisateur";
             Titre.Text = "Utilisateurs";
             Titre.Location = new Point(35, 120);
-            Titre.BackColor = Color.Transparent;
+            Titre.BackColor = Color.White;
             Titre.UseMnemonic = true;
             Titre.AutoSize = true;
             Titre.Font = new Font("Cambria", 13, FontStyle.Bold);
@@ -38,7 +38,7 @@ namespace StoriesHelper.Windows.Organizations.Icons
             Nombre.Name = "Nombre";
             Nombre.Text = NbUser.ToString();
             Nombre.Location = new Point(65, 145);
-            Nombre.BackColor = Color.Transparent;
+            Nombre.BackColor = Color.White;
             Nombre.UseMnemonic = true;
             Nombre.AutoSize = true;
             Nombre.Font = new Font("Cambria", 22, FontStyle.Bold);

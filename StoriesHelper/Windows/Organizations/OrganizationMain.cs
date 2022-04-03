@@ -19,9 +19,27 @@ namespace StoriesHelper.Windows.Organizations
         {
             int idOrganization = Session.UserId;
             InitializeComponent();
+            Gradient GradientTitre = new Gradient();
+            GradientTitre.Name = "GradientTitre";
+            GradientTitre.Size = new Size(1100, 60);
+            GradientTitre.BackColor = Color.FromArgb(200, 30, 137, 255);
+            GradientTitre.Location = new Point(0, 0);
+            gradient.Controls.Add(GradientTitre);
+
+            LigneHorizontale LigneTitre = new LigneHorizontale();
+            LigneTitre.Name = "LigneTitre";
+            LigneTitre.Location = new Point(0, 59);
+            LigneTitre.Width = 1100;
+            LigneTitre.Height = 1;
+            GradientTitre.Controls.Add(LigneTitre);
+
+
             Organization Organization = new Organization(idOrganization);
+
             OrganizationLabel.Text += Organization.getName();
-            OrganizationLabel.Left = (this.ClientSize.Width - OrganizationLabel.Width) / 2;
+            GradientTitre.Controls.Add(OrganizationLabel);
+            OrganizationLabel.Left = (1100 - OrganizationLabel.Width) / 2;
+            OrganizationLabel.Top = (60 - OrganizationLabel.Height) / 2;
 
             List<Project> Projects = Organization.getListProjects();
             List<Team> Teams = new List<Team>();
@@ -44,24 +62,26 @@ namespace StoriesHelper.Windows.Organizations
                     nbProjects++;
                 }
             }
+
             foreach (Team team in Teams)
             {
                 Columns.AddRange(team.getListColumns());
             }
-            foreach (Column column in Columns)
+            foreach (Column Column in Columns)
             {
-                foreach (Task task in column.getListTasks())
+                foreach (Task task in Column.getListTasks())
                 {
-                    if(task.isActive() == 1)
+                    if (task.isActive() != 0)
                     {
-
-                        if (column.getName() == "Closed")
+                        if (Column.getName() == "Closed")
                         {
                             TasksClosed.Add(task);
-                        } else
+                        }
+                        else
                         {
                             TasksOpen.Add(task);
                         }
+                        Tasks.Add(task);
                     }
                 }
             }

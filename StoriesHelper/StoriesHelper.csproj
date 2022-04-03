@@ -209,11 +209,23 @@
     <Compile Include="Windows\Projects\ProjectDescription.Designer.cs">
       <DependentUpon>ProjectDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects\ProjectListTeams.cs">
+    <Compile Include="Windows\Projects\ProjectListTeam\MainProjectListTeam.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects\ProjectListTeams.Designer.cs">
+    <Compile Include="Windows\Projects\ProjectListTeam\MainProjectListTeam.Designer.cs">
+      <DependentUpon>MainProjectListTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeam\ProjectListTeams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeam\ProjectListTeams.Designer.cs">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeam\ProjectPaginationTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\ProjectListTeam\ProjectPaginationTeam.Designer.cs">
+      <DependentUpon>ProjectPaginationTeam.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Projects\ProjectMain.cs">
       <SubType>UserControl</SubType>
@@ -228,17 +240,29 @@
       <DependentUpon>Quitter.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Session.cs" />
+    <Compile Include="Windows\Teams\TeamListUser\MainTeamListUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUser\MainTeamListUser.Designer.cs">
+      <DependentUpon>MainTeamListUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUser\TeamPaginationUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUser\TeamPaginationUser.Designer.cs">
+      <DependentUpon>TeamPaginationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUser\TeamListUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamListUser\TeamListUsers.Designer.cs">
+      <DependentUpon>TeamListUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Teams\TeamMain.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Windows\Teams\TeamMain.Designer.cs">
       <DependentUpon>TeamMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Teams\TeamListUsers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Windows\Teams\TeamListUsers.Designer.cs">
-      <DependentUpon>TeamListUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.cs">
       <SubType>UserControl</SubType>
@@ -331,8 +355,14 @@
     <EmbeddedResource Include="Windows\Projects\ProjectDescription.resx">
       <DependentUpon>ProjectDescription.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\ProjectListTeams.resx">
+    <EmbeddedResource Include="Windows\Projects\ProjectListTeam\MainProjectListTeam.resx">
+      <DependentUpon>MainProjectListTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ProjectListTeam\ProjectListTeams.resx">
       <DependentUpon>ProjectListTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\ProjectListTeam\ProjectPaginationTeam.resx">
+      <DependentUpon>ProjectPaginationTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\ProjectMain.resx">
       <DependentUpon>ProjectMain.cs</DependentUpon>
@@ -340,11 +370,17 @@
     <EmbeddedResource Include="Windows\Quitter.resx">
       <DependentUpon>Quitter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamListUser\MainTeamListUser.resx">
+      <DependentUpon>MainTeamListUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamListUser\TeamPaginationUser.resx">
+      <DependentUpon>TeamPaginationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamListUser\TeamListUsers.resx">
+      <DependentUpon>TeamListUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Teams\TeamMain.resx">
       <DependentUpon>TeamMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Teams\TeamListUsers.resx">
-      <DependentUpon>TeamListUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.resx">
       <DependentUpon>TeamTaskGraphics.cs</DependentUpon>
@@ -400,7 +436,6 @@
     <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
     <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
     <Content Include="bin\Debug\ZstdNet.dll" />
-    <None Include="Images\iconeUser.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

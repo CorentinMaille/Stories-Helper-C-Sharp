@@ -11,7 +11,7 @@ namespace StoriesHelper.Repository
         List<Project> list_projects = new List<Project>();
         List<Collaborator> list_collaborators = new List<Collaborator>();
         
-        public List<Collaborator> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 1, bool pagination = true)
+        public List<Collaborator> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 0, bool pagination = true)
         {
             int offset = 25 * page;
             int limit = 25;
@@ -19,9 +19,13 @@ namespace StoriesHelper.Repository
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
             string sql = "select u.* ";
-            sql += " FROM storieshelper_user u ";
-            sql += " WHERE u.fk_organization = @idOrganization";
-            if(lastname != null)
+            sql += " FROM storieshelper_organization o ";
+            sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
+            sql += " INNER JOIN storieshelper_team t on t.fk_project = p.rowid";
+            sql += " INNER JOIN storieshelper_belong_to bt on bt.fk_team = t.rowid";
+            sql += " INNER JOIN storieshelper_user u on bt.fk_user = u.rowid";
+            sql += " WHERE o.rowid = @idOrganization";
+            if (lastname != null)
             {
                 command.Parameters.AddWithValue("@name", "%" + lastname + "%");
                 sql += " AND u.lastname LIKE @name";
@@ -52,6 +56,52 @@ namespace StoriesHelper.Repository
                 sql += " AND u.rowid LIKE @id";
             }
             if(pagination)
+            {
+                command.Parameters.AddWithValue("@offset", offset);
+                command.Parameters.AddWithValue("@limit", limit);
+                sql += " LIMIT @limit";
+                sql += " OFFSET @offset";
+            }
+            command.CommandText = sql;
+            MySqlDataReader users = command.ExecuteReader();
+            while (users.Read())
+            {
+                Collaborator user = new Collaborator();
+                user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
+                list_collaborators.Add(user);
+            }
+            conn.Close();
+            return list_collaborators;
+        }
+
+        public List<Collaborator> getUserFromTeam(int fkTeam, string lastname = null, string firstname = null, string email = null, int page = 0, bool pagination = true)
+        {
+            int offset = 10 * page;
+            int limit = 10;
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idTeam", fkTeam);
+            string sql = "select u.* ";
+            sql += " FROM storieshelper_team t ";
+            sql += " INNER JOIN storieshelper_belong_to bt ON bt.fk_team = t.rowid ";
+            sql += " INNER JOIN storieshelper_user u ON bt.fk_user = u.rowid ";
+            sql += " WHERE t.rowid = @idTeam";
+            if (lastname != null)
+            {
+                command.Parameters.AddWithValue("@name", "%" + lastname + "%");
+                sql += " AND u.lastname LIKE @name";
+            }
+            if (firstname != null)
+            {
+                command.Parameters.AddWithValue("@firstname", "%" + firstname + "%");
+                sql += " AND u.firstname LIKE @firstname";
+            }
+            if (email != null)
+            {
+                command.Parameters.AddWithValue("@email", "%" + email + "%");
+                sql += " AND u.email LIKE @email";
+            }
+            if (pagination)
             {
                 command.Parameters.AddWithValue("@offset", offset);
                 command.Parameters.AddWithValue("@limit", limit);

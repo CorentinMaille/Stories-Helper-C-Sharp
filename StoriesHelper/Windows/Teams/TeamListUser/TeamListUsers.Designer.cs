@@ -1,5 +1,5 @@
 ﻿
-namespace StoriesHelper.Windows.Teams
+namespace StoriesHelper.Windows.Teams.TeamListUser
 {
     partial class TeamListUsers
     {
@@ -35,10 +35,10 @@ namespace StoriesHelper.Windows.Teams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Name = "TeamListUsers";
-            this.Size = new System.Drawing.Size(550, 260);
+            this.Size = new System.Drawing.Size(575, 250);
             this.ResumeLayout(false);
 
         }

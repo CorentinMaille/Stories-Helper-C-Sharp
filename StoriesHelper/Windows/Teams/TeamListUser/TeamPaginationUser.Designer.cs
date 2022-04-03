@@ -1,7 +1,7 @@
 ﻿
-namespace StoriesHelper.Windows.Projects
+namespace StoriesHelper.Windows.Teams.TeamListUser
 {
-    partial class ProjectListTeams
+    partial class TeamPaginationUser
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -31,14 +31,15 @@ namespace StoriesHelper.Windows.Projects
         {
             this.SuspendLayout();
             // 
-            // ProjectListTeams
+            // TeamPaginationUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ProjectListTeams";
-            this.Size = new System.Drawing.Size(625, 300);
+            this.MaximumSize = new System.Drawing.Size(625, 50);
+            this.Name = "TeamPaginationUser";
+            this.Size = new System.Drawing.Size(625, 50);
             this.ResumeLayout(false);
 
         }
