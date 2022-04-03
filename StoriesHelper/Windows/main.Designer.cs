@@ -32,6 +32,7 @@ namespace StoriesHelper.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.collaboratorsButton = new System.Windows.Forms.Button();
             this.sideBarBackground = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.DisconectButton = new System.Windows.Forms.Button();
             this.ApplicationNamePanel = new System.Windows.Forms.Panel();
@@ -63,6 +64,7 @@ namespace StoriesHelper.Windows
             // sideBarBackground
             // 
             this.sideBarBackground.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.sideBarBackground.Controls.Add(this.button1);
             this.sideBarBackground.Controls.Add(this.button2);
             this.sideBarBackground.Controls.Add(this.DisconectButton);
             this.sideBarBackground.Controls.Add(this.ApplicationNamePanel);
@@ -76,6 +78,20 @@ namespace StoriesHelper.Windows
             this.sideBarBackground.TabIndex = 0;
             this.sideBarBackground.TabStop = true;
             this.sideBarBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(0, 370);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(302, 110);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Journal d\'activité";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.LogButton_Click);
             // 
             // button2
             // 
@@ -107,7 +123,7 @@ namespace StoriesHelper.Windows
             this.DisconectButton.TabIndex = 5;
             this.DisconectButton.Text = "Déconnecter";
             this.DisconectButton.UseVisualStyleBackColor = false;
-            this.DisconectButton.Click += new System.EventHandler(this.Disconect_button_Click);
+            this.DisconectButton.Click += new System.EventHandler(this.Disconnect_button_Click);
             this.DisconectButton.MouseEnter += new System.EventHandler(this.buttonEnter);
             this.DisconectButton.MouseLeave += new System.EventHandler(this.buttonLeave);
             // 
@@ -214,5 +230,6 @@ namespace StoriesHelper.Windows
         private System.Windows.Forms.Label StoriesHelperLabel2;
         private System.Windows.Forms.Button DisconectButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

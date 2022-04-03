@@ -42,11 +42,11 @@ namespace StoriesHelper.Windows.Projects
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<Collaborator> Collaborator = new List<Collaborator>();
+            List<User> User = new List<User>();
             foreach (Team team in Teams)
             {
                 Columns.AddRange(team.getListColumns());
-                Collaborator.AddRange(team.getListCollaborators());
+                User.AddRange(team.getListCollaborators());
             }
             foreach (Column Column in Columns)
             {
@@ -75,7 +75,7 @@ namespace StoriesHelper.Windows.Projects
             }
             labelType.Text += Project.getType();
             labelDateCreation.Text += Project.getOpen().ToString("d");
-            labelNbCollaborateur.Text += Collaborator.Count(); 
+            labelNbCollaborateur.Text += User.Count(); 
             labelNbTeam.Text += Teams.Count();/*
             textDescription.Text = Project.getDescription();*/
 

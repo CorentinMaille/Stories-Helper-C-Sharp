@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MySql.Data.MySqlClient;
 
 namespace StoriesHelper.Models
@@ -15,7 +16,8 @@ namespace StoriesHelper.Models
         protected string password;
         protected int consent;
         protected List<Project> list_projects = new List<Project>();
-        protected List<Collaborator> list_collaborators = new List<Collaborator>();
+        protected List<User> list_collaborators = new List<User>();
+        protected List<LogHistory> list_logs = new List<LogHistory>();
 
         public Organization(int idOrganization = -1)
         {
@@ -72,13 +74,21 @@ namespace StoriesHelper.Models
         {
             list_projects = newListProject;
         }
-        public List<Collaborator> getListUsers()
+        public List<User> getListUsers()
         {
             return list_collaborators;
         }
-        public void setListUsers(List<Collaborator> newListUser)
+        public void setListUsers(List<User> newListUser)
         {
             list_collaborators = newListUser;
+        }
+        public List<LogHistory> getLogs()
+        {
+            return list_logs;
+        }
+        public void setListLogs(List<LogHistory> newListLog)
+        {
+            list_logs = newListLog;
         }
 
         public void fetch(int idOrganization)
@@ -124,10 +134,49 @@ namespace StoriesHelper.Models
             MySqlDataReader users = command3.ExecuteReader();
             while (users.Read())
             {
-                Collaborator user = new Collaborator();
+                User user = new User();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }
+            conn.Close();
+
+            // add Organization logs
+            conn.Open();
+
+            MySqlCommand command4 = conn.CreateCommand();
+            command4.Parameters.AddWithValue("@fk_organization", idOrganization);
+            string sql4 = "SELECT *";
+            sql4 += " FROM storieshelper_log_history";
+            sql4 += " WHERE fk_organization = @fk_organization";
+            command4.CommandText = sql4;
+            MySqlDataReader logs = command4.ExecuteReader();
+            while (logs.Read())
+            {
+                string value = null;
+                if (!logs.IsDBNull(6))
+                {
+                    value = logs.GetString(6);
+                }   
+                string identification = null;
+                if (!logs.IsDBNull(7))
+                {
+                    identification = logs.GetString(7);
+                }       
+                string exception = null;
+                if (!logs.IsDBNull(10))
+                {
+                    exception = logs.GetString(10);
+                }        
+                string platform = null;
+                if (!logs.IsDBNull(11))
+                {
+                    platform = logs.GetString(11);
+                }
+                LogHistory LogHistory = new LogHistory();
+                LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(9), value, identification, exception, platform);
+                list_logs.Add(LogHistory);
+            }
+
             conn.Close();
         }
     }

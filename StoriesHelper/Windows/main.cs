@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Services;
+using StoriesHelper.Windows.Logs;
 using StoriesHelper.Windows.Organizations;
 using StoriesHelper.Windows.Projects;
 using StoriesHelper.Windows.Teams;
@@ -59,6 +60,15 @@ namespace StoriesHelper.Windows
             MainPanel.Controls.Add(OrganizationContent);
 
             OrganizationContent.Show();
+        }
+        private void LogButton_Click(object sender, EventArgs e)
+        {
+            LogMain LogContent = new LogMain();
+
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(LogContent);
+
+            LogContent.Show();
         }
 
         static public void goToOrganization()
@@ -133,7 +143,7 @@ namespace StoriesHelper.Windows
             mdf.Drag(sender, e, Handle);
         }
 
-        private void Disconect_button_Click(object sender, EventArgs e)
+        private void Disconnect_button_Click(object sender, EventArgs e)
         {
             Login loginWindow = new Login();
             loginWindow.Show();

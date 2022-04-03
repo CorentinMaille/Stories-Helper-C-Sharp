@@ -47,7 +47,7 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<Collaborator> Users = Organization.getListUsers();
+            List<User> Users = Organization.getListUsers();
             int nbArchived = 0;
             int nbProjects = 0;
             foreach (Project project in Projects)

@@ -9,9 +9,9 @@ namespace StoriesHelper.Repository
     {
         List<Team> list_teams = new List<Team>();
         List<Project> list_projects = new List<Project>();
-        List<Collaborator> list_collaborators = new List<Collaborator>();
+        List<User> list_collaborators = new List<User>();
         
-        public List<Collaborator> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 0, bool pagination = true)
+        public List<User> getUserFromOrganization(int fkOrganization ,string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 0, bool pagination = true)
         {
             int offset = 25 * page;
             int limit = 25;
@@ -19,7 +19,7 @@ namespace StoriesHelper.Repository
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
             string sql = "select u.* ";
-            sql += " FROM storieshelper_organization o ";
+            sql += " FROM storieshelper_user u ";
             sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
             sql += " INNER JOIN storieshelper_team t on t.fk_project = p.rowid";
             sql += " INNER JOIN storieshelper_belong_to bt on bt.fk_team = t.rowid";
@@ -62,11 +62,13 @@ namespace StoriesHelper.Repository
                 sql += " LIMIT @limit";
                 sql += " OFFSET @offset";
             }
+
+            sql += "GROUP BY u.rowid";
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())
             {
-                Collaborator user = new Collaborator();
+                User user = new User();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }
@@ -74,7 +76,7 @@ namespace StoriesHelper.Repository
             return list_collaborators;
         }
 
-        public List<Collaborator> getUserFromTeam(int fkTeam, string lastname = null, string firstname = null, string email = null, int page = 0, bool pagination = true)
+        public List<User> getUserFromTeam(int fkTeam, string lastname = null, string firstname = null, string email = null, int page = 0, bool pagination = true)
         {
             int offset = 10 * page;
             int limit = 10;
@@ -112,7 +114,7 @@ namespace StoriesHelper.Repository
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())
             {
-                Collaborator user = new Collaborator();
+                User user = new User();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }

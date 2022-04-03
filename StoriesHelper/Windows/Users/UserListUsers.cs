@@ -30,14 +30,14 @@ namespace StoriesHelper.Windows.Users
             this.project = project != "" || project != null ? project : null;
             this.id = id != "" || id != null ? id : null;
 
-            List<Collaborator> CollaboratorsList = new List<Collaborator>();
-            List<Collaborator> Collaborators = new List<Collaborator>();
+            List<User> CollaboratorsList = new List<User>();
+            List<User> Collaborators = new List<User>();
 
             CollaboratorsList = UserRepository.getUserFromOrganization(Session.UserId, lastname, firstname, email, team, project, id);
 
             int delta = 0;
             CollaboratorsList = CollaboratorsList.OrderBy(c => c.getRowId()).ToList();
-            foreach (Collaborator Collaborator in CollaboratorsList)
+            foreach (User Collaborator in CollaboratorsList)
             {
                 if(Collaborator.getRowId() != delta)
                 {
@@ -50,7 +50,7 @@ namespace StoriesHelper.Windows.Users
             int positionButton = 15;
             int positionLigne = 60;
 
-            foreach (Collaborator Collaborator in Collaborators)
+            foreach (User Collaborator in Collaborators)
             {
                 // Créer le label Id 
                 string userId = Collaborator.getRowId().ToString();

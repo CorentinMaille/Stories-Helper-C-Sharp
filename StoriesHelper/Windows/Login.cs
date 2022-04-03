@@ -26,20 +26,20 @@ namespace StoriesHelper.Windows
             command.CommandText = "SELECT rowid, email, password, fk_organization FROM storieshelper_user WHERE email = @email AND admin = 1";
             MySqlDataReader reader = command.ExecuteReader();
             string mdpHash = "";
-            int idOrg = 0;
+            int idOrganization = 0;
             if (reader.HasRows)
             {
                 erreur.Text = "";
                 while (reader.Read())
                 {
                     mdpHash = reader.GetString(2);
-                    idOrg = reader.GetInt32(3);
+                    idOrganization = reader.GetInt32(3);
                 }
 
                 if (BCrypt.Verify(mdp, mdpHash))
                 {
 
-                    Session.UserId = idOrg;
+                    Session.UserId = idOrganization;
                     main WelcomeWindow = new main();
 
                     WelcomeWindow.Show();
