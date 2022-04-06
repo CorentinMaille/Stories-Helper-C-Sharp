@@ -12,32 +12,40 @@ namespace StoriesHelper.Models
         protected int fk_author;
         protected DateTime date_creation;
         protected string action;
-        protected string object_type;
-        protected string object_name;
-        protected string value = null;
-        protected string identification = null;
+        protected string _object;
+        protected string object_id = null;
+        protected string object_name = null;
+        protected string object_parent = null;
+        protected string object_parent_id = null;
+        protected string object_parent_name = null;
+        protected int fk_organization;
         protected string status;
         protected string exception = null;
-        protected string platform = null;
+        protected string ip;
+        protected string page;
 
         public LogHistory()
         {
 
         }
 
-        public void initialize(int rowid, int fk_author, DateTime date_creation, string action, string object_type, string object_name, string status, string value = null, string identification = null, string exception = null, string platform = null)
+        public void initialize(int rowid, int fk_author, DateTime date_creation, string action, string _object, int fk_organization, string status, string ip, string object_id = null, string object_name = null, string object_parent = null, string object_parent_id = null, string object_parent_name = null, string exception = null, string page = null)
         {
             this.rowid = rowid;
             this.fk_author = fk_author;
             this.date_creation = date_creation;
             this.action = action;
-            this.object_type = object_type;
+            this._object = _object;
+            this.object_id = object_id;
             this.object_name = object_name;
-            this.value = value;
-            this.identification = identification;
+            this.object_parent = object_parent;
+            this.object_parent_id = object_parent_id;
+            this.object_parent_name = object_parent_name;
+            this.fk_organization = fk_organization;
             this.status = status;
             this.exception = exception;
-            this.platform = platform;
+            this.ip = ip;
+            this.page = page;
         }
 
         public int getRowid()
@@ -75,14 +83,24 @@ namespace StoriesHelper.Models
             this.action = action;
         }
 
-        public string getObject_type()
+        public string getObject()
         {
-            return object_type;
+            return _object;
         }
         
-        public void setObject_type(string type)
+        public void setObject(string _object)
         {
-            this.object_type = type;
+            this._object = _object;
+        }
+
+        public string getObject_id()
+        {
+            return object_id;
+        }
+        
+        public void setObject_id(string id)
+        {
+            this.object_id = id;
         }
 
         public string getObject_name()
@@ -95,24 +113,34 @@ namespace StoriesHelper.Models
             this.object_name = name;
         }
 
-        public string getValue()
+        public string getObject_parent()
         {
-            return value;
+            return object_parent;
         }
         
-        public void setValue(string value)
+        public void setObject_parent(string object_parent)
         {
-            this.value = value;
-        }
-
-        public string getIdentification()
-        {
-            return identification;
+            this.object_parent = object_parent;
         }
         
-        public void setIdentification(string identification)
+        public string getObject_parent_id()
         {
-            this.identification = identification;
+            return object_parent_id;
+        }
+        
+        public void setObject_parent_id(string id_parent)
+        {
+            this.object_parent_id = id_parent;
+        }        
+        
+        public string getObject_parent_name()
+        {
+            return object_parent_name;
+        }
+        
+        public void setObject_parent_name(string name_parent)
+        {
+            this.object_parent_name = name_parent;
         }
 
         public string getStatus()
@@ -135,14 +163,24 @@ namespace StoriesHelper.Models
             this.exception = exception;
         }
 
-        public string getPlatform()
+        public string getIp()
         {
-            return platform;
+            return ip;
+        }
+        
+        public void setIp(string ip)
+        {
+            this.ip = ip;
         }
 
-        public void setPlatform(string platform)
+        public string getPage()
         {
-            this.platform = platform;
+            return page;
+        }
+        
+        public void setPage(string page)
+        {
+            this.page = page;
         }
     }
 }

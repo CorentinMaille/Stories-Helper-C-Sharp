@@ -173,7 +173,7 @@ namespace StoriesHelper.Models
                     platform = logs.GetString(11);
                 }
                 LogHistory LogHistory = new LogHistory();
-                LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(9), value, identification, exception, platform);
+                /*LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(9), value, identification, exception, platform);*/
                 list_logs.Add(LogHistory);
             }
 

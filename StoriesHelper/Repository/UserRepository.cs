@@ -19,43 +19,45 @@ namespace StoriesHelper.Repository
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
             string sql = "select u.* ";
-            sql += " FROM storieshelper_user u ";
+            sql += " FROM storieshelper_organization o ";
             sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
             sql += " INNER JOIN storieshelper_team t on t.fk_project = p.rowid";
             sql += " INNER JOIN storieshelper_belong_to bt on bt.fk_team = t.rowid";
             sql += " INNER JOIN storieshelper_user u on bt.fk_user = u.rowid";
             sql += " WHERE o.rowid = @idOrganization";
-            if (lastname != null)
+            if (lastname != null && lastname != "")
             {
                 command.Parameters.AddWithValue("@name", "%" + lastname + "%");
                 sql += " AND u.lastname LIKE @name";
             }
-            if(firstname != null)
+            if(firstname != null && firstname != "")
             {
                 command.Parameters.AddWithValue("@firstname", "%" + firstname + "%");
                 sql += " AND u.firstname LIKE @firstname";
             }
-            if(email != null)
+            if(email != null && email != "")
             {
                 command.Parameters.AddWithValue("@email", "%" + email + "%");
                 sql += " AND u.email LIKE @email";
             }
-            if(team != null)
+            if(team != null && team != "")
             {
                 command.Parameters.AddWithValue("@team", "%" + team + "%");
                 sql += " AND t.name LIKE @team";
             }
-            if(project != null)
+            if(project != null && project != "")
             {
                 command.Parameters.AddWithValue("@project", "%" + project + "%");
                 sql += " AND p.name LIKE @project";
             }
-            if(id != null)
+            if(id != null && id != "")
             {
                 command.Parameters.AddWithValue("@id", "%" + id + "%");
                 sql += " AND u.rowid LIKE @id";
             }
-            if(pagination)
+
+            sql += " GROUP BY u.rowid";
+            if (pagination)
             {
                 command.Parameters.AddWithValue("@offset", offset);
                 command.Parameters.AddWithValue("@limit", limit);
@@ -63,7 +65,6 @@ namespace StoriesHelper.Repository
                 sql += " OFFSET @offset";
             }
 
-            sql += "GROUP BY u.rowid";
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())
