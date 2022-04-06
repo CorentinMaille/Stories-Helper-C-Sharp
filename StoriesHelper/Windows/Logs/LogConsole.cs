@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using StoriesHelper.Repository;
 using StoriesHelper.Models;
+using System.Linq;
 
 namespace StoriesHelper.Windows.Logs
 {
@@ -15,63 +16,90 @@ namespace StoriesHelper.Windows.Logs
         {
             InitializeComponent();
 
-            // Display all logs in the console log
+            // Display 100 logs in the console log
             LogHistoryRepository logHistoryRepository = new LogHistoryRepository();
             List<LogHistory> logs = logHistoryRepository.GetLogsByOrganization(Session.UserId);
-
+            logs = logs.OrderBy(dc => dc.getDate_creation()).ToList();
+            RichTextBox Line = new RichTextBox();
+            Line.Size = new Size(900, 600);
+            Line.Multiline = true;
+            Line.MaxLength = 2147483647;
+            Line.Location = new Point(10, 5);
+            Line.BackColor = Color.Black;
+            Line.BorderStyle = BorderStyle.None;
+            Line.ReadOnly = true;
             foreach (LogHistory log in logs)
             {
-                string date = log.getDate_creation().ToString("yyyy MMM HH:mm:ss");
-                /*string auteur = User.getFirstName() log.getFk_author
+                string date = log.getDate_creation().ToString("yyyy MMM dd HH:mm:ss");
+/*                string ip = "[" + log.getIp().ToString() + "]";*/
+                User User = new User(log.getFk_author());
+                string auteur = User.getRowId().ToString();
+                if (User.getLastname() == null && User.getFirstname() == null)
+                {
+                    auteur = "ADMIN";
+                } else
+                {
+                    auteur = User.getLastname() + " " + User.getFirstname();
+                }
+                string action = log.getAction();
+                string objectName = log.getObject_name();
+                string objectType = log.getObject_type();
+                string status = "[" + log.getStatus() + "]";
+                string exception = log.getException();
 
-
-
-
-                // creation of the date_creation label
-                Label label_date_creation = new Label();
-
-                string date_creation = log.getDate_creation().ToString();
-                label_date_creation.Text = date_creation;
-
-                label_date_creation.ForeColor = Color.ForestGreen;
-                label_date_creation.Name = "label_date_creation_" + log.getRowid().ToString();*/
-
-                // creation of the platform label
-
-                Label label_platform = new Label();
-
-                string platform = log.getPlatform().ToString();
-                label_platform.Text = platform;
-
-                label_platform.ForeColor = Color.Gray;
-                label_platform.Name = "label_platform_" + log.getRowid().ToString();
-
-                // creation of the status label
-
-                Label label_status = new Label();
-
-                string status = log.getStatus();
-                label_status.Text = status;
-
+                rtb_AppendText(new Font("Cambria", 12), Color.White, Color.Black, date, Line);
+                Line.AppendText(" ");
                 switch (status)
                 {
-                    case "INFO":
-
+                    case "[INFO]":
+                        rtb_AppendText(new Font("Cambria", 12), Color.DodgerBlue, Color.Black, status, Line);
                         break;
-                    case "WARNING":
-
+                    case "[WARNING]":
+                        rtb_AppendText(new Font("Cambria", 12), Color.Yellow, Color.Black, status, Line);
                         break;
-
-                    case "ERROR":
+                    case "[ERROR]":
+                        rtb_AppendText(new Font("Cambria", 12), Color.Red, Color.Black, status, Line);
+                        break;
+                    case "[IMPORTANT]":
+                        rtb_AppendText(new Font("Cambria", 12), Color.Orange, Color.Black, status, Line);
                         break;
                 }
-                label_status.ForeColor = Color.Gray;
+                this.Controls.Add(Line);
+                rtb_AppendText(new Font("Cambria", 12), Color.Green, Color.Black, "[" + User.getRowId().ToString() + "] ", Line);
+                rtb_AppendText(new Font("Cambria", 12), Color.Green, Color.Black, auteur, Line);
+                Line.AppendText(" "); 
+                rtb_AppendText(new Font("Cambria", 12), Color.Orange , Color.Black, action, Line);
+                Line.AppendText(" ");
+                rtb_AppendText(new Font("Cambria", 12), Color.White, Color.Black, objectType, Line);
+                rtb_AppendText(new Font("Cambria", 12), Color.White, Color.Black, "[id]", Line);
+                Line.AppendText(" ");
 
+                if (status == "[ERROR]") {
+                    rtb_AppendText(new Font("Cambria", 12), Color.Red, Color.Black, "Create an error : " + exception, Line);
+                }
 
-
-
-                // creation of the action label
+                Line.AppendText("\n");
             }
         }
+
+        private void rtb_AppendText(Font selfont, Color color, Color bcolor, string text, RichTextBox Rtb)
+
+        {
+            //append the text to the RichTextBox control
+            int start = Rtb.TextLength;
+            Rtb.AppendText(text);
+            int end = Rtb.TextLength;
+            //select the new text
+            Rtb.Select(start, end - start);
+            //set the attributes of the new text
+            Rtb.SelectionColor = color;
+            Rtb.SelectionFont = selfont;
+            Rtb.SelectionBackColor = bcolor;
+            //unselect
+            Rtb.Select(end, 0);
+            //only required for multi line text to scroll to the end
+            Rtb.ScrollToCaret();
+        }
+        
     }
 }

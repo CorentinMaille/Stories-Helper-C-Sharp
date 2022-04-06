@@ -22,6 +22,7 @@ namespace StoriesHelper.Repository
             string sql = "SELECT * ";
             sql += "FROM storieshelper_log_history ";
             sql += "WHERE fk_organization = @idOrganization ";
+            sql += "ORDER BY date_creation DESC ";
 
             command.Parameters.AddWithValue("@offset", offset);
             command.Parameters.AddWithValue("@limit", limit);

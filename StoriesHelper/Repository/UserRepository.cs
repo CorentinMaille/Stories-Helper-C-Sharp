@@ -19,7 +19,7 @@ namespace StoriesHelper.Repository
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@idOrganization", fkOrganization);
             string sql = "select u.* ";
-            sql += " FROM storieshelper_user u ";
+            sql += " FROM storieshelper_organization o ";
             sql += " INNER JOIN storieshelper_project p on p.fk_organization = o.rowid";
             sql += " INNER JOIN storieshelper_team t on t.fk_project = p.rowid";
             sql += " INNER JOIN storieshelper_belong_to bt on bt.fk_team = t.rowid";
@@ -55,7 +55,9 @@ namespace StoriesHelper.Repository
                 command.Parameters.AddWithValue("@id", "%" + id + "%");
                 sql += " AND u.rowid LIKE @id";
             }
-            if(pagination)
+
+            sql += " GROUP BY u.rowid";
+            if (pagination)
             {
                 command.Parameters.AddWithValue("@offset", offset);
                 command.Parameters.AddWithValue("@limit", limit);
@@ -63,7 +65,6 @@ namespace StoriesHelper.Repository
                 sql += " OFFSET @offset";
             }
 
-            sql += "GROUP BY u.rowid";
             command.CommandText = sql;
             MySqlDataReader users = command.ExecuteReader();
             while (users.Read())
