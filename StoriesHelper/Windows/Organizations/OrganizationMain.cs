@@ -47,7 +47,7 @@ namespace StoriesHelper.Windows.Organizations
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<Collaborator> Users = Organization.getListUsers();
+            List<User> Users = Organization.getListUsers();
             int nbArchived = 0;
             int nbProjects = 0;
             foreach (Project project in Projects)
@@ -87,6 +87,17 @@ namespace StoriesHelper.Windows.Organizations
             }
             int nbTeams = Teams.Count();
             int nbUsers = Users.Count();
+/*
+            for(int i = 0; i <= 25; i++)
+            {
+                UserControl OmbreUtilisateur = new UserControl();
+                OmbreUtilisateur.Name = "OmbreUtilisateur" + i.ToString();
+                OmbreUtilisateur.Size = new Size(150 + (2 * i), 150 + (2 * i));
+                OmbreUtilisateur.Location = new Point(25 - i, 25 - i);
+                OmbreUtilisateur.BackColor = Color.FromArgb(100 - (4 * i), 0, 0, 0);
+                testPanel.Controls.Add(OmbreUtilisateur);
+                OmbreUtilisateur.Show();
+            }    */  
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 

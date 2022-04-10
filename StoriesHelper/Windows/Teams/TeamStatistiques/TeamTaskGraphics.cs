@@ -27,7 +27,6 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             this.idTeam = idTeam;
             Team Team = new Team(idTeam);
             List<Column> Columns = Team.getListColumns();
-            List<Collaborator> Collaborator = Team.getListCollaborators();
             List<Task> Tasks = new List<Task>();
             DateTime DateBegin = DateTime.Now;
             DateTime DateEnd = DateTime.Now;

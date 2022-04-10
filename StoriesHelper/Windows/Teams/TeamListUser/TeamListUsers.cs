@@ -13,18 +13,18 @@ namespace StoriesHelper.Windows.Teams.TeamListUser
     public partial class TeamListUsers : UserControl
     {
         protected int idTeam;
-        public TeamListUsers(int idTeam, string lastname = null, string firstname = null, string email = null)
+        public TeamListUsers(int idTeam, string lastname = null, string firstname = null, string email = null, int page = 0)
         {
             InitializeComponent();
             this.idTeam = idTeam;
             UserRepository UserRepository = new UserRepository();
-            List<Collaborator> Users = UserRepository.getUserFromTeam(idTeam, lastname, firstname, email);
+            List<User> Users = UserRepository.getUserFromTeam(idTeam, lastname, firstname, email, page);
 
             int positionLabel = 10;
             int positionButton = 7;
             int positionBackColor = 0;
             int rang = 0;
-            foreach (Collaborator User in Users)
+            foreach (User User in Users)
             {
                 // créer le fond coloré.
                 Gradient BackColor = new Gradient();

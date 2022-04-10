@@ -28,5 +28,20 @@ namespace StoriesHelper.Windows.Teams.TeamListUser
 
             PanelPagination.Left = (this.ClientSize.Width - PanelPagination.Width) / 2;
         }
+
+        public static void goToPaginateTeam(int idTeam, string lastname, string firstname, string email, int page = 0)
+        {
+            TeamListUsers TeamListUsers = new TeamListUsers(idTeam, lastname, firstname, email, page);
+            PanelListUsers.Controls.Clear();
+            PanelListUsers.Controls.Add(TeamListUsers);
+            TeamListUsers.Show();
+
+            TeamPaginationUser TeamPaginationUser = new TeamPaginationUser(idTeam, lastname, firstname, email, page);
+            PanelPagination.Controls.Clear();
+            PanelPagination.Controls.Add(TeamPaginationUser);
+            TeamPaginationUser.Show();
+
+            PanelPagination.Left = (575 - PanelPagination.Width) / 2;
+        }
     }
 }

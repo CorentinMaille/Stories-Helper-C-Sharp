@@ -72,14 +72,14 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             return week;
         }
 
-        private bool calculateTime(string date, int relativeDate,out DateTime DateBegin, out DateTime DateEnd, out string begin, out string end, out string Date)
+        private bool calculateTime(string scope, int relativeDate,out DateTime DateBegin, out DateTime DateEnd, out string begin, out string end, out string Date)
         {
             DateBegin = DateTime.Now;
             DateEnd = DateTime.Now;
             Date = "";
             begin = "";
             end = "";
-            switch (date)
+            switch (scope)
             {
                 case "semaine":
                     DateBegin = DateBegin.BeginningOfWeek();
@@ -96,7 +96,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             }
             if (relativeDate != 0)
             {
-                switch (date)
+                switch (scope)
                 {
                     case "jour":
                         DateBegin = DateBegin + relativeDate.Days();
@@ -111,7 +111,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
                     case "mois":
                         DateBegin = DateBegin + relativeDate.Months();
                         DateEnd = DateEnd + relativeDate.Months();
-                        Date = DateEnd.ToString("yyyy-MM") + "%";
+                        Date = DateBegin.ToString("yyyy-MM") + "%";
                         break;
                     case "annee":
                         DateBegin = DateBegin + relativeDate.Years();

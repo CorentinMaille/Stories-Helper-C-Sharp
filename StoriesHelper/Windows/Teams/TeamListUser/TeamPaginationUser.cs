@@ -13,14 +13,18 @@ namespace StoriesHelper.Windows.Teams.TeamListUser
         protected int page;
         protected bool archived;
         protected bool open;
-        protected string name;
+        protected string lastname;
+        protected string firstname;
+        protected string email;
         protected int pagination;
         public TeamPaginationUser(int idTeam, string lastname, string firstname, string email, int page = 0)
         {
             InitializeComponent();
             this.idTeam = idTeam;
             this.page = page;
-            this.name = name;
+            this.lastname = lastname;
+            this.firstname = firstname;
+            this.email = email;
 
             UserRepository UserRepository = new UserRepository();
 
@@ -133,33 +137,33 @@ namespace StoriesHelper.Windows.Teams.TeamListUser
 
         private void goToPaginateTeam(object sender, EventArgs e)
         {
-/*            Button button = sender as Button;
+            Button button = sender as Button;
             if (Convert.ToString(button.Name) == "FastForward")
             {
-                MainProjectListTeam.goToPaginateTeam(idTeam, pagination, name);
+                MainTeamListUser.goToPaginateTeam(idTeam, lastname, firstname, email, pagination);
             }
             else if (Convert.ToString(button.Name) == "Forward")
             {
                 if (page < pagination)
                 {
-                    MainProjectListTeam.goToPaginateTeam(idTeam, page + 1, name);
+                    MainTeamListUser.goToPaginateTeam(idTeam, lastname, firstname, email, page + 1);
                 }
             }
             else if (Convert.ToString(button.Name) == "Backward")
             {
                 if (page > 0)
                 {
-                    MainProjectListTeam.goToPaginateTeam(idTeam, page - 1, name);
+                    MainTeamListUser.goToPaginateTeam(idTeam, lastname, firstname, email, page - 1);
                 }
             }
             else if (Convert.ToString(button.Name) == "FastBackward")
             {
-                MainProjectListTeam.goToPaginateTeam(idTeam, 0, name);
+                MainTeamListUser.goToPaginateTeam(idTeam, lastname, firstname, email);
             }
             else
             {
-                MainProjectListTeam.goToPaginateTeam(idTeam, Convert.ToInt32(button.Name), name);
-            }*/
+                MainTeamListUser.goToPaginateTeam(idTeam, lastname, firstname, email, Convert.ToInt32(button.Name));
+            }
         }
     }
 }

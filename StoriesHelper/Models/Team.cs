@@ -9,7 +9,7 @@ namespace StoriesHelper.Models
         protected int rowid;
         protected string name;
         protected int fk_project;
-        protected List<Collaborator> list_collaborators = new List<Collaborator>();
+        protected List<User> list_collaborators = new List<User>();
         protected List<Column> list_columns = new List<Column>();
         protected List<ColumnState> list_column_states = new List<ColumnState>();
         protected bool active;
@@ -45,11 +45,11 @@ namespace StoriesHelper.Models
         {
             fk_project = newProject;
         }        
-        public List<Collaborator> getListCollaborators()
+        public List<User> getListCollaborators()
         {
             return list_collaborators;
         }
-        public void setListCollaborators(List<Collaborator> newListCollaborators)
+        public void setListCollaborators(List<User> newListCollaborators)
         {
             list_collaborators = newListCollaborators;
         }
@@ -109,7 +109,7 @@ namespace StoriesHelper.Models
             MySqlDataReader users = command2.ExecuteReader();
             while (users.Read())
             {
-                Collaborator user = new Collaborator();
+                User user = new User();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }
@@ -165,7 +165,7 @@ namespace StoriesHelper.Models
             MySqlDataReader users = command.ExecuteReader();
             while(users.Read())
             {
-                Collaborator user = new Collaborator();
+                User user = new User();
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }

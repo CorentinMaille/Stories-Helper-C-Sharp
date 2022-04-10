@@ -18,7 +18,7 @@ namespace StoriesHelper.Windows.Teams
             this.from = from;
             Team Team = new Team(idTeam);
             List<Column> Columns = Team.getListColumns();
-            List<Collaborator> Collaborator = Team.getListCollaborators();
+            List<User> User = Team.getListCollaborators();
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
