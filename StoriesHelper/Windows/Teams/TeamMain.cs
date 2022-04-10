@@ -50,11 +50,16 @@ namespace StoriesHelper.Windows.Teams
             PanelListUsers.Controls.Clear();
             PanelListUsers.Controls.Add(MainTeamListUser);
             MainTeamListUser.Show();
-
+/*
             TeamTaskStatistiques TeamTaskStatistiques = new TeamTaskStatistiques(idTeam);
             panelShowStatistiqueTeam.Controls.Clear();
             panelShowStatistiqueTeam.Controls.Add(TeamTaskStatistiques);
-            TeamTaskStatistiques.Show();
+            TeamTaskStatistiques.Show();*/
+
+            TeamGraphicsAdvanced TeamGraphicsAdvanced = new TeamGraphicsAdvanced(idTeam);
+            panelShowStatistiqueTeam.Controls.Clear();
+            panelShowStatistiqueTeam.Controls.Add(TeamGraphicsAdvanced);
+            TeamGraphicsAdvanced.Show();
         }
 
         private void retour_Click(object sender, System.EventArgs e)

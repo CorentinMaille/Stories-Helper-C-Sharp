@@ -29,7 +29,8 @@ namespace StoriesHelper.Windows.Users
         /// </summary>
         private void InitializeComponent()
         {
-            this.gradient1 = new StoriesHelper.Services.Gradient();
+            this.gradient = new StoriesHelper.Services.Gradient();
+            panelPagination = new System.Windows.Forms.FlowLayoutPanel();
             this.UserTitre = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,7 +40,7 @@ namespace StoriesHelper.Windows.Users
             this.label4 = new System.Windows.Forms.Label();
             this.labelFilterId = new System.Windows.Forms.Label();
             this.textId = new System.Windows.Forms.TextBox();
-            this.panelListUsers = new System.Windows.Forms.Panel();
+            panelListUsers = new System.Windows.Forms.Panel();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.labelFilterProject = new System.Windows.Forms.Label();
             this.comboProject = new System.Windows.Forms.ComboBox();
@@ -51,40 +52,51 @@ namespace StoriesHelper.Windows.Users
             this.textFirstname = new System.Windows.Forms.TextBox();
             this.labelFilterName = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
-            this.gradient1.SuspendLayout();
+            this.gradient.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gradient1
+            // gradient
             // 
-            this.gradient1.Angle = 90F;
-            this.gradient1.BackColor = System.Drawing.Color.Transparent;
-            this.gradient1.BottomColor = System.Drawing.Color.SkyBlue;
-            this.gradient1.Controls.Add(this.UserTitre);
-            this.gradient1.Controls.Add(this.label6);
-            this.gradient1.Controls.Add(this.label5);
-            this.gradient1.Controls.Add(this.label3);
-            this.gradient1.Controls.Add(this.label2);
-            this.gradient1.Controls.Add(this.label1);
-            this.gradient1.Controls.Add(this.label4);
-            this.gradient1.Controls.Add(this.labelFilterId);
-            this.gradient1.Controls.Add(this.textId);
-            this.gradient1.Controls.Add(this.panelListUsers);
-            this.gradient1.Controls.Add(this.buttonFilter);
-            this.gradient1.Controls.Add(this.labelFilterProject);
-            this.gradient1.Controls.Add(this.comboProject);
-            this.gradient1.Controls.Add(this.labelFilterTeam);
-            this.gradient1.Controls.Add(this.comboTeam);
-            this.gradient1.Controls.Add(this.labelFilterFirstName);
-            this.gradient1.Controls.Add(this.labelFilterEmail);
-            this.gradient1.Controls.Add(this.textEmail);
-            this.gradient1.Controls.Add(this.textFirstname);
-            this.gradient1.Controls.Add(this.labelFilterName);
-            this.gradient1.Controls.Add(this.textName);
-            this.gradient1.Location = new System.Drawing.Point(0, 0);
-            this.gradient1.Name = "gradient1";
-            this.gradient1.Size = new System.Drawing.Size(1101, 900);
-            this.gradient1.TabIndex = 5;
-            this.gradient1.TopColor = System.Drawing.Color.DodgerBlue;
+            this.gradient.Angle = 90F;
+            this.gradient.BackColor = System.Drawing.Color.Transparent;
+            this.gradient.BottomColor = System.Drawing.Color.White;
+            this.gradient.Controls.Add(panelPagination);
+            this.gradient.Controls.Add(this.UserTitre);
+            this.gradient.Controls.Add(this.label6);
+            this.gradient.Controls.Add(this.label5);
+            this.gradient.Controls.Add(this.label3);
+            this.gradient.Controls.Add(this.label2);
+            this.gradient.Controls.Add(this.label1);
+            this.gradient.Controls.Add(this.label4);
+            this.gradient.Controls.Add(this.labelFilterId);
+            this.gradient.Controls.Add(this.textId);
+            this.gradient.Controls.Add(panelListUsers);
+            this.gradient.Controls.Add(this.buttonFilter);
+            this.gradient.Controls.Add(this.labelFilterProject);
+            this.gradient.Controls.Add(this.comboProject);
+            this.gradient.Controls.Add(this.labelFilterTeam);
+            this.gradient.Controls.Add(this.comboTeam);
+            this.gradient.Controls.Add(this.labelFilterFirstName);
+            this.gradient.Controls.Add(this.labelFilterEmail);
+            this.gradient.Controls.Add(this.textEmail);
+            this.gradient.Controls.Add(this.textFirstname);
+            this.gradient.Controls.Add(this.labelFilterName);
+            this.gradient.Controls.Add(this.textName);
+            this.gradient.Location = new System.Drawing.Point(0, 0);
+            this.gradient.Name = "gradient";
+            this.gradient.Size = new System.Drawing.Size(1101, 900);
+            this.gradient.TabIndex = 5;
+            this.gradient.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            // 
+            // panelPagination
+            // 
+            panelPagination.AutoSize = true;
+            panelPagination.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            panelPagination.Location = new System.Drawing.Point(18, 840);
+            panelPagination.MaximumSize = new System.Drawing.Size(1081, 40);
+            panelPagination.Name = "panelPagination";
+            panelPagination.Size = new System.Drawing.Size(200, 0);
+            panelPagination.TabIndex = 28;
             // 
             // UserTitre
             // 
@@ -92,12 +104,12 @@ namespace StoriesHelper.Windows.Users
             this.UserTitre.BackColor = System.Drawing.Color.Transparent;
             this.UserTitre.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold);
             this.UserTitre.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UserTitre.Location = new System.Drawing.Point(41, 26);
+            this.UserTitre.Location = new System.Drawing.Point(369, 9);
             this.UserTitre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UserTitre.Name = "UserTitre";
-            this.UserTitre.Size = new System.Drawing.Size(234, 41);
+            this.UserTitre.Size = new System.Drawing.Size(358, 41);
             this.UserTitre.TabIndex = 26;
-            this.UserTitre.Text = "Utilisateurs : ";
+            this.UserTitre.Text = "Liste des Utilisateurs";
             // 
             // label6
             // 
@@ -185,11 +197,11 @@ namespace StoriesHelper.Windows.Users
             // 
             // panelListUsers
             // 
-            this.panelListUsers.AutoScroll = true;
-            this.panelListUsers.Location = new System.Drawing.Point(17, 274);
-            this.panelListUsers.Name = "panelListUsers";
-            this.panelListUsers.Size = new System.Drawing.Size(1081, 596);
-            this.panelListUsers.TabIndex = 17;
+            panelListUsers.AutoScroll = true;
+            panelListUsers.Location = new System.Drawing.Point(17, 274);
+            panelListUsers.Name = "panelListUsers";
+            panelListUsers.Size = new System.Drawing.Size(1081, 560);
+            panelListUsers.TabIndex = 17;
             // 
             // buttonFilter
             // 
@@ -325,18 +337,17 @@ namespace StoriesHelper.Windows.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gradient1);
+            this.Controls.Add(this.gradient);
             this.Name = "UserMainList";
             this.Size = new System.Drawing.Size(1101, 900);
-            this.gradient1.ResumeLayout(false);
-            this.gradient1.PerformLayout();
+            this.gradient.ResumeLayout(false);
+            this.gradient.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Services.Gradient gradient1;
-        private System.Windows.Forms.Panel panelListUsers;
+        private Services.Gradient gradient;
         private System.Windows.Forms.Button buttonFilter;
         private System.Windows.Forms.Label labelFilterProject;
         private System.Windows.Forms.ComboBox comboProject;
@@ -357,5 +368,7 @@ namespace StoriesHelper.Windows.Users
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label UserTitre;
+        private static System.Windows.Forms.Panel panelListUsers;
+        private static System.Windows.Forms.FlowLayoutPanel panelPagination;
     }
 }

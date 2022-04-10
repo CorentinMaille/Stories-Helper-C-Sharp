@@ -17,6 +17,7 @@ namespace StoriesHelper.Windows.Organizations
         protected string teamName = "";
         public OrganizationMain(string projectName = "", string projectType = "")
         {
+            // Header
             int idOrganization = Session.UserId;
             InitializeComponent();
             Gradient GradientTitre = new Gradient();
@@ -33,13 +34,14 @@ namespace StoriesHelper.Windows.Organizations
             LigneTitre.Height = 1;
             GradientTitre.Controls.Add(LigneTitre);
 
-
             Organization Organization = new Organization(idOrganization);
 
             OrganizationLabel.Text += Organization.getName();
             GradientTitre.Controls.Add(OrganizationLabel);
             OrganizationLabel.Left = (1100 - OrganizationLabel.Width) / 2;
             OrganizationLabel.Top = (60 - OrganizationLabel.Height) / 2;
+
+            // fin Header
 
             List<Project> Projects = Organization.getListProjects();
             List<Team> Teams = new List<Team>();

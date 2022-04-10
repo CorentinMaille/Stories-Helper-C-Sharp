@@ -121,16 +121,6 @@ namespace StoriesHelper.Windows
             UserMainList.Show();
         }
 
-        static public void goToUser(int idUser, string from)
-        {
-            UserInterfaceMain UserInterfaceMain = new UserInterfaceMain(idUser, from);
-
-            MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(UserInterfaceMain);
-
-            UserInterfaceMain.Show();
-        }
-
         private void QuitButton_Click(object sender, EventArgs e)
         {
             Quitter quitter = new Quitter();

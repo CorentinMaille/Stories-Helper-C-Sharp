@@ -26,7 +26,7 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListTeam
             PanelPagination.Controls.Add(OrganizationPaginationTeam);
             OrganizationPaginationTeam.Show();
 
-            PanelPagination.Left = (this.ClientSize.Width - PanelPagination.Width) / 2;
+            PanelPagination.Left = (520 - PanelPagination.Width) / 2;
         }
 
         public static void goToPaginateTeam(bool archived, bool open, int page, string name)
@@ -40,6 +40,8 @@ namespace StoriesHelper.Windows.Organizations.OrganizationListTeam
             PanelPagination.Controls.Clear();
             PanelPagination.Controls.Add(OrganizationPaginationTeam);
             OrganizationPaginationTeam.Show();
+
+            PanelPagination.Left = (520 - PanelPagination.Width) / 2;
         }
     }
 }

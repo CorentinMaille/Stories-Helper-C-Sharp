@@ -1,19 +1,25 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using StoriesHelper.Models;
-using System;
+using StoriesHelper.Windows.Users;
 
 namespace StoriesHelper.Windows.Users.UserInterface
 {
-    public partial class UserInterfaceMain : UserControl
+    public partial class UserInterface : Form
     {
         private int idUser;
-        private string from;
         private User User;
-        public UserInterfaceMain(int idUser, string from)
+        public UserInterface(int idUser)
         {
             InitializeComponent();
             this.idUser = idUser;
-            this.from = from;
 
             User User = new User(idUser);
             this.User = User;
@@ -21,22 +27,10 @@ namespace StoriesHelper.Windows.Users.UserInterface
             textFirstname.Text = User.getFirstname();
             textEmail.Text = User.getEmail();
             dateTimeBirthDay.Value = User.getBirth();
-        }
-
-        private void retour_Click(object sender, System.EventArgs e)
-        {
-
-            if (from == "ListUser")
+            radioCollaborateur.Checked = true;
+            if (User.isAdmin())
             {
-                main.goToListUser();
-            }
-            else if (from == "Organization")
-            {
-                main.goToOrganization();
-            } 
-            else
-            {
-                main.goToTeam(Int32.Parse(from), "Organization");
+                radioAdministrateur.Checked = true;
             }
         }
 
@@ -45,9 +39,17 @@ namespace StoriesHelper.Windows.Users.UserInterface
             User.setFirstname(textFirstname.Text);
             User.setLastname(textName.Text);
             User.setEmail(textEmail.Text);
-            User.setFirstname(textName.Text);
+            User.setBirth(dateTimeBirthDay.Value);
+            User.setAdmin(false);
+            if (radioAdministrateur.Checked == true)
+            {
+                User.setAdmin(true);
+            }
             User.update();
             MessageBox.Show("Les informations ont bien été mise à jour.");
+            this.Close();
+
+            UserMainList.goToPaginateUser();
         }
     }
 }

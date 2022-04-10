@@ -151,5 +151,22 @@ namespace StoriesHelper.Windows.Logs
                 dateFin.Enabled = false;
             }
         }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            allowDateDebut.CheckState = CheckState.Unchecked;
+            allowDateFin.CheckState = CheckState.Unchecked;
+            statusCombo.Text = "";
+            actionCombo.Text = "";
+            objetCombo.Text = "";
+            pageCombo.Text = "";
+
+            LogConsole LogConsoleContent = new LogConsole();
+
+            PanelLogConsole.Controls.Clear();
+            PanelLogConsole.Controls.Add(LogConsoleContent);
+
+            LogConsoleContent.Show();
+        }
     }
 }

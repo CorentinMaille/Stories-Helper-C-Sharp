@@ -42,16 +42,8 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             {
                 foreach (Column Column in Columns)
                 {
-                    if (Column.getName() == "Closed")
-                    {
-                        Tasks = Column.fetchTaskBetweenTime(Column.getRowId(), begin, end);
-                        TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), Tasks.Count());
-                    }
-                    else
-                    {
-                        Tasks = Column.fetchTaskBetweenTime(Column.getRowId(), begin, end);
-                        TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(Column.getName(), Tasks.Count());
-                    }
+                     Tasks = Column.fetchTaskBetweenTime(Column.getRowId(), begin, end);
+                     TeamGraphicsStat.Series["Nombre de Tâches"].Points.AddXY(Column.getName(), Tasks.Count());
                 }
             }
             else
@@ -61,19 +53,13 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
                 {
                     foreach (ColumnState ColumnState in ColumnStates)
                     {
-                        if (ColumnState.getColumnName() == "Closed")
-                        {
-                            TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(ColumnState.getColumnName(), ColumnState.getNbTask());
-                        }
-                        else
-                        {
-                            TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY(ColumnState.getColumnName(), ColumnState.getNbTask());
-                        }
+
+                         TeamGraphicsStat.Series["Nombre de Tâches"].Points.AddXY(ColumnState.getColumnName(), ColumnState.getNbTask());
                     }
                 }
                 else
                 {
-                    TeamGraphicsStat.Series["Tâches en cours"].Points.AddXY("No Data", 0);
+                    TeamGraphicsStat.Series["Nombre de Tâches"].Points.AddXY("No Data", 0);
                 }
             }
 

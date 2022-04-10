@@ -19,7 +19,7 @@ namespace StoriesHelper.Windows.Users
         protected string team;
         protected string project;
         protected string id;
-        public UserListUsers(string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null)
+        public UserListUsers(string lastname = null, string firstname = null, string email = null, string team = null, string project = null, string id = null, int page = 0)
         {
             InitializeComponent();
 
@@ -30,30 +30,30 @@ namespace StoriesHelper.Windows.Users
             this.project = project != "" || project != null ? project : null;
             this.id = id != "" || id != null ? id : null;
 
-            List<User> CollaboratorsList = new List<User>();
-            List<User> Collaborators = new List<User>();
+            List<UserList> CollaboratorsList = new List<UserList>();
+            List<UserList> Collaborators = new List<UserList>();
 
-            CollaboratorsList = UserRepository.getUserFromOrganization(Session.UserId, lastname, firstname, email, team, project, id);
+            CollaboratorsList = UserRepository.getUserFromOrganization(Session.UserId, lastname, firstname, email, team, project, id, page);
 
             int delta = 0;
-            CollaboratorsList = CollaboratorsList.OrderBy(c => c.getRowId()).ToList();
-            foreach (User Collaborator in CollaboratorsList)
+            CollaboratorsList = CollaboratorsList.OrderBy(c => c.rowid).ToList();
+            foreach (UserList Collaborator in CollaboratorsList)
             {
-                if(Collaborator.getRowId() != delta)
+                if(Collaborator.rowid != delta)
                 {
                     Collaborators.Add(Collaborator);
                 }
-                delta = Collaborator.getRowId();
+                delta = Collaborator.rowid;
             }
 
             int positionLabel = 20;
             int positionButton = 15;
             int positionLigne = 60;
 
-            foreach (User Collaborator in Collaborators)
+            foreach (UserList Collaborator in Collaborators)
             {
                 // Créer le label Id 
-                string userId = Collaborator.getRowId().ToString();
+                string userId = Collaborator.rowid.ToString();
                 string newId = "";
                 Label LabelId = new Label();
                 if (userId.Length > 6)
@@ -61,12 +61,12 @@ namespace StoriesHelper.Windows.Users
                     newId = userId.Remove(6, (userId.Length - 6));
                     newId = newId.Insert(newId.Length, ".");
                     LabelId.Text = "#" + newId;
-                    LabelId.Name = LabelId.Text + Collaborator.getRowId();
+                    LabelId.Name = LabelId.Text + Collaborator.rowid;
                 }
                 else
                 {
                     LabelId.Text = "#" + userId;
-                    LabelId.Name = LabelId.Text + Collaborator.getRowId();
+                    LabelId.Name = LabelId.Text + Collaborator.rowid;
                 }
                 LabelId.UseMnemonic = true;
                 LabelId.AutoSize = true;
@@ -75,7 +75,7 @@ namespace StoriesHelper.Windows.Users
                 this.Controls.Add(LabelId);
 
                 // Créer le label Lastname
-                string UserLastname = Collaborator.getLastname().ToUpper();
+                string UserLastname = Collaborator.lastname.ToUpper();
                 string newLastname = "";
                 Label LabelLastname = new Label();
                 if (UserLastname.Length > 15)
@@ -83,12 +83,12 @@ namespace StoriesHelper.Windows.Users
                     newLastname = UserLastname.Remove(15, (UserLastname.Length - 15));
                     newLastname = newLastname.Insert(newLastname.Length, "...");
                     LabelLastname.Text = newLastname;
-                    LabelLastname.Name = newLastname + Collaborator.getRowId();
+                    LabelLastname.Name = newLastname + Collaborator.rowid;
                 }
                 else
                 {
                     LabelLastname.Text = UserLastname;
-                    LabelLastname.Name = UserLastname + Collaborator.getRowId();
+                    LabelLastname.Name = UserLastname + Collaborator.rowid;
                 }
                 LabelLastname.UseMnemonic = true;
                 LabelLastname.AutoSize = true;
@@ -97,7 +97,7 @@ namespace StoriesHelper.Windows.Users
                 this.Controls.Add(LabelLastname);
 
                 // Créer le label Firstname
-                string UserFirstname = Collaborator.getFirstname();
+                string UserFirstname = Collaborator.firstname;
                 string newFirstname = "";
                 Label LabelFirstname = new Label();
                 if (UserFirstname.Length > 10)
@@ -105,12 +105,12 @@ namespace StoriesHelper.Windows.Users
                     newFirstname = UserFirstname.Remove(10, (UserFirstname.Length - 10));
                     newFirstname = newFirstname.Insert(newFirstname.Length, "...");
                     LabelFirstname.Text = newFirstname;
-                    LabelFirstname.Name = newFirstname + Collaborator.getRowId();
+                    LabelFirstname.Name = newFirstname + Collaborator.rowid;
                 }
                 else
                 {
                     LabelFirstname.Text = UserFirstname;
-                    LabelFirstname.Name = UserFirstname + Collaborator.getRowId();
+                    LabelFirstname.Name = UserFirstname + Collaborator.rowid;
                 }
                 LabelFirstname.UseMnemonic = true;
                 LabelFirstname.AutoSize = true;
@@ -119,35 +119,33 @@ namespace StoriesHelper.Windows.Users
                 this.Controls.Add(LabelFirstname);
 
                 // Créer le label Email
-                string UserEmail = Collaborator.getEmail();
+                string UserEmail = Collaborator.email;
                 string newLabelEmail = "";
                 Label LabelEmail = new Label();
-                if (UserEmail.Length > 28)
+                if (UserEmail.Length > 25)
                 {
                     newLabelEmail = UserEmail.Remove(25, (UserEmail.Length - 25));
                     newLabelEmail = newLabelEmail.Insert(newLabelEmail.Length, "...");
                     LabelEmail.Text = newLabelEmail;
-                    LabelEmail.Name = newLabelEmail + Collaborator.getRowId();
+                    LabelEmail.Name = newLabelEmail + Collaborator.rowid;
                 }
                 else
                 {
                     LabelEmail.Text = UserEmail;
-                    LabelEmail.Name = UserEmail + Collaborator.getRowId();
+                    LabelEmail.Name = UserEmail + Collaborator.rowid;
                 }
                 LabelEmail.UseMnemonic = true;
                 LabelEmail.AutoSize = true;
-                LabelEmail.Font = new Font("Cambria", 14);
-                LabelEmail.Location = new Point(350, positionLabel);
+                LabelEmail.Font = new Font("Cambria", 13);
+                LabelEmail.Location = new Point(340, positionLabel);
                 this.Controls.Add(LabelEmail);
 
                 // Créer le combo Team
-                List<Team> UserTeam = UserRepository.getTeams(Collaborator.getRowId());
-
                 ComboBox ComboTeam = new ComboBox();
-                ComboTeam.Name = "Team" + Collaborator.getRowId();
-                foreach (Team Team in UserTeam)
+                ComboTeam.Name = "Team" + Collaborator.rowid;
+                foreach (string Team in Collaborator.TeamsName)
                 {
-                    string LabelTeam = Team.getName();
+                    string LabelTeam = Team;
                     string newLabelTeam = "";
                     if (LabelTeam.Length > 15)
                     {
@@ -163,17 +161,15 @@ namespace StoriesHelper.Windows.Users
                 ComboTeam.Font = new Font("Cambria", 14);
                 ComboTeam.Width = 150;
                 ComboTeam.Location = new Point(600, positionLabel);
-                UserTeam.Clear();
                 this.Controls.Add(ComboTeam);
 
                 // Créer le combo Projet
-                List<Project> UserProjects = UserRepository.getProjects(Collaborator.getRowId());
 
                 ComboBox ComboProject = new ComboBox();
-                ComboProject.Name = "Team" + Collaborator.getRowId();
-                foreach (Project Project in UserProjects)
+                ComboProject.Name = "Team" + Collaborator.rowid;
+                foreach (string Project in Collaborator.ProjectsName)
                 {
-                    string LabelProject = Project.getName();
+                    string LabelProject = Project;
                     string newLabelProject = "";
                     if (LabelProject.Length > 15)
                     {
@@ -188,12 +184,11 @@ namespace StoriesHelper.Windows.Users
                 ComboProject.Font = new Font("Cambria", 14);
                 ComboProject.Width = 150;
                 ComboProject.Location = new Point(770, positionLabel);
-                UserProjects.Clear();
                 this.Controls.Add(ComboProject);
 
                 // Créer Le button
                 Button button = new Button();
-                button.Name = Collaborator.getRowId().ToString();
+                button.Name = Collaborator.rowid.ToString();
                 button.Text = "Aller à";
                 button.Font = new Font("Cambria", 14);
                 button.Size = new Size(108, 33);
@@ -203,7 +198,7 @@ namespace StoriesHelper.Windows.Users
 
                 // Créer la ligne
                 LigneHorizontale LigneHorizontale = new LigneHorizontale();
-                LigneHorizontale.Name = "Ligne" + Collaborator.getRowId().ToString();
+                LigneHorizontale.Name = "Ligne" + Collaborator.rowid.ToString();
                 LigneHorizontale.Location = new Point(0, positionLigne);
                 LigneHorizontale.Width = 1050;
                 LigneHorizontale.Height = 1;
@@ -219,7 +214,10 @@ namespace StoriesHelper.Windows.Users
         private void goToUser(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            main.goToUser(Convert.ToInt32(button.Name), "ListUser");
+
+            UserInterface.UserInterface UserInterface = new UserInterface.UserInterface(Int32.Parse(button.Name));
+
+            UserInterface.Show();
         }
     }
 }

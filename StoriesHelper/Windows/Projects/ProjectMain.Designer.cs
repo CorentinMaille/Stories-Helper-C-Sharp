@@ -48,7 +48,6 @@ namespace StoriesHelper.Windows.Projects
             this.NbTachesEnCours = new System.Windows.Forms.Label();
             this.NombreUtilisateurs = new System.Windows.Forms.Label();
             this.NomTeam = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.GraphiqueRatioTaskProject = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PanelListTeams = new System.Windows.Forms.Panel();
             this.LabelTitreProject = new System.Windows.Forms.Label();
@@ -74,7 +73,6 @@ namespace StoriesHelper.Windows.Projects
             this.gradientPanelProject.Controls.Add(this.NbTachesEnCours);
             this.gradientPanelProject.Controls.Add(this.NombreUtilisateurs);
             this.gradientPanelProject.Controls.Add(this.NomTeam);
-            this.gradientPanelProject.Controls.Add(this.panel1);
             this.gradientPanelProject.Controls.Add(this.GraphiqueRatioTaskProject);
             this.gradientPanelProject.Controls.Add(this.PanelListTeams);
             this.gradientPanelProject.Controls.Add(this.LabelTitreProject);
@@ -89,9 +87,9 @@ namespace StoriesHelper.Windows.Projects
             this.panelDescription.AutoScroll = true;
             this.panelDescription.BackColor = System.Drawing.Color.Transparent;
             this.panelDescription.Controls.Add(this.labelDescription);
-            this.panelDescription.Location = new System.Drawing.Point(53, 272);
+            this.panelDescription.Location = new System.Drawing.Point(53, 273);
             this.panelDescription.Name = "panelDescription";
-            this.panelDescription.Size = new System.Drawing.Size(336, 242);
+            this.panelDescription.Size = new System.Drawing.Size(982, 214);
             this.panelDescription.TabIndex = 30;
             // 
             // labelDescription
@@ -234,14 +232,6 @@ namespace StoriesHelper.Windows.Projects
             this.NomTeam.TabIndex = 16;
             this.NomTeam.Text = "Nom Équipe";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(410, 104);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 411);
-            this.panel1.TabIndex = 15;
-            // 
             // GraphiqueRatioTaskProject
             // 
             this.GraphiqueRatioTaskProject.BackColor = System.Drawing.Color.Transparent;
@@ -322,7 +312,6 @@ namespace StoriesHelper.Windows.Projects
         private System.Windows.Forms.Panel PanelListTeams;
         private System.Windows.Forms.DataVisualization.Charting.Chart GraphiqueRatioTaskProject;
         private System.Windows.Forms.Label NomTeam;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Label NbTachesEnCours;
         private System.Windows.Forms.Label NombreUtilisateurs;

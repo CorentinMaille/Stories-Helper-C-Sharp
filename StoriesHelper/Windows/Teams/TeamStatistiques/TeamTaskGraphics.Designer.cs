@@ -67,7 +67,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             series1.ChartArea = "ChartArea1";
             series1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
-            series1.Name = "Tâches en cours";
+            series1.Name = "Nombre de Tâches";
             this.TeamGraphicsStat.Series.Add(series1);
             this.TeamGraphicsStat.Size = new System.Drawing.Size(861, 408);
             this.TeamGraphicsStat.TabIndex = 0;

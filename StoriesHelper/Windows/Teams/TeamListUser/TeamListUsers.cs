@@ -3,6 +3,7 @@ using StoriesHelper.Repository;
 using System;
 using System.Collections.Generic;
 using StoriesHelper.Models;
+using StoriesHelper.Windows.Users.UserInterface;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -158,7 +159,10 @@ namespace StoriesHelper.Windows.Teams.TeamListUser
         private void goToUser(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            main.goToUser(Convert.ToInt32(button.Name), this.idTeam.ToString());
+
+            UserInterface UserInterface = new UserInterface(Int32.Parse(button.Name));
+
+            UserInterface.Show();
         }
     }
 }

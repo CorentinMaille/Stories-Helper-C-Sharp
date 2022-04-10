@@ -46,6 +46,7 @@ namespace StoriesHelper.Windows.Logs
             this.allowDateDebut = new System.Windows.Forms.CheckBox();
             this.allowDateFin = new System.Windows.Forms.CheckBox();
             this.error = new System.Windows.Forms.Label();
+            this.clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PanelLogConsole
@@ -178,9 +179,9 @@ namespace StoriesHelper.Windows.Logs
             // filtre
             // 
             this.filtre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtre.Location = new System.Drawing.Point(602, 799);
+            this.filtre.Location = new System.Drawing.Point(526, 799);
             this.filtre.Name = "filtre";
-            this.filtre.Size = new System.Drawing.Size(164, 27);
+            this.filtre.Size = new System.Drawing.Size(149, 27);
             this.filtre.TabIndex = 16;
             this.filtre.Text = "Filtrer";
             this.filtre.UseVisualStyleBackColor = true;
@@ -218,10 +219,22 @@ namespace StoriesHelper.Windows.Logs
             this.error.Size = new System.Drawing.Size(0, 20);
             this.error.TabIndex = 19;
             // 
+            // clear
+            // 
+            this.clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.Location = new System.Drawing.Point(681, 799);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(149, 27);
+            this.clear.TabIndex = 20;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
             // LogMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clear);
             this.Controls.Add(this.error);
             this.Controls.Add(this.allowDateFin);
             this.Controls.Add(this.allowDateDebut);
@@ -265,5 +278,6 @@ namespace StoriesHelper.Windows.Logs
         private System.Windows.Forms.CheckBox allowDateFin;
         private System.Windows.Forms.CheckBox allowDateDebut;
         private System.Windows.Forms.Label error;
+        private System.Windows.Forms.Button clear;
     }
 }

@@ -107,6 +107,7 @@
     </Compile>
     <Compile Include="Services\TeamNameType.cs" />
     <Compile Include="Services\ProjectNameType.cs" />
+    <Compile Include="Services\UserList.cs" />
     <Compile Include="Windows\Logs\LogConsole.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +277,12 @@
     <Compile Include="Windows\Teams\TeamMain.Designer.cs">
       <DependentUpon>TeamMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamGraphicsAdvanced.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Teams\TeamStatistiques\TeamGraphicsAdvanced.Designer.cs">
+      <DependentUpon>TeamGraphicsAdvanced.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,11 +301,11 @@
     <Compile Include="Windows\Teams\TeamStatistiques\TitreStatistique.Designer.cs">
       <DependentUpon>TitreStatistique.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Users\UserInterface\UserInterfaceMain.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Windows\Users\UserInterface\UserInterface.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Users\UserInterface\UserInterfaceMain.Designer.cs">
-      <DependentUpon>UserInterfaceMain.cs</DependentUpon>
+    <Compile Include="Windows\Users\UserInterface\UserInterface.Designer.cs">
+      <DependentUpon>UserInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Users\UserListUsers.cs">
       <SubType>UserControl</SubType>
@@ -311,6 +318,12 @@
     </Compile>
     <Compile Include="Windows\Users\UserMainList.Designer.cs">
       <DependentUpon>UserMainList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Users\UserPaginationUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Users\UserPaginationUsers.Designer.cs">
+      <DependentUpon>UserPaginationUsers.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Images\IconeUser.resx">
       <DependentUpon>IconeUser.cs</DependentUpon>
@@ -400,6 +413,9 @@
     <EmbeddedResource Include="Windows\Teams\TeamMain.resx">
       <DependentUpon>TeamMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamGraphicsAdvanced.resx">
+      <DependentUpon>TeamGraphicsAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TeamTaskGraphics.resx">
       <DependentUpon>TeamTaskGraphics.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,14 +425,17 @@
     <EmbeddedResource Include="Windows\Teams\TeamStatistiques\TitreStatistique.resx">
       <DependentUpon>TitreStatistique.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Users\UserInterface\UserInterfaceMain.resx">
-      <DependentUpon>UserInterfaceMain.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Users\UserInterface\UserInterface.resx">
+      <DependentUpon>UserInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Users\UserListUsers.resx">
       <DependentUpon>UserListUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Users\UserMainList.resx">
       <DependentUpon>UserMainList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Users\UserPaginationUsers.resx">
+      <DependentUpon>UserPaginationUsers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\StoriesHelper.exe.config" />
     <None Include="packages.config" />
@@ -457,6 +476,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Windows\Projects\Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
