@@ -12,9 +12,6 @@ namespace StoriesHelper.Models
     {
         protected int rowid;
         protected string name;
-        protected string email;
-        protected string password;
-        protected int consent;
         protected List<Project> list_projects = new List<Project>();
         protected List<User> list_collaborators = new List<User>();
         protected List<LogHistory> list_logs = new List<LogHistory>();
@@ -41,30 +38,6 @@ namespace StoriesHelper.Models
         public void setName(string newName)
         {
             name = newName;
-        }
-        public string getEmail()
-        {
-            return email;
-        }
-        public void setEmail(string newEmail)
-        {
-            email = newEmail;
-        }
-        public string getPassword()
-        {
-            return password;
-        }
-        public void setPassword(string newPassword)
-        {
-            password = newPassword;
-        }
-        public int getConsent()
-        {
-            return consent;
-        }
-        public void setConsent(int newConsent)
-        {
-            consent = newConsent;
         }
         public List<Project> getListProjects()
         {
@@ -138,45 +111,6 @@ namespace StoriesHelper.Models
                 user.initializedCollaborator(users.GetInt32(0), users.GetString(1), users.GetString(2), users.GetDateTime(3), users.GetString(4), users.GetString(5), users.GetInt32(6));
                 list_collaborators.Add(user);
             }
-            conn.Close();
-
-            // add Organization logs
-            conn.Open();
-
-            MySqlCommand command4 = conn.CreateCommand();
-            command4.Parameters.AddWithValue("@fk_organization", idOrganization);
-            string sql4 = "SELECT *";
-            sql4 += " FROM storieshelper_log_history";
-            sql4 += " WHERE fk_organization = @fk_organization";
-            command4.CommandText = sql4;
-            MySqlDataReader logs = command4.ExecuteReader();
-            while (logs.Read())
-            {
-                string value = null;
-                if (!logs.IsDBNull(6))
-                {
-                    value = logs.GetString(6);
-                }   
-                string identification = null;
-                if (!logs.IsDBNull(7))
-                {
-                    identification = logs.GetString(7);
-                }       
-                string exception = null;
-                if (!logs.IsDBNull(10))
-                {
-                    exception = logs.GetString(10);
-                }        
-                string platform = null;
-                if (!logs.IsDBNull(11))
-                {
-                    platform = logs.GetString(11);
-                }
-                LogHistory LogHistory = new LogHistory();
-                /*LogHistory.initialize(logs.GetInt32(0), logs.GetInt32(1), logs.GetDateTime(2), logs.GetString(3), logs.GetString(4), logs.GetString(5), logs.GetString(9), value, identification, exception, platform);*/
-                list_logs.Add(LogHistory);
-            }
-
             conn.Close();
         }
     }

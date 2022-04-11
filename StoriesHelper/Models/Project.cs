@@ -163,56 +163,10 @@ namespace StoriesHelper.Models
 
         public void delete()
         {
-            // supprime les commentaires
-            conn.Open();
-            MySqlCommand deleteComments = conn.CreateCommand();
-            string sql = "DELETE tc FROM storieshelper_task_comment tc ";
-            sql += "INNER JOIN storieshelper_task tk ON tk.rowid = tc.fk_task ";
-            sql += "INNER JOIN storieshelper_map_column mc ON mc.rowid = tk.fk_column ";
-            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
-            sql += "INNER JOIN storieshelper_project p ON p.rowid = tm.fk_project ";
-            sql += "WHERE p.rowid = @rowid ";
-            deleteComments.Parameters.AddWithValue("@rowid", rowid);
-            deleteComments.CommandText = sql;
-            deleteComments.ExecuteNonQuery();
-            conn.Close();
-            // supprime les tâches
-            conn.Open();
-            MySqlCommand deleteTasks = conn.CreateCommand();
-            sql = "DELETE tk FROM storieshelper_task tk ";
-            sql += "INNER JOIN storieshelper_map_column mc ON mc.rowid = tk.fk_column ";
-            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
-            sql += "INNER JOIN storieshelper_project p ON p.rowid = tm.fk_project ";
-            sql += "WHERE p.rowid = @rowid ";
-            deleteTasks.Parameters.AddWithValue("@rowid", rowid);
-            deleteTasks.CommandText = sql;
-            deleteTasks.ExecuteNonQuery();
-            conn.Close();
-            // supprime les colonnes
-            conn.Open();
-            MySqlCommand deleteColumns = conn.CreateCommand();
-            sql = "DELETE mc FROM storieshelper_map_column mc ";
-            sql += "INNER JOIN storieshelper_team tm ON tm.rowid = mc.fk_team ";
-            sql += "INNER JOIN storieshelper_project p ON p.rowid = tm.fk_project ";
-            sql += "WHERE p.rowid = @rowid ";
-            deleteColumns.Parameters.AddWithValue("@rowid", rowid);
-            deleteColumns.CommandText = sql;
-            deleteColumns.ExecuteNonQuery();
-            conn.Close();
-            // supprime les teams
-            conn.Open();
-            MySqlCommand deleteTeams = conn.CreateCommand();
-            sql = "DELETE tm FROM storieshelper_team tm ";
-            sql += "INNER JOIN storieshelper_project p ON p.rowid = tm.fk_project ";
-            sql += "WHERE p.rowid = @rowid ";
-            deleteTeams.Parameters.AddWithValue("@rowid", rowid);
-            deleteTeams.CommandText = sql;
-            deleteTeams.ExecuteNonQuery();
-            conn.Close();
             // supprime le projet
             conn.Open();
             MySqlCommand delete = conn.CreateCommand();
-            sql = "DELETE p FROM storieshelper_project p ";
+            string sql = "DELETE p FROM storieshelper_project p ";
             sql += "WHERE rowid = @rowid";
             delete.Parameters.AddWithValue("@rowid", rowid);
             delete.CommandText = sql;

@@ -51,5 +51,25 @@ namespace StoriesHelper.Windows.Users.UserInterface
 
             UserMainList.goToPaginateUser();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            User User = new User(idUser);
+            DialogResult result = MessageBox.Show("Vous êtes sur le point de supprimer l'utilisateur " + User.getEmail() + " Cette action est irréversible, êtes-vous sûr de vouloir continuer ?", "Supprimer Utilisateur", (MessageBoxButtons)1);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    User.delete();
+                    MessageBox.Show("L'équipe " + User.getEmail() + " a bien été supprimé.");
+                    UserMainList.goToPaginateUser();
+                }
+                catch
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la suppression.");
+                    UserMainList.goToPaginateUser();
+                }
+            }
+        }
     }
 }

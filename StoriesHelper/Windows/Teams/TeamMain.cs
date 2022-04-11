@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using StoriesHelper.Windows.Teams.TeamStatistiques;
 using StoriesHelper.Windows.Teams.TeamListUser;
+using StoriesHelper.Services;
 
 namespace StoriesHelper.Windows.Teams
 {
@@ -17,6 +18,27 @@ namespace StoriesHelper.Windows.Teams
             this.idTeam = idTeam;
             this.from = from;
             Team Team = new Team(idTeam);
+
+            Gradient GradientTitre = new Gradient();
+            GradientTitre.Name = "GradientTitre";
+            GradientTitre.Size = new Size(1100, 60);
+            GradientTitre.BackColor = Color.FromArgb(200, 30, 137, 255);
+            GradientTitre.Location = new Point(0, 0);
+            gradient.Controls.Add(GradientTitre);
+
+            LigneHorizontale LigneTitre = new LigneHorizontale();
+            LigneTitre.Name = "LigneTitre";
+            LigneTitre.Location = new Point(0, 59);
+            LigneTitre.Width = 1100;
+            LigneTitre.Height = 1;
+            GradientTitre.Controls.Add(LigneTitre);
+
+            LabelTitreTeam.Text += Team.getName();
+            GradientTitre.Controls.Add(LabelTitreTeam);
+            LabelTitreTeam.Left = (1100 - LabelTitreTeam.Width) / 2;
+            LabelTitreTeam.Top = (60 - LabelTitreTeam.Height) / 2;
+
+
             List<Column> Columns = Team.getListColumns();
             List<User> User = Team.getListCollaborators();
             List<Task> Tasks = new List<Task>();
@@ -50,16 +72,11 @@ namespace StoriesHelper.Windows.Teams
             PanelListUsers.Controls.Clear();
             PanelListUsers.Controls.Add(MainTeamListUser);
             MainTeamListUser.Show();
-/*
+
             TeamTaskStatistiques TeamTaskStatistiques = new TeamTaskStatistiques(idTeam);
             panelShowStatistiqueTeam.Controls.Clear();
             panelShowStatistiqueTeam.Controls.Add(TeamTaskStatistiques);
-            TeamTaskStatistiques.Show();*/
-
-            TeamGraphicsAdvanced TeamGraphicsAdvanced = new TeamGraphicsAdvanced(idTeam);
-            panelShowStatistiqueTeam.Controls.Clear();
-            panelShowStatistiqueTeam.Controls.Add(TeamGraphicsAdvanced);
-            TeamGraphicsAdvanced.Show();
+            TeamTaskStatistiques.Show();
         }
 
         private void retour_Click(object sender, System.EventArgs e)
@@ -107,6 +124,22 @@ namespace StoriesHelper.Windows.Teams
             }
             Team.update();
             main.goToTeam(idTeam, from);
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            TeamTaskStatistiques TeamTaskStatistiques = new TeamTaskStatistiques(idTeam);
+            panelShowStatistiqueTeam.Controls.Clear();
+            panelShowStatistiqueTeam.Controls.Add(TeamTaskStatistiques);
+            TeamTaskStatistiques.Show();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            TeamGraphicsAdvanced TeamGraphicsAdvanced = new TeamGraphicsAdvanced(idTeam);
+            panelShowStatistiqueTeam.Controls.Clear();
+            panelShowStatistiqueTeam.Controls.Add(TeamGraphicsAdvanced);
+            TeamGraphicsAdvanced.Show();
         }
     }
 }

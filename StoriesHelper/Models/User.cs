@@ -136,5 +136,16 @@ namespace StoriesHelper.Models
             update.ExecuteNonQuery();
             conn.Close();
         }
+         public void delete()
+        {
+            conn.Open();
+            MySqlCommand delete = conn.CreateCommand();
+            string sql = "DELETE FROM storieshelper_user ";
+            sql += "WHERE rowid = @rowid ";
+            delete.Parameters.AddWithValue("@rowid", rowid);
+            delete.CommandText = sql;
+            delete.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

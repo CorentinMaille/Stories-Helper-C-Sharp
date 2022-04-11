@@ -21,25 +21,47 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             List<Column> Columns = Team.getListColumns();
             List<Task> Tasks = new List<Task>();
 
-            DateTime DateBegin = DateTime.Now - 1.Months();
+            DateTime DateBegin = DateTime.Now - 2.Weeks();
             DateTime DateEnd = DateTime.Now;
 
-            string dateBegin = "";
-            string dateEnd = DateTime.Now.ToString("yyyy-MM-dd 23:59:59");
+
+            string dateBegin = DateBegin.ToString("yyyy-MM-dd");
+            string dateEnd = DateTime.Now.ToString("yyyy-MM-dd");
+
+            string series = "";
+
+            List<string> columnNames = TaskStateRepository.fetchDistinctColumnBetweenDate(idTeam, dateBegin, dateEnd, "jour");
+            foreach (string columnName in columnNames)
+            {
+                series = columnName;
+                TeamGraphics.Series.Add(series);
+                TeamGraphics.Series[series].ChartType = SeriesChartType.StackedArea100;
+            }
 
             while (DateBegin <= DateEnd)
             {
-                dateBegin = DateBegin.ToString("yyyy-MM-dd 00:00:00");
+                dateBegin = DateBegin.ToString("yyyy-MM-dd");
                 List<ColumnState> ColumnStates = TaskStateRepository.fetchBackupColumn(idTeam, dateBegin, "jour");
-                foreach (ColumnState ColumnState in ColumnStates)
+                foreach (string columnName in columnNames)
                 {
-                    string series = ColumnState.getColumnName();
-                    if (TeamGraphics.Series[series] != null) { 
-                        TeamGraphics.Series.Add(series);
+                    bool verif = true;
+                    series = columnName;
+                    foreach (ColumnState ColumnState in ColumnStates)
+                    {
+                        if(ColumnState.getColumnName() == columnName)
+                        {
+                            TeamGraphics.Series[series].Points.AddXY(DateBegin.ToString("dd"), ColumnState.getNbTask());
+                            verif = false;
+                            continue;
+                        }
                     }
-                    TeamGraphics.Series[series].ChartType = SeriesChartType.StackedArea100;
-                    TeamGraphics.Series[series].Points.AddXY(ColumnState.getColumnName(), ColumnState.getNbTask());
+
+                    if (verif)
+                    {
+                        TeamGraphics.Series[series].Points.AddXY(DateBegin.ToString("dd"), 0);
+                    }
                 }
+
                 DateBegin = DateBegin + 1.Days();
             }
         }

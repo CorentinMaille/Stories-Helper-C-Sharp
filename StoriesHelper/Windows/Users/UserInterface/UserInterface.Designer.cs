@@ -42,6 +42,7 @@ namespace StoriesHelper.Windows.Users.UserInterface
             this.label6 = new System.Windows.Forms.Label();
             this.radioCollaborateur = new System.Windows.Forms.RadioButton();
             this.radioAdministrateur = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -153,7 +154,7 @@ namespace StoriesHelper.Windows.Users.UserInterface
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(34, 505);
+            this.button1.Location = new System.Drawing.Point(34, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(330, 38);
             this.button1.TabIndex = 38;
@@ -198,11 +199,24 @@ namespace StoriesHelper.Windows.Users.UserInterface
             this.radioAdministrateur.Text = "Administrateur";
             this.radioAdministrateur.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(34, 539);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(330, 38);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Supprimer l\'utilisateur";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 589);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.radioAdministrateur);
             this.Controls.Add(this.radioCollaborateur);
             this.Controls.Add(this.label6);
@@ -240,5 +254,6 @@ namespace StoriesHelper.Windows.Users.UserInterface
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioCollaborateur;
         private System.Windows.Forms.RadioButton radioAdministrateur;
+        private System.Windows.Forms.Button button2;
     }
 }

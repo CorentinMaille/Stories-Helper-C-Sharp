@@ -22,7 +22,6 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.cs
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.csproj.CopyComplete
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.exe
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.pdb
-C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.ProjectDescription.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProject.MainOrganizationListProject.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProject.OrganizationPaginationProject.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Organizations.OrganizationListProjects.resources
@@ -93,3 +92,9 @@ C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Wi
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Users.UserPaginationUsers.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Users.UserInterface.UserInterface.resources
 C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Teams.TeamStatistiques.TeamGraphicsAdvanced.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.MainIcon.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.IconType.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.IconDate.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.IconUser.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.IconTeam.resources
+C:\wamp64\www\C#\Stories-Helper-C-Sharp\StoriesHelper\obj\Debug\StoriesHelper.Windows.Projects.Icons.IconDescription.resources

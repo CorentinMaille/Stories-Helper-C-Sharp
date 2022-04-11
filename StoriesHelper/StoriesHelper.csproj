@@ -216,11 +216,41 @@
     <Compile Include="Windows\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Projects\ProjectDescription.cs">
+    <Compile Include="Windows\Projects\Icons\IconDescription.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Windows\Projects\ProjectDescription.Designer.cs">
-      <DependentUpon>ProjectDescription.cs</DependentUpon>
+    <Compile Include="Windows\Projects\Icons\IconDescription.Designer.cs">
+      <DependentUpon>IconDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconDate.Designer.cs">
+      <DependentUpon>IconDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconTeam.Designer.cs">
+      <DependentUpon>IconTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconUser.Designer.cs">
+      <DependentUpon>IconUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\IconType.Designer.cs">
+      <DependentUpon>IconType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\MainIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Projects\Icons\MainIcon.Designer.cs">
+      <DependentUpon>MainIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Projects\ProjectListTeam\MainProjectListTeam.cs">
       <SubType>UserControl</SubType>
@@ -383,8 +413,23 @@
     <EmbeddedResource Include="Windows\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Projects\ProjectDescription.resx">
-      <DependentUpon>ProjectDescription.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\Projects\Icons\IconDescription.resx">
+      <DependentUpon>IconDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\Icons\IconDate.resx">
+      <DependentUpon>IconDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\Icons\IconTeam.resx">
+      <DependentUpon>IconTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\Icons\IconUser.resx">
+      <DependentUpon>IconUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\Icons\IconType.resx">
+      <DependentUpon>IconType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Projects\Icons\MainIcon.resx">
+      <DependentUpon>MainIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Projects\ProjectListTeam\MainProjectListTeam.resx">
       <DependentUpon>MainProjectListTeam.cs</DependentUpon>
@@ -476,7 +521,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="Windows\Projects\Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,5 +49,45 @@ namespace StoriesHelper.Repository
             conn.Close();
             return ListTaskState;
         }
+
+        public List<string> fetchDistinctColumnBetweenDate(int idTeam, string dateDebut, string dateFin, string scope)
+        {
+            List<string> ListColumnName = new List<string>();
+            conn.Open();
+            MySqlCommand command = conn.CreateCommand();
+            command.Parameters.AddWithValue("@idTeam", idTeam);
+            command.Parameters.AddWithValue("@dateDebut", dateDebut);
+            command.Parameters.AddWithValue("@dateFin", dateFin);
+            switch (scope)
+            {
+                case "jour":
+                    command.Parameters.AddWithValue("@scope", "Day");
+                    break;
+                case "semaine":
+                    command.Parameters.AddWithValue("@scope", "Week");
+                    break;
+                case "mois":
+                    command.Parameters.AddWithValue("@scope", "Month");
+                    break;
+                case "annee":
+                    command.Parameters.AddWithValue("@scope", "Year");
+                    break;
+            }
+            string sql = "SELECT DISTINCT(column_name)";
+            sql += " FROM storieshelper_column_state";
+            sql += " WHERE fk_team = @idTeam";
+            sql += " AND state_date BETWEEN @dateDebut AND @dateFin";
+            sql += " AND state_scope = @scope";
+            sql += " ORDER BY column_rank";
+            command.CommandText = sql;
+            MySqlDataReader columnNames = command.ExecuteReader();
+            while (columnNames.Read())
+            {
+                string columnName = columnNames.GetString(0);
+                ListColumnName.Add(columnName);
+            }
+            conn.Close();
+            return ListColumnName;
+        }
     }
 }

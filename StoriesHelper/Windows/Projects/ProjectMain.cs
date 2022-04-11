@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using StoriesHelper.Models;
 using StoriesHelper.Services;
 using StoriesHelper.Windows.Projects.ProjectListTeam;
+using StoriesHelper.Windows.Projects.Icons;
 
 namespace StoriesHelper.Windows.Projects
 {
@@ -42,11 +43,11 @@ namespace StoriesHelper.Windows.Projects
             List<Task> Tasks = new List<Task>();
             List<Task> TasksClosed = new List<Task>();
             List<Task> TasksOpen = new List<Task>();
-            List<User> User = new List<User>();
+            List<User> Users = new List<User>();
             foreach (Team team in Teams)
             {
                 Columns.AddRange(team.getListColumns());
-                User.AddRange(team.getListCollaborators());
+                Users.AddRange(team.getListCollaborators());
             }
             foreach (Column Column in Columns)
             {
@@ -66,6 +67,15 @@ namespace StoriesHelper.Windows.Projects
                     }
                 }
             }
+            List<User> ListUser = new List<User>();
+            foreach (User User in Users)
+            {
+                if (!ListUser.Contains(User))
+                {
+                    ListUser.Add(User);
+                }
+            } // on enlève les doublons 
+
             if (!Project.isActive())
             {
                 ArchivedProject.Text = "Projet Archivé";
@@ -73,11 +83,6 @@ namespace StoriesHelper.Windows.Projects
                 buttonArchiverProjet.Text = "Désarchiver le projet";
                 buttonArchiverProjet.Name = "buttonDesarchiverProjet";
             }
-            labelType.Text += Project.getType();
-            labelDateCreation.Text += Project.getOpen().ToString("d");
-            labelNbCollaborateur.Text += User.Count(); 
-            labelNbTeam.Text += Teams.Count();/*
-            textDescription.Text = Project.getDescription();*/
 
             displayTaskChart(Tasks, TasksOpen, TasksClosed);
 
@@ -87,11 +92,10 @@ namespace StoriesHelper.Windows.Projects
             PanelListTeams.Controls.Add(ListTeams);
             ListTeams.Show();
 
-            // description
-            ProjectDescription ProjectDescription = new ProjectDescription(Project.getDescription());
-            panelDescription.Controls.Clear();
-            panelDescription.Controls.Add(ProjectDescription);
-            ProjectDescription.Show();
+            MainIcon MainIcon = new MainIcon(Project.getType(), Project.getOpen().ToString("d"), ListUser.Count(), Teams.Count(), Project.getDescription());
+            panelIcon.Controls.Clear();
+            panelIcon.Controls.Add(MainIcon);
+            MainIcon.Show();
         }
 
         /*

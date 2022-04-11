@@ -170,8 +170,8 @@ namespace StoriesHelper.Windows.Organizations
             {
                 double ratioOpen = Calcul.CalculateRatioTasks(TasksOpen.Count(), Tasks.Count());
                 double ratioClosed = Calcul.CalculateRatioTasks(TasksClosed.Count(), Tasks.Count());
-                string labelOpen = "Open (" + ratioOpen + "%)";
-                string labelClosed = "Closed (" + ratioClosed + "%)";
+                string labelOpen = "En cours (" + ratioOpen + "%)";
+                string labelClosed = "Terminées (" + ratioClosed + "%)";
 
                 GraphiqueRatioTaskOrganization.Series["Task"].IsValueShownAsLabel = true;
                 GraphiqueRatioTaskOrganization.Series["Task"].Points.AddXY(labelOpen, TasksOpen.Count());

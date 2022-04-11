@@ -42,7 +42,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.precedent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.precedent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precedent.Location = new System.Drawing.Point(280, 3);
+            this.precedent.Location = new System.Drawing.Point(280, 10);
             this.precedent.Name = "precedent";
             this.precedent.Size = new System.Drawing.Size(100, 30);
             this.precedent.TabIndex = 32;
@@ -56,7 +56,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             this.jour.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jour.FlatAppearance.BorderSize = 0;
             this.jour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.jour.Location = new System.Drawing.Point(410, 3);
+            this.jour.Location = new System.Drawing.Point(410, 10);
             this.jour.Name = "jour";
             this.jour.Size = new System.Drawing.Size(100, 30);
             this.jour.TabIndex = 33;
@@ -68,7 +68,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.mois.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mois.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.mois.Location = new System.Drawing.Point(670, 3);
+            this.mois.Location = new System.Drawing.Point(670, 10);
             this.mois.Name = "mois";
             this.mois.Size = new System.Drawing.Size(100, 30);
             this.mois.TabIndex = 34;
@@ -80,7 +80,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.annee.Cursor = System.Windows.Forms.Cursors.Hand;
             this.annee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.annee.Location = new System.Drawing.Point(800, 3);
+            this.annee.Location = new System.Drawing.Point(800, 10);
             this.annee.Name = "annee";
             this.annee.Size = new System.Drawing.Size(100, 30);
             this.annee.TabIndex = 35;
@@ -92,7 +92,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.suivant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suivant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.suivant.Location = new System.Drawing.Point(930, 3);
+            this.suivant.Location = new System.Drawing.Point(930, 10);
             this.suivant.Name = "suivant";
             this.suivant.Size = new System.Drawing.Size(100, 30);
             this.suivant.TabIndex = 36;
@@ -104,7 +104,7 @@ namespace StoriesHelper.Windows.Teams.TeamStatistiques
             // 
             this.semaine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.semaine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.semaine.Location = new System.Drawing.Point(540, 3);
+            this.semaine.Location = new System.Drawing.Point(540, 10);
             this.semaine.Name = "semaine";
             this.semaine.Size = new System.Drawing.Size(100, 30);
             this.semaine.TabIndex = 37;

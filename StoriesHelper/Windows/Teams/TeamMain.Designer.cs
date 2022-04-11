@@ -29,7 +29,11 @@ namespace StoriesHelper.Windows.Teams
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeamMain));
             this.gradientPanelTeam = new StoriesHelper.Services.Gradient();
+            this.gradient = new StoriesHelper.Services.Gradient();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.buttonArchiverTeam = new System.Windows.Forms.Button();
             this.buttonSupprimerTeam = new System.Windows.Forms.Button();
             this.ArchivedTeam = new System.Windows.Forms.Label();
@@ -39,7 +43,6 @@ namespace StoriesHelper.Windows.Teams
             this.PanelListUsers = new System.Windows.Forms.Panel();
             this.retour = new System.Windows.Forms.Button();
             this.panelShowStatistiqueTeam = new System.Windows.Forms.Panel();
-            this.labelNbCollaborateur = new System.Windows.Forms.Label();
             this.LabelTitreTeam = new System.Windows.Forms.Label();
             this.gradientPanelTeam.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +52,9 @@ namespace StoriesHelper.Windows.Teams
             this.gradientPanelTeam.Angle = 90F;
             this.gradientPanelTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.gradientPanelTeam.BottomColor = System.Drawing.Color.White;
+            this.gradientPanelTeam.Controls.Add(this.gradient);
+            this.gradientPanelTeam.Controls.Add(this.button1);
+            this.gradientPanelTeam.Controls.Add(this.button2);
             this.gradientPanelTeam.Controls.Add(this.buttonArchiverTeam);
             this.gradientPanelTeam.Controls.Add(this.buttonSupprimerTeam);
             this.gradientPanelTeam.Controls.Add(this.ArchivedTeam);
@@ -58,13 +64,50 @@ namespace StoriesHelper.Windows.Teams
             this.gradientPanelTeam.Controls.Add(this.PanelListUsers);
             this.gradientPanelTeam.Controls.Add(this.retour);
             this.gradientPanelTeam.Controls.Add(this.panelShowStatistiqueTeam);
-            this.gradientPanelTeam.Controls.Add(this.labelNbCollaborateur);
             this.gradientPanelTeam.Controls.Add(this.LabelTitreTeam);
             this.gradientPanelTeam.Location = new System.Drawing.Point(0, 0);
             this.gradientPanelTeam.Name = "gradientPanelTeam";
             this.gradientPanelTeam.Size = new System.Drawing.Size(1101, 900);
             this.gradientPanelTeam.TabIndex = 0;
             this.gradientPanelTeam.TopColor = System.Drawing.Color.Empty;
+            // 
+            // gradient
+            // 
+            this.gradient.Angle = 0F;
+            this.gradient.AutoSize = true;
+            this.gradient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gradient.BottomColor = System.Drawing.Color.Empty;
+            this.gradient.Location = new System.Drawing.Point(0, 0);
+            this.gradient.Name = "gradient";
+            this.gradient.Size = new System.Drawing.Size(0, 0);
+            this.gradient.TabIndex = 40;
+            this.gradient.TopColor = System.Drawing.Color.Empty;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(41, 707);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(417, 82);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Graphique avancement des tâches";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(41, 608);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(417, 82);
+            this.button2.TabIndex = 38;
+            this.button2.Text = "Graphique état des tâches";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonArchiverTeam
             // 
@@ -100,7 +143,7 @@ namespace StoriesHelper.Windows.Teams
             this.ArchivedTeam.BackColor = System.Drawing.Color.Transparent;
             this.ArchivedTeam.Font = new System.Drawing.Font("Cambria", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArchivedTeam.ForeColor = System.Drawing.Color.Red;
-            this.ArchivedTeam.Location = new System.Drawing.Point(679, 26);
+            this.ArchivedTeam.Location = new System.Drawing.Point(41, 560);
             this.ArchivedTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ArchivedTeam.Name = "ArchivedTeam";
             this.ArchivedTeam.Size = new System.Drawing.Size(0, 41);
@@ -152,7 +195,7 @@ namespace StoriesHelper.Windows.Teams
             // retour
             // 
             this.retour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.retour.Location = new System.Drawing.Point(999, 15);
+            this.retour.Location = new System.Drawing.Point(993, 74);
             this.retour.Name = "retour";
             this.retour.Size = new System.Drawing.Size(87, 27);
             this.retour.TabIndex = 31;
@@ -163,21 +206,10 @@ namespace StoriesHelper.Windows.Teams
             // panelShowStatistiqueTeam
             // 
             this.panelShowStatistiqueTeam.BackColor = System.Drawing.Color.Transparent;
-            this.panelShowStatistiqueTeam.Location = new System.Drawing.Point(3, 88);
+            this.panelShowStatistiqueTeam.Location = new System.Drawing.Point(3, 103);
             this.panelShowStatistiqueTeam.Name = "panelShowStatistiqueTeam";
             this.panelShowStatistiqueTeam.Size = new System.Drawing.Size(1077, 450);
             this.panelShowStatistiqueTeam.TabIndex = 30;
-            // 
-            // labelNbCollaborateur
-            // 
-            this.labelNbCollaborateur.AutoSize = true;
-            this.labelNbCollaborateur.BackColor = System.Drawing.Color.Transparent;
-            this.labelNbCollaborateur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelNbCollaborateur.Location = new System.Drawing.Point(44, 557);
-            this.labelNbCollaborateur.Name = "labelNbCollaborateur";
-            this.labelNbCollaborateur.Size = new System.Drawing.Size(252, 22);
-            this.labelNbCollaborateur.TabIndex = 29;
-            this.labelNbCollaborateur.Text = "Nombre de collaborateurs : ";
             // 
             // LabelTitreTeam
             // 
@@ -209,7 +241,6 @@ namespace StoriesHelper.Windows.Teams
 
         private Services.Gradient gradientPanelTeam;
         private System.Windows.Forms.Label LabelTitreTeam;
-        private System.Windows.Forms.Label labelNbCollaborateur;
         private System.Windows.Forms.Panel panelShowStatistiqueTeam;
         private System.Windows.Forms.Button retour;
         private System.Windows.Forms.Panel PanelListUsers;
@@ -219,5 +250,8 @@ namespace StoriesHelper.Windows.Teams
         private System.Windows.Forms.Label ArchivedTeam;
         private System.Windows.Forms.Button buttonSupprimerTeam;
         private System.Windows.Forms.Button buttonArchiverTeam;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private Services.Gradient gradient;
     }
 }
